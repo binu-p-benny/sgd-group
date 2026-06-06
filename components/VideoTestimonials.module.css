@@ -1,0 +1,60 @@
+.videoTestimonials {
+  padding: 1rem 0 0 0;
+  background-color: var(--color-background);
+}
+
+.videoTestimonials {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-background);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md); /* Matching the tighter gap in the reference image */
+  margin-bottom: var(--spacing-lg);
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Landscape style as seen in the reference */
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

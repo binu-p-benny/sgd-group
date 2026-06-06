@@ -1,0 +1,136 @@
+.projects {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-background);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-md);
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectItem {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: center;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.detailsColumn {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  justify-content: flex-start;
+}
+
+.imageOverlay {
+  width: 220px; /* Increased from 160px */
+  height: 135px; /* Increased from 100px */
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 4px;
+}
+
+.imageOverlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectItem:hover .imageOverlay {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.projectItem:hover .projectTitle {
+  opacity: 0.6;
+}
+
+.projectItem:hover {
+  background-color: transparent; /* Keep background clean */
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  width: 100%;
+}
+
+.projectTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.projectDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.projectArrow {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  transition: all var(--transition-smooth);
+}
+
+.projectItem:hover .projectArrow {
+  background-color: var(--color-text);
+  color: var(--color-background);
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .projectItem {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .detailsColumn {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .imageOverlay {
+    display: none; /* User requested to hide on mobile */
+  }
+  
+  .projectTitle {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+  
+  .projectArrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .projectItem {
+    position: relative;
+    padding-right: 60px; /* Make room for arrow */
+  }
+}

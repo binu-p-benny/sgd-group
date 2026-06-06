@@ -1,0 +1,78 @@
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--spacing-md);
+  overflow: hidden;
+}
+
+.bgWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  /* For GSAP scale down effect */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* Darkened for better text visibility */
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: var(--spacing-lg);
+  color: var(--color-background);
+  /* White text on dark bg */
+  z-index: 2;
+}
+
+.content h1 {
+  font-size: 53px !important;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-sm);
+    align-items: center; /* Center text vertically on mobile */
+    text-align: center;
+  }
+  
+  .content h1 {
+    font-size: 32px !important;
+  }
+  
+  .content {
+    padding-bottom: 0;
+  }
+}
+
+.titleLine {
+  overflow: hidden;
+  display: block;
+}
+
+.titleText {
+  display: block;
+}
