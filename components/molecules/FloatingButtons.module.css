@@ -1,0 +1,160 @@
+/* ─────────────────────────────────────────────────
+   Floating Fixed Buttons
+   Left  → Download Brochure  (dark brown vertical tab)
+   Right → Enquire Now        (icon + pill widget)
+   ───────────────────────────────────────────────── */
+
+/* ── LEFT — Download Brochure ───────────────────── */
+.brochureTab {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+
+  width: 46px;
+  height: 200px;
+  padding: 14px 22px;
+  background: #351D0D;
+  border-radius: 0 30px 30px 0;
+
+  transition: background 0.3s ease,
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brochureTab:hover {
+  background: #4a2910;
+  transform: translateY(-50%) translateX(4px);
+}
+
+.brochureText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: block;
+}
+
+.brochureIcon {
+  width: 18px;
+  height: 18px;
+  color: #FFFFFF;
+  flex-shrink: 0;
+  transform: rotate(90deg);
+}
+
+/* ── RIGHT — Enquire Now widget ─────────────────── */
+/*
+  Figma Frame 16: 197 × 187 px, fixed right edge
+  - Icon (Frame 17): 98 × 98 px, centered (left: 50px), top: 38px
+  - Pill (Frame 15): 151 × 35 px, left: 23px, top: 142px
+  Background is transparent / black from screenshot context
+*/
+.enquireWidget {
+  position: fixed;
+  right: 0;
+  bottom: 80px;           /* sits in lower-right, clear of nav */
+  z-index: 200;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  width: 197px;
+  /* total height: icon area (38 top pad + 98 icon) + gap + pill = ~187px */
+  padding: 38px 0 0;
+
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.enquireWidget:hover {
+  transform: translateX(-4px);
+}
+
+/* Icon wrapper — 98 × 98, centered in 197px wide column */
+.enquireIconWrap {
+  width: 98px;
+  height: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.enquireIcon {
+  width: 98px;
+  height: 98px;
+}
+
+/* Pill button — 151 × 35, left: 23px from widget edge */
+/* margin-left: 23px positions it matching Figma left: 23 */
+.enquireLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 9px;          /* gap between icon and pill */
+  margin-left: 0;
+  width: 151px;
+  height: 35px;
+
+  background: #F5F4EF;
+  border-radius: 44px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #000000;
+
+  transition: background 0.25s ease, color 0.25s ease;
+  white-space: nowrap;
+}
+
+.enquireWidget:hover .enquireLabel {
+  background: #111111;
+  color: #F5F4EF;
+}
+
+/* ── Mobile ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .brochureTab { display: none; }
+
+  /* Compact FAB on mobile */
+  .enquireWidget {
+    bottom: 20px;
+    right: 0;
+    width: auto;
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+  }
+
+  .enquireIconWrap { display: none; }
+
+  .enquireLabel {
+    margin: 0;
+    border-radius: 44px 0 0 44px;
+    padding: 0 20px;
+    width: auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+}

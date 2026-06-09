@@ -1,0 +1,130 @@
+/* ─── Section ─────────────────────────────────── */
+.about {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-background);
+}
+
+/* ─── Two-column grid ─────────────────────────── */
+.grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 5rem;
+  align-items: flex-start; /* top-align both columns */
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* ─── Left column ─────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 0.25rem; /* subtle optical alignment with eyebrow */
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text);
+  opacity: 0.55;
+  margin: 0;
+}
+
+/* Body copy */
+.bodyText {
+  font-size: clamp(1rem, 1.15vw, 1.2rem);
+  line-height: 1.75;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ─── Stats row ───────────────────────────────── */
+.statsRow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 0.5rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-right: 2.5rem;
+  /* vertical divider between items */
+  border-right: 1px solid rgba(17, 17, 17, 0.2);
+  margin-right: 2.5rem;
+}
+
+.statItem:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.statValue {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text);
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+/* ─── Right column — Image ────────────────────── */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* landscape, matches screenshot proportions */
+  overflow: hidden;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  /* clip-path animated by GSAP */
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageWrapper:hover .image {
+  transform: scale(1.04);
+}
+
+/* ─── Mobile ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .statsRow {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .statItem {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .statItem:not(:last-child) {
+    padding-right: 1.5rem;
+    border-right: 1px solid rgba(17, 17, 17, 0.2);
+    margin-right: 0;
+  }
+}
