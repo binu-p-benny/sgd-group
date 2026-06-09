@@ -1,0 +1,50 @@
+.hero {
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: var(--spacing-xl);
+  position: relative;
+  padding-top: 120px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17,17,17,0.7) 0%, rgba(17,17,17,0.2) 60%, transparent 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: var(--color-background);
+  max-width: 1400px;
+}
+
+.meta {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.7;
+  border: 1px solid rgba(234,232,227,0.4);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+}
+
+.title {
+  color: var(--color-background);
+  max-width: 900px;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  color: var(--color-background);
+  opacity: 0.8;
+  max-width: 600px;
+}
