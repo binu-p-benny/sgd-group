@@ -2,7 +2,7 @@
 .footer {
   background-color: #111111;
   color: #EAE8E3;
-  padding: 128px 0 48px;
+  padding: clamp(64px, 8vw, 128px) 0 48px;
   position: relative;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -31,9 +31,10 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 64px;
-  max-width: 1856px;
-  margin: 0 auto;
+  gap: clamp(40px, 5vw, 64px);
+  width: 100%;
+  padding: 0 clamp(20px, 4vw, 32px);
+  box-sizing: border-box;
 }
 
 /* ── Row 1: Tagline + nav columns ── */
@@ -41,22 +42,24 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 472px;
+  justify-content: space-between;
+  gap: clamp(40px, 6vw, 80px);
 }
 
 .title {
-  width: 800px;
-  max-width: 800px;
-  flex-shrink: 0;
+  width: min(800px, 55%);
+  flex-shrink: 1;
   color: #EAE8E3;
   letter-spacing: -1.92px;
+  font-size: clamp(40px, 6vw, 96px);
+  line-height: 1.1;
 }
 
 .navColumns {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 71px;
+  gap: clamp(32px, 4vw, 71px);
   flex-shrink: 0;
 }
 
@@ -64,7 +67,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  width: 261.5px;
+  min-width: 120px;
 }
 
 .colLabel {
@@ -73,6 +76,18 @@
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 6px;
+}
+
+/* Services column label has slightly different Figma spec */
+.colLabelServices {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14.7px;
+  line-height: 18px;
+  letter-spacing: 0.735px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 6px;
@@ -111,8 +126,8 @@
 .description p {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.5;
   color: #EAE8E3;
 }
 
@@ -120,14 +135,16 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 71px;
+  gap: clamp(24px, 4vw, 71px);
+  flex-wrap: wrap;
 }
 
 .contactBlock {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  width: 261.5px;
+  min-width: 200px;
+  flex: 1;
 }
 
 .contactLabel {
@@ -213,54 +230,108 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1200px) {
+
+/* Tablet landscape: nav columns wrap below title */
+@media (max-width: 1100px) {
   .topRow {
-    gap: 4rem;
     flex-wrap: wrap;
   }
 
   .title {
     width: 100%;
-    max-width: 100%;
+  }
+
+  .navColumns {
+    width: 100%;
+    gap: 3rem;
+  }
+
+  .navColumn {
+    flex: 1;
+    min-width: 140px;
   }
 }
 
+/* Tablet portrait */
 @media (max-width: 768px) {
   .footer {
-    padding: 80px 0 40px;
-  }
-
-  .content {
-    gap: 40px;
+    padding: 72px 0 40px;
   }
 
   .topRow {
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: clamp(36px, 9vw, 56px);
+    letter-spacing: -1px;
+    width: 100%;
   }
 
   .navColumns {
     gap: 2rem;
-    flex-wrap: wrap;
   }
 
   .contactColumns {
-    flex-direction: column;
     gap: 2rem;
   }
 
   .contactBlock {
-    width: 100%;
+    min-width: 160px;
   }
 
   .bottomBar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   .legalLinks {
     flex-wrap: wrap;
     gap: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer {
+    padding: 56px 0 32px;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: clamp(32px, 10vw, 48px);
+  }
+
+  .navColumns {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .navColumn {
+    width: 100%;
+  }
+
+  .contactColumns {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .contactBlock {
+    width: 100%;
+    flex: none;
+  }
+
+  .socialLinks {
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .legalLinks {
+    gap: 0.75rem;
   }
 }

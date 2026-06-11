@@ -9,12 +9,12 @@ export const metadata = {
   openGraph: {
     title: 'Aluminium Door Systems | SGD Group',
     description: 'Premium aluminium doors — sliding, pivot, folding and entrance systems for residential and commercial spaces.',
-    url: 'https://sgdgroup.in/projects/aluminium-doors',
+    url: 'https://sgdgroup.in/products/aluminium-doors',
     siteName: 'SGD Group of Companies',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/projects/aluminium-doors',
+    canonical: 'https://sgdgroup.in/products/aluminium-doors',
   },
 };
 

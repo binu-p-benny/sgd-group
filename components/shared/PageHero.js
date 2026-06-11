@@ -6,30 +6,37 @@ import styles from './PageHero.module.css';
 
 export default function PageHero({ label, title, subtitle, bg = '/hero.png' }) {
   const titleRef = useRef(null);
-  const metaRef = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
+    // Image subtle scale-in
+    gsap.fromTo(
+      imageRef.current,
+      { scale: 1.06, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1.8, ease: 'power3.out' }
+    );
+    // Title slide up
     gsap.fromTo(
       titleRef.current,
-      { y: 60, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.2 }
-    );
-    gsap.fromTo(
-      metaRef.current,
-      { y: 30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.5 }
+      { y: 48, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.3 }
     );
   }, []);
 
   return (
-    <section className={styles.hero} style={{ backgroundImage: `url(${bg})` }}>
+    <section className={styles.hero}>
+      {/* Background image as separate element for parallax-readiness */}
+      <div
+        className={styles.bgImage}
+        ref={imageRef}
+        style={{ backgroundImage: `url(${bg})` }}
+      />
+      {/* Flat 45% black overlay — matches Figma */}
       <div className={styles.overlay} />
+
+      {/* Content anchored bottom-left */}
       <div className={`container ${styles.content}`}>
-        <div ref={metaRef} className={styles.meta}>
-          <span className={styles.label}>{label}</span>
-        </div>
-        <h1 ref={titleRef} className={`text-h1 ${styles.title}`}>{title}</h1>
-        {subtitle && <p className={`text-body-lg ${styles.subtitle}`}>{subtitle}</p>}
+        <h1 ref={titleRef} className={styles.title}>{title}</h1>
       </div>
     </section>
   );

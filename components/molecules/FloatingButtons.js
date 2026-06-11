@@ -29,16 +29,16 @@ export default function FloatingButtons() {
         <div className={styles.enquireIconWrap}>
           <svg className={styles.enquireIcon} viewBox="0 0 98 98" fill="none"
             xmlns="http://www.w3.org/2000/svg">
-            {/* Back bubble */}
-            <rect x="8" y="8" width="62" height="52" rx="13" fill="#351D0D" />
-            {/* Front bubble */}
-            <rect x="24" y="26" width="62" height="52" rx="13" fill="#1a0e06" />
-            {/* Tail for front bubble */}
-            <polygon points="24,68 24,82 38,68" fill="#1a0e06" />
-            {/* Three dots */}
-            <circle cx="43" cy="53" r="4" fill="#FFFFFF" />
-            <circle cx="55" cy="53" r="4" fill="#FFFFFF" />
-            <circle cx="67" cy="53" r="4" fill="#FFFFFF" />
+            {/* Left bubble */}
+            <rect x="14" y="28" width="40" height="32" rx="8" fill="#351D0D" />
+            <polygon points="18,58 18,70 30,58" fill="#351D0D" />
+            {/* Right bubble (front) */}
+            <rect x="36" y="36" width="46" height="34" rx="8" fill="#351D0D" />
+            <polygon points="76,68 76,80 62,68" fill="#351D0D" />
+            {/* Three dots on right bubble */}
+            <circle cx="50" cy="53" r="3.2" fill="#F5F4EF" />
+            <circle cx="59" cy="53" r="3.2" fill="#F5F4EF" />
+            <circle cx="68" cy="53" r="3.2" fill="#F5F4EF" />
           </svg>
         </div>
 

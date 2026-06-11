@@ -1,0 +1,153 @@
+/* ── AboutProjects ── */
+
+.section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 84px 0 100px;
+  background: #EAE8E3;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* No ellipse masks needed — background matches page */
+
+/* ── Title ── */
+.title {
+  position: relative;
+  z-index: 1;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 3.5vw, 3.3125rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #111111;
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+/* ── Scrollable strip ── */
+.stripOuter {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+
+.stripOuter:active {
+  cursor: grabbing;
+}
+
+.stripOuter::-webkit-scrollbar {
+  display: none;
+}
+
+/* Figma: flex-row, gap 40px, cards 386×512 */
+.track {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  padding: 0 80px;
+  width: max-content;
+}
+
+/* Each card */
+.card {
+  width: 386px;
+  height: 512px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .cardImg {
+  transform: scale(1.04);
+}
+
+/* ── CTA pill ── */
+.btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  height: 49px;
+  margin-top: 52px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.7625rem;
+  line-height: 1;
+  color: #111111;
+  text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: #111111;
+  color: #EAE8E3;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1200px) {
+  .card {
+    width: 320px;
+    height: 424px;
+  }
+  .track {
+    gap: 28px;
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0 80px;
+  }
+  .card {
+    width: 260px;
+    height: 346px;
+  }
+  .track {
+    gap: 20px;
+    padding: 0 24px;
+  }
+  .title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    margin-bottom: 32px;
+  }
+  .btn {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 220px;
+    height: 292px;
+  }
+  .track {
+    gap: 14px;
+    padding: 0 20px;
+  }
+}
