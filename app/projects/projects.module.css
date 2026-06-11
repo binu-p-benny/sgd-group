@@ -1,0 +1,195 @@
+/* ── Hero ── */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.heroLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: rgba(245, 244, 239, 0.6);
+  margin: 0;
+}
+
+.heroTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #F5F4EF;
+  margin: 0;
+}
+
+.heroSub {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(245, 244, 239, 0.7);
+  max-width: 560px;
+  margin: 0;
+}
+
+/* ── Projects section ── */
+.section {
+  background: #EAE8E3;
+  padding: 80px 0;
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+/* ── Group ── */
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.groupTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: rgba(17, 17, 17, 0.45);
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── Card ── */
+.card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.04);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .cardName {
+  opacity: 0.6;
+}
+
+.cardLocation {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: rgba(17, 17, 17, 0.45);
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    min-height: 380px;
+  }
+  .heroInner {
+    padding: 0 20px 48px;
+  }
+  .inner {
+    padding: 0 20px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .section {
+    padding: 56px 0;
+  }
+}

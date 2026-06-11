@@ -9,12 +9,12 @@ export const metadata = {
   openGraph: {
     title: 'Project Gallery | SGD Group',
     description: 'Explore our portfolio of completed aluminium and glazing projects across Kerala.',
-    url: 'https://sgdgroup.in/projects/inner',
+    url: 'https://sgdgroup.in/products/inner',
     siteName: 'SGD Group of Companies',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/projects/inner',
+    canonical: 'https://sgdgroup.in/products/inner',
   },
 };
 

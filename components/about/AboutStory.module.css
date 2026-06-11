@@ -1,0 +1,204 @@
+/* ── AboutStory — matches Figma spec ── */
+
+.section {
+  background: #EAE8E3;           /* Figma: Cararra */
+  width: 100%;
+  min-height: 728.8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 84px 0;
+  isolation: isolate;
+}
+
+/* max-width wrapper */
+.inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 92px;                     /* Figma: 92px */
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+  min-height: 514px;
+}
+
+/* ── Left ── */
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 58px;                     /* Figma: 58px between textBlock and stats */
+  flex: 1;
+  min-width: 0;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;                     /* Figma: 16px between heading & body */
+  width: 100%;
+}
+
+/* Figma: Inter 400, 53px, lh 64px, ls -1.06px, #111111 */
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 3.5vw, 3.3125rem); /* 53px */
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #111111;
+  margin: 0;
+  width: 100%;
+}
+
+/* Figma: Inter 400, 20px, lh 34px (170%), #111111 */
+.body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;            /* 20px */
+  line-height: 1.7;              /* 34/20 = 1.7 */
+  color: #111111;
+  margin: 0;
+  width: 100%;
+}
+
+/* ── Stats row ── */
+.statsRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 16px;
+  width: 100%;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Figma: Inter 500, 48px, ls -0.48px */
+.statValue {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 3vw, 3rem); /* 48px */
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #000000;
+  text-align: center;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Figma: Inter 400, 24px */
+.statLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;             /* 24px */
+  line-height: 1.2;
+  color: #000000;
+  display: block;
+  white-space: nowrap;
+}
+
+/* Vertical divider between stats — Figma: 111px tall, 1px solid #000 rotated 90deg */
+.divider {
+  width: 1px;
+  height: 111px;
+  background: #000000;
+  flex-shrink: 0;
+  align-self: flex-end;
+  margin-bottom: 12px;           /* visually align with bottom of stat items */
+}
+
+/* ── Right — image column ── */
+.right {
+  position: relative;
+  width: 576px;
+  min-width: 576px;
+  height: 514px;
+  flex-shrink: 0;
+}
+
+/* Large primary image — fills the column */
+.img1Wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.img1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Small overlay image — bottom-right, Figma: 226×269 offset from left:1522 top:423 (relative to 1920 canvas, so roughly right-edge overlap) */
+.img2Wrap {
+  position: absolute;
+  bottom: -40px;
+  right: -60px;
+  width: 226px;
+  height: 269px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 2;
+}
+
+.img2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .right {
+    width: 440px;
+    min-width: 440px;
+    height: 420px;
+  }
+  .img2Wrap {
+    width: 180px;
+    height: 214px;
+    right: -24px;
+    bottom: -24px;
+  }
+}
+
+@media (max-width: 820px) {
+  .inner {
+    flex-direction: column;
+    gap: 48px;
+  }
+  .right {
+    width: 100%;
+    min-width: unset;
+    height: 360px;
+  }
+  .img2Wrap {
+    right: 0;
+    bottom: -20px;
+  }
+  .body {
+    font-size: 1.0625rem;
+  }
+  .statValue {
+    font-size: 2rem;
+  }
+  .statLabel {
+    font-size: 1rem;
+  }
+  .divider {
+    height: 72px;
+  }
+}

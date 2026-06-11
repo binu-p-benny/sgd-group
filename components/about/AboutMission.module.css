@@ -1,0 +1,176 @@
+/* ── AboutMission — matches Figma spec ── */
+
+.section {
+  background: #EAE8E3;
+  width: 100%;
+  min-height: 728.8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 84px 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 192px;               /* Figma: 192px */
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+}
+
+/* ── Left: image ── */
+/* Figma: 562 × 614.61px, bg rgba(0,0,0,0.05) */
+.imgWrap {
+  width: 562px;
+  min-width: 562px;
+  height: 614px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Right: content ── */
+/* Figma: 646px wide, gap 16px between eyebrow/body/btn */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+  align-self: center;         /* vertically center text vs image */
+}
+
+/* Figma: Inter SemiBold 14px, ls 1.4px, uppercase, opacity 0.7, #111 */
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;        /* 14px */
+  line-height: 1.2;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #111111;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* Figma: Inter 400, 20px, lh 34px (170%), #111 */
+.body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;         /* 20px */
+  line-height: 1.7;           /* 34/20 */
+  color: #111111;
+  margin: 0;
+}
+
+/* Figma: pill button, 167×49px, border 1px rgba(17,17,17,0.1), Inter Medium 12.2px */
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  height: 49px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.7625rem;       /* 12.2px */
+  line-height: 1;
+  color: #111111;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease;
+  margin-top: 8px;            /* slight extra gap before button */
+}
+
+.btn:hover {
+  background: #111111;
+  color: #EAE8E3;
+}
+
+/* ── Responsive ── */
+
+/* Shrink gap and image at mid widths */
+@media (max-width: 1200px) {
+  .inner {
+    gap: 80px;
+  }
+  .imgWrap {
+    width: 440px;
+    min-width: 440px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 960px) {
+  .inner {
+    gap: 48px;
+  }
+  .imgWrap {
+    width: 360px;
+    min-width: 360px;
+    height: 420px;
+  }
+  .body {
+    font-size: 1.0625rem;     /* 17px */
+    line-height: 1.65;
+  }
+}
+
+/* Stack vertically below 768px */
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+    min-height: unset;
+  }
+  .inner {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 1.5rem;
+  }
+  .imgWrap {
+    width: 100%;
+    min-width: unset;
+    height: 380px;
+  }
+  .content {
+    align-self: flex-start;
+  }
+  .body {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 48px 0;
+  }
+  .inner {
+    padding: 0 1.25rem;
+    gap: 32px;
+  }
+  .imgWrap {
+    height: 280px;
+  }
+  .body {
+    font-size: 0.9375rem;
+  }
+  .btn {
+    padding: 14px 24px;
+    font-size: 0.75rem;
+  }
+}

@@ -40,7 +40,7 @@ export default function Footer() {
         />
       </div>
 
-      <div className={`container ${styles.content}`}>
+      <div className={styles.content}>
 
         {/* ── Row 1: Tagline + Nav columns ── */}
         <div className={styles.topRow}>
@@ -49,7 +49,7 @@ export default function Footer() {
           <div className={styles.navColumns}>
             {/* Services */}
             <div className={styles.navColumn}>
-              <p className={styles.colLabel}>Services</p>
+              <p className={styles.colLabelServices}>Services</p>
               <ul className={styles.colLinks}>
                 <li><Link href="#">Aluminium Windows</Link></li>
                 <li><Link href="#">Aluminium Doors</Link></li>
@@ -62,8 +62,8 @@ export default function Footer() {
               <p className={styles.colLabel}>Links</p>
               <ul className={styles.colLinks}>
                 <li><Link href="/about">About us</Link></li>
-                <li><Link href="/products">Products</Link></li>
-                <li><Link href="/projects/inner">Projects</Link></li>
+                <li><Link href="/products/aluminium-window-systems">Products</Link></li>
+                <li><Link href="/products/inner">Projects</Link></li>
                 <li><Link href="/careers">Careers</Link></li>
               </ul>
             </div>
@@ -129,7 +129,7 @@ export default function Footer() {
           <div className={styles.legalLinks}>
             <a href="#">Privacy policy</a>
             <a href="#">Terms & conditions</a>
-            <span>Crafted by CraftsmanStudioo</span>
+            <span>Crafted by who?</span>
           </div>
         </div>
 
