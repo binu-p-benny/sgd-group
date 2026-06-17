@@ -1,6 +1,8 @@
 import Navigation from '@/components/home/Navigation';
 import Footer from '@/components/home/Footer';
 import PageHero from '@/components/shared/PageHero';
+import OpenPositions from '@/components/careers/OpenPositions';
+import styles from './careers.module.css';
 
 export const metadata = {
   title: 'Careers at SGD Group | Join Kerala\'s Leading Glazing Company',
@@ -18,11 +20,27 @@ export const metadata = {
   },
 };
 
+const whyJoin = [
+  {
+    title: 'Mission-Driven Work',
+    desc: 'Be part of projects that combine functionality, craftsmanship, and modern design. Every contribution plays a role in creating spaces that are built with precision and purpose.',
+  },
+  {
+    title: 'Innovation at the Core',
+    desc: 'We embrace new ideas, evolving technologies, and modern approaches to deliver better solutions. Creativity and forward thinking are encouraged across every stage of our work.',
+  },
+  {
+    title: 'Career Growth',
+    desc: 'We believe in continuous learning and professional development. Our team members are given opportunities to expand their skills, take on new challenges, and grow within the organization.',
+  },
+  {
+    title: 'Flexible Work Environment',
+    desc: 'We foster a collaborative and supportive workplace that values balance, adaptability, and teamwork, helping individuals perform at their best in a positive environment.',
+  },
+];
+
 const openings = [
-  { role: 'Site Supervisor', type: 'Full-time', location: 'Kochi, Kerala', desc: 'Oversee installation of aluminium window and door systems at project sites. 3+ years experience required.' },
   { role: 'Aluminium Fabricator', type: 'Full-time', location: 'Thrissur, Kerala', desc: 'Hands-on fabrication of aluminium profiles and glazed units in our production facility.' },
-  { role: 'Sales Engineer', type: 'Full-time', location: 'Kerala (Field)', desc: 'Drive B2B and B2C sales of our product range across Kerala. Architecture/civil background preferred.' },
-  { role: 'Draftsman / CAD Operator', type: 'Full-time', location: 'Thrissur, Kerala', desc: 'Prepare shop drawings and installation drawings for aluminium systems using AutoCAD.' },
 ];
 
 export default function CareersPage() {
@@ -30,61 +48,61 @@ export default function CareersPage() {
     <main>
       <Navigation />
       <PageHero
-        label="Join Our Team"
-        title="Build something great with us."
-        subtitle="We're growing — and we're looking for passionate people who take pride in their craft."
-        bg="/showroom-poster.png"
+        title="Career"
+        bg="/hero.png"
       />
 
-      {/* Why work here */}
-      <section className="section container">
-        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
-          <p style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', opacity: 0.5, marginBottom: '1.5rem' }}>Why SGD</p>
-          <h2 className="text-h2" style={{ marginBottom: '3rem', maxWidth: 600 }}>A place where craft meets career.</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: 'var(--spacing-xl)' }}>
-            {[
-              { title: 'Growth Opportunities', desc: 'We promote from within. Your skills are recognized and rewarded.' },
-              { title: 'Quality Work Environment', desc: 'Modern facilities, proper tools, and a team that values precision.' },
-              { title: 'Competitive Compensation', desc: 'Fair salaries, timely payments, and performance incentives.' },
-            ].map(perk => (
-              <div key={perk.title} style={{ background: 'rgba(17,17,17,0.04)', borderRadius: '20px', padding: '2.5rem' }}>
-                <h3 className="text-h3" style={{ marginBottom: '1rem' }}>{perk.title}</h3>
-                <p className="text-body" style={{ opacity: 0.65, fontSize: '1rem' }}>{perk.desc}</p>
-              </div>
-            ))}
-          </div>
+      {/* Download Brochure floating tab */}
+      <a href="/brochure.pdf" download className={styles.brochureTab} aria-label="Download Brochure">
+        <span className={styles.brochureLabel}>Download Brochure</span>
+        <span className={styles.brochureIcon}>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3V15M12 15L7 10M12 15L17 10" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M4 19H20" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
+          </svg>
+        </span>
+      </a>
 
-          {/* Open Positions */}
-          <p style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', opacity: 0.5, marginBottom: '1.5rem' }}>Open Positions</p>
-          <h2 className="text-h2" style={{ marginBottom: '3rem', maxWidth: 500 }}>We're hiring.</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {openings.map(job => (
-              <div key={job.role} style={{ border: '1px solid var(--color-border)', borderRadius: '20px', padding: '2rem 2.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem' }}>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', background: 'rgba(17,17,17,0.08)', padding: '0.3rem 0.8rem', borderRadius: '9999px' }}>{job.type}</span>
-                    <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', opacity: 0.5 }}>{job.location}</span>
-                  </div>
-                  <h3 className="text-h3" style={{ marginBottom: '0.5rem' }}>{job.role}</h3>
-                  <p style={{ fontSize: '0.95rem', opacity: 0.65, lineHeight: 1.5 }}>{job.desc}</p>
-                </div>
-                <a href="/contact" className="btn-secondary" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>Apply Now →</a>
-              </div>
-            ))}
+      {/* Intro */}
+      <section className={styles.intro}>
+        <div className={styles.introInner}>
+          <div className={styles.introHeader}>
+            <h2 className={styles.introHeading}>
+              Build the Future With Us, where ideas, talent, and growth move forward together
+            </h2>
+            <p className={styles.introBody}>
+              At SGD Group of Companies, we believe exceptional work begins with passionate people and a shared commitment to quality. As a growing team in the glass and aluminium solutions industry, we foster a work environment built on collaboration, learning, and innovation. From design and project execution to customer support and operations, every role contributes to shaping modern spaces with precision and purpose. We value dedication, creativity, and continuous growth, creating opportunities for individuals to build meaningful and rewarding careers with us.
+            </p>
           </div>
-
-          {/* General Application */}
-          <div style={{ marginTop: '3rem', background: 'var(--color-text)', color: 'var(--color-background)', borderRadius: '24px', padding: '3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-            <div>
-              <h3 className="text-h3" style={{ marginBottom: '0.75rem' }}>Don't see your role?</h3>
-              <p style={{ opacity: 0.65 }}>Send us your CV and we'll keep you in mind for future openings.</p>
-            </div>
-            <a href="/contact" style={{ background: 'var(--color-background)', color: 'var(--color-text)', padding: '1rem 2.5rem', borderRadius: '9999px', fontWeight: 600, fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>
-              Send Your CV
-            </a>
+          <div className={styles.introImage}>
+            <img src="/about.png" alt="SGD Group team" />
           </div>
         </div>
       </section>
+
+      {/* Why Join Us */}
+      <section className={styles.why}>
+        <div className={styles.whyInner}>
+          <div className={styles.whyLeft}>
+            <h2 className={styles.whyHeading}>Why Join Us</h2>
+            {whyJoin.map((item, i) => (
+              <div key={item.title} className={styles.whyItem}>
+                <div className={styles.whyNumber}>{i + 1}</div>
+                <div className={styles.whyText}>
+                  <h3 className={styles.whyItemTitle}>{item.title}</h3>
+                  <p className={styles.whyItemDesc}>{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className={styles.whyImage}>
+            <img src="/services/services-03.png" alt="SGD Group workplace" />
+          </div>
+        </div>
+      </section>
+
+      {/* Open positions */}
+      <OpenPositions openings={openings} />
 
       <Footer />
     </main>

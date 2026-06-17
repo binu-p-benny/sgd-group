@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from 'react';
 import styles from './FloatingButtons.module.css';
+import EnquiryModal from '@/components/shared/EnquiryModal';
 
 export default function FloatingButtons() {
+  const [enquireOpen, setEnquireOpen] = useState(false);
+
   return (
     <>
       {/* ── Left: Download Brochure ── */}
@@ -24,7 +28,7 @@ export default function FloatingButtons() {
                background: #F5F4EF, border-radius: 44 px
                text: "ENQUIRE NOW", Inter SemiBold 14 px, letter-spacing 0.7 px
       */}
-      <a href="#contact" className={styles.enquireWidget} aria-label="Enquire Now">
+      <button type="button" onClick={() => setEnquireOpen(true)} className={styles.enquireWidget} aria-label="Enquire Now">
         {/* Chat bubbles icon — matches Figma image 23 */}
         <div className={styles.enquireIconWrap}>
           <svg className={styles.enquireIcon} viewBox="0 0 98 98" fill="none"
@@ -44,7 +48,9 @@ export default function FloatingButtons() {
 
         {/* Pill label */}
         <span className={styles.enquireLabel}>Enquire Now</span>
-      </a>
+      </button>
+
+      {enquireOpen && <EnquiryModal onClose={() => setEnquireOpen(false)} />}
     </>
   );
 }

@@ -1,6 +1,6 @@
 /* ─── Section ─────────────────────────────────── */
 .about {
-  padding: var(--spacing-xl) 0;
+  padding: 84px 0;
   background-color: var(--color-background);
 }
 
@@ -111,20 +111,52 @@
 
 /* ─── Mobile ──────────────────────────────────── */
 @media (max-width: 768px) {
+  .about {
+    padding: 56px 0;
+  }
+
+  /* Even 3-column grid so items never overflow */
   .statsRow {
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 0.25rem;
   }
 
   .statItem {
-    border-right: none;
-    padding-right: 0;
-    margin-right: 0;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    border-right: 1px solid rgba(17, 17, 17, 0.2);
   }
 
-  .statItem:not(:last-child) {
-    padding-right: 1.5rem;
-    border-right: 1px solid rgba(17, 17, 17, 0.2);
-    margin-right: 0;
+  .statValue {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+
+  /* labels can wrap now — no overflow */
+  .statLabel {
+    font-size: 0.8rem;
+    white-space: normal;
+    line-height: 1.3;
+  }
+}
+
+/* ─── Small phones ────────────────────────────── */
+@media (max-width: 420px) {
+  .statsRow {
+    gap: 0.5rem 0;
+  }
+
+  .statItem {
+    padding-right: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .statValue {
+    font-size: 1.35rem;
+  }
+
+  .statLabel {
+    font-size: 0.72rem;
   }
 }

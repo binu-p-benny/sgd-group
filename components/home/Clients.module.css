@@ -1,5 +1,5 @@
 .clients {
-  padding: 2rem 0 var(--spacing-xl) 0;
+  padding: 84px 0;
   background-color: var(--color-background);
   overflow: hidden;
 }
@@ -67,10 +67,19 @@
 }
 
 @media (max-width: 768px) {
+  .clients {
+    padding: 56px 0;
+  }
+
+  .header {
+    margin-bottom: var(--spacing-md);
+  }
+
   .marqueeTrack {
     gap: 2rem;
+    padding: 1rem 0;
   }
-  
+
   .logoWrapper {
     width: 100px;
     height: 60px;

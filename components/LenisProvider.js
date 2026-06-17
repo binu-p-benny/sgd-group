@@ -4,7 +4,7 @@ import { ReactLenis } from '@studio-freight/react-lenis';
 
 export default function LenisProvider({ children }) {
   return (
-    <ReactLenis root options={{ lerp: 0.05, duration: 1.5, smoothTouch: true }}>
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.2, smoothTouch: false }}>
       {children}
     </ReactLenis>
   );

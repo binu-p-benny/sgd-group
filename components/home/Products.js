@@ -48,7 +48,7 @@ export default function Products() {
         <div className={styles.headerBlock} ref={headerRef}>
           {/* Title row */}
           <div className={styles.titleRow}>
-            <h2 className={styles.title}>Engineered Systems for Modern Spaces -- products</h2>
+            <h2 className={styles.title}>Engineered Systems for Modern Spaces </h2>
           </div>
 
           {/* Description + button row (right-aligned per Figma) */}

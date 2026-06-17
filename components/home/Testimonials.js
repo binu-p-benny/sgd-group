@@ -41,11 +41,15 @@ export default function Testimonials() {
   const sliderRef = useRef(null);
 
   const scrollSlider = (direction) => {
-    const scrollAmount = 482; // card width + gap
-    gsap.to(sliderRef.current, {
-      scrollLeft: direction === 'next' 
-        ? sliderRef.current.scrollLeft + scrollAmount 
-        : sliderRef.current.scrollLeft - scrollAmount,
+    const slider = sliderRef.current;
+    // Scroll by one actual card width (+ gap) so it works at any screen size
+    const firstCard = slider.children[0];
+    const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap) || 0;
+    const scrollAmount = (firstCard?.offsetWidth || 450) + gap;
+    gsap.to(slider, {
+      scrollLeft: direction === 'next'
+        ? slider.scrollLeft + scrollAmount
+        : slider.scrollLeft - scrollAmount,
       duration: 0.8,
       ease: 'power3.inOut'
     });

@@ -1,0 +1,224 @@
+.section {
+  background: #EAE8E3;
+  padding: 84px 0;
+}
+
+.inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 92px;
+}
+
+/* ── Left: info column ── */
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 53px);
+  line-height: 1.21;
+  letter-spacing: -1.06px;
+  color: #111111;
+}
+
+.infoGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 12px;
+}
+
+.infoRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.infoBlock {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.infoValue {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 34px;
+  color: #000000;
+}
+
+.infoValue a {
+  color: #000000;
+}
+
+.phoneList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Social icons */
+.social {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  transition: opacity 0.3s;
+}
+
+.social a:hover {
+  opacity: 0.6;
+}
+
+.social svg {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* ── Right: form card ── */
+.formCard {
+  width: 639px;
+  max-width: 100%;
+  background: #FFFFFF;
+  padding: 60px 50px 85px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.formTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 53px);
+  line-height: 64px;
+  letter-spacing: -1.06px;
+  color: #111111;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 10px 10px 10px 0;
+  border: none;
+  border-bottom: 1px solid #000000;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 17.6px;
+  line-height: 21px;
+  color: #111111;
+  outline: none;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 138px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-bottom-color: #111111;
+}
+
+.submit {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: #111111;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #EAE8E3;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.submit:hover {
+  opacity: 0.85;
+}
+
+/* ── Map ── */
+.mapSection {
+  background: #EAE8E3;
+  padding: 84px 0;
+}
+
+.mapInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.mapFrame {
+  width: 100%;
+  aspect-ratio: 1400 / 540;
+  overflow: hidden;
+}
+
+.mapFrame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 1100px) {
+  .inner {
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .formCard {
+    width: 100%;
+    padding: 40px 32px 56px;
+  }
+}
