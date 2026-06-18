@@ -1,0 +1,219 @@
+/* ── Intro section ── */
+.intro {
+  background: #EAE8E3;
+  padding: 84px 0;
+}
+
+.introInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.introHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 72px;
+  padding: 0 32px;
+}
+
+.introHeading {
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 53px);
+  line-height: 1.21;
+  letter-spacing: -1.06px;
+  color: #111111;
+}
+
+.introBody {
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  color: #111111;
+}
+
+.introImage {
+  width: 100%;
+  aspect-ratio: 1400 / 782;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.introImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Why Join Us ── */
+.why {
+  background: #EAE8E3;
+  padding: 84px 0;
+}
+
+.whyInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 192px;
+}
+
+.whyLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.whyHeading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 53px);
+  line-height: 64px;
+  letter-spacing: -1.06px;
+  color: #111111;
+}
+
+.whyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.whyNumber {
+  flex-shrink: 0;
+  width: 62px;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 78px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.whyText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.whyItemTitle {
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  color: #111111;
+}
+
+.whyItemDesc {
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.whyImage {
+  flex-shrink: 0;
+  width: 562px;
+  max-width: 45%;
+  aspect-ratio: 562 / 615;
+  background: rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.whyImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Download Brochure floating tab ── */
+.brochureTab {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 67px;
+  padding: 22px 14px;
+  background: #351D0D;
+  border-radius: 0 30px 30px 0;
+  color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.brochureTab:hover {
+  width: 74px;
+}
+
+.brochureLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #ffffff;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.brochureIcon {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+}
+
+.brochureIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1100px) {
+  .introHeader {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0;
+  }
+
+  .whyInner {
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .whyImage {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .brochureTab {
+    width: 52px;
+    padding: 18px 10px;
+  }
+}

@@ -13,8 +13,65 @@
 
 .scrolled {
   padding: 12px 0;
-  background: rgba(14, 12, 10, 0.92);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(234, 232, 227, 0.92);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Scrolled (light) state — dark text to match colored logo ── */
+.scrolled .navLink {
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.scrolled .navLink:hover,
+.scrolled .navLink.active,
+.scrolled .navLinkActive {
+  color: #111111;
+}
+
+/* ── Scrolled (light) mega menu theme ── */
+.scrolled .megaMenu {
+  top: 64px;
+  background: rgba(234, 232, 227, 0.98);
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.scrolled .megaItem {
+  color: rgba(17, 17, 17, 0.6);
+  border-bottom-color: rgba(17, 17, 17, 0.08);
+}
+
+.scrolled .megaItem:first-child {
+  border-top-color: rgba(17, 17, 17, 0.08);
+}
+
+.scrolled .megaItem:hover,
+.scrolled .megaItem.active,
+.scrolled .megaItemActive {
+  color: #111111;
+}
+
+.scrolled .megaSubLinks {
+  border-left-color: rgba(17, 17, 17, 0.08);
+}
+
+.scrolled .megaSubTitle,
+.scrolled .projectsColLabel {
+  color: rgba(17, 17, 17, 0.4);
+}
+
+.scrolled .megaSubItem {
+  color: rgba(17, 17, 17, 0.55);
+  border-bottom-color: rgba(17, 17, 17, 0.06);
+}
+
+.scrolled .megaSubItem:first-of-type {
+  border-top-color: rgba(17, 17, 17, 0.06);
+}
+
+.scrolled .megaSubItem:hover {
+  color: #111111;
 }
 
 .container {
@@ -100,6 +157,7 @@
   display: flex;
   align-items: stretch;
   width: 860px;
+  min-height: 340px;
   flex-shrink: 0;
 }
 
@@ -267,7 +325,14 @@
 }
 
 .scrolled .contactBtn {
-  background: rgba(245, 244, 239, 0.12);
+  background: #111111;
+  color: #F5F4EF;
+  border-color: #111111;
+}
+
+.scrolled .contactBtn:hover {
+  background: #1a0e06;
+  color: #F5F4EF;
 }
 
 .contactBtn:hover {
@@ -295,6 +360,25 @@
   transform-origin: center;
 }
 
+/* Dark bars when navbar is on its light scrolled background */
+.scrolled .mobileToggle span {
+  background-color: #111111;
+}
+
+/* While the mobile menu is open, the bar sits over the light overlay —
+   go transparent so the dark logo + dark ✕ read against the cream sheet */
+.menuOpen {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.menuOpen .mobileToggle span {
+  background-color: #111111;
+}
+
 .mobileToggle.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
   background-color: var(--color-text);
@@ -311,70 +395,84 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--color-background);
   z-index: 999;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   transform: translateY(-100%);
   opacity: 0;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: 96px 28px calc(28px + env(safe-area-inset-bottom));
   overflow-y: auto;
 }
 
 .mobileNavLinks {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  align-items: stretch;
   width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .mobileNavLink {
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(1.75rem, 7vw, 2.5rem);
   font-weight: 500;
-  text-transform: uppercase;
   letter-spacing: -0.02em;
   color: var(--color-text);
-  text-align: center;
+  text-align: left;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
 }
 
 .mobileDropdownGroup {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
+  align-items: stretch;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
 }
 
 .mobileNavGroupLabel {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   color: var(--color-text);
   opacity: 0.4;
+  margin-bottom: 0.85rem;
 }
 
 .mobileSubLink {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.35rem, 5vw, 1.85rem);
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--color-text);
-  text-align: center;
+  text-align: left;
+  padding: 0.5rem 0;
+  padding-left: 1rem;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobileSubLink:active,
+.mobileSubLink:hover {
+  opacity: 1;
+  padding-left: 1.4rem;
 }
 
 .mobileContactBtn {
   margin-top: 2rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  text-align: center;
   color: var(--color-background);
   background-color: var(--color-text);
-  padding: 1rem 3rem;
+  padding: 1.15rem 3rem;
   border-radius: 9999px;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {

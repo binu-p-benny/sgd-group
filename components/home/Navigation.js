@@ -128,11 +128,11 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className={`${styles.navWrapper} ${scrolled ? styles.scrolled : ''}`}>
+      <nav className={`${styles.navWrapper} ${scrolled ? styles.scrolled : ''} ${isOpen ? styles.menuOpen : ''}`}>
         <div className={styles.container}>
           <Link href="/" className={styles.logoWrapper}>
             <img
-              src={scrolled ? "/logo-cl.png" : "/logo-wt.png"}
+              src={(scrolled || isOpen) ? "/logo-cl.png" : "/logo-wt.png"}
               alt="SGD Group of Companies"
               className={styles.logo}
             />

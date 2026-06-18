@@ -68,7 +68,7 @@ export default function About() {
   }, []);
 
   const text =
-    'Welcome to SGD Group Of Companies , your premier partner in the service sector specializing in glass and window solutions. With 10 years of expertise, we offer a comprehensive range of services including installation and future services for residential and commercial properties. Our commitment to quality craftsmanship and customer satisfaction ensures that every project is executed with precision and care. Discover how we can enhance your space with clarity and functionality. Contact us today to schedule a consultation';
+    'Welcome to SGD Group Of Companies, your premier partner in the service sector specializing in glass and window solutions. With 10 years of expertise, we offer a comprehensive range of services including installation and future services for residential and commercial properties. Our commitment to quality craftsmanship and customer satisfaction ensures that every project is executed with precision and care. Discover how we can enhance your space with clarity and functionality. Contact us today to schedule a consultation.';
 
   return (
     <section className={styles.about} id="about" ref={containerRef}>

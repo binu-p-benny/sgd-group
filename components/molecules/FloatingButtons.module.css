@@ -75,6 +75,11 @@
   text-decoration: none;
   cursor: pointer;
 
+  /* button reset */
+  background: transparent;
+  border: none;
+  font-family: inherit;
+
   width: 197px;
   /* total height: icon area (38 top pad + 98 icon) + gap + pill = ~187px */
   padding: 38px 0 0;

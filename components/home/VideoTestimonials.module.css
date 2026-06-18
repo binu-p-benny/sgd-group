@@ -1,10 +1,5 @@
 .videoTestimonials {
-  padding: 1rem 0 0 0;
-  background-color: var(--color-background);
-}
-
-.videoTestimonials {
-  padding: var(--spacing-xl) 0;
+  padding: 84px 0;
   background-color: var(--color-background);
 }
 
@@ -48,13 +43,13 @@
 }
 
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
+  .videoTestimonials {
+    padding: 56px 0;
   }
-}
 
-@media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
   }
 }
