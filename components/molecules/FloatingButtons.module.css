@@ -162,4 +162,67 @@
     width: auto;
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
   }
+
+  /* Home page (mobile): the old floating widgets are replaced by the
+     sticky bottom action bar below — hidden here only, other routes
+     keep the compact FAB above untouched. */
+  .brochureTab.hideOnMobile,
+  .enquireWidget.hideOnMobile {
+    display: none;
+  }
+}
+
+/* ── Home page mobile sticky bottom action bar ───── */
+.mobileActionBar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileActionBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 300;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    background: rgba(14, 12, 10, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .actionItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 4px 12px;
+
+    background: transparent;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    color: #F5F4EF;
+    text-decoration: none;
+    cursor: pointer;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .actionItem:last-child {
+    border-right: none;
+  }
+
+  .actionIcon {
+    width: 20px;
+    height: 20px;
+  }
 }

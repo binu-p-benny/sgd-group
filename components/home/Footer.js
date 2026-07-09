@@ -2,8 +2,10 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { FaInstagram, FaLinkedin, FaFacebook, FaYoutube } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,6 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Footer() {
   const footerRef = useRef(null);
   const imageRef = useRef(null);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     gsap.fromTo(imageRef.current,
@@ -29,7 +33,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className={styles.footer} id="contact" ref={footerRef}>
+    <footer className={`${styles.footer} ${isHome ? styles.footerHome : ''}`} id="contact" ref={footerRef}>
       {/* Parallax background image */}
       <div className={styles.bgWrapper}>
         <img
@@ -39,6 +43,9 @@ export default function Footer() {
           ref={imageRef}
         />
       </div>
+
+      {/* Dark overlay for text contrast — home page mobile only */}
+      {isHome && <div className={styles.mobileOverlay} />}
 
       <div className={styles.content}>
 
@@ -121,10 +128,22 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className={styles.bottomBar}>
           <div className={styles.socialLinks}>
-            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram className={styles.socialIcon} />
+              <span>Instagram</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin className={styles.socialIcon} />
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebook className={styles.socialIcon} />
+              <span>Facebook</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <FaYoutube className={styles.socialIcon} />
+              <span>YouTube</span>
+            </a>
           </div>
           <div className={styles.legalLinks}>
             <a href="#">Privacy policy</a>

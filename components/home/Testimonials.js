@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 import styles from './Testimonials.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -46,12 +46,11 @@ export default function Testimonials() {
     const firstCard = slider.children[0];
     const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap) || 0;
     const scrollAmount = (firstCard?.offsetWidth || 450) + gap;
-    gsap.to(slider, {
-      scrollLeft: direction === 'next'
-        ? slider.scrollLeft + scrollAmount
-        : slider.scrollLeft - scrollAmount,
-      duration: 0.8,
-      ease: 'power3.inOut'
+    // Native smooth scroll — cooperates with the mobile scroll-snap instead
+    // of fighting it the way an imperative GSAP scrollLeft tween would.
+    slider.scrollBy({
+      left: direction === 'next' ? scrollAmount : -scrollAmount,
+      behavior: 'smooth',
     });
   };
 
@@ -86,7 +85,7 @@ export default function Testimonials() {
             <h2 className="text-h2">Trust built through precision.</h2>
           </div>
           
-          <div className={styles.navButtons}>
+          <div className={`${styles.navButtons} ${styles.navButtonsDesktop}`}>
             <button className={styles.navBtn} onClick={() => scrollSlider('prev')}>
               <ArrowLeft size={24} />
             </button>
@@ -99,18 +98,44 @@ export default function Testimonials() {
         <div className={styles.scrollContainer}>
           <div className={styles.grid} ref={sliderRef} style={{ overflowX: 'auto', scrollbarWidth: 'none' }}>
             {testimonialsData.map((item, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className={styles.card}
               >
+                {/* Mobile-only header: avatar + name/role + star rating */}
+                <div className={styles.cardHeaderMobile}>
+                  <div className={styles.avatar}>{item.author.charAt(0)}</div>
+                  <div className={styles.headerText}>
+                    <span className={styles.authorName}>{item.author}</span>
+                    <span className={styles.authorRole}>{item.role}</span>
+                  </div>
+                </div>
+                <div className={styles.starsMobile}>
+                  {[...Array(5)].map((_, si) => (
+                    <Star key={si} size={16} className={styles.starIcon} fill="currentColor" />
+                  ))}
+                </div>
+
                 <p className={styles.quote}>"{item.quote}"</p>
-                <div className={styles.authorInfo}>
+
+                {/* Desktop: name/role below the quote */}
+                <div className={`${styles.authorInfo} ${styles.authorInfoDesktop}`}>
                   <span className={styles.authorName}>{item.author}</span>
                   <span className={styles.authorRole}>{item.role}</span>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile: prev/next arrows shown below the card instead of the header */}
+        <div className={`${styles.navButtons} ${styles.navButtonsMobile}`}>
+          <button className={styles.navBtn} onClick={() => scrollSlider('prev')}>
+            <ArrowLeft size={24} />
+          </button>
+          <button className={styles.navBtn} onClick={() => scrollSlider('next')}>
+            <ArrowRight size={24} />
+          </button>
         </div>
       </div>
     </section>

@@ -389,21 +389,41 @@
   background-color: var(--color-text);
 }
 
-/* Mobile Overlay */
+/* Mobile Overlay — a left-anchored panel, not full width, so the
+   exposed strip on the right (over the backdrop) stays tappable to close. */
 .mobileOverlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: min(84%, 400px);
   height: 100dvh;
   background-color: var(--color-background);
+  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.18);
   z-index: 999;
   display: flex;
   flex-direction: column;
-  transform: translateY(-100%);
+  transform: translateX(-100%);
   opacity: 0;
-  padding: 96px 28px calc(28px + env(safe-area-inset-bottom));
+  padding: 76px 28px calc(28px + env(safe-area-inset-bottom));
   overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+/* Backdrop behind the panel — fills the rest of the screen (including the
+   space the narrower panel freed up on the right) and closes on tap. */
+.mobileBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobileBackdropOpen {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .mobileNavLinks {
@@ -441,6 +461,154 @@
   color: var(--color-text);
   opacity: 0.4;
   margin-bottom: 0.85rem;
+}
+
+/* ── Home page mobile accordion (Products / Projects) ── */
+.mobileAccordionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.mobileAccordionHeaderLabel {
+  font-size: clamp(1.75rem, 7vw, 2.5rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.mobileChevron {
+  color: var(--color-text);
+  opacity: 0.5;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobileChevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Smooth, content-accurate expand/collapse (grid 0fr → 1fr technique) */
+.mobileAccordionContent {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.45s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.35s ease;
+}
+
+.mobileAccordionContentOpen {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 0.85rem;
+}
+
+.mobileAccordionInner {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.mobileCategoryGroup {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Second-level accordion row: label (link) + dark chevron toggle box */
+.mobileCategoryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.mobileCategoryRowButton {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+
+.mobileCategoryRowOpen {
+  background-color: rgba(17, 17, 17, 0.05);
+}
+
+.mobileCategoryLabel {
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.mobileCategoryChevronBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  background-color: #111111;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mobileCategoryChevronIcon {
+  color: #F5F4EF;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobileCategoryChevronIconOpen {
+  transform: rotate(180deg);
+}
+
+.mobileLeafContent {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.3s ease;
+}
+
+.mobileLeafContentOpen {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.mobileLeafInner {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.mobileLeafLink {
+  font-size: clamp(1.05rem, 4vw, 1.4rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  text-align: left;
+  padding: 0.4rem 0;
+  padding-left: 2rem;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobileLeafLink:active,
+.mobileLeafLink:hover {
+  opacity: 0.9;
+  padding-left: 2.4rem;
 }
 
 .mobileSubLink {
@@ -482,5 +650,37 @@
   .mobileToggle {
     display: flex;
     cursor: pointer;
+    margin-left: auto;
+  }
+
+  /* Home page only: hide the logo while the mobile menu is open —
+     keeping logo on the left when closed. */
+  .logoHiddenMobile {
+    display: none;
+  }
+
+  /* Home page only: no visible close icon while the menu is open —
+     a dedicated blank strip on the right (same spot as the toggle)
+     remains tappable to close, without affecting the rest of the header. */
+  .mobileToggleHidden {
+    opacity: 0;
+    width: 64px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Home page only: mobile menu content starts below the header instead
+     of being vertically centered, removing the large gap above "About Us" */
+  .mobileNavLinksHome {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Home page only: the header has no visible logo/close icon while the
+     menu is open (see logoHiddenMobile / mobileToggleHidden above), so
+     there's nothing to clear — just a small breathing gap from the edge. */
+  .mobileOverlayHome {
+    padding-top: 32px;
   }
 }

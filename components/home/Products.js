@@ -18,6 +18,19 @@ export default function Products() {
   const sectionRef = useRef(null);
   const headerRef  = useRef(null);
   const cardsRef   = useRef([]);
+  const imgRefs    = useRef([]);
+
+  // Mobile press-to-zoom (mirrors the Services mosaic) — desktop keeps its
+  // CSS :hover scale untouched, gated here so we don't fight it on click.
+  const isMobile = () => window.matchMedia('(max-width: 640px)').matches;
+  const handlePressIn = (i) => {
+    if (!isMobile()) return;
+    gsap.to(imgRefs.current[i], { scale: 1.12, duration: 0.4, ease: 'power2.out', overwrite: 'auto' });
+  };
+  const handlePressOut = (i) => {
+    if (!isMobile()) return;
+    gsap.to(imgRefs.current[i], { scale: 1, duration: 0.5, ease: 'power3.out', overwrite: 'auto' });
+  };
 
   useEffect(() => {
     // Header block fade-up
@@ -69,8 +82,17 @@ export default function Products() {
               key={cat.label}
               className={styles.card}
               ref={el => (cardsRef.current[i] = el)}
+              onPointerDown={() => handlePressIn(i)}
+              onPointerUp={() => handlePressOut(i)}
+              onPointerCancel={() => handlePressOut(i)}
+              onPointerLeave={() => handlePressOut(i)}
             >
-              <img src={cat.img} alt={cat.label} className={styles.cardImg} />
+              <img
+                src={cat.img}
+                alt={cat.label}
+                className={styles.cardImg}
+                ref={el => (imgRefs.current[i] = el)}
+              />
 
               {/* Bottom gradient + label */}
               <div className={styles.cardOverlay}>

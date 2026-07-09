@@ -49,6 +49,19 @@
   margin: 0;
 }
 
+/* Mobile-only "Read More" toggle (hidden on desktop, no clamp there) */
+.readMoreBtn {
+  display: none;
+}
+
+/* ─── Stats card wrapper (desktop: invisible, mobile: card) ── */
+.statsCard {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
 /* ─── Stats row ───────────────────────────────── */
 .statsRow {
   display: flex;
@@ -113,6 +126,37 @@
 @media (max-width: 768px) {
   .about {
     padding: 56px 0;
+    background-color: #ffffff;
+  }
+
+  /* Clamp the paragraph to ~3 lines with a Read More toggle */
+  .bodyTextClamped {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .readMoreBtn {
+    display: inline-block;
+    margin-top: 0.6rem;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  /* Light card behind the stats row */
+  .statsCard {
+    background: var(--color-surface);
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
   }
 
   /* Even 3-column grid so items never overflow */
@@ -120,7 +164,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0;
-    margin-top: 0.25rem;
+    margin-top: 0;
   }
 
   .statItem {
@@ -130,7 +174,8 @@
   }
 
   .statValue {
-    font-size: clamp(1.4rem, 6vw, 2rem);
+    font-size: clamp(1.6rem, 7vw, 2.25rem);
+    font-weight: 700;
   }
 
   /* labels can wrap now — no overflow */

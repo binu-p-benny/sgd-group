@@ -1,16 +1,22 @@
 "use client";
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './FloatingButtons.module.css';
 import EnquiryModal from '@/components/shared/EnquiryModal';
 
+const WHATSAPP_NUMBER = '919778151162';
+const PHONE_NUMBER = '+919778151162';
+
 export default function FloatingButtons() {
   const [enquireOpen, setEnquireOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   return (
     <>
       {/* ── Left: Download Brochure ── */}
-      <a href="#" className={styles.brochureTab} aria-label="Download Brochure">
+      <a href="#" className={`${styles.brochureTab} ${isHome ? styles.hideOnMobile : ''}`} aria-label="Download Brochure">
         <span className={styles.brochureText}>Download Brochure</span>
         <svg className={styles.brochureIcon} viewBox="0 0 24 24" fill="none"
           stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -28,7 +34,12 @@ export default function FloatingButtons() {
                background: #F5F4EF, border-radius: 44 px
                text: "ENQUIRE NOW", Inter SemiBold 14 px, letter-spacing 0.7 px
       */}
-      <button type="button" onClick={() => setEnquireOpen(true)} className={styles.enquireWidget} aria-label="Enquire Now">
+      <button
+        type="button"
+        onClick={() => setEnquireOpen(true)}
+        className={`${styles.enquireWidget} ${isHome ? styles.hideOnMobile : ''}`}
+        aria-label="Enquire Now"
+      >
         {/* Chat bubbles icon — matches Figma image 23 */}
         <div className={styles.enquireIconWrap}>
           <svg className={styles.enquireIcon} viewBox="0 0 98 98" fill="none"
@@ -49,6 +60,38 @@ export default function FloatingButtons() {
         {/* Pill label */}
         <span className={styles.enquireLabel}>Enquire Now</span>
       </button>
+
+      {/* ── Mobile-only sticky bottom action bar (home page only) ── */}
+      {isHome && (
+        <div className={styles.mobileActionBar}>
+          <button type="button" onClick={() => setEnquireOpen(true)} className={styles.actionItem} aria-label="Enquire Now">
+            <svg className={styles.actionIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+            <span>Enquire Now</span>
+          </button>
+
+          <a href={`tel:${PHONE_NUMBER}`} className={styles.actionItem} aria-label="Call Us">
+            <svg className={styles.actionIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>Call Us</span>
+          </a>
+
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.actionItem}
+            aria-label="WhatsApp"
+          >
+            <svg className={styles.actionIcon} viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.14h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.55-3.7 8.24-8.24 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.24-.02-.37.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.16 0-.43.06-.66.31-.23.24-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      )}
 
       {enquireOpen && <EnquiryModal onClose={() => setEnquireOpen(false)} />}
     </>

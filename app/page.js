@@ -10,6 +10,7 @@ import VideoTestimonials from '@/components/home/VideoTestimonials';
 import Clients from '@/components/home/Clients';
 import Blog from '@/components/home/Blog';
 import Footer from '@/components/home/Footer';
+import styles from './page.module.css';
 
 export const metadata = {
   title: 'SGD Group of Companies | Aluminium & Glazing Specialists Kerala',
@@ -21,7 +22,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <main className={styles.main}>
       <Navigation />
       <Hero />
       <About />

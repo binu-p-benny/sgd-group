@@ -251,15 +251,31 @@
   .desc  { font-size: 16px; line-height: 26px; }
 
   .mosaic {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 6px;
     height: auto;
   }
 
   .tall, .topMid, .topRight, .bottomMid {
-    grid-column: 1;
+    grid-column: auto;
     grid-row: auto;
-    aspect-ratio: 4/3;
+    aspect-ratio: 3 / 2;
+  }
+
+  /* Moody bottom vignette on every tile, matching the reference grid */
+  .cell::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Press-to-zoom is driven by GSAP in Services.js (it already owns this
+     image's transform via the scroll-reveal animation's inline style). */
+  .cell {
+    -webkit-tap-highlight-color: transparent;
   }
 
   .brochureTab { display: none; }
