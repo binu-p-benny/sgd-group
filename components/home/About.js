@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
@@ -20,6 +20,7 @@ export default function About() {
   const textRef = useRef(null);
   const statsRef = useRef([]);
   const imageRef = useRef(null);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -81,21 +82,30 @@ export default function About() {
           </p>
 
           <div ref={textRef}>
-            <p className={styles.bodyText}>{text}</p>
+            <p className={`${styles.bodyText} ${expanded ? '' : styles.bodyTextClamped}`}>{text}</p>
+            <button
+              type="button"
+              className={styles.readMoreBtn}
+              onClick={() => setExpanded(v => !v)}
+            >
+              {expanded ? 'Read Less' : 'Read More'}
+            </button>
           </div>
 
           {/* Stats */}
-          <div className={styles.statsRow}>
-            {stats.map((stat, i) => (
-              <div
-                key={i}
-                className={styles.statItem}
-                ref={el => (statsRef.current[i] = el)}
-              >
-                <span className={styles.statValue}>{stat.value}</span>
-                <span className={styles.statLabel}>{stat.label}</span>
-              </div>
-            ))}
+          <div className={styles.statsCard}>
+            <div className={styles.statsRow}>
+              {stats.map((stat, i) => (
+                <div
+                  key={i}
+                  className={styles.statItem}
+                  ref={el => (statsRef.current[i] = el)}
+                >
+                  <span className={styles.statValue}>{stat.value}</span>
+                  <span className={styles.statLabel}>{stat.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

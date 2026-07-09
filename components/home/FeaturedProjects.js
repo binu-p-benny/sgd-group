@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './FeaturedProjects.module.css';
@@ -8,10 +9,10 @@ import styles from './FeaturedProjects.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { title: 'Nikshan Electronics', img: '/project-nikshan.png' },
-  { title: 'Eham Digital',        img: '/project-eham.png'   },
-  { title: 'Loshidh Thrissur',    img: '/project-loshidh.png'},
-  { title: 'Jabir Kottakal',      img: '/project-Jabir.png'  },
+  { title: 'Nikshan Electronics', images: ['/project-nikshan.png', '/project3.png', '/project4.png'] },
+  { title: 'Eham Digital',        images: ['/project-eham.png', '/project3.png', '/project4.png']    },
+  { title: 'Loshidh Thrissur',    images: ['/project-loshidh.png', '/project1.png', '/project2.png'] },
+  { title: 'Jabir Kottakal',      images: ['/project-Jabir.png', '/project1.png', '/project2.png']   },
 ];
 
 export default function FeaturedProjects() {
@@ -48,6 +49,45 @@ export default function FeaturedProjects() {
         scrollTrigger: { trigger: footerRef.current, start: 'top 92%', once: true },
       }
     );
+
+    // Auto-sliding gallery inside each card — slow crossfade between
+    // images plus an independent, continuous Ken Burns drift so whichever
+    // image is showing always feels alive rather than static.
+    const timelines = [];
+    const zoomTweens = [];
+
+    cardsRef.current.forEach((card, ci) => {
+      if (!card) return;
+      const imgs = [...card.querySelectorAll('[data-slide-img]')];
+      if (imgs.length < 2) return;
+
+      imgs.forEach((img, ii) => {
+        zoomTweens.push(
+          gsap.to(img, {
+            scale: 1.12,
+            duration: 9,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut',
+            delay: ii * 1.4,
+          })
+        );
+      });
+
+      const tl = gsap.timeline({ repeat: -1, delay: 1 + ci * 0.8 });
+      imgs.forEach((img, ii) => {
+        const next = imgs[(ii + 1) % imgs.length];
+        tl.to({}, { duration: 2.8 })
+          .to(next, { opacity: 1, duration: 1.1, ease: 'power2.inOut' }, '<')
+          .to(img, { opacity: 0, duration: 1.1, ease: 'power2.inOut' }, '<');
+      });
+      timelines.push(tl);
+    });
+
+    return () => {
+      timelines.forEach(tl => tl.kill());
+      zoomTweens.forEach(t => t.kill());
+    };
   }, []);
 
   return (
@@ -65,11 +105,17 @@ export default function FeaturedProjects() {
               className={styles.card}
               ref={el => (cardsRef.current[i] = el)}
             >
-              <img
-                src={project.img}
-                alt={project.title}
-                className={styles.cardImg}
-              />
+              <div className={styles.slideStack}>
+                {project.images.map((src, si) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={project.title}
+                    data-slide-img
+                    className={styles.slideImg}
+                  />
+                ))}
+              </div>
 
               {/* Bottom gradient bar */}
               <div className={styles.cardBar}>
@@ -82,7 +128,7 @@ export default function FeaturedProjects() {
 
         {/* ── Footer button ── */}
         <div className={styles.footer} ref={footerRef}>
-          <button className={styles.allBtn}>View all Projects</button>
+          <Link href="/projects" className={styles.allBtn}>View all Projects</Link>
         </div>
 
       </div>

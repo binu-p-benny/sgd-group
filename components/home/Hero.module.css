@@ -52,19 +52,65 @@
   line-height: 1.2;
 }
 
+.heroCta {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  /* Mobile: video sits as its own full-width block up top, title/CTA
+     follow below it in normal flow — not overlaid on the video. */
   .hero {
-    padding: var(--spacing-sm);
-    align-items: center; /* Center text vertically on mobile */
-    text-align: center;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    text-align: left;
   }
-  
+
+  .bgWrapper {
+    position: relative;
+    width: 100%;
+    height: 46vh;
+    min-height: 260px;
+  }
+
+  .overlay {
+    display: none;
+  }
+
   .content h1 {
-    font-size: 32px !important;
+    font-size: 27px !important;
+    letter-spacing: -0.01em;
   }
-  
+
   .content {
-    padding-bottom: 0;
+    position: relative;
+    padding: var(--spacing-sm);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heroCta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.75rem;
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 420px) {
+  .content h1 {
+    font-size: 23px !important;
   }
 }
 

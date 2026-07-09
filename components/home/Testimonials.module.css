@@ -25,6 +25,10 @@
   margin-bottom: 2rem;
 }
 
+.navButtonsMobile {
+  display: none;
+}
+
 .navBtn {
   width: 56px;
   height: 56px;
@@ -73,6 +77,7 @@
   transition: transform 0.4s ease;
 }
 
+
 .card:hover {
   background-color: var(--color-surface);
 }
@@ -102,9 +107,19 @@
   opacity: 0.6;
 }
 
+/* Mobile-only header (avatar + name/role + stars) — hidden on desktop */
+.cardHeaderMobile {
+  display: none;
+}
+
+.starsMobile {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .testimonials {
-    padding: 56px 0;
+    padding: 56px 0 32px;
+    background-color: #f5f5f5;
   }
 
   .header {
@@ -113,7 +128,14 @@
     gap: 1rem;
   }
 
-  .navButtons {
+  .navButtonsDesktop {
+    display: none;
+  }
+
+  .navButtonsMobile {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
     margin-bottom: 0;
   }
 
@@ -124,23 +146,79 @@
 
   .grid {
     gap: 1rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
     /* allow card edges to peek past the container padding */
     scroll-snap-type: x mandatory;
   }
 
   .card {
     /* fit the viewport with a small peek of the next card */
-    flex: 0 0 82vw;
+    flex: 0 0 78vw;
     max-width: 360px;
     min-height: auto;
-    padding: var(--spacing-md);
+    padding: 28px 24px;
     scroll-snap-align: start;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(17, 17, 17, 0.08);
+  }
+
+  .cardHeaderMobile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #351D0D;
+    color: #F5F4EF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .headerText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cardHeaderMobile .authorName {
+    font-size: 1rem;
+  }
+
+  .cardHeaderMobile .authorRole {
+    font-size: 0.8rem;
+  }
+
+  .starsMobile {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+
+  .starIcon {
+    color: #F5A623;
+  }
+
+  .quote {
+    margin-bottom: 0;
+  }
+
+  .authorInfoDesktop {
+    display: none;
   }
 }
 
 @media (max-width: 420px) {
   .card {
-    flex: 0 0 85vw;
+    flex: 0 0 78vw;
   }
 }

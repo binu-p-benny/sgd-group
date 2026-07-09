@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Hero.module.css';
@@ -82,6 +83,8 @@ export default function Hero() {
             </span>
           ))}
         </h1>
+
+        <Link href="/projects" className={styles.heroCta}>View Our Work</Link>
       </div>
     </section>
   );

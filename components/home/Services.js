@@ -22,6 +22,16 @@ export default function Services() {
   const mosaicRef   = useRef(null);
   const imgRefs     = useRef([]);
 
+  // Press-to-zoom — GSAP owns the transform on these images (the scroll
+  // reveal animation sets it inline), so animating scale via GSAP here
+  // avoids fighting that inline style with a CSS class.
+  const pressIn = (i) => {
+    gsap.to(imgRefs.current[i], { scale: 1.12, duration: 0.4, ease: 'power2.out', overwrite: 'auto' });
+  };
+  const pressOut = (i) => {
+    gsap.to(imgRefs.current[i], { scale: 1, duration: 0.5, ease: 'power3.out', overwrite: 'auto' });
+  };
+
   useEffect(() => {
     // Header fade-up
     gsap.fromTo(headerRef.current,
@@ -68,6 +78,10 @@ export default function Services() {
             <div
               key={img.slot}
               className={`${styles.cell} ${styles[img.slot]}`}
+              onPointerDown={() => pressIn(i)}
+              onPointerUp={() => pressOut(i)}
+              onPointerCancel={() => pressOut(i)}
+              onPointerLeave={() => pressOut(i)}
             >
               <img
                 src={img.src}

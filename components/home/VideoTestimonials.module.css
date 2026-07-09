@@ -3,6 +3,10 @@
   background-color: var(--color-background);
 }
 
+.watchLabel {
+  display: none;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -44,12 +48,52 @@
 
 @media (max-width: 768px) {
   .videoTestimonials {
-    padding: 56px 0;
+    padding: 32px 0;
+    background-color: #ffffff;
   }
 
+  .watchLabel {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+    opacity: 0.6;
+    margin-bottom: 1rem;
+  }
+
+  /* Same swipeable-card language as the testimonials slider — touch/drag
+     to browse, snap-aligned, peeking edge, no visible prev/next controls. */
   .grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+    display: flex;
+    grid-template-columns: unset;
+    gap: 1rem;
     margin-bottom: var(--spacing-md);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 4px;
+    cursor: grab;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid:active {
+    cursor: grabbing;
+  }
+
+  .card {
+    flex: 0 0 82vw;
+    max-width: 360px;
+    width: auto;
+    scroll-snap-align: start;
+  }
+
+  .videoWrapper {
+    width: 100%;
   }
 }
