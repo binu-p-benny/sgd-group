@@ -129,6 +129,10 @@
     background-color: #ffffff;
   }
 
+  .imageWrapper {
+    border-radius: 16px;
+  }
+
   /* Clamp the paragraph to ~3 lines with a Read More toggle */
   .bodyTextClamped {
     display: -webkit-box;
