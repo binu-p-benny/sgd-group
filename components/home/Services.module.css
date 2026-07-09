@@ -263,6 +263,10 @@
     aspect-ratio: 3 / 2;
   }
 
+  .cell {
+    border-radius: 12px;
+  }
+
   /* Moody bottom vignette on every tile, matching the reference grid */
   .cell::after {
     content: '';
