@@ -212,8 +212,18 @@
 }
 
 @media (max-width: 768px) {
+  .intro,
+  .why {
+    padding: 48px 0;
+  }
+
   .brochureTab {
     width: 52px;
     padding: 18px 10px;
+  }
+
+  .introImage,
+  .whyImage {
+    border-radius: 16px;
   }
 }

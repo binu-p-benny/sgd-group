@@ -222,3 +222,14 @@
     padding: 40px 32px 56px;
   }
 }
+
+@media (max-width: 768px) {
+  .section,
+  .mapSection {
+    padding: 48px 0;
+  }
+
+  .mapFrame {
+    border-radius: 16px;
+  }
+}

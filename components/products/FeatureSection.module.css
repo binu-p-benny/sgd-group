@@ -108,8 +108,7 @@
     padding: 0 24px;
   }
   .imageWrap {
-    width: 100%;
-    height: 420px;
+    display: none;
   }
   .heading {
     font-size: 36px;
@@ -125,10 +124,7 @@
 
 @media (max-width: 560px) {
   .section {
-    padding: 56px 0;
-  }
-  .imageWrap {
-    height: 300px;
+    padding: 40px 0;
   }
   .heading {
     font-size: 28px;

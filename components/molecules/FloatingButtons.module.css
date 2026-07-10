@@ -139,40 +139,16 @@
 }
 
 /* ── Mobile ─────────────────────────────────────── */
+/* The floating widgets above are replaced by the sticky bottom action
+   bar below on every route. */
 @media (max-width: 768px) {
-  .brochureTab { display: none; }
-
-  /* Compact FAB on mobile */
+  .brochureTab,
   .enquireWidget {
-    bottom: 20px;
-    right: 0;
-    width: auto;
-    padding: 0;
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
-  }
-
-  .enquireIconWrap { display: none; }
-
-  .enquireLabel {
-    margin: 0;
-    border-radius: 44px 0 0 44px;
-    padding: 0 20px;
-    width: auto;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  }
-
-  /* Home page (mobile): the old floating widgets are replaced by the
-     sticky bottom action bar below — hidden here only, other routes
-     keep the compact FAB above untouched. */
-  .brochureTab.hideOnMobile,
-  .enquireWidget.hideOnMobile {
     display: none;
   }
 }
 
-/* ── Home page mobile sticky bottom action bar ───── */
+/* ── Mobile sticky bottom action bar ───────────────── */
 .mobileActionBar {
   display: none;
 }

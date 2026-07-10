@@ -36,7 +36,6 @@ export default function Navigation() {
   const closeTimer = useRef(null);
   const projTimer  = useRef(null);
   const pathname   = usePathname();
-  const isHome     = pathname === '/';
   const lenis      = useLenis();
 
   const toggleMobileGroup = (name) => {
@@ -147,7 +146,7 @@ export default function Navigation() {
     <>
       <nav className={`${styles.navWrapper} ${scrolled ? styles.scrolled : ''} ${isOpen ? styles.menuOpen : ''}`}>
         <div className={styles.container}>
-          <Link href="/" className={`${styles.logoWrapper} ${isHome && isOpen ? styles.logoHiddenMobile : ''}`}>
+          <Link href="/" className={`${styles.logoWrapper} ${isOpen ? styles.logoHiddenMobile : ''}`}>
             <img
               src={(scrolled || isOpen) ? "/logo-cl.png" : "/logo-wt.png"}
               alt="SGD Group of Companies"
@@ -295,7 +294,7 @@ export default function Navigation() {
           </div>
 
           <div
-            className={`${styles.mobileToggle} ${isOpen ? styles.open : ''} ${isHome && isOpen ? styles.mobileToggleHidden : ''}`}
+            className={`${styles.mobileToggle} ${isOpen ? styles.open : ''} ${isOpen ? styles.mobileToggleHidden : ''}`}
             onClick={(e) => { e.stopPropagation(); setIsOpen(!isOpen); }}
           >
             <span></span>
@@ -312,146 +311,114 @@ export default function Navigation() {
       />
 
       {/* Mobile Menu */}
-      <div className={`${styles.mobileOverlay} ${isHome ? styles.mobileOverlayHome : ''}`} ref={menuRef} data-lenis-prevent>
-        <div className={`${styles.mobileNavLinks} ${isHome ? styles.mobileNavLinksHome : ''}`}>
+      <div className={`${styles.mobileOverlay} ${styles.mobileOverlayHome}`} ref={menuRef} data-lenis-prevent>
+        <div className={`${styles.mobileNavLinks} ${styles.mobileNavLinksHome}`}>
           {navItems.map((item, i) => (
             item.dropdown ? (
-              isHome ? (
-                <div key={item.name} className={styles.mobileDropdownGroup}>
-                  <button
-                    type="button"
-                    className={styles.mobileAccordionHeader}
-                    onClick={() => toggleMobileGroup(item.name)}
-                    aria-expanded={openMobileGroup === item.name}
-                  >
-                    <span className={styles.mobileAccordionHeaderLabel}>{item.name}</span>
-                    <ChevronDown
-                      size={26}
-                      className={`${styles.mobileChevron} ${openMobileGroup === item.name ? styles.mobileChevronOpen : ''}`}
-                    />
-                  </button>
-                  <div className={`${styles.mobileAccordionContent} ${openMobileGroup === item.name ? styles.mobileAccordionContentOpen : ''}`}>
-                    <div className={styles.mobileAccordionInner}>
-                      {item.dropdown.map((sub, j) => (
-                        <div key={sub.name} className={styles.mobileCategoryGroup}>
-                          <div className={`${styles.mobileCategoryRow} ${openMobileLeaf === sub.name ? styles.mobileCategoryRowOpen : ''}`}>
-                            <Link href={sub.href} className={styles.mobileCategoryLabel}
-                              onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
-                              {sub.name}
-                            </Link>
-                            {sub.subItems && (
-                              <button
-                                type="button"
-                                className={styles.mobileCategoryChevronBox}
-                                onClick={() => toggleMobileLeaf(sub.name)}
-                                aria-expanded={openMobileLeaf === sub.name}
-                                aria-label={`Toggle ${sub.name} sub-items`}
-                              >
-                                <ChevronDown
-                                  size={16}
-                                  className={`${styles.mobileCategoryChevronIcon} ${openMobileLeaf === sub.name ? styles.mobileCategoryChevronIconOpen : ''}`}
-                                />
-                              </button>
-                            )}
-                          </div>
+              <div key={item.name} className={styles.mobileDropdownGroup}>
+                <button
+                  type="button"
+                  className={styles.mobileAccordionHeader}
+                  onClick={() => toggleMobileGroup(item.name)}
+                  aria-expanded={openMobileGroup === item.name}
+                >
+                  <span className={styles.mobileAccordionHeaderLabel}>{item.name}</span>
+                  <ChevronDown
+                    size={26}
+                    className={`${styles.mobileChevron} ${openMobileGroup === item.name ? styles.mobileChevronOpen : ''}`}
+                  />
+                </button>
+                <div className={`${styles.mobileAccordionContent} ${openMobileGroup === item.name ? styles.mobileAccordionContentOpen : ''}`}>
+                  <div className={styles.mobileAccordionInner}>
+                    {item.dropdown.map((sub, j) => (
+                      <div key={sub.name} className={styles.mobileCategoryGroup}>
+                        <div className={`${styles.mobileCategoryRow} ${openMobileLeaf === sub.name ? styles.mobileCategoryRowOpen : ''}`}>
+                          <Link href={sub.href} className={styles.mobileCategoryLabel}
+                            onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
+                            {sub.name}
+                          </Link>
                           {sub.subItems && (
-                            <div className={`${styles.mobileLeafContent} ${openMobileLeaf === sub.name ? styles.mobileLeafContentOpen : ''}`}>
-                              <div className={styles.mobileLeafInner}>
-                                {sub.subItems.map((leaf) => (
-                                  <Link key={leaf.name} href={leaf.href} className={styles.mobileLeafLink}
-                                    onClick={() => setIsOpen(false)}>
-                                    {leaf.name}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div key={item.name} className={styles.mobileDropdownGroup}>
-                  <span className={styles.mobileNavGroupLabel}>{item.name}</span>
-                  {item.dropdown.map((sub, j) => (
-                    <Link key={sub.name} href={sub.href} className={styles.mobileSubLink}
-                      onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
-                      {sub.name}
-                    </Link>
-                  ))}
-                </div>
-              )
-            ) : item.projectsDropdown ? (
-              isHome ? (
-                <div key={item.name} className={styles.mobileDropdownGroup}>
-                  <button
-                    type="button"
-                    className={styles.mobileAccordionHeader}
-                    onClick={() => toggleMobileGroup(item.name)}
-                    aria-expanded={openMobileGroup === item.name}
-                  >
-                    <span className={styles.mobileAccordionHeaderLabel}>{item.name}</span>
-                    <ChevronDown
-                      size={26}
-                      className={`${styles.mobileChevron} ${openMobileGroup === item.name ? styles.mobileChevronOpen : ''}`}
-                    />
-                  </button>
-                  <div className={`${styles.mobileAccordionContent} ${openMobileGroup === item.name ? styles.mobileAccordionContentOpen : ''}`}>
-                    <div className={styles.mobileAccordionInner}>
-                      {[
-                        { label: 'Residential', items: residentialProjects },
-                        { label: 'Commercial', items: commercialProjects },
-                      ].map((group) => (
-                        <div key={group.label} className={styles.mobileCategoryGroup}>
-                          <button
-                            type="button"
-                            className={`${styles.mobileCategoryRow} ${styles.mobileCategoryRowButton} ${openMobileLeaf === group.label ? styles.mobileCategoryRowOpen : ''}`}
-                            onClick={() => toggleMobileLeaf(group.label)}
-                            aria-expanded={openMobileLeaf === group.label}
-                          >
-                            <span className={styles.mobileCategoryLabel}>{group.label}</span>
-                            <span className={styles.mobileCategoryChevronBox}>
+                            <button
+                              type="button"
+                              className={styles.mobileCategoryChevronBox}
+                              onClick={() => toggleMobileLeaf(sub.name)}
+                              aria-expanded={openMobileLeaf === sub.name}
+                              aria-label={`Toggle ${sub.name} sub-items`}
+                            >
                               <ChevronDown
                                 size={16}
-                                className={`${styles.mobileCategoryChevronIcon} ${openMobileLeaf === group.label ? styles.mobileCategoryChevronIconOpen : ''}`}
+                                className={`${styles.mobileCategoryChevronIcon} ${openMobileLeaf === sub.name ? styles.mobileCategoryChevronIconOpen : ''}`}
                               />
-                            </span>
-                          </button>
-                          <div className={`${styles.mobileLeafContent} ${openMobileLeaf === group.label ? styles.mobileLeafContentOpen : ''}`}>
+                            </button>
+                          )}
+                        </div>
+                        {sub.subItems && (
+                          <div className={`${styles.mobileLeafContent} ${openMobileLeaf === sub.name ? styles.mobileLeafContentOpen : ''}`}>
                             <div className={styles.mobileLeafInner}>
-                              {group.items.map((p, j) => (
-                                <Link key={p.name} href={p.href} className={styles.mobileLeafLink}
-                                  onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
-                                  {p.name}
+                              {sub.subItems.map((leaf) => (
+                                <Link key={leaf.name} href={leaf.href} className={styles.mobileLeafLink}
+                                  onClick={() => setIsOpen(false)}>
+                                  {leaf.name}
                                 </Link>
                               ))}
                             </div>
                           </div>
-                        </div>
-                      ))}
-                    </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ) : (
-                <div key={item.name} className={styles.mobileDropdownGroup}>
-                  <span className={styles.mobileNavGroupLabel}>{item.name}</span>
-                  <span className={styles.mobileNavGroupLabel} style={{ fontSize: '0.75rem', opacity: 0.45 }}>Residential</span>
-                  {residentialProjects.map((p, j) => (
-                    <Link key={p.name} href={p.href} className={styles.mobileSubLink}
-                      onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
-                      {p.name}
-                    </Link>
-                  ))}
-                  <span className={styles.mobileNavGroupLabel} style={{ fontSize: '0.75rem', opacity: 0.45, marginTop: '1rem' }}>Commercial</span>
-                  {commercialProjects.map((p, j) => (
-                    <Link key={p.name} href={p.href} className={styles.mobileSubLink}
-                      onClick={() => setIsOpen(false)}>
-                      {p.name}
-                    </Link>
-                  ))}
+              </div>
+            ) : item.projectsDropdown ? (
+              <div key={item.name} className={styles.mobileDropdownGroup}>
+                <button
+                  type="button"
+                  className={styles.mobileAccordionHeader}
+                  onClick={() => toggleMobileGroup(item.name)}
+                  aria-expanded={openMobileGroup === item.name}
+                >
+                  <span className={styles.mobileAccordionHeaderLabel}>{item.name}</span>
+                  <ChevronDown
+                    size={26}
+                    className={`${styles.mobileChevron} ${openMobileGroup === item.name ? styles.mobileChevronOpen : ''}`}
+                  />
+                </button>
+                <div className={`${styles.mobileAccordionContent} ${openMobileGroup === item.name ? styles.mobileAccordionContentOpen : ''}`}>
+                  <div className={styles.mobileAccordionInner}>
+                    {[
+                      { label: 'Residential', items: residentialProjects },
+                      { label: 'Commercial', items: commercialProjects },
+                    ].map((group) => (
+                      <div key={group.label} className={styles.mobileCategoryGroup}>
+                        <button
+                          type="button"
+                          className={`${styles.mobileCategoryRow} ${styles.mobileCategoryRowButton} ${openMobileLeaf === group.label ? styles.mobileCategoryRowOpen : ''}`}
+                          onClick={() => toggleMobileLeaf(group.label)}
+                          aria-expanded={openMobileLeaf === group.label}
+                        >
+                          <span className={styles.mobileCategoryLabel}>{group.label}</span>
+                          <span className={styles.mobileCategoryChevronBox}>
+                            <ChevronDown
+                              size={16}
+                              className={`${styles.mobileCategoryChevronIcon} ${openMobileLeaf === group.label ? styles.mobileCategoryChevronIconOpen : ''}`}
+                            />
+                          </span>
+                        </button>
+                        <div className={`${styles.mobileLeafContent} ${openMobileLeaf === group.label ? styles.mobileLeafContentOpen : ''}`}>
+                          <div className={styles.mobileLeafInner}>
+                            {group.items.map((p, j) => (
+                              <Link key={p.name} href={p.href} className={styles.mobileLeafLink}
+                                onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
+                                {p.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              )
+              </div>
             ) : (
               <Link key={item.name} href={item.href} className={styles.mobileNavLink}
                 onClick={() => setIsOpen(false)} ref={el => linksRef.current[i] = el}>

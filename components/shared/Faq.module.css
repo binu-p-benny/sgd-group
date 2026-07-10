@@ -98,6 +98,10 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+
   .row {
     padding: 18px 4px;
   }

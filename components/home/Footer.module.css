@@ -320,7 +320,7 @@
   }
 
   .footerHome .content {
-    gap: clamp(56px, 8vw, 80px);
+    gap: clamp(30px, 8vw, 80px);
   }
 
   .footerHome .navColumns {
