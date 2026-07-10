@@ -178,10 +178,22 @@ export default function AluminiumWindowSystemsPage() {
             <img src="/services/services-02.png" alt="Aluminium window installation" />
           </div>
 
+          {/* Mobile-only combined image grid — replaces the separate
+              per-section images below with one compact mosaic */}
+          <div className={styles.mobileImageGrid}>
+            <div className={styles.mobileImageGridItem}>
+              <img src="/services/services-02.png" alt="Aluminium window installation" />
+            </div>
+            <div className={styles.mobileImageGridItem}>
+              <img src="/services/services-03.png" alt="Premium aluminium window design" />
+            </div>
+            <div className={styles.mobileImageGridItem}>
+              <img src="/services/services-04.png" alt="Why choose SGD aluminium windows" />
+            </div>
+          </div>
+
         </div>
       </section>
-
-      
 
       <WhyChooseUs />
 

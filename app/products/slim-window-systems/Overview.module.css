@@ -311,6 +311,8 @@
   border-bottom: 1px solid rgba(17, 17, 17, 0.15);
   cursor: pointer;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
 .windowsItemName {
@@ -513,6 +515,12 @@
   display: block;
 }
 
+/* ── Mobile image grid — replaces the per-section images below with one
+   combined mosaic, matching the home page Services grid treatment ── */
+.mobileImageGrid {
+  display: none;
+}
+
 /* ── Tablet: stack columns ── */
 @media (max-width: 900px) {
   .whyInner {
@@ -520,9 +528,7 @@
   }
 
   .whyImage {
-    flex: none;
-    width: 100%;
-    height: clamp(240px, 55vw, 480px);
+    display: none;
   }
 
   .whySection {
@@ -534,8 +540,7 @@
   }
 
   .imageWrapper {
-    width: 100%;
-    height: clamp(240px, 55vw, 480px);
+    display: none;
   }
 
   .left {
@@ -551,23 +556,86 @@
   }
 
   .premiumImage {
-    flex: none;
-    width: 100%;
-    height: clamp(240px, 55vw, 480px);
+    display: none;
   }
 
   .featuresGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Wrapper for standalone usage (e.g. casement-door-systems, where the
+     grid isn't already nested inside a padded .inner/.whyInner) — gives
+     it the same side inset as the rest of the page's content. */
+  .mobileImageGridWrap {
+    padding: 0 clamp(20px, 4vw, 32px);
+    box-sizing: border-box;
+  }
+
+  /* Matches the home page Services mosaic mobile treatment exactly:
+     2-column grid, 6px gap, 3:2 tiles, 12px radius, bottom vignette */
+  .mobileImageGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 32px;
+  }
+
+  .mobileImageGridItem {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 3 / 2;
+  }
+
+  .mobileImageGridItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mobileImageGridItem::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* Odd item count — center the leftover last tile instead of leaving
+     it stranded in the first column with an empty gap beside it */
+  .mobileImageGridItem:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 3px);
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 540px) {
+  .featuresSection {
+    padding: 40px 0;
+  }
+
   .featuresGrid {
     grid-template-columns: 1fr;
+    row-gap: 12px;
   }
 
   .featuresInner {
-    gap: 40px;
+    gap: 28px;
+  }
+
+  .featureItem {
+    gap: 12px;
+  }
+
+  .featureText {
+    padding: 0;
+    gap: 4px;
+  }
+
+  .featureTitle {
+    font-size: clamp(15px, 4vw, 18px);
   }
 }
 
@@ -575,6 +643,12 @@
 @media (max-width: 540px) {
   .section {
     min-height: unset;
+  }
+
+  .imageWrapper,
+  .premiumImage,
+  .whyImage {
+    border-radius: 16px;
   }
 
   .iconCell svg {
@@ -592,5 +666,21 @@
 
   .left {
     gap: 32px;
+  }
+
+  .windowsSection {
+    padding: 32px 0;
+  }
+
+  .windowsInner {
+    gap: 24px;
+  }
+
+  .windowsHeading {
+    padding-bottom: 16px;
+  }
+
+  .windowsItem {
+    padding: clamp(18px, 4vw, 28px) 0;
   }
 }

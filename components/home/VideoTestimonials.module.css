@@ -95,5 +95,6 @@
 
   .videoWrapper {
     width: 100%;
+    border-radius: 16px;
   }
 }

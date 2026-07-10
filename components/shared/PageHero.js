@@ -16,11 +16,13 @@ export default function PageHero({ label, title, subtitle, bg = '/hero.png' }) {
       { scale: 1, opacity: 1, duration: 1.8, ease: 'power3.out' }
     );
     // Title slide up
-    gsap.fromTo(
-      titleRef.current,
-      { y: 48, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.3 }
-    );
+    if (titleRef.current) {
+      gsap.fromTo(
+        titleRef.current,
+        { y: 48, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: 'power3.out', delay: 0.3 }
+      );
+    }
   }, []);
 
   return (
@@ -35,9 +37,11 @@ export default function PageHero({ label, title, subtitle, bg = '/hero.png' }) {
       <div className={styles.overlay} />
 
       {/* Content anchored bottom-left */}
-      <div className={`container ${styles.content}`}>
-        <h1 ref={titleRef} className={styles.title}>{title}</h1>
-      </div>
+      {title && (
+        <div className={`container ${styles.content}`}>
+          <h1 ref={titleRef} className={styles.title}>{title}</h1>
+        </div>
+      )}
     </section>
   );
 }

@@ -145,6 +145,7 @@
     width: 100%;
     min-width: unset;
     height: 380px;
+    border-radius: 16px;
   }
   .content {
     align-self: flex-start;

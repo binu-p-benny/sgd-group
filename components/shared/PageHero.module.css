@@ -64,20 +64,41 @@
   padding: 31px 0;
 }
 
-/* Responsive */
+/* Responsive — mirrors the home page Hero's mobile treatment: image
+   becomes a plain block up top, title flows below it in normal flow
+   (not overlaid), so no dark overlay or light text is needed. */
 @media (max-width: 768px) {
   .hero {
-    height: 60vh;
-    min-height: 480px;
-    padding: 24px;
+    height: auto;
+    max-height: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .bgImage {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 46vh;
+    min-height: 260px;
+  }
+
+  .overlay {
+    display: none;
   }
 
   .content {
-    padding-bottom: 32px;
+    padding: var(--spacing-sm) 24px 20px;
   }
 
   .title {
-    font-size: clamp(2rem, 8vw, 3rem);
-    padding: 16px 0;
+    color: var(--color-text);
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    padding: 8px 0 0;
+    max-width: 100%;
   }
 }

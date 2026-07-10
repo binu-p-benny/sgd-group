@@ -459,6 +459,10 @@
 }
 
 @media (max-width: 680px) {
+  .intro {
+    padding: 48px 0;
+  }
+
   .heroCategory {
     font-size: 14px;
   }
@@ -482,11 +486,27 @@
     line-height: 28px;
   }
 
+  .introImage {
+    border-radius: 16px;
+  }
+
+  .slider {
+    border-radius: 12px;
+  }
+
   .materialsGrid {
     grid-template-columns: 1fr;
   }
 
   .materialCard:first-child {
     grid-column: span 1;
+  }
+
+  .materialCard {
+    border-radius: 12px;
+  }
+
+  .videoEmbed {
+    border-radius: 16px;
   }
 }

@@ -453,17 +453,7 @@
   border-bottom: 1px solid rgba(17, 17, 17, 0.1);
 }
 
-.mobileNavGroupLabel {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-text);
-  opacity: 0.4;
-  margin-bottom: 0.85rem;
-}
-
-/* ── Home page mobile accordion (Products / Projects) ── */
+/* ── Mobile accordion (Products / Projects) ── */
 .mobileAccordionHeader {
   display: flex;
   align-items: center;
@@ -611,24 +601,6 @@
   padding-left: 2.4rem;
 }
 
-.mobileSubLink {
-  font-size: clamp(1.35rem, 5vw, 1.85rem);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--color-text);
-  text-align: left;
-  padding: 0.5rem 0;
-  padding-left: 1rem;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, padding-left 0.2s ease;
-}
-
-.mobileSubLink:active,
-.mobileSubLink:hover {
-  opacity: 1;
-  padding-left: 1.4rem;
-}
-
 .mobileContactBtn {
   margin-top: 2rem;
   font-size: 1rem;
@@ -653,15 +625,15 @@
     margin-left: auto;
   }
 
-  /* Home page only: hide the logo while the mobile menu is open —
-     keeping logo on the left when closed. */
+  /* Hide the logo while the mobile menu is open — keeping logo on the
+     left when closed. */
   .logoHiddenMobile {
     display: none;
   }
 
-  /* Home page only: no visible close icon while the menu is open —
-     a dedicated blank strip on the right (same spot as the toggle)
-     remains tappable to close, without affecting the rest of the header. */
+  /* No visible close icon while the menu is open — a dedicated blank
+     strip on the right (same spot as the toggle) remains tappable to
+     close, without affecting the rest of the header. */
   .mobileToggleHidden {
     opacity: 0;
     width: 64px;
@@ -670,16 +642,16 @@
     justify-content: center;
   }
 
-  /* Home page only: mobile menu content starts below the header instead
-     of being vertically centered, removing the large gap above "About Us" */
+  /* Mobile menu content starts below the header instead of being
+     vertically centered, removing the large gap above "About Us" */
   .mobileNavLinksHome {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  /* Home page only: the header has no visible logo/close icon while the
-     menu is open (see logoHiddenMobile / mobileToggleHidden above), so
-     there's nothing to clear — just a small breathing gap from the edge. */
+  /* The header has no visible logo/close icon while the menu is open
+     (see logoHiddenMobile / mobileToggleHidden above), so there's
+     nothing to clear — just a small breathing gap from the edge. */
   .mobileOverlayHome {
     padding-top: 32px;
   }

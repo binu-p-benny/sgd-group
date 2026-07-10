@@ -150,16 +150,7 @@ export default async function SlimWindowProductPage({ params }) {
   return (
     <main>
       <Navigation />
-      <PageHero title={data.name} bg={data.hero} />
-
-      {/* Breadcrumb */}
-      <nav className={styles.breadcrumb}>
-        <div className={styles.breadcrumbInner}>
-          <Link href="/products/slim-window-systems">Slim Window Systems</Link>
-          <span className={styles.sep}>/</span>
-          <span className={styles.current}>{data.name}</span>
-        </div>
-      </nav>
+      <PageHero bg={data.hero} />
 
       {/* Overview */}
       <section className={styles.overview}>

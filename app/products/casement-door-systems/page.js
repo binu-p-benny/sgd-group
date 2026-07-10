@@ -46,6 +46,20 @@ export default function CasementDoorSystemsPage() {
       <ApplicationsSection image="/services/services-02.png" />
       <FeatureSection image="/services/services-02.png" />
       <KeyFeaturesSection />
+
+      {/* Mobile-only combined image grid — replaces the separate
+          per-section images above with one compact mosaic */}
+      <div className={styles.mobileImageGridWrap}>
+        <div className={styles.mobileImageGrid}>
+          <div className={styles.mobileImageGridItem}>
+            <img src="/services/services-02.png" alt="Casement door systems" />
+          </div>
+          <div className={styles.mobileImageGridItem}>
+            <img src="/services/services-03.png" alt="Why choose SGD casement door systems" />
+          </div>
+        </div>
+      </div>
+
       <WhyChooseUs />
 
       {/* Door Systems list */}
