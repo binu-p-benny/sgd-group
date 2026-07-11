@@ -188,15 +188,10 @@
   .left {
     gap: 40px;
   }
+  /* Text-only on mobile — matches the home page's text-first mobile
+     sections, dropping the stacked image pair entirely. */
   .right {
-    width: 100%;
-    min-width: unset;
-    height: 360px;
-    order: -1;            /* show image first under the hero */
-  }
-  .img2Wrap {
-    right: 0;
-    bottom: -20px;
+    display: none;
   }
   .body {
     font-size: 1.0625rem;
@@ -219,15 +214,6 @@
   .inner {
     padding: 0 1.25rem;
     gap: 40px;
-  }
-  .right {
-    height: 280px;
-  }
-  .img2Wrap {
-    width: 130px;
-    height: 160px;
-    right: 0;
-    bottom: -16px;
   }
   /* Stats: even 3 columns, wrapping labels — no overflow */
   .statsRow {

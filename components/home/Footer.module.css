@@ -272,7 +272,10 @@
 /* Tablet portrait */
 @media (max-width: 768px) {
   .footer {
-    padding: 72px 0 40px;
+    /* Bottom clearance so the fixed mobile action bar (FloatingButtons,
+       61px tall) doesn't cover the last row of links/copyright — kept
+       tight (16px breathing room) so it doesn't read as a dead gap. */
+    padding: 72px 0 calc(16px + 61px + env(safe-area-inset-bottom));
   }
 
   .topRow {
@@ -335,7 +338,7 @@
 /* Mobile */
 @media (max-width: 480px) {
   .footer {
-    padding: 56px 0 32px;
+    padding: 56px 0 calc(16px + 61px + env(safe-area-inset-bottom));
   }
 
   .content {

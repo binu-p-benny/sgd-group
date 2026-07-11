@@ -52,17 +52,6 @@ export default function CareersPage() {
         bg="/hero.png"
       />
 
-      {/* Download Brochure floating tab */}
-      <a href="/brochure.pdf" download className={styles.brochureTab} aria-label="Download Brochure">
-        <span className={styles.brochureLabel}>Download Brochure</span>
-        <span className={styles.brochureIcon}>
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3V15M12 15L7 10M12 15L17 10" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M4 19H20" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        </span>
-      </a>
-
       {/* Intro */}
       <section className={styles.intro}>
         <div className={styles.introInner}>
@@ -79,6 +68,19 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
+
+      {/* Mobile-only combined image grid — replaces the separate
+          per-section images with one compact mosaic */}
+      <div className={styles.mobileImageGridWrap}>
+        <div className={styles.mobileImageGrid}>
+          <div className={styles.mobileImageGridItem}>
+            <img src="/about.png" alt="SGD Group team" />
+          </div>
+          <div className={styles.mobileImageGridItem}>
+            <img src="/services/services-03.png" alt="SGD Group workplace" />
+          </div>
+        </div>
+      </div>
 
       {/* Why Join Us */}
       <section className={styles.why}>

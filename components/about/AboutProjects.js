@@ -93,7 +93,7 @@ export default function AboutProjects() {
       </div>
 
       {/* CTA */}
-      <Link href="/products/inner" className={styles.btn} ref={btnRef}>
+      <Link href="/projects" className={styles.btn} ref={btnRef}>
         View all Projects
       </Link>
 

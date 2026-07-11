@@ -463,8 +463,59 @@
     padding: 48px 0;
   }
 
+  .gallery {
+    padding: 0 0 40px;
+  }
+
+  .materials,
+  .videoSection {
+    padding: 40px 0;
+  }
+
+  .materialsInner {
+    gap: 32px;
+  }
+
+  .videoInner {
+    gap: 20px;
+  }
+
+  /* Mirrors the home page Hero's mobile treatment: image becomes a
+     plain block up top, title flows below it in normal flow (not
+     overlaid), so no dark overlay or light text is needed. */
+  .hero {
+    height: auto;
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .heroImage {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 46vh;
+    min-height: 260px;
+  }
+
+  .heroOverlay {
+    display: none;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    padding: 16px 24px 20px;
+  }
+
   .heroCategory {
+    color: rgba(17, 17, 17, 0.6);
     font-size: 14px;
+  }
+
+  .heroTitle {
+    color: var(--color-text);
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
   }
 
   .introCategoryHeader {

@@ -95,12 +95,16 @@ img, video {
 }
 
 .section {
-  padding: var(--spacing-xl) 0;
+  /* longhand on purpose — a shorthand here would clobber .container's
+     horizontal padding when both classes are combined on one element */
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: 48px 0;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
 
