@@ -145,52 +145,10 @@
   object-fit: cover;
 }
 
-/* ── Download Brochure floating tab ── */
-.brochureTab {
-  position: fixed;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 67px;
-  padding: 22px 14px;
-  background: #351D0D;
-  border-radius: 0 30px 30px 0;
-  color: #ffffff;
-  transition: width 0.3s ease;
-}
 
-.brochureTab:hover {
-  width: 74px;
-}
-
-.brochureLabel {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-  color: #ffffff;
-  white-space: nowrap;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
-
-.brochureIcon {
-  width: 23px;
-  height: 23px;
-  flex-shrink: 0;
-}
-
-.brochureIcon svg {
-  width: 100%;
-  height: 100%;
+/* Mobile-only combined image grid — hidden by default, shown ≤768px */
+.mobileImageGridWrap {
+  display: none;
 }
 
 @media (max-width: 1100px) {
@@ -217,13 +175,63 @@
     padding: 48px 0;
   }
 
-  .brochureTab {
-    width: 52px;
-    padding: 18px 10px;
-  }
-
+  /* Individual images are replaced by the combined mobile grid below,
+     matching the home page Services mosaic treatment. */
   .introImage,
   .whyImage {
-    border-radius: 16px;
+    display: none;
+  }
+
+  .whyLeft {
+    gap: 16px;
+  }
+
+  .whyItem {
+    gap: 12px;
+  }
+
+  .whyItemTitle,
+  .whyItemDesc {
+    padding: 0;
+  }
+
+  .whyText {
+    gap: 4px;
+  }
+
+  /* Matches the home page Services mosaic mobile treatment exactly:
+     2-column grid, 6px gap, 3:2 tiles, 12px radius, bottom vignette */
+  .mobileImageGridWrap {
+    display: block;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .mobileImageGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .mobileImageGridItem {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 3 / 2;
+  }
+
+  .mobileImageGridItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mobileImageGridItem::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 100%);
+    pointer-events: none;
   }
 }
