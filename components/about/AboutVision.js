@@ -81,7 +81,7 @@ export default function AboutVision() {
             <p className={styles.body} ref={bodyRef}>
               Our vision is to become the industry leader in glass and window solutions, recognized for our innovation, quality, and customer-centric approach. We aspire to set new standards in the service sector by consistently delivering superior products and services that transform spaces. Through sustainable practices and a focus on excellence, we aim to drive growth and positively impact the communities we serve.
             </p>
-            <Link href="/products/inner" className={styles.btn} ref={btnRef}>
+            <Link href="/products" className={styles.btn} ref={btnRef}>
               Explore More
             </Link>
           </div>

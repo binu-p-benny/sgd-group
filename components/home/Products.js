@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Products.module.css';
@@ -71,7 +72,7 @@ export default function Products() {
               designed for durability, performance, and seamless integration across residential
               and commercial environments.
             </p>
-            <button className={styles.viewBtn}>View all Products</button>
+            <Link href="/products" className={styles.viewBtn}>View all Products</Link>
           </div>
         </div>
 

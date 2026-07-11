@@ -69,8 +69,8 @@ export default function Footer() {
               <p className={styles.colLabel}>Links</p>
               <ul className={styles.colLinks}>
                 <li><Link href="/about">About us</Link></li>
-                <li><Link href="/products/aluminium-window-systems">Products</Link></li>
-                <li><Link href="/products/inner">Projects</Link></li>
+                <li><Link href="/products">Products</Link></li>
+                <li><Link href="/projects">Projects</Link></li>
                 <li><Link href="/careers">Careers</Link></li>
               </ul>
             </div>

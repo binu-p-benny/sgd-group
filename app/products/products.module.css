@@ -1,0 +1,311 @@
+/* ─────────────────────────────────────────────────
+   Products catalog — mirrors the home page Products
+   section's header + grid language, repeated per category
+   ───────────────────────────────────────────────── */
+
+.page {
+  background: #EAE8E3;
+}
+
+.intro {
+  padding: 84px 0 0;
+}
+
+.introInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.introText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+  color: #111111;
+  max-width: 760px;
+}
+
+/* ── Category section ───────────────────────────── */
+.category {
+  padding: 58px 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.headerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.titleRow {
+  width: 100%;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.2;
+  letter-spacing: -0.84px;
+  color: #111111;
+  margin: 0;
+}
+
+.descRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  width: 100%;
+}
+
+.desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.2px;
+  color: #111111;
+  margin: 0;
+  width: 100%;
+}
+
+.viewBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 9999px;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 12.2px;
+  line-height: 15px;
+  color: #111111;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.viewBtn:hover {
+  background: #111111;
+  color: #EAE8E3;
+  border-color: #111111;
+}
+
+/* ── Product grid ───────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ── Product card ────────────────────────────────── */
+/* .card is a plain container (not a link) so the mini project slider
+   below can carry its own separate links without nesting <a> in <a>. */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(17, 17, 17, 0.1);
+}
+
+/* Everything except the mini slider links to the product detail page */
+.cardMain {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.05);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+}
+
+.cardCategory {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.cardTitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.25;
+  color: #111111;
+  margin: 0;
+}
+
+.cardDesc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(17, 17, 17, 0.6);
+  margin: 0;
+}
+
+/* ── Mini project-photo slider ──────────────────── */
+/* Sits outside .cardMain (its own link target), so it needs its own
+   horizontal padding to line up with the text above it. */
+.miniSliderWrap {
+  padding: 0 20px 20px;
+}
+
+.miniSliderLabel {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(17, 17, 17, 0.4);
+  margin: 0 0 6px;
+}
+
+.miniSlider {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 2px;
+  cursor: grab;
+}
+
+.miniSlider::-webkit-scrollbar {
+  display: none;
+}
+
+.miniSlider:active {
+  cursor: grabbing;
+}
+
+.miniSliderItem {
+  display: block;
+  flex: 0 0 76px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.25s ease;
+}
+
+.miniSliderItem:hover {
+  transform: scale(1.06);
+}
+
+.miniSliderItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 1200px) {
+  .title { font-size: 34px; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .headerBlock { gap: 12px; }
+  .descRow { align-items: flex-start; gap: 20px; }
+  .viewBtn { align-self: flex-start; }
+}
+
+@media (max-width: 640px) {
+  .page { background: #f5f5f5; }
+
+  .intro { padding: 48px 0 0; }
+  .introInner { padding: 0 20px; }
+  .introText { font-size: 16px; line-height: 26px; }
+
+  .category { padding: 40px 0; }
+  .inner { padding: 0 20px; gap: 24px; }
+
+  .title { font-size: 26px; letter-spacing: -0.5px; }
+  .desc { font-size: 15px; line-height: 24px; }
+
+  .descRow { align-items: center; }
+  .viewBtn { align-self: center; }
+
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .card { border-radius: 12px; }
+
+  .cardBody { padding: 12px; gap: 6px; }
+
+  .miniSliderWrap { padding: 0 12px 12px; }
+
+  .cardTitle { font-size: 15px; }
+
+  .cardDesc {
+    font-size: 12px;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .miniSliderLabel { display: none; }
+
+  .miniSliderItem {
+    flex-basis: 56px;
+    height: 42px;
+    border-radius: 6px;
+  }
+}
