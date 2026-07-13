@@ -650,9 +650,11 @@
   }
 
   /* The header has no visible logo/close icon while the menu is open
-     (see logoHiddenMobile / mobileToggleHidden above), so there's
-     nothing to clear — just a small breathing gap from the edge. */
+     (see logoHiddenMobile / mobileToggleHidden above), but the fixed
+     .navWrapper itself is still ~80px tall (16px padding + the 48px
+     tap-to-close zone) and sits above the overlay in z-index — so the
+     first menu item needs enough clearance to not be covered by it. */
   .mobileOverlayHome {
-    padding-top: 32px;
+    padding-top: 88px;
   }
 }
