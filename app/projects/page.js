@@ -13,6 +13,7 @@ export const metadata = {
     url: 'https://sgdgroup.in/projects',
     siteName: 'SGD Group of Companies',
     type: 'website',
+    images: ['/hero.png'],
   },
   alternates: { canonical: 'https://sgdgroup.in/projects' },
 };
