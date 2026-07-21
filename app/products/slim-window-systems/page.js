@@ -7,18 +7,19 @@ import WhyChooseUs from './WhyChooseUs';
 import VideoTestimonials from '@/components/home/VideoTestimonials';
 
 export const metadata = {
-  title: 'Aluminium Window Systems | SGD Group of Companies Kerala',
-  description: 'Explore SGD Group\'s pre-engineered aluminium window systems — premium quality, thermally efficient, and architecturally refined for residential and commercial projects.',
-  keywords: 'aluminium window systems Kerala, pre-engineered windows, SGD aluminium windows, architectural windows Kerala',
+  title: 'Slim Window Systems | SGD Group of Companies Kerala',
+  description: 'Explore SGD Group\'s slim aluminium window systems — ImperialSS2, Vista, Ultra, RetroGulf and Eco Gulf — premium, thermally efficient, and architecturally refined for residential and commercial projects.',
+  keywords: 'slim window systems Kerala, slim aluminium windows, SGD aluminium windows, architectural windows Kerala',
   openGraph: {
-    title: 'Aluminium Window Systems | SGD Group',
-    description: 'Premium pre-engineered aluminium window systems for residential and commercial projects in Kerala.',
-    url: 'https://sgdgroup.in/products/aluminium-window-systems',
+    title: 'Slim Window Systems | SGD Group',
+    description: 'Premium slim-profile aluminium window systems for residential and commercial projects in Kerala.',
+    url: 'https://sgdgroup.in/products/slim-window-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
+    images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/products/aluminium-window-systems',
+    canonical: 'https://sgdgroup.in/products/slim-window-systems',
   },
 };
 
@@ -153,7 +154,7 @@ export default function AluminiumWindowSystemsPage() {
     <main>
       <Navigation />
       <PageHero
-        title="Aluminium Window Systems"
+        title="Slim Window Systems"
         bg="/services/services-01.png"
       />
 

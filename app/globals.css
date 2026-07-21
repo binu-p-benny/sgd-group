@@ -150,6 +150,7 @@ img, video {
   border: 1px solid var(--color-border);
   border-radius: 9999px;
   font-weight: 500;
+  text-decoration: none;
   transition: all var(--transition-smooth);
   cursor: pointer;
 }

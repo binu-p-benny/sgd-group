@@ -12,6 +12,7 @@ export const metadata = {
     url: 'https://sgdgroup.in/products/aluminium-doors',
     siteName: 'SGD Group of Companies',
     type: 'website',
+    images: ['/hero.png'],
   },
   alternates: {
     canonical: 'https://sgdgroup.in/products/aluminium-doors',

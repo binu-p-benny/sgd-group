@@ -18,6 +18,7 @@ export const metadata = {
     url: 'https://sgdgroup.in/products/casement-door-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
+    images: ['/hero.png'],
   },
   alternates: {
     canonical: 'https://sgdgroup.in/products/casement-door-systems',

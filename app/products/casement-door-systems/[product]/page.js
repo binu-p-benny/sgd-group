@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Navigation from '@/components/home/Navigation';
 import Footer from '@/components/home/Footer';
 import PageHero from '@/components/shared/PageHero';
+import BreadcrumbJsonLd from '@/components/shared/BreadcrumbJsonLd';
 import VideoTestimonials from '@/components/home/VideoTestimonials';
 import styles from './product.module.css';
 
@@ -71,6 +72,7 @@ export async function generateMetadata({ params }) {
       url,
       siteName: 'SGD Group of Companies',
       type: 'website',
+      images: ['/hero.png'],
     },
     alternates: { canonical: url },
   };
@@ -83,8 +85,16 @@ export default async function CasementDoorProductPage({ params }) {
 
   return (
     <main>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://sgdgroup.in' },
+          { name: 'Products', url: 'https://sgdgroup.in/products' },
+          { name: 'Casement Door Systems', url: 'https://sgdgroup.in/products/casement-door-systems' },
+          { name: data.name, url: `https://sgdgroup.in/products/casement-door-systems/${product}` },
+        ]}
+      />
       <Navigation />
-      <PageHero bg={data.hero} />
+      <PageHero title={data.name} bg={data.hero} />
 
       {/* Overview */}
       <section className={styles.overview}>

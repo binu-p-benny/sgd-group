@@ -14,6 +14,7 @@ export const metadata = {
     url: 'https://sgdgroup.in/products',
     siteName: 'SGD Group of Companies',
     type: 'website',
+    images: ['/hero.png'],
   },
   alternates: {
     canonical: 'https://sgdgroup.in/products',
@@ -78,18 +79,18 @@ const categories = [
       { slug: 'slide-pro', name: 'Slide-Pro', image: '/services/services-02.png', desc: 'Multi-track horizontal sliding system for openings needing more than two panels.' },
       { slug: 'vertical-sliding', name: 'Vertical Sliding', image: '/services/services-03.png', desc: 'Modern aluminium take on the classic sash window, for heritage-style facades.' },
       { slug: 'tilt-turn', name: 'Tilt & Turn', image: '/services/services-04.png', desc: 'Dual-function sash — tilt for ventilation, turn for full opening and cleaning.' },
-      { slug: 'sliding-folding', name: 'Sliding Folding', image: '/services/services-01.png', desc: 'Stacking panels that open an entire wall between indoor and outdoor spaces.' },
+      { slug: 'sliding-folding ', name: 'Sliding Folding', image: '/services/services-01.png', desc: 'Stacking panels that open an entire wall between indoor and outdoor spaces.' },
       { slug: 'parallel-opening', name: 'Parallel Opening', image: '/services/services-03.png', desc: 'Even push-out ventilation window that holds securely at any angle.' },
     ],
   },
 ];
-
+  
 export default function ProductsPage() {
-  return (
+  return (    
     <main className={styles.page}>
       <Navigation />
       <PageHero
-        label="Products"
+        label="Products" 
         title="Every system we build, in one place."
         subtitle="Slim Window Systems, Casement Door Systems, Signature Series, and Speciality Systems — explore the full SGD Group catalog."
         bg="/services/services-01.png"

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Navigation from '@/components/home/Navigation';
 import Footer from '@/components/home/Footer';
+import BreadcrumbJsonLd from '@/components/shared/BreadcrumbJsonLd';
 import AboutProjects from '@/components/about/AboutProjects';
 import styles from './project.module.css';
 
@@ -175,6 +176,7 @@ export async function generateMetadata({ params }) {
       url: `https://sgdgroup.in/projects/${slug}`,
       siteName: 'SGD Group of Companies',
       type: 'website',
+      images: ['/hero.png'],
     },
     alternates: { canonical: `https://sgdgroup.in/projects/${slug}` },
   };
@@ -189,6 +191,13 @@ export default async function ProjectPage({ params }) {
 
   return (
     <main>
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://sgdgroup.in' },
+          { name: 'Projects', url: 'https://sgdgroup.in/projects' },
+          { name: project.name, url: `https://sgdgroup.in/projects/${slug}` },
+        ]}
+      />
       <Navigation />
 
       {/* ── Hero ── */}
