@@ -1,33 +1,16 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import { blogPosts } from '@/app/blog/posts';
 import styles from './Blog.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const blogData = [
-  {
-    title: "The Future of Structural Glazing in Modern Architecture",
-    excerpt: "Explore how advancements in glass technology are enabling architects to push the boundaries of design with larger, clearer, and stronger glass systems.",
-    date: "October 12, 2023",
-    image: "/project-nikshan.png"
-  },
-  {
-    title: "Maximizing Natural Light: A Guide to Skylights",
-    excerpt: "Discover the benefits of incorporating skylights into your commercial or residential projects, from energy efficiency to enhanced well-being.",
-    date: "November 05, 2023",
-    image: "/skylight.png" // We have a skylight.png in public
-  },
-  {
-    title: "Minimalist Frameless Doors for Seamless Transitions",
-    excerpt: "Learn why frameless sliding doors are becoming the standard for luxury homes, offering unobstructed views and an elegant indoor-outdoor flow.",
-    date: "November 28, 2023",
-    image: "/project-eham.png"
-  }
-];
+const blogData = blogPosts.slice(0, 3);
 
 export default function Blog() {
   const containerRef = useRef(null);
@@ -62,13 +45,14 @@ export default function Blog() {
             <p className={styles.title}>Insights & News</p>
             <h2 className="text-h2">Latest from our journal.</h2>
           </div>
-          <button className="btn-secondary">View all articles</button>
+          <Link href="/blog" className="btn-secondary">View all articles</Link>
         </div>
 
         <div className={styles.grid}>
           {blogData.map((post, i) => (
-            <div 
-              key={i} 
+            <Link
+              href={`/blog/${post.slug}`}
+              key={post.slug}
               className={styles.card}
               ref={el => cardsRef.current[i] = el}
             >
@@ -81,7 +65,7 @@ export default function Blog() {
               <span className={styles.readMore}>
                 Read article <ArrowRight size={16} />
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
