@@ -20,6 +20,28 @@
   margin: 0;
 }
 
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.exportBtn {
+  padding: 0.6rem 1.25rem;
+  background: #111111;
+  color: #fff;
+  border: 1px solid #111111;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.exportBtn:hover {
+  opacity: 0.85;
+}
+
 .logoutBtn {
   padding: 0.6rem 1.25rem;
   background: transparent;
@@ -138,6 +160,11 @@
   color: #8a4c1e;
 }
 
+.badge[data-type='brochure'] {
+  background: #f3e4f7;
+  color: #6b2c8a;
+}
+
 .actionBtn {
   padding: 0.4rem 0.9rem;
   background: transparent;
@@ -150,4 +177,234 @@
 
 .actionBtn:hover {
   background: rgba(17, 17, 17, 0.05);
+}
+
+.rowActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.deleteBtn {
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  border: 1px solid #e0a5a0;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #c0392b;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background: rgba(192, 57, 43, 0.08);
+}
+
+/* ── Mobile card list (hidden on desktop) ── */
+.cardList {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--color-border, #e5e5e5);
+  border-radius: 14px;
+  background: var(--color-surface, #fff);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.cardName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.cardMeta {
+  font-size: 0.78rem;
+  opacity: 0.55;
+}
+
+.viewBtn {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 9999px;
+  background: transparent;
+  color: #111111;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.viewBtn:active {
+  background: rgba(17, 17, 17, 0.08);
+}
+
+/* ── Mobile detail overlay (bottom sheet) ── */
+.detailOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.detailPanel {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 88dvh;
+  overflow-y: auto;
+  background: var(--color-surface, #fff);
+  border-radius: 20px 20px 0 0;
+  padding: 1.75rem 1.5rem calc(1.75rem + env(safe-area-inset-bottom));
+  animation: detailSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes detailSlideUp {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(17, 17, 17, 0.06);
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.detailName {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin: 0.75rem 2rem 0.15rem 0;
+}
+
+.detailDate {
+  font-size: 0.82rem;
+  opacity: 0.55;
+  margin-bottom: 1rem;
+}
+
+.detailField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--color-border, #eee);
+}
+
+.detailLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+}
+
+.detailValue {
+  font-size: 0.95rem;
+  color: inherit;
+  word-break: break-word;
+}
+
+a.detailValue {
+  color: #2a4d8f;
+  text-decoration: underline;
+}
+
+.detailActionBtn {
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.85rem;
+  background: #111111;
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.detailActionBtn:active {
+  opacity: 0.85;
+}
+
+.detailDeleteBtn {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.85rem;
+  background: transparent;
+  color: #c0392b;
+  border: 1px solid #e0a5a0;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.detailDeleteBtn:active {
+  background: rgba(192, 57, 43, 0.08);
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .header {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .headerActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .exportBtn,
+  .logoutBtn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .tableWrap {
+    display: none;
+  }
+
+  .cardList {
+    display: flex;
+  }
 }

@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { isAdminAuthenticated } from '@/lib/adminAuth';
 import { supabaseAdmin } from '@/lib/supabaseAdmin';
-import { adminLogout, setSubmissionHidden } from '@/lib/actions/admin';
+import { adminLogout } from '@/lib/actions/admin';
+import SubmissionsList from './SubmissionsList';
 import styles from './admin.module.css';
 
 export const metadata = {
@@ -29,6 +30,7 @@ export default async function AdminPage({ searchParams }) {
       .from('submissions')
       .select('*')
       .eq('is_hidden', showHidden)
+      .eq('is_deleted', false)
       .order('created_at', { ascending: false });
 
     submissions = result.data ?? [];
@@ -51,9 +53,17 @@ export default async function AdminPage({ searchParams }) {
     <main className={styles.wrap}>
       <div className={styles.header}>
         <h1>Form Submissions</h1>
-        <form action={adminLogout}>
-          <button type="submit" className={styles.logoutBtn}>Log out</button>
-        </form>
+        <div className={styles.headerActions}>
+          <a
+            href={`/admin/export${showHidden ? '?view=hidden' : ''}`}
+            className={styles.exportBtn}
+          >
+            Export to Excel
+          </a>
+          <form action={adminLogout}>
+            <button type="submit" className={styles.logoutBtn}>Log out</button>
+          </form>
+        </div>
       </div>
 
       <div className={styles.tabs}>
@@ -63,59 +73,7 @@ export default async function AdminPage({ searchParams }) {
 
       {error && <p className={styles.error}>Could not load submissions: {error.message}</p>}
 
-      <div className={styles.tableWrap}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Type</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Role</th>
-              <th>Message</th>
-              <th>CV</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {submissions.map((s) => (
-              <tr key={s.id}>
-                <td>{new Date(s.created_at).toLocaleString()}</td>
-                <td><span className={styles.badge} data-type={s.type}>{s.type}</span></td>
-                <td>{s.name}</td>
-                <td><a href={`mailto:${s.email}`}>{s.email}</a></td>
-                <td>{s.phone ? <a href={`tel:${s.phone}`}>{s.phone}</a> : '—'}</td>
-                <td>{s.role || '—'}</td>
-                <td className={styles.message}>{s.message || '—'}</td>
-                <td>
-                  {s.cv_path && cvUrlMap[s.cv_path] ? (
-                    <a href={cvUrlMap[s.cv_path]} target="_blank" rel="noopener noreferrer">
-                      Download
-                    </a>
-                  ) : (
-                    '—'
-                  )}
-                </td>
-                <td>
-                  <form action={setSubmissionHidden}>
-                    <input type="hidden" name="id" value={s.id} />
-                    <input type="hidden" name="hidden" value={showHidden ? 'false' : 'true'} />
-                    <button type="submit" className={styles.actionBtn}>
-                      {showHidden ? 'Restore' : 'Remove'}
-                    </button>
-                  </form>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        {submissions.length === 0 && (
-          <p className={styles.empty}>
-            {showHidden ? 'No hidden submissions.' : 'No submissions yet.'}
-          </p>
-        )}
-      </div>
+      <SubmissionsList submissions={submissions} cvUrlMap={cvUrlMap} showHidden={showHidden} />
     </main>
   );
 }

@@ -1,26 +1,37 @@
 "use client";
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './FloatingButtons.module.css';
 import EnquiryModal from '@/components/shared/EnquiryModal';
+import BrochureModal from '@/components/shared/BrochureModal';
 
 const WHATSAPP_NUMBER = '919778151162';
 const PHONE_NUMBER = '+919778151162';
 
 export default function FloatingButtons() {
   const [enquireOpen, setEnquireOpen] = useState(false);
+  const [brochureOpen, setBrochureOpen] = useState(false);
+  const pathname = usePathname();
+
+  if (pathname?.startsWith('/admin')) return null;
 
   return (
     <>
       {/* ── Left: Download Brochure ── */}
-      <a href="#" className={styles.brochureTab} aria-label="Download Brochure">
+      <button
+        type="button"
+        onClick={() => setBrochureOpen(true)}
+        className={styles.brochureTab}
+        aria-label="Download Brochure"
+      >
         <span className={styles.brochureText}>Download Brochure</span>
         <svg className={styles.brochureIcon} viewBox="0 0 24 24" fill="none"
           stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 15V3m0 12-4-4m4 4 4-4" />
           <path d="M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" />
         </svg>
-      </a>
+      </button>
 
       {/* ── Right: Enquire Now floating widget ── */}
       {/*
@@ -89,6 +100,7 @@ export default function FloatingButtons() {
       </div>
 
       {enquireOpen && <EnquiryModal onClose={() => setEnquireOpen(false)} />}
+      {brochureOpen && <BrochureModal onClose={() => setBrochureOpen(false)} />}
     </>
   );
 }
