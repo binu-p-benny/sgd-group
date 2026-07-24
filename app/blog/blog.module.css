@@ -12,6 +12,42 @@
   padding: 0 32px;
 }
 
+/* ── Category filter chips ──────────────────────── */
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.filterChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid rgba(17, 17, 17, 0.15);
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filterChip:hover {
+  border-color: rgba(17, 17, 17, 0.35);
+}
+
+.filterChipActive {
+  background: #111111;
+  color: #EAE8E3;
+  border-color: #111111;
+}
+
+.filterChipActive:hover {
+  border-color: #111111;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -132,6 +168,8 @@
 @media (max-width: 768px) {
   .section { padding: 48px 0; }
   .inner { padding: 0 20px; }
+  .filterRow { gap: 0.5rem; margin-bottom: 2rem; }
+  .filterChip { padding: 0.5rem 1.1rem; font-size: 0.8rem; }
   .grid { grid-template-columns: 1fr; gap: 40px; }
   .imageWrapper { border-radius: 16px; }
 }

@@ -10,19 +10,33 @@ export const metadata = {
   title: 'Insights & News | SGD Group of Companies Kerala',
   description: 'Articles from SGD Group on structural glazing, skylights, frameless doors, and the latest in aluminium and glass design.',
   keywords: 'SGD Group blog, glazing articles Kerala, aluminium design insights, window and door trends',
+  robots: { index: true, follow: true },
   openGraph: {
     title: 'Insights & News | SGD Group',
     description: 'Articles from SGD Group on structural glazing, skylights, frameless doors, and the latest in aluminium and glass design.',
     url: 'https://sgdgroup.in/blog',
     siteName: 'SGD Group of Companies',
     type: 'website',
+    images: [{ url: 'https://sgdgroup.in/project-nikshan.png', width: 1200, height: 630, alt: 'SGD Group Insights & News' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Insights & News | SGD Group',
+    description: 'Articles from SGD Group on structural glazing, skylights, frameless doors, and the latest in aluminium and glass design.',
+    images: ['https://sgdgroup.in/project-nikshan.png'],
   },
   alternates: {
     canonical: 'https://sgdgroup.in/blog',
   },
 };
 
-export default function BlogPage() {
+export default async function BlogPage({ searchParams }) {
+  const { category: activeCategory } = await searchParams;
+  const categories = [...new Set(blogPosts.map((p) => p.category))];
+  const filteredPosts = activeCategory
+    ? blogPosts.filter((p) => p.category === activeCategory)
+    : blogPosts;
+
   return (
     <main className={styles.page}>
       <Navigation />
@@ -35,8 +49,26 @@ export default function BlogPage() {
 
       <section className={styles.section}>
         <div className={styles.inner}>
+          <div className={styles.filterRow}>
+            <Link
+              href="/blog"
+              className={`${styles.filterChip} ${!activeCategory ? styles.filterChipActive : ''}`}
+            >
+              All
+            </Link>
+            {categories.map((cat) => (
+              <Link
+                key={cat}
+                href={`/blog?category=${encodeURIComponent(cat)}`}
+                className={`${styles.filterChip} ${activeCategory === cat ? styles.filterChipActive : ''}`}
+              >
+                {cat}
+              </Link>
+            ))}
+          </div>
+
           <div className={styles.grid}>
-            {blogPosts.map((post) => (
+            {filteredPosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className={styles.card}>
                 <div className={styles.imageWrapper}>
                   <img src={post.image} alt={post.title} className={styles.image} />
