@@ -1,3 +1,5 @@
+import { blogPosts } from './blog/posts';
+
 const BASE_URL = 'https://sgdgroup.in';
 
 const staticRoutes = [
@@ -12,6 +14,7 @@ const staticRoutes = [
   { path: '/products/signature-series', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/products/slim-window-systems', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/products/speciality-systems', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
 ];
 
 const projectSlugs = [
@@ -59,6 +62,15 @@ export default function sitemap() {
         priority: 0.7,
       });
     }
+  }
+
+  for (const post of blogPosts) {
+    entries.push({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedDate || post.date),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    });
   }
 
   return entries;
