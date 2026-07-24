@@ -1,0 +1,111 @@
+.wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.logoutBtn {
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background: rgba(17, 17, 17, 0.05);
+}
+
+.error {
+  color: #c0392b;
+  margin-bottom: 1rem;
+}
+
+.empty {
+  padding: 3rem 0;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border, #e5e5e5);
+  border-radius: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border, #eee);
+}
+
+.table th {
+  background: rgba(17, 17, 17, 0.03);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.message {
+  white-space: normal;
+  min-width: 220px;
+  max-width: 340px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(17, 17, 17, 0.08);
+}
+
+.badge[data-type='contact'] {
+  background: #e4ecf7;
+  color: #2a4d8f;
+}
+
+.badge[data-type='enquiry'] {
+  background: #eaf3e4;
+  color: #3d6b2c;
+}
+
+.badge[data-type='career'] {
+  background: #f7ece4;
+  color: #8a4c1e;
+}

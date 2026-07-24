@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useActionState } from 'react';
+import { submitCareerApplication } from '@/lib/actions/submissions';
 import styles from './OpenPositions.module.css';
 
 export default function OpenPositions({ openings }) {
@@ -50,9 +51,11 @@ export default function OpenPositions({ openings }) {
   );
 }
 
+const applyInitialState = { error: null, success: false };
+
 function ApplyModal({ role, onClose }) {
-  const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState('');
+  const [state, formAction, pending] = useActionState(submitCareerApplication, applyInitialState);
 
   // Lock background scroll + close on Escape
   useEffect(() => {
@@ -65,12 +68,6 @@ function ApplyModal({ role, onClose }) {
     };
   }, [onClose]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: wire up to a backend / email service
-    setSubmitted(true);
-  };
-
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-label={`Apply for ${role}`}>
@@ -80,7 +77,7 @@ function ApplyModal({ role, onClose }) {
           </svg>
         </button>
 
-        {submitted ? (
+        {state.success ? (
           <div className={styles.success}>
             <h3 className={styles.modalTitle}>Application received</h3>
             <p className={styles.modalSub}>Thanks for applying for <strong>{role}</strong>. Our team will review your details and get back to you.</p>
@@ -93,7 +90,8 @@ function ApplyModal({ role, onClose }) {
               <h3 className={styles.modalTitle}>{role}</h3>
             </div>
 
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <form className={styles.form} action={formAction}>
+              <input type="hidden" name="role" value={role} />
               <div className={styles.field}>
                 <label>Full Name</label>
                 <input type="text" name="name" placeholder="Your name" required />
@@ -124,7 +122,10 @@ function ApplyModal({ role, onClose }) {
                 <label>Message (optional)</label>
                 <textarea name="message" rows={2} placeholder="Tell us a bit about yourself..." />
               </div>
-              <button type="submit" className={styles.submitBtn}>Submit Application</button>
+              {state.error && <p className={`${styles.fieldFull} ${styles.errorMsg}`}>{state.error}</p>}
+              <button type="submit" className={styles.submitBtn} disabled={pending}>
+                {pending ? 'Submitting...' : 'Submit Application'}
+              </button>
             </form>
           </>
         )}

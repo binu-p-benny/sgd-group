@@ -146,6 +146,12 @@
   opacity: 0.45;
 }
 
+.errorMsg {
+  font-size: 0.85rem;
+  color: #c0392b;
+  margin: -0.3rem 0 0;
+}
+
 .submitBtn {
   grid-column: 1 / -1;
   margin-top: 0.25rem;
@@ -163,6 +169,11 @@
 
 .submitBtn:hover {
   opacity: 0.85;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .success {

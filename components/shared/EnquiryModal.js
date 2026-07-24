@@ -1,10 +1,13 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useEffect, useActionState } from 'react';
+import { submitEnquiry } from '@/lib/actions/submissions';
 import styles from './EnquiryModal.module.css';
 
+const initialState = { error: null, success: false };
+
 export default function EnquiryModal({ onClose }) {
-  const [submitted, setSubmitted] = useState(false);
+  const [state, formAction, pending] = useActionState(submitEnquiry, initialState);
 
   // Lock background scroll + close on Escape
   useEffect(() => {
@@ -17,12 +20,6 @@ export default function EnquiryModal({ onClose }) {
     };
   }, [onClose]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: wire up to a backend / email service
-    setSubmitted(true);
-  };
-
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-label="Enquire Now">
@@ -32,7 +29,7 @@ export default function EnquiryModal({ onClose }) {
           </svg>
         </button>
 
-        {submitted ? (
+        {state.success ? (
           <div className={styles.success}>
             <h3 className={styles.modalTitle}>Thank you!</h3>
             <p className={styles.modalSub}>We've received your enquiry and will get back to you shortly.</p>
@@ -46,7 +43,7 @@ export default function EnquiryModal({ onClose }) {
               <p className={styles.modalSub}>Tell us what you're looking for and our team will reach out.</p>
             </div>
 
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <form className={styles.form} action={formAction}>
               <div className={styles.field}>
                 <label>Full Name</label>
                 <input type="text" name="name" placeholder="Your name" required />
@@ -63,7 +60,10 @@ export default function EnquiryModal({ onClose }) {
                 <label>Your Enquiry</label>
                 <textarea name="message" rows={3} placeholder="e.g. Sliding windows for a 3BHK villa..." required />
               </div>
-              <button type="submit" className={styles.submitBtn}>Send Enquiry</button>
+              {state.error && <p className={`${styles.fieldFull} ${styles.errorMsg}`}>{state.error}</p>}
+              <button type="submit" className={styles.submitBtn} disabled={pending}>
+                {pending ? 'Sending...' : 'Send Enquiry'}
+              </button>
             </form>
           </>
         )}
