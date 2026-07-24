@@ -5,17 +5,21 @@ create extension if not exists "pgcrypto";
 
 create table if not exists submissions (
   id uuid primary key default gen_random_uuid(),
-  type text not null check (type in ('contact', 'enquiry', 'career')),
+  type text not null check (type in ('contact', 'enquiry', 'career', 'brochure')),
   name text not null,
   email text not null,
   phone text,
   message text,
   role text,
   cv_path text,
+  is_hidden boolean not null default false,
+  is_deleted boolean not null default false,
   created_at timestamptz not null default now()
 );
 
 create index if not exists submissions_created_at_idx on submissions (created_at desc);
+create index if not exists submissions_is_hidden_idx on submissions (is_hidden);
+create index if not exists submissions_is_deleted_idx on submissions (is_deleted);
 
 alter table submissions enable row level security;
 -- No policies are added on purpose: the app only ever talks to this table
