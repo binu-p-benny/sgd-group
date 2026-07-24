@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { isAdminAuthenticated } from '@/lib/adminAuth';
 import { supabaseAdmin } from '@/lib/supabaseAdmin';
-import { adminLogout } from '@/lib/actions/admin';
+import { adminLogout, setSubmissionHidden } from '@/lib/actions/admin';
 import styles from './admin.module.css';
 
 export const metadata = {
@@ -11,9 +12,12 @@ export const metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default async function AdminPage() {
+export default async function AdminPage({ searchParams }) {
   const authed = await isAdminAuthenticated();
   if (!authed) redirect('/admin/login');
+
+  const { view } = await searchParams;
+  const showHidden = view === 'hidden';
 
   let submissions = [];
   let error = null;
@@ -24,6 +28,7 @@ export default async function AdminPage() {
     const result = await supabase
       .from('submissions')
       .select('*')
+      .eq('is_hidden', showHidden)
       .order('created_at', { ascending: false });
 
     submissions = result.data ?? [];
@@ -51,6 +56,11 @@ export default async function AdminPage() {
         </form>
       </div>
 
+      <div className={styles.tabs}>
+        <Link href="/admin" className={styles.tab} data-active={!showHidden}>Active</Link>
+        <Link href="/admin?view=hidden" className={styles.tab} data-active={showHidden}>Hidden</Link>
+      </div>
+
       {error && <p className={styles.error}>Could not load submissions: {error.message}</p>}
 
       <div className={styles.tableWrap}>
@@ -65,10 +75,11 @@ export default async function AdminPage() {
               <th>Role</th>
               <th>Message</th>
               <th>CV</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            {(submissions ?? []).map((s) => (
+            {submissions.map((s) => (
               <tr key={s.id}>
                 <td>{new Date(s.created_at).toLocaleString()}</td>
                 <td><span className={styles.badge} data-type={s.type}>{s.type}</span></td>
@@ -86,11 +97,24 @@ export default async function AdminPage() {
                     '—'
                   )}
                 </td>
+                <td>
+                  <form action={setSubmissionHidden}>
+                    <input type="hidden" name="id" value={s.id} />
+                    <input type="hidden" name="hidden" value={showHidden ? 'false' : 'true'} />
+                    <button type="submit" className={styles.actionBtn}>
+                      {showHidden ? 'Restore' : 'Remove'}
+                    </button>
+                  </form>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
-        {(submissions ?? []).length === 0 && <p className={styles.empty}>No submissions yet.</p>}
+        {submissions.length === 0 && (
+          <p className={styles.empty}>
+            {showHidden ? 'No hidden submissions.' : 'No submissions yet.'}
+          </p>
+        )}
       </div>
     </main>
   );

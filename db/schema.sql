@@ -12,10 +12,12 @@ create table if not exists submissions (
   message text,
   role text,
   cv_path text,
+  is_hidden boolean not null default false,
   created_at timestamptz not null default now()
 );
 
 create index if not exists submissions_created_at_idx on submissions (created_at desc);
+create index if not exists submissions_is_hidden_idx on submissions (is_hidden);
 
 alter table submissions enable row level security;
 -- No policies are added on purpose: the app only ever talks to this table
