@@ -1,4 +1,7 @@
 import { blogPosts } from './blog/posts';
+// Location pages are parked — app/_locations is a private folder, so the routes
+// do not resolve. Restore with the loop below when they go live.
+// import { indexableLocations } from './_locations/data';
 
 const BASE_URL = 'https://sgdgroup.in';
 
@@ -9,11 +12,9 @@ const staticRoutes = [
   { path: '/careers', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/projects', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/products', priority: 0.9, changeFrequency: 'weekly' },
-  { path: '/products/aluminium-doors', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/products/casement-door-systems', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/products/signature-series', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/products/slim-window-systems', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/products/speciality-systems', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/products/aluminium-window-systems', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/products/aluminium-door-systems', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/products/signature-systems', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
 ];
 
@@ -28,10 +29,9 @@ const projectSlugs = [
 ];
 
 const productRoutes = {
-  'casement-door-systems': ['hl50', 'hl40'],
-  'signature-series': ['nexus', 'horizon', 'blaze'],
-  'slim-window-systems': ['imperialss2', 'vista', 'ultra', 'retrogulf', 'eco-gulf'],
-  'speciality-systems': ['slide-pro', 'vertical-sliding', 'tilt-turn', 'sliding-folding', 'parallel-opening'],
+  'aluminium-window-systems': ['eco-gulf', 'hl40', 'blaze', 'slide-pro'],
+  'aluminium-door-systems': ['imperialss2', 'vista', 'ultra', 'retrogulf', 'hl50', 'nexus', 'horizon'],
+  'signature-systems': ['parallel-opening', 'tilt-turn', 'vertical-sliding', 'sliding-folding'],
 };
 
 // Slugs are mirrored from each route's local product/project data objects —
@@ -63,6 +63,16 @@ export default function sitemap() {
       });
     }
   }
+
+  // Only states whose copy is written — see contentComplete in ./_locations/data.js
+  // for (const loc of indexableLocations) {
+  //   entries.push({
+  //     url: `${BASE_URL}/locations/${loc.slug}`,
+  //     lastModified: new Date(),
+  //     changeFrequency: 'monthly',
+  //     priority: 0.8,
+  //   });
+  // }
 
   for (const post of blogPosts) {
     entries.push({

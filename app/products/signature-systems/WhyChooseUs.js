@@ -1,24 +1,24 @@
 "use client";
 
 import { useState } from 'react';
-import styles from '@/app/products/slim-window-systems/Overview.module.css';
+import styles from '@/components/products/Overview.module.css';
 
 const accordionItems = [
   {
-    title: 'Built to last, designed to endure',
-    body: 'Our casement door profiles are precision-engineered for maximum strength and longevity, resistant to rust, corrosion, and warping — even in Kerala\'s humid coastal climate.',
+    title: 'A mechanism for every opening',
+    body: 'From vertical sliding sashes to parallel-opening ventilation windows, our signature systems solve openings that standard sliding or casement profiles can\'t.',
   },
   {
-    title: 'Secure locking, every time',
-    body: 'Multi-point locking mechanisms across the HL50 and HL40 series deliver reliable security and peace of mind, whether for residential entrances or high-traffic commercial spaces.',
+    title: 'Same durability, specialised motion',
+    body: 'Every signature mechanism is built on our standard aluminium profiles and hardware — the same rust and corrosion resistance, just engineered for a different way of opening.',
   },
   {
-    title: 'Energy-smart thermal performance',
-    body: 'Thermally broken profiles combined with insulated glass reduce heat transfer, cut energy bills, and maintain a comfortable indoor temperature year-round.',
+    title: 'Precision hardware',
+    body: 'Multi-bar hinges, friction stays, and folding-track rollers are all backed by the same Pego Hardware and 10-Year Warranty as the rest of our range.',
   },
   {
-    title: 'Premium hardware, backed by warranty',
-    body: 'Fitted with Pego Hardware and Saint-Gobain toughened glass, every door system is built for long-term performance with industry-leading warranty coverage.',
+    title: 'Built for tricky openings',
+    body: 'Tight spaces, wide openings, or ventilation-only requirements — our signature systems are the answer when a standard window or door won\'t fit the brief.',
   },
 ];
 
@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
         <div className={styles.whyLeft}>
           <h2 className={styles.whyTitle}>Why Choose Us</h2>
           <p className={styles.whyBody}>
-            Our casement door systems combine architectural precision with lasting durability. Slim profiles let in more natural light while robust aluminium construction resists rust, corrosion, and warping for years of worry-free performance. Low-maintenance and energy-efficient with insulated glass and thermal break technology, they reduce upkeep and help save on energy bills — available in a wide range of colours and finishes to suit every project.
+            Not every opening fits a standard slide or swing. Our Signature Systems cover the mechanisms in between — vertical sliding sashes, tilt & turn windows, sliding-folding doors, and parallel-opening vents — each engineered with the same durability and precision as the rest of our range, for the openings that need a different kind of solution.
           </p>
 
           <div className={styles.accordion}>
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
         </div>
 
         <div className={styles.whyImage}>
-          <img src="/services/services-03.png" alt="Why choose SGD casement door systems" />
+          <img src="/services/services-04.png" alt="Why choose SGD Signature Systems" />
         </div>
 
       </div>

@@ -1,24 +1,24 @@
 "use client";
 
 import { useState } from 'react';
-import styles from '@/app/products/slim-window-systems/Overview.module.css';
+import styles from '@/components/products/Overview.module.css';
 
 const accordionItems = [
   {
-    title: 'Architect-grade precision',
-    body: 'Every Signature Series profile is engineered to tighter tolerances than our standard range, built for projects where every sightline and joint is scrutinised.',
+    title: 'Built to last, designed to endure',
+    body: 'Our aluminium window profiles are precision-engineered for maximum strength and longevity, resistant to rust, corrosion, and warping — even in Kerala\'s humid coastal climate.',
   },
   {
-    title: 'A finish for every facade',
-    body: 'From matte anodised to bold custom powder coats, the Signature Series offers an extended palette of finishes to match any architectural vision.',
+    title: 'Secure locking, every time',
+    body: 'Multi-point locking mechanisms across the range deliver reliable security and peace of mind, whether for residential entrances or high-traffic commercial spaces.',
   },
   {
-    title: 'Engineered for scale',
-    body: 'Reinforced profiles and heavy-duty hardware support oversized panels and tall openings without compromising on operation or security.',
+    title: 'Energy-smart thermal performance',
+    body: 'Thermally broken profiles combined with insulated glass reduce heat transfer, cut energy bills, and maintain a comfortable indoor temperature year-round.',
   },
   {
-    title: 'Backed by our best warranty',
-    body: 'Signature Series systems carry our longest hardware and finish warranties, reflecting the premium materials used throughout.',
+    title: 'Premium hardware, backed by warranty',
+    body: 'Fitted with Pego Hardware and Saint-Gobain toughened glass, every door system is built for long-term performance with industry-leading warranty coverage.',
   },
 ];
 
@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
         <div className={styles.whyLeft}>
           <h2 className={styles.whyTitle}>Why Choose Us</h2>
           <p className={styles.whyBody}>
-            The Signature Series is our premium collection, designed for architects and homeowners who want more — more scale, more finish options, more engineering headroom. Every system in the line shares the same DNA: slim sightlines, reinforced hardware, and a level of finish that holds up to close inspection, project after project.
+            Our aluminium window systems combine architectural precision with lasting durability. Slim profiles let in more natural light while robust aluminium construction resists rust, corrosion, and warping for years of worry-free performance. Low-maintenance and energy-efficient with insulated glass and thermal break technology, they reduce upkeep and help save on energy bills — available in a wide range of colours and finishes to suit every project.
           </p>
 
           <div className={styles.accordion}>
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
         </div>
 
         <div className={styles.whyImage}>
-          <img src="/services/services-04.png" alt="Why choose SGD Signature Series" />
+          <img src="/services/services-03.png" alt="Why choose SGD aluminium window systems" />
         </div>
 
       </div>

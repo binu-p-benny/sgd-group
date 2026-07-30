@@ -152,11 +152,13 @@
   transform: translateY(0);
 }
 
-/* Inner content — fixed layout, no reflow on hover */
+/* Inner content — fixed layout, no reflow on hover.
+   Width is the sum of the three columns below (260 + 350 + 270); keep it in
+   sync if any column changes, or a gap opens up on the right (260 + 350 + 280). */
 .megaInner {
   display: flex;
   align-items: stretch;
-  width: 860px;
+  width: 890px;
   min-height: 340px;
   flex-shrink: 0;
 }
@@ -182,9 +184,12 @@
   opacity: 1;
 }
 
-/* Right — links panel */
+/* Right — links panel.
+   Sized so the longest category label plus its arrow fits on one line: the
+   labels are nowrap, so too little width pushes text past its own underline
+   and leaves margin-left:auto with no slack to align the arrows. */
 .megaLinks {
-  width: 260px;
+  width: 350px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -219,8 +224,10 @@
   letter-spacing: 1.6px;
 }
 
+/* Sits directly after the label, not right-aligned — the category names differ
+   enough in length that margin-left:auto strands the arrow 80px+ from the
+   shortest one. */
 .megaItemArrow {
-  margin-left: auto;
   padding-left: 16px;
   opacity: 0.4;
   font-size: 16px;
@@ -228,8 +235,9 @@
 }
 
 /* Sub-items panel — always in layout, never shifts siblings */
+/* 280px keeps the longest category name on one line as the panel heading */
 .megaSubLinks {
-  width: 240px;
+  width: 280px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -281,23 +289,169 @@
   color: #F5F4EF;
 }
 
-/* ── Projects two-column layout ── */
+/* ── Projects two-column layout ──
+   Deliberately mirrors the Products mega so the two dropdowns read as one
+   component: same 890px shell, same 260 / 350 / 280 column zones, same 28/40
+   padding, and the same hairline divider between the second and third zones. */
 .projectsColumns {
+  flex: 1;
   display: flex;
   flex-direction: row;
-  gap: 64px;
-  padding: 28px 40px;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: stretch;
 }
 
 .projectsCol {
   display: flex;
   flex-direction: column;
-  min-width: 200px;
+  flex-shrink: 0;
+  padding: 28px 40px;
 }
 
+/* Zone 2 — matches .megaLinks */
+.projectsCol:first-child {
+  width: 350px;
+}
+
+/* Zone 3 — matches .megaSubLinks, divider included */
+.projectsCol:last-child {
+  width: 280px;
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+
+.scrolled .projectsCol:last-child {
+  border-left-color: rgba(17, 17, 17, 0.08);
+}
+
+/* Same treatment as .megaSubTitle */
 .projectsColLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: rgba(245, 244, 239, 0.3);
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+/* ── Locations dropdown — sits after the Contact button at the end of the bar ── */
+.locationsWrapper {
+  position: relative;
+}
+
+/* Vertical rule separating the region selector from the main nav */
+.locationsWrapper::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 20px;
+  background: rgba(245, 244, 239, 0.22);
+  transition: background 0.3s ease;
+}
+
+.scrolled .locationsWrapper::before {
+  background: rgba(17, 17, 17, 0.18);
+}
+
+/* Trigger — globe + label + chevron, on the .navLink type scale.
+   It's a <button> (click-to-open), so reset the UA button styling. */
+.locationsBtn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: rgba(245, 244, 239, 0.75);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.locationsBtn:hover,
+.locationsBtnActive {
+  color: #F5F4EF;
+}
+
+/* No ring on mouse click, but keep one for keyboard users */
+.locationsBtn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.locationsBtn:focus-visible {
+  outline: 1px solid rgba(245, 244, 239, 0.45);
+  outline-offset: 6px;
+  border-radius: 9999px;
+}
+
+.scrolled .locationsBtn:focus-visible {
+  outline-color: rgba(17, 17, 17, 0.35);
+}
+
+.scrolled .locationsBtn {
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.scrolled .locationsBtn:hover,
+.scrolled .locationsBtnActive {
+  color: #111111;
+}
+
+.locationsGlobe {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.locationsChevron {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.locationsChevronOpen {
+  transform: rotate(180deg);
+}
+
+.locationsMenu {
+  position: absolute;
+  top: calc(100% + 18px);
+  right: 0;               /* right-aligned — it sits at the end of the bar */
+  transform: translateY(-10px);
+  min-width: 220px;
+  padding: 22px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(14, 12, 10, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+}
+
+.locationsMenuOpen {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.locationsGroupLabel {
   font-family: 'Inter', sans-serif;
   font-size: 10px;
   font-weight: 600;
@@ -306,6 +460,65 @@
   color: rgba(245, 244, 239, 0.3);
   margin: 0 0 12px;
   padding: 0;
+}
+
+.locationsItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: rgba(245, 244, 239, 0.55);
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+  white-space: nowrap;
+}
+
+.locationsPin {
+  flex-shrink: 0;
+  opacity: 0.45;
+  transition: opacity 0.2s ease;
+}
+
+.locationsItem:hover .locationsPin {
+  opacity: 1;
+}
+
+.locationsItem:first-of-type {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.locationsItem:hover {
+  color: #F5F4EF;
+  letter-spacing: 1.6px;
+}
+
+/* Scrolled (light) theme — same values the mega menu switches to */
+.scrolled .locationsMenu {
+  background: rgba(234, 232, 227, 0.98);
+  border-color: rgba(17, 17, 17, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.scrolled .locationsGroupLabel {
+  color: rgba(17, 17, 17, 0.4);
+}
+
+.scrolled .locationsItem {
+  color: rgba(17, 17, 17, 0.6);
+  border-bottom-color: rgba(17, 17, 17, 0.08);
+}
+
+.scrolled .locationsItem:first-of-type {
+  border-top-color: rgba(17, 17, 17, 0.08);
+}
+
+.scrolled .locationsItem:hover {
+  color: #111111;
 }
 
 /* Contact button */
@@ -581,6 +794,17 @@
   flex-direction: column;
   min-height: 0;
   overflow: hidden;
+}
+
+/* Group heading inside a mobile accordion (e.g. "South India") */
+.mobileGroupLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  opacity: 0.4;
+  margin: 0.25rem 0 0.5rem 1rem;
 }
 
 .mobileLeafLink {

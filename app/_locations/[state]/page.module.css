@@ -1,0 +1,223 @@
+.section {
+  padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.sectionAlt {
+  padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: rgba(17, 17, 17, 0.45);
+  margin: 0 0 1rem;
+}
+
+.heading {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+  max-width: 22ch;
+}
+
+.intro {
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  line-height: 1.7;
+  color: rgba(17, 17, 17, 0.7);
+  margin: 0;
+  max-width: 70ch;
+}
+
+/* ── Areas served ── */
+.areas {
+  margin-top: 2.5rem;
+}
+
+.areasLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: rgba(17, 17, 17, 0.45);
+  margin: 0 0 0.85rem;
+}
+
+.areasList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.areaChip {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  background: var(--color-surface);
+}
+
+/* ── Product range ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.6rem 1.5rem 3rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-background);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(17, 17, 17, 0.35);
+  transform: translateY(-3px);
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.cardArrow {
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.4rem;
+  font-size: 1.1rem;
+  opacity: 0.4;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.card:hover .cardArrow {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* ── Projects ── */
+.projectList {
+  list-style: none;
+  margin: 2.25rem 0 0;
+  padding: 0;
+}
+
+.projectRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: padding-left 0.25s ease;
+}
+
+.projectList li:first-child .projectRow {
+  border-top: 1px solid var(--color-border);
+}
+
+.projectRow:hover {
+  padding-left: 0.6rem;
+}
+
+.projectName {
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.projectPlace {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(17, 17, 17, 0.4);
+  white-space: nowrap;
+}
+
+/* ── CTA ── */
+.ctaSection {
+  padding: clamp(3.5rem, 8vw, 6rem) 0;
+  background-color: #111111;
+  color: #F5F4EF;
+}
+
+.ctaHeading {
+  font-size: clamp(1.5rem, 3.6vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.9rem;
+}
+
+.ctaText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(245, 244, 239, 0.65);
+  margin: 0 0 2rem;
+  max-width: 55ch;
+}
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.ctaBtn {
+  background: #F5F4EF;
+  color: #111111;
+  padding: 1rem 2.4rem;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.ctaBtn:hover {
+  transform: scale(1.03);
+}
+
+.ctaLink {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(245, 244, 239, 0.75);
+  border-bottom: 1px solid rgba(245, 244, 239, 0.3);
+  padding-bottom: 2px;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.ctaLink:hover {
+  color: #F5F4EF;
+  border-color: #F5F4EF;
+}

@@ -1,25 +1,26 @@
 import React from 'react';
+import Link from 'next/link';
 import Navigation from '@/components/home/Navigation';
 import Footer from '@/components/home/Footer';
 import PageHero from '@/components/shared/PageHero';
-import styles from './Overview.module.css';
+import styles from '@/components/products/Overview.module.css';
 import WhyChooseUs from './WhyChooseUs';
 import VideoTestimonials from '@/components/home/VideoTestimonials';
 
 export const metadata = {
-  title: 'Slim Window Systems | SGD Group of Companies Kerala',
-  description: 'Explore SGD Group\'s slim aluminium window systems — ImperialSS2, Vista, Ultra, RetroGulf and Eco Gulf — premium, thermally efficient, and architecturally refined for residential and commercial projects.',
+  title: 'Aluminium Door Systems | SGD Group of Companies Kerala',
+  description: 'Explore SGD Group\'s aluminium door systems — Imperial SS2, Vista, Ultra, Retro Gulf, HL-50, Nexus and Horizon — premium, thermally efficient, and architecturally refined for residential and commercial projects.',
   keywords: 'slim window systems Kerala, slim aluminium windows, SGD aluminium windows, architectural windows Kerala',
   openGraph: {
-    title: 'Slim Window Systems | SGD Group',
+    title: 'Aluminium Door Systems | SGD Group',
     description: 'Premium slim-profile aluminium window systems for residential and commercial projects in Kerala.',
-    url: 'https://sgdgroup.in/products/slim-window-systems',
+    url: 'https://sgdgroup.in/products/aluminium-door-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/products/slim-window-systems',
+    canonical: 'https://sgdgroup.in/products/aluminium-door-systems',
   },
 };
 
@@ -116,12 +117,14 @@ const categories = [
 const row1 = categories.slice(0, 3);
 const row2 = categories.slice(3, 6);
 
-const windowSystems = [
-  { name: 'Sliding Windows',                    image: '/services/services-01.png' },
-  { name: 'Casement/Openable Window',           image: '/services/services-02.png' },
-  { name: 'Folding Window',                     image: '/services/services-03.png' },
-  { name: 'Sliding Window with Grill',          image: '/services/services-04.png' },
-  { name: 'Casement/Openable Window with Grill',image: '/services/services-01.png' },
+const doorSystems = [
+  { name: 'Imperial SS2', href: '/products/aluminium-door-systems/imperialss2', image: '/services/services-02.png' },
+  { name: 'Vista',        href: '/products/aluminium-door-systems/vista',       image: '/services/services-03.png' },
+  { name: 'Ultra',        href: '/products/aluminium-door-systems/ultra',       image: '/services/services-04.png' },
+  { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf',   image: '/services/services-01.png' },
+  { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50',        image: '/services/services-03.png' },
+  { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus',       image: '/services/services-02.png' },
+  { name: 'Horizon',      href: '/products/aluminium-door-systems/horizon',     image: '/services/services-03.png' },
 ];
 
 const features = [
@@ -154,7 +157,7 @@ export default function AluminiumWindowSystemsPage() {
     <main>
       <Navigation />
       <PageHero
-        title="Slim Window Systems"
+        title="Aluminium Door Systems"
         bg="/services/services-01.png"
       />
 
@@ -217,24 +220,26 @@ export default function AluminiumWindowSystemsPage() {
         </div>
       </section>
 
-      {/* ── Window Systems List Section ── */}
+      {/* ── Door Systems List Section ── */}
       <section className={styles.windowsSection}>
         <div className={styles.windowsInner}>
-          <h2 className={styles.windowsHeading}>Window Systems</h2>
+          <h2 className={styles.windowsHeading}>Explore the Systems</h2>
           <ul className={styles.windowsList}>
-            {windowSystems.map((item) => (
-              <li key={item.name} className={styles.windowsItem}>
-                <span className={styles.windowsItemName}>{item.name}</span>
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className={styles.windowsItemImage}
-                />
-                <div className={styles.windowsItemArrow}>
-                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="#111111" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
+            {doorSystems.map((item) => (
+              <li key={item.name}>
+                <Link href={item.href} className={styles.windowsItem}>
+                  <span className={styles.windowsItemName}>{item.name}</span>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className={styles.windowsItemImage}
+                  />
+                  <div className={styles.windowsItemArrow}>
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="#111111" strokeWidth="1.67" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>

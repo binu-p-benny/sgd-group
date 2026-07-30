@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Globe, MapPin } from 'lucide-react';
 import { useLenis } from '@studio-freight/react-lenis';
 import styles from './Navigation.module.css';
 
@@ -22,11 +22,22 @@ const commercialProjects = [
   { name: 'Eham Digital',        href: '/projects/eham-digital',        image: '/project-eham.png' },
 ];
 
+/* Service locations — states we currently operate in.
+   The per-state pages are parked in app/_locations (private folder = no route),
+   so these point at /contact for now. To go live, un-private that folder and
+   restore the hrefs below — slugs mirror the keys in app/_locations/data.js. */
+const southIndiaLocations = [
+  { name: 'Kerala',     href: '/contact' },  // '/locations/kerala'
+  { name: 'Tamil Nadu', href: '/contact' },  // '/locations/tamil-nadu'
+  { name: 'Karnataka',  href: '/contact' },  // '/locations/karnataka'
+];
+
 export default function Navigation() {
   const [scrolled, setScrolled]               = useState(false);
   const [isOpen, setIsOpen]                   = useState(false);
   const [megaOpen, setMegaOpen]               = useState(false);       // products mega
   const [projectsOpen, setProjectsOpen]       = useState(false);       // projects mega
+  const [locationsOpen, setLocationsOpen]     = useState(false);       // locations dropdown
   const [hoveredProduct, setHoveredProduct]   = useState(null);
   const [hoveredProject, setHoveredProject]   = useState(null);
   const [openMobileGroup, setOpenMobileGroup] = useState(null); // 'Products' | 'Projects' | null — home page accordion
@@ -35,6 +46,7 @@ export default function Navigation() {
   const linksRef   = useRef([]);
   const closeTimer = useRef(null);
   const projTimer  = useRef(null);
+  const locWrapRef = useRef(null);
   const pathname   = usePathname();
   const lenis      = useLenis();
 
@@ -52,6 +64,28 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  /* Locations opens on click, so it needs the usual dismissals: outside click and Escape */
+  useEffect(() => {
+    if (!locationsOpen) return;
+    const onPointerDown = (e) => {
+      if (!locWrapRef.current?.contains(e.target)) setLocationsOpen(false);
+    };
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setLocationsOpen(false);
+    };
+    document.addEventListener('mousedown', onPointerDown);
+    document.addEventListener('touchstart', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', onPointerDown);
+      document.removeEventListener('touchstart', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [locationsOpen]);
+
+  /* Close it when navigating away */
+  useEffect(() => { setLocationsOpen(false); }, [pathname]);
 
   useEffect(() => {
     if (isOpen) {
@@ -76,44 +110,40 @@ export default function Navigation() {
       href: '#',
       dropdown: [
         {
-          name: 'Slim Window Systems', href: '/products/slim-window-systems', image: '/services/services-01.png',
+          name: 'Aluminium Window Systems', href: '/products/aluminium-window-systems', image: '/services/services-01.png',
           subItems: [
-            { name: 'ImperialSS2', href: '/products/slim-window-systems/imperialss2' },
-            { name: 'Vista',       href: '/products/slim-window-systems/vista' },
-            { name: 'Ultra',       href: '/products/slim-window-systems/ultra' },
-            { name: 'RetroGulf',   href: '/products/slim-window-systems/retrogulf' },
-            { name: 'Eco Gulf',    href: '/products/slim-window-systems/eco-gulf' },
+            { name: 'Eco Gulf',  href: '/products/aluminium-window-systems/eco-gulf' },
+            { name: 'HL-40',     href: '/products/aluminium-window-systems/hl40' },
+            { name: 'Blaze',     href: '/products/aluminium-window-systems/blaze' },
+            { name: 'Slide-Pro', href: '/products/aluminium-window-systems/slide-pro' },
           ]
         },
         {
-          name: 'Casement Door Systems', href: '/products/casement-door-systems', image: '/services/services-02.png',
+          name: 'Aluminium Door Systems', href: '/products/aluminium-door-systems', image: '/services/services-02.png',
           subItems: [
-            { name: 'HL50', href: '/products/casement-door-systems/hl50' },
-            { name: 'HL40', href: '/products/casement-door-systems/hl40' },
+            { name: 'Imperial SS2', href: '/products/aluminium-door-systems/imperialss2' },
+            { name: 'Vista',        href: '/products/aluminium-door-systems/vista' },
+            { name: 'Ultra',        href: '/products/aluminium-door-systems/ultra' },
+            { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf' },
+            { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50' },
+            { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus' },
+            { name: 'Horizon',      href: '/products/aluminium-door-systems/horizon' },
           ]
         },
         {
-          name: 'Signature Series', href: '/products/signature-series', image: '/services/services-03.png',
+          name: 'Signature Systems', href: '/products/signature-systems', image: '/services/services-03.png',
           subItems: [
-            { name: 'Nexus',   href: '/products/signature-series/nexus' },
-            { name: 'Horizon', href: '/products/signature-series/horizon' },
-            { name: 'Blaze',   href: '/products/signature-series/blaze' },
-          ]
-        },
-        {
-          name: 'Speciality Systems', href: '/products/speciality-systems', image: '/services/services-04.png',
-          subItems: [
-            { name: 'Slide-Pro',        href: '/products/speciality-systems/slide-pro' },
-            { name: 'Vertical Sliding', href: '/products/speciality-systems/vertical-sliding' },
-            { name: 'Tilt & Turn',      href: '/products/speciality-systems/tilt-turn' },
-            { name: 'Sliding Folding',  href: '/products/speciality-systems/sliding-folding' },
-            { name: 'Parallel Opening', href: '/products/speciality-systems/parallel-opening' },
+            { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening' },
+            { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn' },
+            { name: 'Vertical Sliding', href: '/products/signature-systems/vertical-sliding' },
+            { name: 'Sliding Folding',  href: '/products/signature-systems/sliding-folding' },
           ]
         },
       ]
     },
     { name: 'Projects', href: '/projects', projectsDropdown: true },
     { name: 'Careers', href: '/careers' },
+    { name: 'Locations', href: '#', locationsDropdown: true },
   ];
 
   const isActive = (href) => href !== '#' && pathname === href;
@@ -140,7 +170,47 @@ export default function Navigation() {
   };
   const cancelProjClose = () => clearTimeout(projTimer.current);
 
+  /* ── Locations dropdown — click to toggle, unlike the hover megas ── */
+  const toggleLocations = () => setLocationsOpen(prev => !prev);
+
   const allProjectItems = [...residentialProjects, ...commercialProjects];
+
+  /* Locations sits after the Contact button on desktop, so it renders outside
+     the navItems map — on mobile it stays in sequence as an accordion. */
+  const locationsDesktop = (
+    <div className={`${styles.dropdownWrapper} ${styles.locationsWrapper}`} ref={locWrapRef}>
+      <button
+        type="button"
+        className={`${styles.locationsBtn} ${locationsOpen ? styles.locationsBtnActive : ''}`}
+        onClick={toggleLocations}
+        aria-expanded={locationsOpen}
+        aria-haspopup="true"
+      >
+        <Globe size={16} strokeWidth={1.75} className={styles.locationsGlobe} />
+        Locations
+        <ChevronDown
+          size={14}
+          strokeWidth={2}
+          className={`${styles.locationsChevron} ${locationsOpen ? styles.locationsChevronOpen : ''}`}
+        />
+      </button>
+
+      <div className={`${styles.locationsMenu} ${locationsOpen ? styles.locationsMenuOpen : ''}`}>
+        <p className={styles.locationsGroupLabel}>South India</p>
+        {southIndiaLocations.map((loc) => (
+          <Link
+            key={loc.name}
+            href={loc.href}
+            className={styles.locationsItem}
+            onClick={() => setLocationsOpen(false)}
+          >
+            <MapPin size={14} strokeWidth={1.75} className={styles.locationsPin} />
+            {loc.name}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -155,7 +225,7 @@ export default function Navigation() {
           </Link>
 
           <div className={styles.navLinks}>
-            {navItems.map((item) => {
+            {navItems.filter((item) => !item.locationsDropdown).map((item) => {
               if (item.dropdown) {
                 return (
                   <div
@@ -291,6 +361,7 @@ export default function Navigation() {
             <Link href="/contact" className={`${styles.contactBtn} ${isActive('/contact') ? styles.active : ''}`}>
               Contact
             </Link>
+            {locationsDesktop}
           </div>
 
           <div
@@ -415,6 +486,32 @@ export default function Navigation() {
                           </div>
                         </div>
                       </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : item.locationsDropdown ? (
+              <div key={item.name} className={styles.mobileDropdownGroup}>
+                <button
+                  type="button"
+                  className={styles.mobileAccordionHeader}
+                  onClick={() => toggleMobileGroup(item.name)}
+                  aria-expanded={openMobileGroup === item.name}
+                >
+                  <span className={styles.mobileAccordionHeaderLabel}>{item.name}</span>
+                  <ChevronDown
+                    size={26}
+                    className={`${styles.mobileChevron} ${openMobileGroup === item.name ? styles.mobileChevronOpen : ''}`}
+                  />
+                </button>
+                <div className={`${styles.mobileAccordionContent} ${openMobileGroup === item.name ? styles.mobileAccordionContentOpen : ''}`}>
+                  <div className={styles.mobileAccordionInner}>
+                    <p className={styles.mobileGroupLabel}>South India</p>
+                    {southIndiaLocations.map((loc, j) => (
+                      <Link key={loc.name} href={loc.href} className={styles.mobileLeafLink}
+                        onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
+                        {loc.name}
+                      </Link>
                     ))}
                   </div>
                 </div>
