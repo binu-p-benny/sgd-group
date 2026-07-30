@@ -8,33 +8,33 @@ import VideoTestimonials from '@/components/home/VideoTestimonials';
 import styles from './product.module.css';
 
 const products = {
-  hl50: {
-    name: 'HL50',
-    tagline: 'Casement Door System',
-    hero: '/services/services-02.png',
-    intro: 'HL50 is our heavy-duty casement door series, built on a 50 mm profile for large openings and high-traffic entrances. Reinforced corner joints and multi-point locking deliver commercial-grade security without sacrificing the clean sightlines architects ask for.',
-    image: '/services/services-03.png',
+  'eco-gulf': {
+    name: 'Eco Gulf',
+    tagline: 'Aluminium Window System',
+    hero: '/services/services-01.png',
+    intro: 'Eco Gulf is our most sustainable window system, built from recycled-content aluminium and optimised for energy efficiency. It pairs responsible materials with the same slim aesthetic and reliable performance our systems are known for.',
+    image: '/services/services-02.png',
     specs: [
-      { label: 'Frame Depth', value: '50 mm' },
-      { label: 'Panel Weight', value: 'Up to 120 kg' },
-      { label: 'Locking', value: 'Multi-point, 3 hooks' },
+      { label: 'Frame Depth', value: '46 mm' },
+      { label: 'Sightline', value: '23 mm (interlock)' },
+      { label: 'Max Sash Weight', value: '120 kg' },
       { label: 'Glazing', value: 'Double / Triple' },
-      { label: 'Finish', value: 'Powder-coated / Anodised' },
+      { label: 'Finish', value: 'Powder-coated' },
       { label: 'Air Tightness', value: 'Class 4' },
     ],
     features: [
-      { title: 'Heavy-Duty Frame', desc: '50 mm profile depth built for large, high-traffic door openings.' },
-      { title: 'Multi-Point Locking', desc: 'Three-hook locking system for commercial-grade security.' },
-      { title: 'Thermal Break', desc: 'Polyamide thermal barrier keeps interiors comfortable year-round.' },
-      { title: 'Heavy-Duty Hardware', desc: 'Pego hinges and hardware rated for large panels, 10-year warranty.' },
+      { title: 'Recycled Aluminium', desc: 'Profiles made with high recycled content for a lower footprint.' },
+      { title: 'Energy Efficient', desc: 'Triple-glazing-ready thermal break for year-round comfort.' },
+      { title: 'Low Maintenance', desc: 'Durable finishes that need minimal upkeep over decades.' },
+      { title: 'Weather Sealing', desc: 'Class 4 air-tightness with premium EPDM gaskets.' },
     ],
-    applications: ['Commercial Entrances', 'Villas', 'Offices', 'Showrooms'],
+    applications: ['Green Buildings', 'Homes', 'Offices'],
   },
   hl40: {
-    name: 'HL40',
-    tagline: 'Casement Door System',
+    name: 'HL-40',
+    tagline: 'Aluminium Window System',
     hero: '/services/services-03.png',
-    intro: 'HL40 is a slimmer 40 mm profile casement door built for residential projects that want the same durability as HL50 in a lighter, more compact frame. It is our most popular series for balconies, patios, and everyday entrances.',
+    intro: 'HL-40 is a slimmer 40 mm profile casement door built for residential projects that want the same durability as HL-50 in a lighter, more compact frame. It is our most popular series for balconies, patios, and everyday entrances.',
     image: '/services/services-04.png',
     specs: [
       { label: 'Frame Depth', value: '40 mm' },
@@ -52,6 +52,50 @@ const products = {
     ],
     applications: ['Balconies', 'Patios', 'Apartments', 'Homes'],
   },
+  blaze: {
+    name: 'Blaze',
+    tagline: 'Aluminium Window System',
+    hero: '/services/services-03.png',
+    intro: 'Blaze is our statement pivot system, designed as the centrepiece of an elevation. A single oversized panel rotates on a concealed pivot hinge, delivering dramatic scale with precision-balanced operation.',
+    image: '/services/services-04.png',
+    specs: [
+      { label: 'Panel Width', value: 'Up to 1.4 m' },
+      { label: 'Panel Height', value: 'Up to 3 m' },
+      { label: 'Hinge', value: 'Concealed floor & head pivot' },
+      { label: 'Glazing', value: 'Double, laminated safety glass' },
+      { label: 'Finish', value: 'Anodised / Custom powder coat' },
+      { label: 'Locking', value: 'Multi-point security lock' },
+    ],
+    features: [
+      { title: 'Statement Scale', desc: 'A single oversized panel makes a striking architectural feature.' },
+      { title: 'Concealed Pivot Hinge', desc: 'Precision-balanced hinge hides all hardware from view.' },
+      { title: 'Effortless Operation', desc: 'Engineered balance means even large panels swing smoothly.' },
+      { title: 'Security Locking', desc: 'Multi-point locking rated for exterior security.' },
+    ],
+    applications: ['Signature Elevations', 'Luxury Villas', 'Boutique Hotels'],
+  },
+  'slide-pro': {
+    name: 'Slide-Pro',
+    tagline: 'Aluminium Window System',
+    hero: '/services/services-01.png',
+    intro: 'Slide-Pro is our multi-track horizontal sliding system, built for openings that need more panels than a standard 2-track slider can carry. Interlocking tracks keep large spans smooth and weathertight, panel after panel.',
+    image: '/services/services-02.png',
+    specs: [
+      { label: 'Frame Depth', value: '48 mm' },
+      { label: 'Tracks', value: '2, 3 or 4-track' },
+      { label: 'Max Panel Weight', value: '150 kg' },
+      { label: 'Glazing', value: 'Double' },
+      { label: 'Finish', value: 'Powder-coated' },
+      { label: 'Air Tightness', value: 'Class 3' },
+    ],
+    features: [
+      { title: 'Multi-Track Design', desc: '2, 3 or 4-track configurations for wide openings.' },
+      { title: 'Interlocking Panels', desc: 'Weathertight seals maintained across every panel join.' },
+      { title: 'Smooth Rollers', desc: 'Precision ball-bearing rollers for effortless sliding, even fully loaded.' },
+      { title: 'Weather Sealing', desc: 'EPDM gaskets deliver Class 3 air-tightness across all tracks.' },
+    ],
+    applications: ['Balconies', 'Wide Living Room Openings', 'Verandas'],
+  },
 };
 
 export function generateStaticParams() {
@@ -62,9 +106,9 @@ export async function generateMetadata({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) return {};
-  const url = `https://sgdgroup.in/products/casement-door-systems/${product}`;
+  const url = `https://sgdgroup.in/products/aluminium-window-systems/${product}`;
   return {
-    title: `${data.name} | Casement Door Systems | SGD Group of Companies Kerala`,
+    title: `${data.name} | Aluminium Window Systems | SGD Group of Companies Kerala`,
     description: data.intro.slice(0, 155),
     openGraph: {
       title: `${data.name} | SGD Group`,
@@ -78,7 +122,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function CasementDoorProductPage({ params }) {
+export default async function AluminiumWindowProductPage({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) notFound();
@@ -89,8 +133,8 @@ export default async function CasementDoorProductPage({ params }) {
         items={[
           { name: 'Home', url: 'https://sgdgroup.in' },
           { name: 'Products', url: 'https://sgdgroup.in/products' },
-          { name: 'Casement Door Systems', url: 'https://sgdgroup.in/products/casement-door-systems' },
-          { name: data.name, url: `https://sgdgroup.in/products/casement-door-systems/${product}` },
+          { name: 'Aluminium Window Systems', url: 'https://sgdgroup.in/products/aluminium-window-systems' },
+          { name: data.name, url: `https://sgdgroup.in/products/aluminium-window-systems/${product}` },
         ]}
       />
       <Navigation />

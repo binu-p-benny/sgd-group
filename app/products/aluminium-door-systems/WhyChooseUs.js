@@ -1,39 +1,41 @@
 "use client";
 
 import { useState } from 'react';
-import styles from '@/app/products/slim-window-systems/Overview.module.css';
+import styles from '@/components/products/Overview.module.css';
 
 const accordionItems = [
   {
-    title: 'A mechanism for every opening',
-    body: 'From vertical sliding sashes to parallel-opening ventilation windows, our speciality systems solve openings that standard sliding or casement profiles can\'t.',
+    title: 'Built to last, designed to endure',
+    body: 'Our aluminium profiles are precision-engineered for maximum strength and longevity, resistant to rust, corrosion, and warping — even in Kerala\'s coastal climate.',
   },
   {
-    title: 'Same durability, specialised motion',
-    body: 'Every speciality mechanism is built on our standard aluminium profiles and hardware — the same rust and corrosion resistance, just engineered for a different way of opening.',
+    title: 'Slim frames, endless views',
+    body: 'Ultra-slim sightlines maximise natural light and deliver unobstructed panoramic views, blending architecture with the landscape.',
   },
   {
-    title: 'Precision hardware',
-    body: 'Multi-bar hinges, friction stays, and folding-track rollers are all backed by the same Pego Hardware and 10-Year Warranty as the rest of our range.',
+    title: 'Keep your home cozy and energy-smart',
+    body: 'Insulated glass combined with thermal break technology reduces heat transfer, cuts energy bills, and maintains a comfortable indoor temperature year-round.',
   },
   {
-    title: 'Built for tricky openings',
-    body: 'Tight spaces, wide openings, or ventilation-only requirements — our speciality systems are the answer when a standard window or door won\'t fit the brief.',
+    title: 'Durability & Strength',
+    body: 'Backed by Saint-Gobain toughened glass and Pego Hardware, every system is tested for long-term performance with industry-leading warranty coverage.',
   },
 ];
 
 export default function WhyChooseUs() {
   const [openIndex, setOpenIndex] = useState(null);
+
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <section className={styles.whySection}>
       <div className={styles.whyInner}>
 
+        {/* Left: text + accordion */}
         <div className={styles.whyLeft}>
           <h2 className={styles.whyTitle}>Why Choose Us</h2>
           <p className={styles.whyBody}>
-            Not every opening fits a standard slide or swing. Our Speciality Systems cover the mechanisms in between — vertical sliding sashes, tilt & turn windows, sliding-folding doors, and parallel-opening vents — each engineered with the same durability and precision as the rest of our range, for the openings that need a different kind of solution.
+            Combine sleek elegance with lasting strength. Their slim frames let in more natural light and offer expansive views, while durable aluminum resists rust, corrosion, and warping for years of worry-free performance. Low-maintenance and energy-efficient with insulated glass and thermal break technology, they reduce upkeep and help save on energy bills. With a variety of colors, finishes, and styles, our windows bring both style and comfort to every home.
           </p>
 
           <div className={styles.accordion}>
@@ -60,8 +62,9 @@ export default function WhyChooseUs() {
           </div>
         </div>
 
+        {/* Right: image */}
         <div className={styles.whyImage}>
-          <img src="/services/services-04.png" alt="Why choose SGD Speciality Systems" />
+          <img src="/services/services-04.png" alt="Why choose SGD aluminium windows" />
         </div>
 
       </div>

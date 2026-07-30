@@ -13,7 +13,6 @@ const mosaicImages = [
   { src: 'services/services-02.png',     alt: 'Window frame detail close-up',          slot: 'topMid'      },
   { src: 'services/services-03.png',  alt: 'Window in mountain landscape',          slot: 'topRight'    },
   { src: 'services/services-04.png',         alt: 'Window cross-section diagram',          slot: 'bottomMid'   },
-  { src: 'services/services-05.png',    alt: 'Premium handle and glass components',   slot: 'bottomRight' },
 ];
 
 export default function Services() {

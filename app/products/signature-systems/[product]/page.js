@@ -8,31 +8,9 @@ import VideoTestimonials from '@/components/home/VideoTestimonials';
 import styles from './product.module.css';
 
 const products = {
-  'slide-pro': {
-    name: 'Slide-Pro',
-    tagline: 'Speciality System',
-    hero: '/services/services-01.png',
-    intro: 'Slide-Pro is our multi-track horizontal sliding system, built for openings that need more panels than a standard 2-track slider can carry. Interlocking tracks keep large spans smooth and weathertight, panel after panel.',
-    image: '/services/services-02.png',
-    specs: [
-      { label: 'Frame Depth', value: '48 mm' },
-      { label: 'Tracks', value: '2, 3 or 4-track' },
-      { label: 'Max Panel Weight', value: '150 kg' },
-      { label: 'Glazing', value: 'Double' },
-      { label: 'Finish', value: 'Powder-coated' },
-      { label: 'Air Tightness', value: 'Class 3' },
-    ],
-    features: [
-      { title: 'Multi-Track Design', desc: '2, 3 or 4-track configurations for wide openings.' },
-      { title: 'Interlocking Panels', desc: 'Weathertight seals maintained across every panel join.' },
-      { title: 'Smooth Rollers', desc: 'Precision ball-bearing rollers for effortless sliding, even fully loaded.' },
-      { title: 'Weather Sealing', desc: 'EPDM gaskets deliver Class 3 air-tightness across all tracks.' },
-    ],
-    applications: ['Balconies', 'Wide Living Room Openings', 'Verandas'],
-  },
   'vertical-sliding': {
     name: 'Vertical Sliding',
-    tagline: 'Speciality System',
+    tagline: 'Signature System',
     hero: '/services/services-02.png',
     intro: 'Our Vertical Sliding system recreates the classic sash-window motion in modern aluminium — sashes glide up and down on concealed spring balances, ideal for heritage-style facades that still need contemporary performance.',
     image: '/services/services-03.png',
@@ -54,7 +32,7 @@ const products = {
   },
   'tilt-turn': {
     name: 'Tilt & Turn',
-    tagline: 'Speciality System',
+    tagline: 'Signature System',
     hero: '/services/services-03.png',
     intro: 'Tilt & Turn gives a single sash two ways to open: tilted inward from the top for secure, draft-free ventilation, or turned fully inward on its side hinge for cleaning and emergency egress.',
     image: '/services/services-04.png',
@@ -76,7 +54,7 @@ const products = {
   },
   'sliding-folding': {
     name: 'Sliding Folding',
-    tagline: 'Speciality System',
+    tagline: 'Signature System',
     hero: '/services/services-04.png',
     intro: 'Sliding Folding doors stack panel against panel to open an entire wall, turning indoor and outdoor spaces into one. Heavy-duty top-hung rollers carry the load, so the threshold stays low and easy to walk over.',
     image: '/services/services-01.png',
@@ -98,7 +76,7 @@ const products = {
   },
   'parallel-opening': {
     name: 'Parallel Opening',
-    tagline: 'Speciality System',
+    tagline: 'Signature System',
     hero: '/services/services-01.png',
     intro: 'Parallel Opening windows push out evenly along their whole perimeter, holding position at any angle for controlled, secure ventilation — a favourite for kitchens, bathrooms, and facades that need airflow without an open sash catching wind.',
     image: '/services/services-03.png',
@@ -128,9 +106,9 @@ export async function generateMetadata({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) return {};
-  const url = `https://sgdgroup.in/products/speciality-systems/${product}`;
+  const url = `https://sgdgroup.in/products/signature-systems/${product}`;
   return {
-    title: `${data.name} | Speciality Systems | SGD Group of Companies Kerala`,
+    title: `${data.name} | Signature Systems | SGD Group of Companies Kerala`,
     description: data.intro.slice(0, 155),
     openGraph: {
       title: `${data.name} | SGD Group`,
@@ -144,7 +122,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function SpecialitySystemProductPage({ params }) {
+export default async function SignatureSystemsProductPage({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) notFound();
@@ -155,8 +133,8 @@ export default async function SpecialitySystemProductPage({ params }) {
         items={[
           { name: 'Home', url: 'https://sgdgroup.in' },
           { name: 'Products', url: 'https://sgdgroup.in/products' },
-          { name: 'Speciality Systems', url: 'https://sgdgroup.in/products/speciality-systems' },
-          { name: data.name, url: `https://sgdgroup.in/products/speciality-systems/${product}` },
+          { name: 'Signature Systems', url: 'https://sgdgroup.in/products/signature-systems' },
+          { name: data.name, url: `https://sgdgroup.in/products/signature-systems/${product}` },
         ]}
       />
       <Navigation />

@@ -9,10 +9,10 @@ import styles from './product.module.css';
 
 const products = {
   imperialss2: {
-    name: 'ImperialSS2',
-    tagline: 'Slim Window System',
+    name: 'Imperial SS2',
+    tagline: 'Aluminium Door System',
     hero: '/services/services-01.png',
-    intro: 'The ImperialSS2 is our flagship slim-profile window system, engineered for architects and homeowners who demand expansive glass with minimal sightlines. Its precision-extruded frames deliver structural strength while keeping the visible aluminium to an absolute minimum — flooding interiors with natural light.',
+    intro: 'The Imperial SS2 is our flagship slim-profile window system, engineered for architects and homeowners who demand expansive glass with minimal sightlines. Its precision-extruded frames deliver structural strength while keeping the visible aluminium to an absolute minimum — flooding interiors with natural light.',
     image: '/services/services-02.png',
     specs: [
       { label: 'Frame Depth', value: '50 mm' },
@@ -32,7 +32,7 @@ const products = {
   },
   vista: {
     name: 'Vista',
-    tagline: 'Slim Window System',
+    tagline: 'Aluminium Door System',
     hero: '/services/services-02.png',
     intro: 'Vista balances slim aesthetics with everyday practicality. Designed for residential projects, it offers smooth operation, excellent weather resistance, and a refined finish that complements modern and traditional architecture alike.',
     image: '/services/services-03.png',
@@ -54,7 +54,7 @@ const products = {
   },
   ultra: {
     name: 'Ultra',
-    tagline: 'Slim Window System',
+    tagline: 'Aluminium Door System',
     hero: '/services/services-03.png',
     intro: 'Ultra is built for large openings where strength matters. Reinforced profiles support oversized panels without compromising the slim look, making it ideal for high-rise and commercial applications exposed to wind load.',
     image: '/services/services-04.png',
@@ -75,10 +75,10 @@ const products = {
     applications: ['High-Rise', 'Commercial Facades', 'Luxury Villas'],
   },
   retrogulf: {
-    name: 'RetroGulf',
-    tagline: 'Slim Window System',
+    name: 'Retro Gulf',
+    tagline: 'Aluminium Door System',
     hero: '/services/services-04.png',
-    intro: 'RetroGulf is a retrofit-friendly slim system designed to upgrade existing openings with minimal disruption. It delivers modern thermal and acoustic performance while preserving the architectural character of the original structure.',
+    intro: 'Retro Gulf is a retrofit-friendly slim system designed to upgrade existing openings with minimal disruption. It delivers modern thermal and acoustic performance while preserving the architectural character of the original structure.',
     image: '/services/services-01.png',
     specs: [
       { label: 'Frame Depth', value: '48 mm' },
@@ -96,27 +96,71 @@ const products = {
     ],
     applications: ['Renovations', 'Heritage Buildings', 'Apartments'],
   },
-  'eco-gulf': {
-    name: 'Eco Gulf',
-    tagline: 'Slim Window System',
-    hero: '/services/services-01.png',
-    intro: 'Eco Gulf is our most sustainable slim system, built from recycled-content aluminium and optimised for energy efficiency. It pairs responsible materials with the same slim aesthetic and reliable performance our systems are known for.',
-    image: '/services/services-02.png',
+  hl50: {
+    name: 'HL-50',
+    tagline: 'Aluminium Door System',
+    hero: '/services/services-02.png',
+    intro: 'HL-50 is our heavy-duty casement door series, built on a 50 mm profile for large openings and high-traffic entrances. Reinforced corner joints and multi-point locking deliver commercial-grade security without sacrificing the clean sightlines architects ask for.',
+    image: '/services/services-03.png',
     specs: [
-      { label: 'Frame Depth', value: '46 mm' },
-      { label: 'Sightline', value: '23 mm (interlock)' },
-      { label: 'Max Sash Weight', value: '120 kg' },
+      { label: 'Frame Depth', value: '50 mm' },
+      { label: 'Panel Weight', value: 'Up to 120 kg' },
+      { label: 'Locking', value: 'Multi-point, 3 hooks' },
       { label: 'Glazing', value: 'Double / Triple' },
-      { label: 'Finish', value: 'Powder-coated' },
+      { label: 'Finish', value: 'Powder-coated / Anodised' },
       { label: 'Air Tightness', value: 'Class 4' },
     ],
     features: [
-      { title: 'Recycled Aluminium', desc: 'Profiles made with high recycled content for a lower footprint.' },
-      { title: 'Energy Efficient', desc: 'Triple-glazing-ready thermal break for year-round comfort.' },
-      { title: 'Low Maintenance', desc: 'Durable finishes that need minimal upkeep over decades.' },
-      { title: 'Weather Sealing', desc: 'Class 4 air-tightness with premium EPDM gaskets.' },
+      { title: 'Heavy-Duty Frame', desc: '50 mm profile depth built for large, high-traffic door openings.' },
+      { title: 'Multi-Point Locking', desc: 'Three-hook locking system for commercial-grade security.' },
+      { title: 'Thermal Break', desc: 'Polyamide thermal barrier keeps interiors comfortable year-round.' },
+      { title: 'Heavy-Duty Hardware', desc: 'Pego hinges and hardware rated for large panels, 10-year warranty.' },
     ],
-    applications: ['Green Buildings', 'Homes', 'Offices'],
+    applications: ['Commercial Entrances', 'Villas', 'Offices', 'Showrooms'],
+  },
+  nexus: {
+    name: 'Nexus',
+    tagline: 'Aluminium Door System',
+    hero: '/services/services-01.png',
+    intro: 'Nexus is our modular curtain-wall system, built to link large glazed panels into a single continuous facade. Concealed structural silicone joints and a reinforced mullion grid let architects design expansive, uninterrupted glass elevations.',
+    image: '/services/services-02.png',
+    specs: [
+      { label: 'System Type', value: 'Unitised Curtain Wall' },
+      { label: 'Mullion Depth', value: '75 mm' },
+      { label: 'Max Panel Height', value: '4.5 m' },
+      { label: 'Glazing', value: 'Double / Triple, structural silicone' },
+      { label: 'Finish', value: 'Anodised / Custom powder coat' },
+      { label: 'Wind Load', value: 'Engineered per project' },
+    ],
+    features: [
+      { title: 'Continuous Facades', desc: 'Concealed joints create an uninterrupted glass elevation.' },
+      { title: 'Structural Glazing', desc: 'Structural silicone bonding for a flush, frameless exterior face.' },
+      { title: 'Engineered Wind Rating', desc: 'Reinforced mullion grid engineered to project-specific wind load.' },
+      { title: 'Thermal Performance', desc: 'Continuous thermal break across the full mullion depth.' },
+    ],
+    applications: ['Commercial Towers', 'Corporate Facades', 'Landmark Buildings'],
+  },
+  horizon: {
+    name: 'Horizon',
+    tagline: 'Aluminium Door System',
+    hero: '/services/services-02.png',
+    intro: 'Horizon is our panoramic sliding system, engineered for openings that erase the line between indoors and outdoors. Slim, low-profile tracks and oversized panel capacity make it the system of choice for pool-facing living rooms and rooftop lounges.',
+    image: '/services/services-03.png',
+    specs: [
+      { label: 'Frame Depth', value: '55 mm' },
+      { label: 'Max Panel Weight', value: '300 kg' },
+      { label: 'Track', value: 'Low-profile, flush threshold option' },
+      { label: 'Glazing', value: 'Double / Triple' },
+      { label: 'Finish', value: 'Powder-coated / Anodised' },
+      { label: 'Air Tightness', value: 'Class 4' },
+    ],
+    features: [
+      { title: 'Panoramic Views', desc: 'Slim vertical sightlines maximise glass area on every panel.' },
+      { title: 'Oversized Panels', desc: 'Supports panels up to 300 kg for dramatic, uninterrupted openings.' },
+      { title: 'Flush Threshold', desc: 'Optional low-profile track for a seamless indoor-outdoor transition.' },
+      { title: 'Effortless Glide', desc: 'Precision ball-bearing rollers keep large panels moving smoothly.' },
+    ],
+    applications: ['Pool-Facing Living Rooms', 'Rooftop Lounges', 'Luxury Villas'],
   },
 };
 
@@ -128,9 +172,9 @@ export async function generateMetadata({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) return {};
-  const url = `https://sgdgroup.in/products/slim-window-systems/${product}`;
+  const url = `https://sgdgroup.in/products/aluminium-door-systems/${product}`;
   return {
-    title: `${data.name} | Slim Window Systems | SGD Group of Companies Kerala`,
+    title: `${data.name} | Aluminium Door Systems | SGD Group of Companies Kerala`,
     description: data.intro.slice(0, 155),
     openGraph: {
       title: `${data.name} | SGD Group`,
@@ -144,7 +188,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function SlimWindowProductPage({ params }) {
+export default async function AluminiumDoorProductPage({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) notFound();
@@ -155,8 +199,8 @@ export default async function SlimWindowProductPage({ params }) {
         items={[
           { name: 'Home', url: 'https://sgdgroup.in' },
           { name: 'Products', url: 'https://sgdgroup.in/products' },
-          { name: 'Slim Window Systems', url: 'https://sgdgroup.in/products/slim-window-systems' },
-          { name: data.name, url: `https://sgdgroup.in/products/slim-window-systems/${product}` },
+          { name: 'Aluminium Door Systems', url: 'https://sgdgroup.in/products/aluminium-door-systems' },
+          { name: data.name, url: `https://sgdgroup.in/products/aluminium-door-systems/${product}` },
         ]}
       />
       <Navigation />

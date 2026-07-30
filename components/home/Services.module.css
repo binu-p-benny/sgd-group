@@ -127,12 +127,6 @@
 .bottomMid {
   grid-column: 2 / 4;
   grid-row: 2;
-  /* hide the 5th placeholder slot */
-}
-
-/* We only use 4 cells in the new grid layout */
-.bottomRight {
-  display: none;
 }
 
 .cell {

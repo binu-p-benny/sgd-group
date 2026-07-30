@@ -152,11 +152,13 @@
   transform: translateY(0);
 }
 
-/* Inner content — fixed layout, no reflow on hover */
+/* Inner content — fixed layout, no reflow on hover.
+   Width is the sum of the three columns below (260 + 350 + 270); keep it in
+   sync if any column changes, or a gap opens up on the right (260 + 350 + 280). */
 .megaInner {
   display: flex;
   align-items: stretch;
-  width: 860px;
+  width: 890px;
   min-height: 340px;
   flex-shrink: 0;
 }
@@ -182,9 +184,12 @@
   opacity: 1;
 }
 
-/* Right — links panel */
+/* Right — links panel.
+   Sized so the longest category label plus its arrow fits on one line: the
+   labels are nowrap, so too little width pushes text past its own underline
+   and leaves margin-left:auto with no slack to align the arrows. */
 .megaLinks {
-  width: 260px;
+  width: 350px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -219,8 +224,10 @@
   letter-spacing: 1.6px;
 }
 
+/* Sits directly after the label, not right-aligned — the category names differ
+   enough in length that margin-left:auto strands the arrow 80px+ from the
+   shortest one. */
 .megaItemArrow {
-  margin-left: auto;
   padding-left: 16px;
   opacity: 0.4;
   font-size: 16px;
@@ -228,8 +235,9 @@
 }
 
 /* Sub-items panel — always in layout, never shifts siblings */
+/* 280px keeps the longest category name on one line as the panel heading */
 .megaSubLinks {
-  width: 240px;
+  width: 280px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -281,22 +289,40 @@
   color: #F5F4EF;
 }
 
-/* ── Projects two-column layout ── */
+/* ── Projects two-column layout ──
+   Deliberately mirrors the Products mega so the two dropdowns read as one
+   component: same 890px shell, same 260 / 350 / 280 column zones, same 28/40
+   padding, and the same hairline divider between the second and third zones. */
 .projectsColumns {
+  flex: 1;
   display: flex;
   flex-direction: row;
-  gap: 64px;
-  padding: 28px 40px;
-  align-items: flex-start;
-  justify-content: center;
+  align-items: stretch;
 }
 
 .projectsCol {
   display: flex;
   flex-direction: column;
-  min-width: 200px;
+  flex-shrink: 0;
+  padding: 28px 40px;
 }
 
+/* Zone 2 — matches .megaLinks */
+.projectsCol:first-child {
+  width: 350px;
+}
+
+/* Zone 3 — matches .megaSubLinks, divider included */
+.projectsCol:last-child {
+  width: 280px;
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+
+.scrolled .projectsCol:last-child {
+  border-left-color: rgba(17, 17, 17, 0.08);
+}
+
+/* Same treatment as .megaSubTitle */
 .projectsColLabel {
   font-family: 'Inter', sans-serif;
   font-size: 10px;
@@ -304,7 +330,7 @@
   text-transform: uppercase;
   letter-spacing: 1.4px;
   color: rgba(245, 244, 239, 0.3);
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   padding: 0;
 }
 
