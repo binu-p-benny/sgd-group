@@ -74,7 +74,11 @@ export default function RootLayout({ children }) {
                 "addressRegion": "Kerala",
                 "addressCountry": "IN"
               },
-              "areaServed": "Kerala, India",
+              "areaServed": [
+                { "@type": "State", "name": "Kerala", "containedInPlace": { "@type": "Country", "name": "India" } },
+                { "@type": "State", "name": "Tamil Nadu", "containedInPlace": { "@type": "Country", "name": "India" } },
+                { "@type": "State", "name": "Karnataka", "containedInPlace": { "@type": "Country", "name": "India" } }
+              ],
               "foundingDate": "2014",
               "openingHoursSpecification": [
                 {
