@@ -68,9 +68,9 @@ export default function Products() {
           {/* Description + button row (right-aligned per Figma) */}
           <div className={styles.descRow}>
             <p className={styles.desc}>
-              From precision-crafted aluminum windows to large-scale facades, our solutions are
-              designed for durability, performance, and seamless integration across residential
-              and commercial environments.
+              Redefining modern architecture with premium aluminum windows and doors, expertly
+              engineered for elegance, strength, energy efficiency, and long-lasting
+              performance.
             </p>
             <Link href="/products" className={styles.viewBtn}>View all Products</Link>
           </div>

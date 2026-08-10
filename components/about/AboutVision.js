@@ -79,7 +79,7 @@ export default function AboutVision() {
           <div className={styles.textCol}>
             <p className={styles.eyebrow} ref={eyebrowRef}>Our Vision</p>
             <p className={styles.body} ref={bodyRef}>
-              Our vision is to become the industry leader in glass and window solutions, recognized for our innovation, quality, and customer-centric approach. We aspire to set new standards in the service sector by consistently delivering superior products and services that transform spaces. Through sustainable practices and a focus on excellence, we aim to drive growth and positively impact the communities we serve.
+              Our vision is to become South India's most trusted aluminum windows and doors brand, known for delivering exactly what we promise. As we grow beyond 4,000 homes, we remain committed to pre-engineered precision, transparent communication, exceptional craftsmanship, professional service, and on-time delivery — building lasting relationships with every homeowner, architect, and builder we serve.
             </p>
             <Link href="/products" className={styles.btn} ref={btnRef}>
               Explore More

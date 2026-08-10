@@ -9,9 +9,9 @@ import styles from './AboutStory.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: '7+',      label: 'Clients Served' },
-  { value: '100%',    label: 'Clients Satisfaction' },
-  { value: 'On-Time', label: 'Project Delivery' },
+  { value: '4000+', label: 'Clients' },
+  { value: '10+',   label: 'Years Experience' },
+  { value: '100%',  label: 'On-Time Project Delivery' },
 ];
 
 export default function AboutStory() {
@@ -87,10 +87,10 @@ export default function AboutStory() {
         <div className={styles.left}>
           <div className={styles.textBlock}>
             <h2 className={styles.heading} ref={headingRef}>
-              Built with Precision
+              South India's Leading Aluminum Doors and Windows Brand
             </h2>
             <p className={styles.body} ref={bodyRef}>
-              For over a decade, SGD Group of Companies has been helping clients transform their spaces with high-quality glass and window solutions. We work across residential and commercial projects, offering installation and long-term service support. Our approach is simple — deliver reliable systems, execute with care, and ensure every detail is handled with precision. We believe that well-designed systems don't just serve a function — they enhance how a space looks, feels, and performs.
+              At SGD Group of Companies, we design pre-engineered aluminum windows and doors that combine precision, elegance, and lasting performance. As South India's leading aluminum doors and windows brand, we are trusted by over <span className={styles.highlight}>4,000 premium homes</span> across Kerala, Tamil Nadu, and Karnataka. Our commitment to exceptional craftsmanship, professional customer service, and on-time delivery ensures every project reflects quality, reliability, and enduring value.
             </p>
           </div>
 

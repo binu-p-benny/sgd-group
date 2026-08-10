@@ -78,7 +78,7 @@ export default function AboutMission() {
 
           {/* Body — Inter 400, 20px, lh 34px */}
           <p className={styles.body} ref={bodyRef}>
-            At SGD Group Of Companies, our mission is to provide exceptional glass and window solutions that exceed customer expectations. We are dedicated to delivering top-quality craftsmanship and unparalleled service, ensuring that every project enhances the aesthetic and functional value of residential and commercial properties. Our team is committed to precision, care, and continuous improvement, creating lasting partnerships with our clients through trust and reliability.
+            Our mission is to bring pre-engineered aluminum window and door systems to homes and businesses across South India, backed by professional customer service, honest timelines, and craftsmanship that doesn't cut corners. We measure our success not in units sold, but in doors that close without a fight ten years later, and clients who call us back for their next project.
           </p>
 
           {/* CTA button — pill, border 1px rgba(17,17,17,0.1) */}

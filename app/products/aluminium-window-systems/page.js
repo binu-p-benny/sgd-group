@@ -44,8 +44,15 @@ export default function AluminiumWindowSystemsPage() {
         bg="/services/services-02.png"
       />
 
-      <ApplicationsSection image="/services/services-02.png" />
-      <FeatureSection image="/services/services-02.png" />
+      <ApplicationsSection
+        image="/services/services-02.png"
+        description="Our aluminum window systems are thoughtfully engineered to bring together modern design, lasting durability, and everyday comfort. Built with precision and premium materials, they offer seamless functionality, enhanced natural light, and reliable performance for homes and commercial spaces. Every installation reflects our commitment to quality craftsmanship, elegant finishes, and customer satisfaction."
+      />
+      <FeatureSection
+        image="/services/services-02.png"
+        heading="Timeless Design, Lasting Strength"
+        body="Beautiful spaces begin with exceptional windows. Our aluminum window systems are engineered for durability, precision, and modern aesthetics, offering superior performance in every season. With premium finishes, smooth operation, and dependable quality, they create brighter, safer, and more inspiring living and working environments."
+      />
       <KeyFeaturesSection />
 
       {/* Mobile-only combined image grid — replaces the separate
