@@ -64,8 +64,9 @@ export default function Services() {
           </div>
           <div className={styles.descCol}>
             <p className={styles.desc}>
-              Factory-finished aluminum window systems that reduce on-site work, ensure accurate
-              fit, and deliver long-lasting durability with a premium finish.
+              Designed for precision, our solutions ensure faster installation, lasting
+              durability, elegant aesthetics, superior performance, and complete customer
+              satisfaction.
             </p>
             <button className={styles.exploreBtn}>Explore More</button>
           </div>
