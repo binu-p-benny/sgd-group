@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
         <div className={styles.whyLeft}>
           <h2 className={styles.whyTitle}>Why Choose Us</h2>
           <p className={styles.whyBody}>
-            Combine sleek elegance with lasting strength. Their slim frames let in more natural light and offer expansive views, while durable aluminum resists rust, corrosion, and warping for years of worry-free performance. Low-maintenance and energy-efficient with insulated glass and thermal break technology, they reduce upkeep and help save on energy bills. With a variety of colors, finishes, and styles, our windows bring both style and comfort to every home.
+            At SGD Group of Companies, we combine thoughtful design, precision engineering, and dependable craftsmanship to create aluminium door systems built for modern living. Our solutions offer lasting durability, elegant finishes, energy efficiency, and minimal maintenance. From the first consultation to installation, our professional team ensures clear communication, careful execution, and on-time delivery. Trusted by homeowners, architects, and builders across South India, we focus on creating quality products and experiences that bring lasting value to every space we serve.
           </p>
 
           <div className={styles.accordion}>
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
 
         {/* Right: image */}
         <div className={styles.whyImage}>
-          <img src="/services/services-04.png" alt="Why choose SGD aluminium windows" />
+          <img src="/services/services-04.png" alt="Why choose SGD aluminium doors" />
         </div>
 
       </div>

@@ -1,7 +1,5 @@
 import { blogPosts } from './blog/posts';
-// Location pages are parked — app/_locations is a private folder, so the routes
-// do not resolve. Restore with the loop below when they go live.
-// import { indexableLocations } from './_locations/data';
+import { indexableLocations } from './locations/data';
 
 const BASE_URL = 'https://sgdgroup.in';
 
@@ -64,15 +62,15 @@ export default function sitemap() {
     }
   }
 
-  // Only states whose copy is written — see contentComplete in ./_locations/data.js
-  // for (const loc of indexableLocations) {
-  //   entries.push({
-  //     url: `${BASE_URL}/locations/${loc.slug}`,
-  //     lastModified: new Date(),
-  //     changeFrequency: 'monthly',
-  //     priority: 0.8,
-  //   });
-  // }
+  // Only states whose copy is written — see contentComplete in ./locations/data.js
+  for (const loc of indexableLocations) {
+    entries.push({
+      url: `${BASE_URL}/locations/${loc.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    });
+  }
 
   for (const post of blogPosts) {
     entries.push({

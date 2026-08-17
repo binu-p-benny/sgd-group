@@ -10,10 +10,10 @@ import VideoTestimonials from '@/components/home/VideoTestimonials';
 export const metadata = {
   title: 'Aluminium Door Systems | SGD Group of Companies Kerala',
   description: 'Explore SGD Group\'s aluminium door systems — Imperial SS2, Vista, Ultra, Retro Gulf, HL-50, Nexus and Horizon — premium, thermally efficient, and architecturally refined for residential and commercial projects.',
-  keywords: 'slim window systems Kerala, slim aluminium windows, SGD aluminium windows, architectural windows Kerala',
+  keywords: 'aluminium door systems Kerala, aluminium doors, SGD aluminium doors, architectural doors Kerala',
   openGraph: {
     title: 'Aluminium Door Systems | SGD Group',
-    description: 'Premium slim-profile aluminium window systems for residential and commercial projects in Kerala.',
+    description: 'Premium aluminium door systems for residential and commercial projects in Kerala.',
     url: 'https://sgdgroup.in/products/aluminium-door-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
@@ -128,12 +128,12 @@ const doorSystems = [
 ];
 
 const features = [
-  { title: 'Ultra-Slim Profiles', desc: 'Maximize natural light and enjoy wide, unobstructed views with our elegant slim-line design.' },
-  { title: 'Smooth Sliding Mechanism', desc: 'Engineered for effortless operation and long-term durability.' },
-  { title: 'High-Performance Hardware', desc: 'Equipped with Pego Hardware trusted for its precision and strength, backed by a 10-Year Warranty.' },
-  { title: 'Weather-Resistant Sealing', desc: 'Premium EPDM Gaskets ensure exceptional weatherproofing, offering longevity and protection with a 15-Year Warranty.' },
-  { title: 'Superior Glass Quality', desc: 'Installed with Saint-Gobain Toughened Glass for enhanced safety, clarity and durability.' },
-  { title: 'Support', desc: 'We provide ongoing support maintenance advice and service when needed.' },
+  { title: 'Precision-Engineered Systems', desc: 'Factory-finished for accurate fit and consistent quality.' },
+  { title: 'Premium Aluminium Profiles', desc: 'Strong, lightweight, and built for long-lasting performance.' },
+  { title: 'Modern Aesthetic Design', desc: 'Clean lines and elegant finishes for contemporary spaces.' },
+  { title: 'Seamless Installation', desc: 'Pre-engineered solutions help reduce on-site work and delays.' },
+  { title: 'Durable & Low Maintenance', desc: 'Designed to withstand everyday use while maintaining their finish.' },
+  { title: 'Professional Service & Delivery', desc: 'Expert support, exceptional craftsmanship, and dependable on-time delivery.' },
 ];
 
 function IconRow({ items }) {
@@ -152,7 +152,7 @@ function IconRow({ items }) {
   );
 }
 
-export default function AluminiumWindowSystemsPage() {
+export default function AluminiumDoorSystemsPage() {
   return (
     <main>
       <Navigation />
@@ -168,8 +168,7 @@ export default function AluminiumWindowSystemsPage() {
           {/* Left: text + icon grid */}
           <div className={styles.left}>
             <p className={styles.description}>
-              Premium aluminium window systems designed for modern residential and commercial spaces. With over a decade of experience, our solutions combine clean aesthetics, durability, and precise engineering.<br /><br />
-              With over 10 years of expertise, we work across residential and commercial projects, offering sliding, openable, and custom window systems tailored to each space. Every detail is carefully executed to ensure durability, performance, and lasting quality.
+              Our aluminium door systems blend contemporary design with dependable strength, creating entrances that feel welcoming, secure, and built to last. Carefully engineered for smooth movement and everyday durability, they complement modern homes, villas, and commercial spaces. With premium finishes and attention to detail, every door adds lasting value, comfort, and character to your architecture.
             </p>
             <div className={styles.iconGrid}>
               <IconRow items={row1} />
@@ -179,20 +178,20 @@ export default function AluminiumWindowSystemsPage() {
 
           {/* Right: image */}
           <div className={styles.imageWrapper}>
-            <img src="/services/services-02.png" alt="Aluminium window installation" />
+            <img src="/services/services-02.png" alt="Aluminium door installation" />
           </div>
 
           {/* Mobile-only combined image grid — replaces the separate
               per-section images below with one compact mosaic */}
           <div className={styles.mobileImageGrid}>
             <div className={styles.mobileImageGridItem}>
-              <img src="/services/services-02.png" alt="Aluminium window installation" />
+              <img src="/services/services-02.png" alt="Aluminium door installation" />
             </div>
             <div className={styles.mobileImageGridItem}>
-              <img src="/services/services-03.png" alt="Premium aluminium window design" />
+              <img src="/services/services-03.png" alt="Premium aluminium door design" />
             </div>
             <div className={styles.mobileImageGridItem}>
-              <img src="/services/services-04.png" alt="Why choose SGD aluminium windows" />
+              <img src="/services/services-04.png" alt="Why choose SGD aluminium doors" />
             </div>
           </div>
 
@@ -210,9 +209,9 @@ export default function AluminiumWindowSystemsPage() {
           </div>
 
           <div className={styles.premiumContent}>
-            <h2 className={styles.premiumTitle}>Premium Design, Lasting Performance</h2>
+            <h2 className={styles.premiumTitle}>Timeless Design, Lasting Strength</h2>
             <p className={styles.premiumBody}>
-              Bring a touch of elegance to your space with our ultra-slim designs that fill your rooms with natural light and beautiful views. Enjoy the effortless glide of smooth, durable sliders crafted with trusted Pego Hardware. With long-lasting weather protection and premium Saint-Gobain toughened glass, you'll experience comfort, safety, and style that truly lasts.
+              Beautiful spaces begin with exceptional doors. Our aluminium door systems are engineered for durability, precision, and modern aesthetics, offering superior performance in every season. With premium finishes, smooth operation, and dependable quality, they create brighter, safer, and more inspiring living and working environments.
             </p>
             <button className={styles.playBtn}>Play Video</button>
           </div>

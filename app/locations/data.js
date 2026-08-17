@@ -15,10 +15,9 @@ export const BUSINESS = {
 
 /* The full system range, linked from every location page for internal linking. */
 export const PRODUCT_RANGE = [
-  { name: 'Slim Window Systems',   href: '/products/slim-window-systems',   desc: 'Minimal-sightline window systems for expansive glass.' },
-  { name: 'Casement Door Systems', href: '/products/casement-door-systems', desc: 'Heavy-duty and residential casement door series.' },
-  { name: 'Signature Series',      href: '/products/signature-series',      desc: 'Curtain wall, panoramic sliding and pivot-door systems.' },
-  { name: 'Speciality Systems',    href: '/products/speciality-systems',    desc: 'Tilt & turn, sliding folding, vertical sliding and more.' },
+  { name: 'Aluminium Window Systems', href: '/products/aluminium-window-systems', desc: 'Sustainable and slim-profile window systems for expansive glass.' },
+  { name: 'Aluminium Door Systems',   href: '/products/aluminium-door-systems',   desc: 'Heavy-duty casement, curtain wall and panoramic door systems.' },
+  { name: 'Signature Systems',        href: '/products/signature-systems',        desc: 'Tilt & turn, sliding folding, vertical sliding and more.' },
 ];
 
 /*

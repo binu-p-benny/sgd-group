@@ -23,13 +23,11 @@ const commercialProjects = [
 ];
 
 /* Service locations — states we currently operate in.
-   The per-state pages are parked in app/_locations (private folder = no route),
-   so these point at /contact for now. To go live, un-private that folder and
-   restore the hrefs below — slugs mirror the keys in app/_locations/data.js. */
+   Slugs mirror the keys in app/locations/data.js. */
 const southIndiaLocations = [
-  { name: 'Kerala',     href: '/contact' },  // '/locations/kerala'
-  { name: 'Tamil Nadu', href: '/contact' },  // '/locations/tamil-nadu'
-  { name: 'Karnataka',  href: '/contact' },  // '/locations/karnataka'
+  { name: 'Kerala',     href: '/locations/kerala' },
+  { name: 'Tamil Nadu', href: '/locations/tamil-nadu' },
+  { name: 'Karnataka',  href: '/locations/karnataka' },
 ];
 
 export default function Navigation() {

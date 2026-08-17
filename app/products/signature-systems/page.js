@@ -55,7 +55,7 @@ export default function SignatureSystemsPage() {
 
       <ApplicationsSection
         image="/services/services-01.png"
-        description="Signature Systems cover the openings a standard slide or swing can't — tight vertical sashes, ventilation-only vents, and wide folding openings that need to disappear completely. Every mechanism shares the same aluminium quality and hardware as the rest of our range."
+        description="Our Signature Systems bring thoughtful design and practical performance together. From flexible Parallel Opening and versatile Tilt & Turn to space-saving Vertical Sliding and expansive Sliding Folding solutions, each system is crafted to suit modern lifestyles. With refined aluminium profiles, smooth operation, and lasting durability, these designs help create comfortable, elegant spaces that feel truly yours."
       />
       <FeatureSection
         image="/services/services-02.png"

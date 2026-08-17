@@ -53,7 +53,16 @@ export default function AluminiumWindowSystemsPage() {
         heading="Timeless Design, Lasting Strength"
         body="Beautiful spaces begin with exceptional windows. Our aluminum window systems are engineered for durability, precision, and modern aesthetics, offering superior performance in every season. With premium finishes, smooth operation, and dependable quality, they create brighter, safer, and more inspiring living and working environments."
       />
-      <KeyFeaturesSection />
+      <KeyFeaturesSection
+        features={[
+          { title: 'Precision-Engineered Systems', desc: 'Factory-finished for accurate fit and consistent quality.' },
+          { title: 'Premium Aluminium Profiles', desc: 'Strong, lightweight, and built for long-lasting performance.' },
+          { title: 'Modern Aesthetic Design', desc: 'Clean lines and elegant finishes for contemporary spaces.' },
+          { title: 'Seamless Installation', desc: 'Pre-engineered solutions help reduce on-site work and delays.' },
+          { title: 'Durable & Low Maintenance', desc: 'Designed to withstand everyday use while maintaining their finish.' },
+          { title: 'Professional Service & Delivery', desc: 'Expert support, exceptional craftsmanship, and dependable on-time delivery.' },
+        ]}
+      />
 
       {/* Mobile-only combined image grid — replaces the separate
           per-section images above with one compact mosaic */}
