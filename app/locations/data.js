@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://sgdgroup.in';
+export const BASE_URL = 'https://sgdgroupofcompanies.com';
 
 /* Head-office details — mirrored from the LocalBusiness JSON-LD in app/layout.js
    and the contact page. Keep in sync if those change. */

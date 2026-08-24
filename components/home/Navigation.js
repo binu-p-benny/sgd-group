@@ -10,16 +10,17 @@ import { useLenis } from '@studio-freight/react-lenis';
 import styles from './Navigation.module.css';
 
 const residentialProjects = [
-  { name: 'Jabir Kottakal',    href: '/projects/jabir-kottakal',    image: '/project-Jabir.png' },
-  { name: 'Shameer Vengara',   href: '/projects/shameer-vengara',   image: '/projects/projects-01.png' },
-  { name: 'Loshidh Thrissur',  href: '/projects/loshidh-thrissur',  image: '/project-loshidh.png' },
-  { name: 'Nidhin Engapuzha',  href: '/projects/nidhin-engapuzha',  image: '/projects/projects-02.png' },
-  { name: 'Nidhin Kannur',     href: '/projects/nidhin-kannur',     image: '/projects/projects-03.png' },
+  { name: 'Jabir Kottakal',    href: '/projects/jabir-kottakal',    image: '/projects/jabir-kottakal-1.jpg' },
+  { name: 'Shameer Vengara',   href: '/projects/shameer-vengara',   image: '/projects/shameer-vengara-1.jpg' },
+  { name: 'Loshidh Thrissur',  href: '/projects/loshidh-thrissur',  image: '/projects/loshidh-thrissur-1.jpg' },
+  { name: 'Nidhin Engapuzha',  href: '/projects/nidhin-engapuzha',  image: '/projects/nidhin-engapuzha-1.jpg' },
+  { name: 'Nidhin Kannur',     href: '/projects/nidhin-kannur',     image: '/projects/nidhin-kannur-1.jpg' },
+  { name: 'Jilce Jose',        href: '/projects/jilce-jose-thrissur', image: '/projects/jilce-jose-thrissur-1.jpg' },
 ];
 
 const commercialProjects = [
   { name: 'Nikshan Electronics', href: '/projects/nikshan-electronics', image: '/project-nikshan.png' },
-  { name: 'Eham Digital',        href: '/projects/eham-digital',        image: '/project-eham.png' },
+  { name: 'Eham Digital',        href: '/projects/eham-digital',        image: '/projects/eham-digital-real.jpg' },
 ];
 
 /* Service locations — states we currently operate in.

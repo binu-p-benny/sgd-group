@@ -64,7 +64,7 @@ export default function AboutMission() {
         {/* ── Left — image ── */}
         <div className={styles.imgWrap} ref={imgRef}>
           <img
-            src="/about.png"
+            src="/about/about-branded-interior.png"
             alt="SGD Group — Our Mission"
             className={styles.img}
           />

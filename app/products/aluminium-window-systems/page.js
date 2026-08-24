@@ -16,21 +16,21 @@ export const metadata = {
   openGraph: {
     title: 'Aluminium Window Systems | SGD Group',
     description: 'Premium aluminium window systems — Eco Gulf, HL-40, Blaze and Slide-Pro — for residential and commercial spaces.',
-    url: 'https://sgdgroup.in/products/aluminium-window-systems',
+    url: 'https://sgdgroupofcompanies.com/products/aluminium-window-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/products/aluminium-window-systems',
+    canonical: 'https://sgdgroupofcompanies.com/products/aluminium-window-systems',
   },
 };
 
 const windowSystems = [
-  { name: 'Eco Gulf',  href: '/products/aluminium-window-systems/eco-gulf',  image: '/services/services-02.png' },
-  { name: 'HL-40',     href: '/products/aluminium-window-systems/hl40',      image: '/services/services-04.png' },
-  { name: 'Blaze',     href: '/products/aluminium-window-systems/blaze',     image: '/services/services-03.png' },
-  { name: 'Slide-Pro', href: '/products/aluminium-window-systems/slide-pro', image: '/services/services-01.png' },
+  { name: 'Eco Gulf',  href: '/products/aluminium-window-systems/eco-gulf',  image: '/products/ecogulf-1.jpg' },
+  { name: 'HL-40',     href: '/products/aluminium-window-systems/hl40',      image: '/products/hl40-1.jpg' },
+  { name: 'Blaze',     href: '/products/aluminium-window-systems/blaze',     image: '/products/blaze-1.jpg' },
+  { name: 'Slide-Pro', href: '/products/aluminium-window-systems/slide-pro', image: '/products/slidepro-1.jpg' },
 ];
 
 export default function AluminiumWindowSystemsPage() {
@@ -41,15 +41,15 @@ export default function AluminiumWindowSystemsPage() {
         label="Aluminium Window Systems"
         title="Aluminium Window Systems."
         subtitle="Precision-engineered aluminium window profiles — Eco Gulf, HL-40, Blaze and Slide-Pro — built for lasting performance and architectural clarity."
-        bg="/services/services-02.png"
+        bg="/products/window-systems-hillview.jpg"
       />
 
       <ApplicationsSection
-        image="/services/services-02.png"
+        image="/products/window-systems-swing.jpg"
         description="Our aluminum window systems are thoughtfully engineered to bring together modern design, lasting durability, and everyday comfort. Built with precision and premium materials, they offer seamless functionality, enhanced natural light, and reliable performance for homes and commercial spaces. Every installation reflects our commitment to quality craftsmanship, elegant finishes, and customer satisfaction."
       />
       <FeatureSection
-        image="/services/services-02.png"
+        image="/products/window-systems-detail.jpg"
         heading="Timeless Design, Lasting Strength"
         body="Beautiful spaces begin with exceptional windows. Our aluminum window systems are engineered for durability, precision, and modern aesthetics, offering superior performance in every season. With premium finishes, smooth operation, and dependable quality, they create brighter, safer, and more inspiring living and working environments."
       />

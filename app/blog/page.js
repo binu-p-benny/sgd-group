@@ -14,19 +14,19 @@ export const metadata = {
   openGraph: {
     title: 'Insights & News | SGD Group',
     description: 'Articles from SGD Group on structural glazing, skylights, frameless doors, and the latest in aluminium and glass design.',
-    url: 'https://sgdgroup.in/blog',
+    url: 'https://sgdgroupofcompanies.com/blog',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: [{ url: 'https://sgdgroup.in/project-nikshan.png', width: 1200, height: 630, alt: 'SGD Group Insights & News' }],
+    images: [{ url: 'https://sgdgroupofcompanies.com/project-nikshan.png', width: 1200, height: 630, alt: 'SGD Group Insights & News' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Insights & News | SGD Group',
     description: 'Articles from SGD Group on structural glazing, skylights, frameless doors, and the latest in aluminium and glass design.',
-    images: ['https://sgdgroup.in/project-nikshan.png'],
+    images: ['https://sgdgroupofcompanies.com/project-nikshan.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/blog',
+    canonical: 'https://sgdgroupofcompanies.com/blog',
   },
 };
 

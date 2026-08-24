@@ -7,12 +7,11 @@ import styles from './Services.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Mosaic image slots — swap src values for real assets when ready
 const mosaicImages = [
-  { src: 'services/services-01.png',  alt: 'Aluminium curtain wall building',      slot: 'tall'        },
-  { src: 'services/services-02.png',     alt: 'Window frame detail close-up',          slot: 'topMid'      },
-  { src: 'services/services-03.png',  alt: 'Window in mountain landscape',          slot: 'topRight'    },
-  { src: 'services/services-04.png',         alt: 'Window cross-section diagram',          slot: 'bottomMid'   },
+  { src: 'services/home-mosaic-tall.jpg',      alt: 'Double-height living room with full-height aluminium glazing', slot: 'tall'        },
+  { src: 'services/home-mosaic-topmid.jpg',    alt: 'Window frame detail close-up',                                  slot: 'topMid'      },
+  { src: 'services/home-mosaic-topright.png',  alt: 'Aluminium window with a forest view',                           slot: 'topRight'    },
+  { src: 'services/home-mosaic-bottommid.png', alt: 'Window cross-section diagram',                                  slot: 'bottomMid'   },
 ];
 
 export default function Services() {

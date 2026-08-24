@@ -11,9 +11,9 @@ const products = {
   'vertical-sliding': {
     name: 'Vertical Sliding',
     tagline: 'Signature System',
-    hero: '/services/services-02.png',
+    hero: '/products/verticalsliding-1.jpg',
     intro: 'Vertical Sliding is a stylish aluminium window system that combines classic character with modern functionality. Designed to move smoothly up and down, it offers practical ventilation without taking up extra space. With durable construction, clean profiles, and refined finishes, it brings comfort, elegance, and reliable performance to modern homes and commercial spaces.',
-    image: '/services/services-03.png',
+    image: '/products/verticalsliding-2.jpg',
     specs: [
       { label: 'Frame Depth', value: '52 mm' },
       { label: 'Balance', value: 'Concealed spring balance' },
@@ -33,9 +33,9 @@ const products = {
   'tilt-turn': {
     name: 'Tilt & Turn',
     tagline: 'Signature System',
-    hero: '/services/services-03.png',
+    hero: '/products/tilt-turn-onsite.jpg',
     intro: 'Tilt & Turn is a versatile aluminium window system designed for modern comfort and flexibility. Its dual-opening function lets you tilt the window for gentle ventilation or turn it fully open when you need more airflow. With clean lines, smooth operation, and lasting durability, it suits contemporary homes and commercial spaces.',
-    image: '/services/services-04.png',
+    image: '/products/tilt-turn-onsite.jpg',
     specs: [
       { label: 'Frame Depth', value: '50 mm' },
       { label: 'Hardware', value: 'Multi-point tilt & turn gear' },
@@ -55,9 +55,9 @@ const products = {
   'sliding-folding': {
     name: 'Sliding Folding',
     tagline: 'Signature System',
-    hero: '/services/services-04.png',
+    hero: '/products/slidingfolding-1.jpg',
     intro: 'Sliding Folding is a versatile aluminium door system designed to open spaces beautifully. Its smooth folding panels create a wide, unobstructed opening, making indoor and outdoor areas feel naturally connected. With strong construction, sleek profiles, and effortless operation, it brings flexibility, natural light, and modern elegance to homes and commercial spaces.',
-    image: '/services/services-01.png',
+    image: '/products/slidingfolding-2.jpg',
     specs: [
       { label: 'Frame Depth', value: '46 mm' },
       { label: 'Panels', value: '3 to 7-panel configurations' },
@@ -77,9 +77,9 @@ const products = {
   'parallel-opening': {
     name: 'Parallel Opening',
     tagline: 'Signature System',
-    hero: '/services/services-01.png',
+    hero: '/products/parallel-opening-onsite.jpg',
     intro: 'Parallel Opening is a thoughtfully designed aluminium window system that brings fresh air, natural light, and everyday comfort into your space. Its unique opening style allows the window to move outward evenly, creating effective ventilation while maintaining a clean, modern appearance and dependable performance for contemporary homes and commercial spaces.',
-    image: '/services/services-03.png',
+    image: '/products/parallel-opening-onsite.jpg',
     specs: [
       { label: 'Frame Depth', value: '48 mm' },
       { label: 'Hardware', value: 'Parallel friction stays' },
@@ -106,7 +106,7 @@ export async function generateMetadata({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) return {};
-  const url = `https://sgdgroup.in/products/signature-systems/${product}`;
+  const url = `https://sgdgroupofcompanies.com/products/signature-systems/${product}`;
   return {
     title: `${data.name} | Signature Systems | SGD Group of Companies Kerala`,
     description: data.intro.slice(0, 155),
@@ -131,10 +131,10 @@ export default async function SignatureSystemsProductPage({ params }) {
     <main>
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://sgdgroup.in' },
-          { name: 'Products', url: 'https://sgdgroup.in/products' },
-          { name: 'Signature Systems', url: 'https://sgdgroup.in/products/signature-systems' },
-          { name: data.name, url: `https://sgdgroup.in/products/signature-systems/${product}` },
+          { name: 'Home', url: 'https://sgdgroupofcompanies.com' },
+          { name: 'Products', url: 'https://sgdgroupofcompanies.com/products' },
+          { name: 'Signature Systems', url: 'https://sgdgroupofcompanies.com/products/signature-systems' },
+          { name: data.name, url: `https://sgdgroupofcompanies.com/products/signature-systems/${product}` },
         ]}
       />
       <Navigation />

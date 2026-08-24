@@ -1,7 +1,7 @@
 import { blogPosts } from './blog/posts';
 import { indexableLocations } from './locations/data';
 
-const BASE_URL = 'https://sgdgroup.in';
+const BASE_URL = 'https://sgdgroupofcompanies.com';
 
 const staticRoutes = [
   { path: '/', priority: 1, changeFrequency: 'monthly' },

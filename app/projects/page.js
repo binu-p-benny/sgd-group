@@ -10,25 +10,26 @@ export const metadata = {
   openGraph: {
     title: 'Projects | SGD Group',
     description: 'Residential and commercial aluminium projects by SGD Group of Companies.',
-    url: 'https://sgdgroup.in/projects',
+    url: 'https://sgdgroupofcompanies.com/projects',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
-  alternates: { canonical: 'https://sgdgroup.in/projects' },
+  alternates: { canonical: 'https://sgdgroupofcompanies.com/projects' },
 };
 
 const residential = [
-  { name: 'Jabir Kottakal',   href: '/projects/jabir-kottakal',   image: '/project-Jabir.png',           location: 'Kottakal, Kerala' },
-  { name: 'Shameer Vengara',  href: '/projects/shameer-vengara',  image: '/projects/projects-01.png',    location: 'Vengara, Kerala' },
-  { name: 'Loshidh Thrissur', href: '/projects/loshidh-thrissur', image: '/project-loshidh.png',         location: 'Thrissur, Kerala' },
-  { name: 'Nidhin Engapuzha', href: '/projects/nidhin-engapuzha', image: '/projects/projects-02.png',    location: 'Engapuzha, Kerala' },
-  { name: 'Nidhin Kannur',    href: '/projects/nidhin-kannur',    image: '/projects/projects-03.png',    location: 'Kannur, Kerala' },
+  { name: 'Jabir Kottakal',      href: '/projects/jabir-kottakal',      image: '/projects/jabir-kottakal-1.jpg',      location: 'Kottakal, Kerala' },
+  { name: 'Shameer Vengara',     href: '/projects/shameer-vengara',     image: '/projects/shameer-vengara-1.jpg',     location: 'Vengara, Kerala' },
+  { name: 'Loshidh Thrissur',    href: '/projects/loshidh-thrissur',    image: '/projects/loshidh-thrissur-1.jpg',    location: 'Thrissur, Kerala' },
+  { name: 'Nidhin Engapuzha',    href: '/projects/nidhin-engapuzha',    image: '/projects/nidhin-engapuzha-1.jpg',    location: 'Engapuzha, Kerala' },
+  { name: 'Nidhin Kannur',       href: '/projects/nidhin-kannur',       image: '/projects/nidhin-kannur-1.jpg',       location: 'Kannur, Kerala' },
+  { name: 'Jilce Jose',          href: '/projects/jilce-jose-thrissur', image: '/projects/jilce-jose-thrissur-1.jpg', location: 'Thrissur, Kerala' },
 ];
 
 const commercial = [
   { name: 'Nikshan Electronics', href: '/projects/nikshan-electronics', image: '/project-nikshan.png', location: 'Kerala' },
-  { name: 'Eham Digital',        href: '/projects/eham-digital',        image: '/project-eham.png',    location: 'Kerala' },
+  { name: 'Eham Digital',        href: '/projects/eham-digital',        image: '/projects/eham-digital-real.jpg', location: 'Kerala' },
 ];
 
 function ProjectGrid({ title, items }) {
@@ -67,7 +68,7 @@ export default function ProjectsPage() {
           </p>
         </div>
         <div className={styles.heroBg}>
-          <img src="/projects/projects-04.png" alt="SGD Projects" />
+          <img src="/projects/nidhin-engapuzha-2.jpg" alt="SGD Projects" />
         </div>
       </section>
 

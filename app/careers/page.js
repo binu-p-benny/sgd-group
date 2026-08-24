@@ -11,13 +11,13 @@ export const metadata = {
   openGraph: {
     title: 'Careers at SGD Group of Companies',
     description: 'Join Kerala\'s leading aluminium and glazing company. Explore open positions.',
-    url: 'https://sgdgroup.in/careers',
+    url: 'https://sgdgroupofcompanies.com/careers',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/careers',
+    canonical: 'https://sgdgroupofcompanies.com/careers',
   },
 };
 

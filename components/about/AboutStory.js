@@ -118,16 +118,16 @@ export default function AboutStory() {
           {/* Large primary image */}
           <div className={styles.img1Wrap} ref={img1Ref}>
             <img
-              src="/about.png"
-              alt="About SGD Group"
+              src="/about/about-kitchen-dusk.jpg"
+              alt="SGD-installed kitchen sliding window at dusk"
               className={styles.img1}
             />
           </div>
           {/* Small overlay image — bottom-right */}
           <div className={styles.img2Wrap} ref={img2Ref}>
             <img
-              src="/about.png"
-              alt="SGD Group project"
+              src="/about/about-villa-dusk.jpg"
+              alt="SGD showcase villa front elevation at dusk"
               className={styles.img2}
             />
           </div>

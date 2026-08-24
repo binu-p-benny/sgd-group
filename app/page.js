@@ -16,7 +16,7 @@ export const metadata = {
   title: 'SGD Group of Companies | Aluminium & Glazing Specialists Kerala',
   description: 'SGD Group — Kerala\'s trusted aluminium window systems, doors, facades, and architectural glazing specialists. 10+ years of craftsmanship across South India.',
   alternates: {
-    canonical: 'https://sgdgroup.in',
+    canonical: 'https://sgdgroupofcompanies.com',
   },
 };
 
