@@ -51,3 +51,7 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+// Enables Cloudflare bindings (env vars, etc.) when running `next dev` locally
+// against the OpenNext Cloudflare adapter. See open-next.config.ts / wrangler.jsonc.
+import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());

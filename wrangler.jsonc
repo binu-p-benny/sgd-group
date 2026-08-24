@@ -1,0 +1,29 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "sgd-group",
+	"compatibility_date": "2026-08-24",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			// Self-reference service binding, the service name must match the worker name
+			// see https://opennext.js.org/cloudflare/caching
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "sgd-group"
+		}
+	],
+	"images": {
+		// Enables next/image optimization to run on Cloudflare
+		// see https://opennext.js.org/cloudflare/howtos/image
+		"binding": "IMAGES"
+	}
+	// R2 incremental cache (for ISR/on-demand revalidation) was deliberately left out —
+	// setting it up requires creating a real R2 bucket under your Cloudflare account
+	// (`wrangler r2 bucket create sgd-group-opennext-cache`), which needs you logged in
+	// interactively. The site doesn't currently use ISR/revalidate, so this isn't blocking.
+	// See https://opennext.js.org/cloudflare/caching to add it later if needed.
+}
