@@ -11,8 +11,8 @@ import VideoTestimonials from '@/components/home/VideoTestimonials';
 
 export const metadata = {
   title: 'Signature Systems | SGD Group of Companies Kerala',
-  description: 'SGD Group\'s signature aluminium systems — Parallel Opening, Tilt & Turn, Vertical Sliding, and Sliding Folding — for openings that need a different mechanism.',
-  keywords: 'speciality window systems Kerala, tilt and turn windows, sliding folding doors, vertical sliding windows, parallel opening windows, SGD signature systems',
+  description: 'SGD Group\'s signature aluminium systems — folding windows, Parallel Opening, Tilt & Turn, Vertical Sliding — for openings a standard system can\'t solve.',
+  keywords: 'speciality window systems Kerala, tilt and turn windows, sliding folding doors, vertical sliding windows, parallel opening windows, SGD signature systems, folding windows Kerala, space-saving folding windows, bi-fold windows',
   openGraph: {
     title: 'Signature Systems | SGD Group',
     description: 'Signature aluminium window and door mechanisms for openings standard systems can\'t solve.',

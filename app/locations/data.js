@@ -9,7 +9,7 @@ export const BUSINESS = {
   region: 'Kerala',
   country: 'IN',
   telephone: '+919778151162',
-  telephoneAlt: '+917026285251',
+  telephoneAlt: '+917902266219',
   email: 'sgdprojectmanagement@gmail.com',
 };
 
@@ -61,7 +61,7 @@ export const locations = {
     title: 'Aluminium Windows & Glazing in Tamil Nadu | SGD Group',
     description:
       'SGD Group supplies and installs aluminium window systems, doors and architectural glazing across Tamil Nadu.',
-    keywords: 'aluminium windows Tamil Nadu, glazing contractors Tamil Nadu, aluminium doors Tamil Nadu',
+    keywords: 'aluminium windows Tamil Nadu, glazing contractors Tamil Nadu, aluminium doors Tamil Nadu, system aluminium windows Chennai, aluminium windows Chennai',
     intro:
       'SGD Group delivers its full range of aluminium window systems, doors and architectural glazing to projects across Tamil Nadu, coordinated from our head office in Calicut, Kerala.',
     areasLabel: 'Cities we serve',

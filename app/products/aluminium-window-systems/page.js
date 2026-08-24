@@ -11,8 +11,8 @@ import VideoTestimonials from '@/components/home/VideoTestimonials';
 
 export const metadata = {
   title: 'Aluminium Window Systems | SGD Group of Companies Kerala',
-  description: 'SGD Group\'s aluminium window systems — Eco Gulf, HL-40, Blaze and Slide-Pro — engineered for precision, security, and modern aesthetics.',
-  keywords: 'aluminium window systems Kerala, Eco Gulf window, HL-40 window, Blaze pivot system, Slide-Pro sliding window, SGD aluminium windows',
+  description: 'SGD Group\'s aluminium sliding glass window systems — Eco Gulf, HL-40, Blaze and Slide-Pro — slim-line, engineered for precision and modern Kerala homes.',
+  keywords: 'aluminium window systems Kerala, Eco Gulf window, HL-40 window, Blaze pivot system, Slide-Pro sliding window, SGD aluminium windows, sliding glass windows Kerala, best sliding windows, slim line windows, residential sliding windows, openable windows Kerala, casement windows Kerala, sliding windows with grill',
   openGraph: {
     title: 'Aluminium Window Systems | SGD Group',
     description: 'Premium aluminium window systems — Eco Gulf, HL-40, Blaze and Slide-Pro — for residential and commercial spaces.',

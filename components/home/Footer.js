@@ -58,10 +58,9 @@ export default function Footer() {
             <div className={styles.navColumn}>
               <p className={styles.colLabelServices}>Services</p>
               <ul className={styles.colLinks}>
-                <li><Link href="#">Aluminium Windows</Link></li>
-                <li><Link href="#">Aluminium Doors</Link></li>
-                <li><Link href="#">Facades</Link></li>
-                <li><Link href="#">Interiors</Link></li>
+                <li><Link href="/products/aluminium-window-systems">Aluminium Windows</Link></li>
+                <li><Link href="/products/aluminium-door-systems">Aluminium Doors</Link></li>
+                <li><Link href="/products/signature-systems">Signature Systems</Link></li>
               </ul>
             </div>
             {/* Links */}
@@ -118,7 +117,7 @@ export default function Footer() {
                 <div>
                   <a href="tel:+919778151162">+91 9778 151 162</a>
                   <br />
-                  <a href="tel:+917026285251">+91 70262 85251</a>
+                  <a href="tel:+917902266219">+91 79022 66219</a>
                 </div>
               </div>
             </div>
@@ -146,8 +145,8 @@ export default function Footer() {
             </a>
           </div>
           <div className={styles.legalLinks}>
-            <a href="#">Privacy policy</a>
-            <a href="#">Terms & conditions</a>
+            <Link href="/privacy-policy">Privacy policy</Link>
+            <Link href="/terms-and-conditions">Terms & conditions</Link>
           </div>
         </div>
 

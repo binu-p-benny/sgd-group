@@ -9,7 +9,7 @@ import Clients from '@/components/home/Clients';
 
 export const metadata = {
   title: 'About SGD Group of Companies | Kerala Glazing & Aluminium Specialists',
-  description: 'Learn about SGD Group, Kerala\'s trusted aluminium and glazing company with over 10 years of experience delivering premium architectural solutions across South India.',
+  description: 'Learn about SGD Group, Kerala\'s trusted aluminium and glazing company with 10+ years delivering premium architectural solutions across South India.',
   keywords: 'SGD Group about, Kerala glazing company, aluminium specialists Kerala, architectural glazing South India',
   openGraph: {
     title: 'About SGD Group of Companies',

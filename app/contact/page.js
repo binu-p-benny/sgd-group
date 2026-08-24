@@ -63,7 +63,7 @@ export default function ContactPage() {
                   <p className={styles.infoLabel}>Call Center</p>
                   <div className={`${styles.infoValue} ${styles.phoneList}`}>
                     <a href="tel:+919778151162">+91 9778 151 162</a>
-                    <a href="tel:+917026285251">+91 70262 85251</a>
+                    <a href="tel:+917902266219">+91 79022 66219</a>
                   </div>
                 </div>
                 <div className={styles.infoBlock}>

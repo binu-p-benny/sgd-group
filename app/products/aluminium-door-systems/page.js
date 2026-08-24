@@ -9,8 +9,8 @@ import VideoTestimonials from '@/components/home/VideoTestimonials';
 
 export const metadata = {
   title: 'Aluminium Door Systems | SGD Group of Companies Kerala',
-  description: 'Explore SGD Group\'s aluminium door systems — Imperial SS2, Vista, Ultra, Retro Gulf, HL-50, Nexus and Horizon — premium, thermally efficient, and architecturally refined for residential and commercial projects.',
-  keywords: 'aluminium door systems Kerala, aluminium doors, SGD aluminium doors, architectural doors Kerala',
+  description: 'SGD Group\'s aluminium & sliding glass door systems — Imperial SS2, Vista, Ultra, Retro Gulf, HL-50, Nexus and Horizon — precision-engineered for Kerala homes.',
+  keywords: 'aluminium door systems Kerala, aluminium doors, SGD aluminium doors, architectural doors Kerala, sliding glass doors Kerala, residential sliding doors, slim line sliding doors, automatic sliding doors, openable doors with grill Kerala, frameless sliding doors, Algerian sliding doors',
   openGraph: {
     title: 'Aluminium Door Systems | SGD Group',
     description: 'Premium aluminium door systems for residential and commercial projects in Kerala.',
