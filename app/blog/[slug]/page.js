@@ -15,8 +15,8 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
-  const url = `https://sgdgroup.in/blog/${slug}`;
-  const imageUrl = `https://sgdgroup.in${post.image}`;
+  const url = `https://sgdgroupofcompanies.com/blog/${slug}`;
+  const imageUrl = `https://sgdgroupofcompanies.com${post.image}`;
   return {
     title: `${post.title} | SGD Group of Companies Kerala`,
     description: post.excerpt,
@@ -49,8 +49,8 @@ export default async function BlogPostPage({ params }) {
   if (!post) notFound();
 
   const moreArticles = blogPosts.filter((p) => p.slug !== slug);
-  const url = `https://sgdgroup.in/blog/${slug}`;
-  const imageUrl = `https://sgdgroup.in${post.image}`;
+  const url = `https://sgdgroupofcompanies.com/blog/${slug}`;
+  const imageUrl = `https://sgdgroupofcompanies.com${post.image}`;
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }) {
     publisher: {
       '@type': 'Organization',
       name: 'SGD Group of Companies',
-      logo: { '@type': 'ImageObject', url: 'https://sgdgroup.in/logo-cl.png' },
+      logo: { '@type': 'ImageObject', url: 'https://sgdgroupofcompanies.com/logo-cl.png' },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
   };
@@ -83,8 +83,8 @@ export default async function BlogPostPage({ params }) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sgdgroup.in' },
-      { '@type': 'ListItem', position: 2, name: 'Insights & News', item: 'https://sgdgroup.in/blog' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://sgdgroupofcompanies.com' },
+      { '@type': 'ListItem', position: 2, name: 'Insights & News', item: 'https://sgdgroupofcompanies.com/blog' },
       { '@type': 'ListItem', position: 3, name: post.title, item: url },
     ],
   };

@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: '/admin',
     },
-    sitemap: 'https://sgdgroup.in/sitemap.xml',
+    sitemap: 'https://sgdgroupofcompanies.com/sitemap.xml',
   };
 }

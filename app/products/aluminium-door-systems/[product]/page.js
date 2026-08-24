@@ -11,9 +11,9 @@ const products = {
   imperialss2: {
     name: 'Imperial SS2',
     tagline: 'Aluminium Door System',
-    hero: '/services/services-01.png',
+    hero: '/products/imperial-ss2-pool-view.jpg',
     intro: 'Imperial SS2 brings together refined aluminium design, dependable strength, and effortless functionality for modern spaces. Its elegant profile and premium finish create a sophisticated entrance, while thoughtful engineering ensures lasting performance. Ideal for homes and commercial projects, it adds comfort, security, and timeless character to every space.',
-    image: '/services/services-02.png',
+    image: '/products/imperial-ss2-corridor.jpg',
     specs: [
       { label: 'Frame Depth', value: '50 mm' },
       { label: 'Sightline', value: '20 mm (interlock)' },
@@ -55,9 +55,9 @@ const products = {
   ultra: {
     name: 'Ultra',
     tagline: 'Aluminium Door System',
-    hero: '/services/services-03.png',
+    hero: '/products/ultra-1.jpg',
     intro: 'Ultra is a premium aluminium door system created for those who value clean design, lasting strength, and everyday comfort. Its refined profile and quality construction deliver smooth functionality and dependable performance, while the elegant finish adds a sophisticated touch to modern homes, villas, and commercial spaces.',
-    image: '/services/services-04.png',
+    image: '/products/ultra-2.jpg',
     specs: [
       { label: 'Frame Depth', value: '60 mm' },
       { label: 'Sightline', value: '22 mm (interlock)' },
@@ -77,9 +77,9 @@ const products = {
   retrogulf: {
     name: 'Retro Gulf',
     tagline: 'Aluminium Door System',
-    hero: '/services/services-04.png',
+    hero: '/products/retrogulf-1.jpg',
     intro: 'Retro Gulf combines timeless character with modern aluminium engineering, bringing warmth, elegance, and dependable performance to your space. Its distinctive design adds personality while durable construction ensures lasting reliability. Ideal for homes and commercial projects, Retro Gulf creates an inviting architectural statement without compromising everyday comfort or functionality.',
-    image: '/services/services-01.png',
+    image: '/products/retrogulf-1.jpg',
     specs: [
       { label: 'Frame Depth', value: '48 mm' },
       { label: 'Sightline', value: '25 mm (interlock)' },
@@ -99,9 +99,9 @@ const products = {
   hl50: {
     name: 'HL-50',
     tagline: 'Aluminium Door System',
-    hero: '/services/services-02.png',
+    hero: '/products/hl50-1.jpg',
     intro: 'HL-50 is a premium aluminium casement door system designed for modern spaces that value clean aesthetics and dependable performance. Its strong construction, refined profile, and smooth functionality create a comfortable, elegant experience. Built for lasting durability, HL-50 is an ideal choice for contemporary homes, villas, and commercial projects.',
-    image: '/services/services-03.png',
+    image: '/products/hl50-2.jpg',
     specs: [
       { label: 'Frame Depth', value: '50 mm' },
       { label: 'Panel Weight', value: 'Up to 120 kg' },
@@ -121,9 +121,9 @@ const products = {
   nexus: {
     name: 'Nexus',
     tagline: 'Aluminium Door System',
-    hero: '/services/services-01.png',
+    hero: '/products/nexus-1.jpg',
     intro: 'Nexus is a modern aluminium door system designed to connect style, comfort, and reliable performance. Its clean profile and durable construction bring a refined look to contemporary spaces, while smooth functionality makes everyday living easier. Ideal for homes and commercial projects, Nexus delivers lasting quality with effortless elegance.',
-    image: '/services/services-02.png',
+    image: '/products/nexus-2.jpg',
     specs: [
       { label: 'System Type', value: 'Unitised Curtain Wall' },
       { label: 'Mullion Depth', value: '75 mm' },
@@ -143,9 +143,9 @@ const products = {
   horizon: {
     name: 'Horizon',
     tagline: 'Aluminium Door System',
-    hero: '/services/services-02.png',
+    hero: '/products/horizon-1.jpg',
     intro: 'Horizon is a thoughtfully designed aluminium door system that brings openness, natural light, and modern elegance into everyday spaces. Its durable construction and refined profile offer dependable performance, while smooth functionality ensures comfort and convenience. Perfect for contemporary homes and commercial projects, Horizon creates bright spaces built for lasting enjoyment.',
-    image: '/services/services-03.png',
+    image: '/products/horizon-2.jpg',
     specs: [
       { label: 'Frame Depth', value: '55 mm' },
       { label: 'Max Panel Weight', value: '300 kg' },
@@ -172,7 +172,7 @@ export async function generateMetadata({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) return {};
-  const url = `https://sgdgroup.in/products/aluminium-door-systems/${product}`;
+  const url = `https://sgdgroupofcompanies.com/products/aluminium-door-systems/${product}`;
   return {
     title: `${data.name} | Aluminium Door Systems | SGD Group of Companies Kerala`,
     description: data.intro.slice(0, 155),
@@ -197,10 +197,10 @@ export default async function AluminiumDoorProductPage({ params }) {
     <main>
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://sgdgroup.in' },
-          { name: 'Products', url: 'https://sgdgroup.in/products' },
-          { name: 'Aluminium Door Systems', url: 'https://sgdgroup.in/products/aluminium-door-systems' },
-          { name: data.name, url: `https://sgdgroup.in/products/aluminium-door-systems/${product}` },
+          { name: 'Home', url: 'https://sgdgroupofcompanies.com' },
+          { name: 'Products', url: 'https://sgdgroupofcompanies.com/products' },
+          { name: 'Aluminium Door Systems', url: 'https://sgdgroupofcompanies.com/products/aluminium-door-systems' },
+          { name: data.name, url: `https://sgdgroupofcompanies.com/products/aluminium-door-systems/${product}` },
         ]}
       />
       <Navigation />

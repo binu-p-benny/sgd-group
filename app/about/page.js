@@ -14,13 +14,13 @@ export const metadata = {
   openGraph: {
     title: 'About SGD Group of Companies',
     description: 'Kerala\'s trusted aluminium and glazing specialists with 10+ years of experience.',
-    url: 'https://sgdgroup.in/about',
+    url: 'https://sgdgroupofcompanies.com/about',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/about',
+    canonical: 'https://sgdgroupofcompanies.com/about',
   },
 };
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
       <Navigation />
       <PageHero
         title="Our Story"
-        bg="/about.png"
+        bg="/about/about-hero-dusk.jpg"
       />
 
       {/* Built with Precision — Story Section */}

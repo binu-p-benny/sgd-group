@@ -1,9 +1,10 @@
+import Script from 'next/script';
 import './globals.css';
 import LenisProvider from '@/components/LenisProvider';
 import FloatingButtons from '@/components/molecules/FloatingButtons';
 
 export const metadata = {
-  metadataBase: new URL('https://sgdgroup.in'),
+  metadataBase: new URL('https://sgdgroupofcompanies.com'),
   title: {
     default: 'SGD Group of Companies | Aluminium & Glazing Specialists Kerala',
   },
@@ -14,7 +15,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://sgdgroup.in',
+    url: 'https://sgdgroupofcompanies.com',
     siteName: 'SGD Group of Companies',
     title: 'SGD Group of Companies | Aluminium & Glazing Specialists Kerala',
     description: 'Kerala\'s leading specialists in aluminium window systems, doors, facades, and architectural glazing.',
@@ -45,7 +46,10 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://sgdgroup.in',
+    canonical: 'https://sgdgroupofcompanies.com',
+  },
+  verification: {
+    google: 'm7igxirYO458eDmREiumfKtFPeZLBWZdYthOL0ylHeI',
   },
 };
 
@@ -53,6 +57,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-K896LSG2');`}
+        </Script>
+
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -62,9 +75,9 @@ export default function RootLayout({ children }) {
               "@type": "HomeAndConstructionBusiness",
               "name": "SGD Group of Companies",
               "description": "Kerala's leading specialists in aluminium window systems, doors, facades, and architectural glazing.",
-              "url": "https://sgdgroup.in",
-              "logo": "https://sgdgroup.in/logo-cl.png",
-              "image": "https://sgdgroup.in/hero.png",
+              "url": "https://sgdgroupofcompanies.com",
+              "logo": "https://sgdgroupofcompanies.com/logo-cl.png",
+              "image": "https://sgdgroupofcompanies.com/hero.png",
               "telephone": "+919778151162",
               "email": "sgdprojectmanagement@gmail.com",
               "address": {
@@ -89,14 +102,26 @@ export default function RootLayout({ children }) {
                 }
               ],
               "sameAs": [
-                "https://www.instagram.com/sgdgroup",
-                "https://www.youtube.com/@sgdgroup"
+                "https://www.instagram.com/sgdgroupofcompanies",
+                "https://www.facebook.com/share/1ZbubB8ZKb/?mibextid=wwXIfr",
+                "https://www.linkedin.com/company/sgd-group-of-companies/",
+                "https://youtube.com/@glassandwindowsbyakash?si=yYGwq0szPDRvnhg6"
               ]
             })
           }}
         />
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K896LSG2"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <LenisProvider>
           <FloatingButtons />
           {children}

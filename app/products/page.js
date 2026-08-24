@@ -11,13 +11,13 @@ export const metadata = {
   openGraph: {
     title: 'Products | SGD Group',
     description: 'The full SGD Group product catalog — every aluminium window and door system we offer.',
-    url: 'https://sgdgroup.in/products',
+    url: 'https://sgdgroupofcompanies.com/products',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/products',
+    canonical: 'https://sgdgroupofcompanies.com/products',
   },
 };
 
@@ -25,13 +25,14 @@ export const metadata = {
 // product cards so each one links to actual project detail pages instead
 // of just decorative images.
 const realProjects = [
-  { slug: 'jabir-kottakal',     name: 'Jabir Kottakkal',    image: '/project-Jabir.png' },
-  { slug: 'shameer-vengara',    name: 'Shameer Vengara',    image: '/projects/projects-01.png' },
-  { slug: 'loshidh-thrissur',   name: 'Loshidh Thrissur',   image: '/project-loshidh.png' },
-  { slug: 'nidhin-engapuzha',   name: 'Nidhin Engapuzha',   image: '/projects/projects-02.png' },
-  { slug: 'nidhin-kannur',      name: 'Nidhin Kannur',      image: '/projects/projects-03.png' },
+  { slug: 'jabir-kottakal',     name: 'Jabir Kottakkal',    image: '/projects/jabir-kottakal-1.jpg' },
+  { slug: 'shameer-vengara',    name: 'Shameer Vengara',    image: '/projects/shameer-vengara-1.jpg' },
+  { slug: 'loshidh-thrissur',   name: 'Loshidh Thrissur',   image: '/projects/loshidh-thrissur-1.jpg' },
+  { slug: 'nidhin-engapuzha',   name: 'Nidhin Engapuzha',   image: '/projects/nidhin-engapuzha-1.jpg' },
+  { slug: 'nidhin-kannur',      name: 'Nidhin Kannur',      image: '/projects/nidhin-kannur-1.jpg' },
   { slug: 'nikshan-electronics',name: 'Nikshan Electronics',image: '/project-nikshan.png' },
-  { slug: 'eham-digital',       name: 'Eham Digital',       image: '/project-eham.png' },
+  { slug: 'eham-digital',       name: 'Eham Digital',       image: '/projects/eham-digital-real.jpg' },
+  { slug: 'jilce-jose-thrissur',name: 'Jilce Jose',         image: '/projects/jilce-jose-thrissur-1.jpg' },
 ];
 
 function projectsFor(index) {

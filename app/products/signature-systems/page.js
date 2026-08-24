@@ -16,13 +16,13 @@ export const metadata = {
   openGraph: {
     title: 'Signature Systems | SGD Group',
     description: 'Signature aluminium window and door mechanisms for openings standard systems can\'t solve.',
-    url: 'https://sgdgroup.in/products/signature-systems',
+    url: 'https://sgdgroupofcompanies.com/products/signature-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/products/signature-systems',
+    canonical: 'https://sgdgroupofcompanies.com/products/signature-systems',
   },
 };
 
@@ -36,10 +36,10 @@ const featureItems = [
 ];
 
 const systems = [
-  { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening', image: '/services/services-01.png' },
-  { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn',        image: '/services/services-03.png' },
-  { name: 'Vertical Sliding', href: '/products/signature-systems/vertical-sliding', image: '/services/services-02.png' },
-  { name: 'Sliding Folding',  href: '/products/signature-systems/sliding-folding',  image: '/services/services-04.png' },
+  { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening', image: '/products/parallel-opening-onsite.jpg' },
+  { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn',        image: '/products/tilt-turn-onsite.jpg' },
+  { name: 'Vertical Sliding', href: '/products/signature-systems/vertical-sliding', image: '/products/verticalsliding-1.jpg' },
+  { name: 'Sliding Folding',  href: '/products/signature-systems/sliding-folding',  image: '/products/slidingfolding-1.jpg' },
 ];
 
 export default function SignatureSystemsPage() {
@@ -50,11 +50,11 @@ export default function SignatureSystemsPage() {
         label="Signature Systems"
         title="For the openings standard systems can't solve."
         subtitle="Parallel Opening, Tilt & Turn, Vertical Sliding, and Sliding Folding — four mechanisms engineered for every kind of opening."
-        bg="/services/services-04.png"
+        bg="/products/tilt-turn-onsite.jpg"
       />
 
       <ApplicationsSection
-        image="/services/services-01.png"
+        image="/products/parallel-opening-onsite.jpg"
         description="Our Signature Systems bring thoughtful design and practical performance together. From flexible Parallel Opening and versatile Tilt & Turn to space-saving Vertical Sliding and expansive Sliding Folding solutions, each system is crafted to suit modern lifestyles. With refined aluminium profiles, smooth operation, and lasting durability, these designs help create comfortable, elegant spaces that feel truly yours."
       />
       <FeatureSection

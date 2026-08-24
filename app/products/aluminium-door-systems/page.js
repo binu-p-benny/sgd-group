@@ -14,13 +14,13 @@ export const metadata = {
   openGraph: {
     title: 'Aluminium Door Systems | SGD Group',
     description: 'Premium aluminium door systems for residential and commercial projects in Kerala.',
-    url: 'https://sgdgroup.in/products/aluminium-door-systems',
+    url: 'https://sgdgroupofcompanies.com/products/aluminium-door-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/products/aluminium-door-systems',
+    canonical: 'https://sgdgroupofcompanies.com/products/aluminium-door-systems',
   },
 };
 
@@ -118,13 +118,13 @@ const row1 = categories.slice(0, 3);
 const row2 = categories.slice(3, 6);
 
 const doorSystems = [
-  { name: 'Imperial SS2', href: '/products/aluminium-door-systems/imperialss2', image: '/services/services-02.png' },
+  { name: 'Imperial SS2', href: '/products/aluminium-door-systems/imperialss2', image: '/products/imperial-ss2-pool-view.jpg' },
   { name: 'Vista',        href: '/products/aluminium-door-systems/vista',       image: '/services/services-03.png' },
-  { name: 'Ultra',        href: '/products/aluminium-door-systems/ultra',       image: '/services/services-04.png' },
-  { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf',   image: '/services/services-01.png' },
-  { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50',        image: '/services/services-03.png' },
-  { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus',       image: '/services/services-02.png' },
-  { name: 'Horizon',      href: '/products/aluminium-door-systems/horizon',     image: '/services/services-03.png' },
+  { name: 'Ultra',        href: '/products/aluminium-door-systems/ultra',       image: '/products/ultra-1.jpg' },
+  { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf',   image: '/products/retrogulf-1.jpg' },
+  { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50',        image: '/products/hl50-1.jpg' },
+  { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus',       image: '/products/nexus-1.jpg' },
+  { name: 'Horizon',      href: '/products/aluminium-door-systems/horizon',     image: '/products/horizon-1.jpg' },
 ];
 
 const features = [
@@ -158,7 +158,7 @@ export default function AluminiumDoorSystemsPage() {
       <Navigation />
       <PageHero
         title="Aluminium Door Systems"
-        bg="/services/services-01.png"
+        bg="/products/imperial-ss2-pool-view.jpg"
       />
 
       {/* ── Overview Section ── */}
@@ -178,7 +178,7 @@ export default function AluminiumDoorSystemsPage() {
 
           {/* Right: image */}
           <div className={styles.imageWrapper}>
-            <img src="/services/services-02.png" alt="Aluminium door installation" />
+            <img src="/products/imperial-ss2-corridor.jpg" alt="Aluminium door installation — Imperial SS2, SGD showcase villa" />
           </div>
 
           {/* Mobile-only combined image grid — replaces the separate

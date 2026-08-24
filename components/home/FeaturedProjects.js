@@ -10,9 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   { title: 'Nikshan Electronics', images: ['/project-nikshan.png', '/project3.png', '/project4.png'] },
-  { title: 'Eham Digital',        images: ['/project-eham.png', '/project3.png', '/project4.png']    },
-  { title: 'Loshidh Thrissur',    images: ['/project-loshidh.png', '/project1.png', '/project2.png'] },
-  { title: 'Jabir Kottakal',      images: ['/project-Jabir.png', '/project1.png', '/project2.png']   },
+  { title: 'Eham Digital',        images: ['/projects/eham-digital-real.jpg', '/project3.png', '/project4.png'] },
+  { title: 'Loshidh Thrissur',    images: ['/projects/loshidh-thrissur-1.jpg', '/projects/loshidh-thrissur-3.jpg', '/projects/loshidh-thrissur-4.jpg'] },
+  { title: 'Jabir Kottakal',      images: ['/projects/jabir-kottakal-1.jpg', '/projects/jabir-kottakal-2.jpg', '/projects/jabir-kottakal-4.jpg'] },
 ];
 
 export default function FeaturedProjects() {

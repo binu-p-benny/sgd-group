@@ -10,12 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   { src: '/project-nikshan.png',  alt: 'Nikshan Electronics' },
-  { src: '/project-eham.png',     alt: 'Eham Digital' },
-  { src: '/project-loshidh.png',  alt: 'Loshidh Residence' },
-  { src: '/project-Jabir.png',    alt: 'Jabir Residence' },
-  { src: '/projects/projects-01.png', alt: 'Project 5' },
-  { src: '/projects/projects-02.png', alt: 'Project 6' },
-  { src: '/projects/projects-03.png', alt: 'Project 7' },
+  { src: '/projects/eham-digital-real.jpg',    alt: 'Eham Digital' },
+  { src: '/projects/loshidh-thrissur-1.jpg',   alt: 'Loshidh Residence' },
+  { src: '/projects/jabir-kottakal-1.jpg',     alt: 'Jabir Residence' },
+  { src: '/projects/shameer-vengara-1.jpg',    alt: 'Shameer Vengara Residence' },
+  { src: '/projects/nidhin-engapuzha-1.jpg',   alt: 'Nidhin Engapuzha Residence' },
+  { src: '/projects/nidhin-kannur-1.jpg',      alt: 'Nidhin Kannur Residence' },
+  { src: '/projects/jilce-jose-thrissur-1.jpg', alt: 'Jilce Jose Residence' },
 ];
 
 export default function AboutProjects() {

@@ -112,7 +112,7 @@ export default function About() {
         {/* ── Right Column — Image ── */}
         <div className={styles.imageWrapper} ref={imageRef}>
           <Image
-            src="/about.png"
+            src="/about-home.jpg"
             alt="About SGD Group"
             fill
             className={styles.image}

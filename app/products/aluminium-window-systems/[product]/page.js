@@ -11,9 +11,9 @@ const products = {
   'eco-gulf': {
     name: 'Eco Gulf',
     tagline: 'Aluminium Window System',
-    hero: '/services/services-01.png',
+    hero: '/products/ecogulf-1.jpg',
     intro: 'Eco Gulf is our sustainable window system, crafted with recycled-content aluminium and designed for better energy efficiency. It combines responsible material choices with a sleek, modern appearance and dependable performance, helping create comfortable spaces while supporting a more environmentally conscious approach to contemporary architecture.',
-    image: '/services/services-02.png',
+    image: '/products/ecogulf-2.jpg',
     specs: [
       { label: 'Frame Depth', value: '46 mm' },
       { label: 'Sightline', value: '23 mm (interlock)' },
@@ -33,9 +33,9 @@ const products = {
   hl40: {
     name: 'HL-40',
     tagline: 'Aluminium Window System',
-    hero: '/services/services-03.png',
+    hero: '/products/hl40-1.jpg',
     intro: 'HL-40 is a thoughtfully engineered aluminium window system designed for modern spaces. Its refined profile, durable construction, and smooth functionality bring together style and performance. With clean aesthetics and dependable quality, HL-40 offers a practical, elegant solution for homes and commercial projects seeking lasting value.',
-    image: '/services/services-04.png',
+    image: '/products/hl40-2.jpg',
     specs: [
       { label: 'Frame Depth', value: '40 mm' },
       { label: 'Panel Weight', value: 'Up to 90 kg' },
@@ -55,9 +55,9 @@ const products = {
   blaze: {
     name: 'Blaze',
     tagline: 'Aluminium Window System',
-    hero: '/services/services-03.png',
+    hero: '/products/blaze-1.jpg',
     intro: 'Blaze is a premium aluminium window system designed to bring together bold aesthetics, dependable strength, and everyday comfort. With its clean profile and refined finish, it adds a contemporary touch to any space while delivering smooth functionality, lasting durability, and reliable performance for modern homes.',
-    image: '/services/services-04.png',
+    image: '/products/blaze-2.jpg',
     specs: [
       { label: 'Panel Width', value: 'Up to 1.4 m' },
       { label: 'Panel Height', value: 'Up to 3 m' },
@@ -77,9 +77,9 @@ const products = {
   'slide-pro': {
     name: 'Slide-Pro',
     tagline: 'Aluminium Window System',
-    hero: '/services/services-01.png',
+    hero: '/products/slidepro-1.jpg',
     intro: 'Slide-Pro is a thoughtfully designed aluminium sliding window system that combines sleek aesthetics with smooth, effortless movement. Built for modern homes and commercial spaces, it offers dependable strength, practical functionality, and a refined finish, creating a seamless connection between indoor comfort and the outside world.',
-    image: '/services/services-02.png',
+    image: '/products/slidepro-2.jpg',
     specs: [
       { label: 'Frame Depth', value: '48 mm' },
       { label: 'Tracks', value: '2, 3 or 4-track' },
@@ -106,7 +106,7 @@ export async function generateMetadata({ params }) {
   const { product } = await params;
   const data = products[product];
   if (!data) return {};
-  const url = `https://sgdgroup.in/products/aluminium-window-systems/${product}`;
+  const url = `https://sgdgroupofcompanies.com/products/aluminium-window-systems/${product}`;
   return {
     title: `${data.name} | Aluminium Window Systems | SGD Group of Companies Kerala`,
     description: data.intro.slice(0, 155),
@@ -131,10 +131,10 @@ export default async function AluminiumWindowProductPage({ params }) {
     <main>
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: 'https://sgdgroup.in' },
-          { name: 'Products', url: 'https://sgdgroup.in/products' },
-          { name: 'Aluminium Window Systems', url: 'https://sgdgroup.in/products/aluminium-window-systems' },
-          { name: data.name, url: `https://sgdgroup.in/products/aluminium-window-systems/${product}` },
+          { name: 'Home', url: 'https://sgdgroupofcompanies.com' },
+          { name: 'Products', url: 'https://sgdgroupofcompanies.com/products' },
+          { name: 'Aluminium Window Systems', url: 'https://sgdgroupofcompanies.com/products/aluminium-window-systems' },
+          { name: data.name, url: `https://sgdgroupofcompanies.com/products/aluminium-window-systems/${product}` },
         ]}
       />
       <Navigation />

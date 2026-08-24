@@ -12,13 +12,13 @@ export const metadata = {
   openGraph: {
     title: 'Contact SGD Group of Companies',
     description: 'Reach out for project enquiries and free quotations — serving all of Kerala.',
-    url: 'https://sgdgroup.in/contact',
+    url: 'https://sgdgroupofcompanies.com/contact',
     siteName: 'SGD Group of Companies',
     type: 'website',
     images: ['/hero.png'],
   },
   alternates: {
-    canonical: 'https://sgdgroup.in/contact',
+    canonical: 'https://sgdgroupofcompanies.com/contact',
   },
 };
 
@@ -69,24 +69,24 @@ export default function ContactPage() {
                 <div className={styles.infoBlock}>
                   <p className={styles.infoLabel}>Follow Us</p>
                   <div className={styles.social}>
-                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/share/1ZbubB8ZKb/?mibextid=wwXIfr" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 2C6.48 2 2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12c0-5.52-4.48-10-10-10z"/>
                       </svg>
                     </a>
-                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/sgdgroupofcompanies" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" strokeWidth="2"/>
                         <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="2"/>
                         <circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/>
                       </svg>
                     </a>
-                    <a href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/company/sgd-group-of-companies/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/>
                       </svg>
                     </a>
-                    <a href="#" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                    <a href="https://youtube.com/@glassandwindowsbyakash?si=yYGwq0szPDRvnhg6" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/>
                       </svg>

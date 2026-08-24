@@ -128,19 +128,19 @@ export default function Footer() {
         {/* ── Bottom bar ── */}
         <div className={styles.bottomBar}>
           <div className={styles.socialLinks}>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/sgdgroupofcompanies" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram className={styles.socialIcon} />
               <span>Instagram</span>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/sgd-group-of-companies/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin className={styles.socialIcon} />
               <span>LinkedIn</span>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1ZbubB8ZKb/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebook className={styles.socialIcon} />
               <span>Facebook</span>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <a href="https://youtube.com/@glassandwindowsbyakash?si=yYGwq0szPDRvnhg6" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <FaYoutube className={styles.socialIcon} />
               <span>YouTube</span>
             </a>
