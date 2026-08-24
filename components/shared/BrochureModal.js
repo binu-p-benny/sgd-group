@@ -5,7 +5,7 @@ import { submitBrochureRequest } from '@/lib/actions/submissions';
 import styles from './BrochureModal.module.css';
 
 const initialState = { error: null, success: false };
-const BROCHURE_PATH = '/test.pdf';
+const BROCHURE_PATH = '/SGD-Group-Brochure.pdf';
 
 export default function BrochureModal({ onClose }) {
   const [state, formAction, pending] = useActionState(submitBrochureRequest, initialState);
