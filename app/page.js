@@ -13,8 +13,8 @@ import Footer from '@/components/home/Footer';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'SGD Group of Companies | Aluminium & Glazing Specialists Kerala',
-  description: 'SGD Group — Kerala\'s trusted aluminium window systems, doors, facades, and architectural glazing specialists. 10+ years of craftsmanship across South India.',
+  title: 'Expert Glass & Window Installation and Service in Kerala | SGD Group',
+  description: 'Discover the best windows for home in Kerala with SGD Group of Companies. Premium, durable glass and windows for home in Kerala designed for style, safety, and performance.',
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com',
   },

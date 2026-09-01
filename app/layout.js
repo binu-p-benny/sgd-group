@@ -17,8 +17,8 @@ export const metadata = {
     locale: 'en_IN',
     url: 'https://sgdgroupofcompanies.com',
     siteName: 'SGD Group of Companies',
-    title: 'SGD Group of Companies | Aluminium & Glazing Specialists Kerala',
-    description: 'Kerala\'s leading specialists in aluminium window systems, doors, facades, and architectural glazing.',
+    title: 'Expert Glass & Window Installation and Service in Kerala | SGD Group',
+    description: 'Discover the best windows for home in Kerala with SGD Group of Companies. Premium, durable glass and windows for home in Kerala designed for style, safety, and performance.',
     images: [
       {
         url: '/hero.png',
@@ -30,8 +30,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SGD Group of Companies | Aluminium & Glazing Specialists Kerala',
-    description: 'Kerala\'s leading specialists in aluminium & glazing solutions.',
+    title: 'Expert Glass & Window Installation and Service in Kerala | SGD Group',
+    description: 'Discover the best windows for home in Kerala with SGD Group of Companies. Premium, durable glass and windows for home in Kerala designed for style, safety, and performance.',
     images: ['/hero.png'],
   },
   robots: {
