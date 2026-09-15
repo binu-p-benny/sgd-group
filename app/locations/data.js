@@ -4,12 +4,13 @@ export const BASE_URL = 'https://sgdgroupofcompanies.com';
    and the contact page. Keep in sync if those change. */
 export const BUSINESS = {
   name: 'SGD Group of Companies',
-  streetAddress: 'Indus Avenue Building, Pushpa Junction',
-  locality: 'Calicut',
+  streetAddress: 'Signature Blossom, Karikkamkulam, Kozhikode Balussery Rd, Karikkamkulam, Thadampattuthazham',
+  locality: 'Kozhikode',
   region: 'Kerala',
+  postalCode: '673010',
   country: 'IN',
-  telephone: '+919778151162',
-  telephoneAlt: '+917902266219',
+  telephone: '+917902266219',
+  telephoneAlt: '+919778151162',
   email: 'sgdprojectmanagement@gmail.com',
 };
 

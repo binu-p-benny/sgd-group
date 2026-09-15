@@ -103,7 +103,7 @@ export default function Footer() {
                   <path d="M8 1.33C5.6 1.33 3.67 3.27 3.67 5.67C3.67 9 8 14.67 8 14.67C8 14.67 12.33 9 12.33 5.67C12.33 3.27 10.4 1.33 8 1.33Z" stroke="#EAE8E3" strokeWidth="1.33"/>
                   <circle cx="8" cy="5.67" r="1.33" stroke="#EAE8E3" strokeWidth="1.33"/>
                 </svg>
-                <address>SGD Group Of Companies Indus Avenue Building Pushpa Junction, Calicut</address>
+                <address>SGD Group Of Companies, Signature Blossom, Karikkamkulam, Kozhikode Balussery Rd, Thadampattuthazham, Kozhikode, Kerala 673010</address>
               </div>
             </div>
 
@@ -115,9 +115,9 @@ export default function Footer() {
                   <path d="M3 1.33H6L7.33 4.67L5.67 5.67C6.43 7.23 7.77 8.57 9.33 9.33L10.33 7.67L13.67 9V12C13.67 12.74 13.07 13.33 12.33 13.33C6.63 13 2.67 8.37 3 2.67C3 1.93 3.6 1.33 4.33 1.33H3Z" stroke="#EAE8E3" strokeWidth="1.33" strokeLinejoin="round"/>
                 </svg>
                 <div>
-                  <a href="tel:+919778151162">+91 9778 151 162</a>
-                  <br />
                   <a href="tel:+917902266219">+91 79022 66219</a>
+                  <br />
+                  <a href="tel:+919778151162">+91 9778 151 162</a>
                 </div>
               </div>
             </div>

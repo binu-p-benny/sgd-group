@@ -141,9 +141,9 @@ export default function TermsAndConditionsPage() {
             <p>Questions about these Terms? Reach out to us:</p>
             <div className={styles.contactBlock}>
               <p><strong>SGD Group of Companies</strong></p>
-              <p>Indus Avenue Building, Pushpa Junction, Calicut, Kerala, India</p>
+              <p>Signature Blossom, Karikkamkulam, Kozhikode Balussery Rd, Thadampattuthazham, Kozhikode, Kerala 673010, India</p>
               <p>Email: sgdprojectmanagement@gmail.com</p>
-              <p>Phone: +91 97781 51162 / +91 79022 66219</p>
+              <p>Phone: +91 79022 66219 / +91 97781 51162</p>
             </div>
           </div>
         </div>

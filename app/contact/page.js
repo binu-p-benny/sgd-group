@@ -52,8 +52,9 @@ export default function ContactPage() {
                   <p className={styles.infoLabel}>Our Location</p>
                   <p className={styles.infoValue}>
                     SGD Group Of Companies<br />
-                    Indus Avenue Building<br />
-                    Pushpa Junction, Calicut
+                    Signature Blossom, Karikkamkulam<br />
+                    Kozhikode Balussery Rd, Thadampattuthazham<br />
+                    Kozhikode, Kerala 673010
                   </p>
                 </div>
               </div>
@@ -62,8 +63,8 @@ export default function ContactPage() {
                 <div className={styles.infoBlock}>
                   <p className={styles.infoLabel}>Call Center</p>
                   <div className={`${styles.infoValue} ${styles.phoneList}`}>
-                    <a href="tel:+919778151162">+91 9778 151 162</a>
                     <a href="tel:+917902266219">+91 79022 66219</a>
+                    <a href="tel:+919778151162">+91 9778 151 162</a>
                   </div>
                 </div>
                 <div className={styles.infoBlock}>
@@ -110,8 +111,8 @@ export default function ContactPage() {
         <div className={styles.mapInner}>
           <div className={styles.mapFrame}>
             <iframe
-              src="https://www.google.com/maps?q=Pushpa+Junction,+Calicut,+Kerala&output=embed"
-              title="SGD Group of Companies — Pushpa Junction, Calicut"
+              src="https://www.google.com/maps?q=Signature+Blossom,+Karikkamkulam,+Kozhikode+Balussery+Rd,+Thadampattuthazham,+Kozhikode,+Kerala+673010&output=embed"
+              title="SGD Group of Companies — Signature Blossom, Karikkamkulam, Kozhikode"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen

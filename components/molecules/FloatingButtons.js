@@ -6,8 +6,8 @@ import styles from './FloatingButtons.module.css';
 import EnquiryModal from '@/components/shared/EnquiryModal';
 import BrochureModal from '@/components/shared/BrochureModal';
 
-const WHATSAPP_NUMBER = '919778151162';
-const PHONE_NUMBER = '+919778151162';
+const WHATSAPP_NUMBER = '917902266219';
+const PHONE_NUMBER = '+917902266219';
 
 export default function FloatingButtons() {
   const [enquireOpen, setEnquireOpen] = useState(false);

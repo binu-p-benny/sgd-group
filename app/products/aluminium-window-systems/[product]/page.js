@@ -23,7 +23,6 @@ const products = {
       { label: 'Air Tightness', value: 'Class 4' },
     ],
     features: [
-      { title: 'Recycled Aluminium', desc: 'Made with recycled-content aluminium, helping reduce material waste while maintaining quality and strength.' },
       { title: 'Energy-Efficient Design', desc: 'Designed to improve indoor comfort and support lower energy consumption.' },
       { title: 'Slim & Modern Look', desc: 'Sleek profiles create a clean, contemporary appearance that complements modern architecture.' },
       { title: 'Built for Everyday Performance', desc: 'A practical balance of sustainability, durability, and reliable functionality for homes and commercial spaces.' },

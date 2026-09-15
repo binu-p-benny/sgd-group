@@ -67,6 +67,7 @@ export default async function LocationPage({ params }) {
         streetAddress: BUSINESS.streetAddress,
         addressLocality: BUSINESS.locality,
         addressRegion: BUSINESS.region,
+        postalCode: BUSINESS.postalCode,
         addressCountry: BUSINESS.country,
       },
     },

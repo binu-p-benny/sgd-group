@@ -78,13 +78,14 @@ export default function RootLayout({ children }) {
               "url": "https://sgdgroupofcompanies.com",
               "logo": "https://sgdgroupofcompanies.com/logo-cl.png",
               "image": "https://sgdgroupofcompanies.com/hero.png",
-              "telephone": "+919778151162",
+              "telephone": "+917902266219",
               "email": "sgdprojectmanagement@gmail.com",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Indus Avenue Building, Pushpa Junction",
-                "addressLocality": "Calicut",
+                "streetAddress": "Signature Blossom, Karikkamkulam, Kozhikode Balussery Rd, Karikkamkulam, Thadampattuthazham",
+                "addressLocality": "Kozhikode",
                 "addressRegion": "Kerala",
+                "postalCode": "673010",
                 "addressCountry": "IN"
               },
               "areaServed": [
