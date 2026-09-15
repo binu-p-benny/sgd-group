@@ -1,0 +1,17 @@
+name: Supabase keep-alive
+
+# Supabase's free tier pauses a project after 7 days with no database activity,
+# which silently breaks every form on the live site. This pings a route that
+# runs a real query, well inside that 7-day window, so it never goes quiet
+# long enough to trigger the pause. See app/api/keepalive/route.js.
+on:
+  schedule:
+    - cron: '0 6 */3 * *'   # every 3 days at 06:00 UTC
+  workflow_dispatch:        # allows a manual run from the Actions tab
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping keep-alive endpoint
+        run: curl -sf https://sgdgroupofcompanies.com/api/keepalive
