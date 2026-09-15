@@ -17,7 +17,9 @@ export async function GET() {
     if (error) throw error;
 
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (err) {
+    // Logged server-side only (Cloudflare Workers Logs) — never in the public response.
+    console.error('[keepalive] Supabase query failed:', err?.message || err);
     return NextResponse.json({ ok: false }, { status: 500 });
   }
 }
