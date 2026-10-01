@@ -9,19 +9,19 @@ gsap.registerPlugin(ScrollTrigger);
 
 const videoData = [
   {
-    name: "Nikshan Client",
-    location: "Kannur, Kerala",
-    videoUrl: "https://www.youtube.com/embed/tLx6rhgy_No" // Placeholder URLs
+    name: "Albert Jose",
+    location: "Attitude Builders, Kozhikode",
+    videoUrl: "https://www.youtube.com/embed/_oOpEjNYyAM"
   },
   {
-    name: "Loshidh Residencies",
-    location: "Thrissur, Kerala",
-    videoUrl: "https://www.youtube.com/embed/tLx6rhgy_No"
+    name: "Binoy",
+    location: "BB Associates",
+    videoUrl: "https://www.youtube.com/embed/8Ns-aYFz4cM"
   },
   {
-    name: "Eham Projects",
-    location: "Kozhikode, Kerala",
-    videoUrl: "https://www.youtube.com/embed/tLx6rhgy_No"
+    name: "Aslam",
+    location: "Adam Group of Events",
+    videoUrl: "https://www.youtube.com/embed/4ZYQ5cnJMXQ"
   }
 ];
 

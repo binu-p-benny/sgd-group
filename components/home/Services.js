@@ -8,10 +8,18 @@ import styles from './Services.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const mosaicImages = [
-  { src: 'services/home-mosaic-tall.jpg',      alt: 'Double-height living room with full-height aluminium glazing', slot: 'tall'        },
-  { src: 'services/home-mosaic-topmid.jpg',    alt: 'Window frame detail close-up',                                  slot: 'topMid'      },
-  { src: 'services/home-mosaic-topright.png',  alt: 'Aluminium window with a forest view',                           slot: 'topRight'    },
-  { src: 'services/home-mosaic-bottommid.png', alt: 'Window cross-section diagram',                                  slot: 'bottomMid'   },
+  { src: 'services/pre-Engineered-1.png',
+       alt: 'Exploded display board of aluminium door hardware, including frame sections, hinges, locking mechanisms, handles, and restrictors',
+        slot: 'tall'        },
+  { src: 'services/pre-Engineered-2.png',
+       alt: 'Side-by-side comparison of a normal window letting in glare and heat versus a pre-engineered reflective window keeping the office cool',
+                                       slot: 'topMid'      },
+  { src: 'services/Pre-Engineered-3.jpg',
+       alt: 'Water droplets beading on weatherproof aluminium panel finishes in multiple metallic shades',
+                                 slot: 'topRight'    },
+  { src: 'services/Pre-Engineered-4.png',
+      alt: 'Cross-section diagram of an aluminium window profile highlighting double glazing, EPDM gasket, thermal break, drainage system, and strong profile',
+                                   slot: 'bottomMid'   },
 ];
 
 export default function Services() {

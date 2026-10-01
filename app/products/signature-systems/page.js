@@ -36,10 +36,10 @@ const featureItems = [
 ];
 
 const systems = [
-  { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening', image: '/products/parallel-opening-onsite.jpg' },
-  { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn',        image: '/products/tilt-turn-onsite.jpg' },
-  { name: 'Vertical Sliding', href: '/products/signature-systems/vertical-sliding', image: '/products/verticalsliding-1.jpg' },
-  { name: 'Sliding Folding',  href: '/products/signature-systems/sliding-folding',  image: '/products/slidingfolding-1.jpg' },
+  { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening', image: '/products/parallel-opening-a.webp' },
+  { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn',        image: '/products/tilt-turn-a.jpg' },
+  { name: 'Vertical Sliding', href: '/products/signature-systems/vertical-sliding', image: '/products/vertical-sliding-a.jpg' },
+  { name: 'Sliding Folding',  href: '/products/signature-systems/sliding-folding',  image: '/products/sliding-folding-a.png' },
 ];
 
 export default function SignatureSystemsPage() {
@@ -50,11 +50,11 @@ export default function SignatureSystemsPage() {
         label="Signature Systems"
         title="For the openings standard systems can't solve."
         subtitle="Parallel Opening, Tilt & Turn, Vertical Sliding, and Sliding Folding — four mechanisms engineered for every kind of opening."
-        bg="/products/tilt-turn-onsite.jpg"
+        bg="/products/tilt-turn-a.jpg"
       />
 
       <ApplicationsSection
-        image="/products/parallel-opening-onsite.jpg"
+        image="/products/parallel-opening-a.webp"
         description="Our Signature Systems bring thoughtful design and practical performance together. From flexible Parallel Opening and versatile Tilt & Turn to space-saving Vertical Sliding and expansive Sliding Folding solutions, each system is crafted to suit modern lifestyles. With refined aluminium profiles, smooth operation, and lasting durability, these designs help create comfortable, elegant spaces that feel truly yours."
       />
       <FeatureSection

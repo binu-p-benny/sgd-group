@@ -15,7 +15,7 @@ export const metadata = {
     url: 'https://sgdgroupofcompanies.com/contact',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: ['/hero.png'],
+    images: ['/RMS04290.JPG'],
   },
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com/contact',
@@ -30,7 +30,7 @@ export default function ContactPage() {
         label="Get in Touch"
         title="Let's talk about your project."
         subtitle="Tell us what you're building. We'll bring the expertise."
-        bg="/showroom.png"
+        bg="/RMS04290.JPG"
       />
 
       <section className={styles.section}>

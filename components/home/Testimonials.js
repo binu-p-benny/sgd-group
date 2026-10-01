@@ -10,29 +10,44 @@ gsap.registerPlugin(ScrollTrigger);
 
 const testimonialsData = [
   {
-    quote: "The attention to detail and structural integrity of the glass systems provided by SGD Group is unmatched. They truly understand architectural vision.",
-    author: "Vaidas Vileikis",
-    role: "Founder, Name Architects"
+    quote: "Highly impressed with the quality of windows and doors from SGD Group. They specialize in modern, durable pre-engineered aluminium designs that look premium and stylish. The execution was seamless, and the materials used are top-notch.",
+    author: "Muhammed Saleel",
+    role: "Google Review"
   },
   {
-    quote: "Working with SGD was a seamless experience. Their installation team was professional, and the final result transformed our space completely.",
-    author: "Owen Davies-Small",
-    role: "Founder, Davies-Small Architects"
+    quote: "I am very happy with the quality of the aluminium window products. The windows have a sleek, modern design and are built with excellent craftsmanship. Installation was smooth, and the windows operate effortlessly with excellent sealing against dust, rain, and noise.",
+    author: "Jilce Jose",
+    role: "Google Review"
   },
   {
-    quote: "Exceptional craftsmanship and a deep understanding of minimalist design. They are our go-to partner for all high-end glazing projects.",
-    author: "Andreja Beric",
-    role: "Founder, Twist In Architecture"
+    quote: "I had an excellent experience with SGD Group of Companies for the supply and installation of sliding doors for my new home. From the initial consultation to the final installation, their team was professional, responsive, and efficient.",
+    author: "Nishad Basheer",
+    role: "Google Review"
   },
   {
-    quote: "Highly recommend for any complex glazing requirement. Their team's technical knowledge and execution speed were outstanding throughout the project.",
-    author: "Devon Mothersille",
-    role: "Homeowner"
+    quote: "I recently got system aluminium windows installed by SGD Group, and I'm really happy with how everything turned out. The whole team was friendly, helpful, and did the work neatly. They finished everything on time and made the whole process easy for us.",
+    author: "Neeraj Achu",
+    role: "Google Review"
   },
   {
-    quote: "A perfect blend of aesthetics and functionality. The custom sliding doors they installed have become the centerpiece of our architectural design.",
-    author: "Steven Goode",
-    role: "Homeowner"
+    quote: "They used top-quality aluminium profiles and the window locks and other materials used were top branded. The entire team demonstrated outstanding professionalism and reliability throughout the process. Highly recommended!",
+    author: "Aneesh G",
+    role: "Google Review"
+  },
+  {
+    quote: "Really impressed with the quality and elegance of the aluminium window products. The products are not only stylish but also sturdy and well-finished. A smooth and pleasant experience overall. Highly recommended!",
+    author: "Mohammed Rashad K",
+    role: "Google Review"
+  },
+  {
+    quote: "We had a very good experience with the team from start to finish. The quality of the windows is really good and the installation was done properly and professionally. What I liked most was their after sales support.",
+    author: "Salman Sonu",
+    role: "Google Review"
+  },
+  {
+    quote: "I had a wonderful experience with SGD Group of Companies. The materials they used feel super high quality and give the place a luxury look. Plus, they finished on time and left everything spotless.",
+    author: "Sachin Dev",
+    role: "Google Review"
   }
 ];
 

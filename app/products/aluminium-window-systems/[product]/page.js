@@ -11,16 +11,20 @@ const products = {
   'eco-gulf': {
     name: 'Eco Gulf',
     tagline: 'Aluminium Window System',
-    hero: '/products/ecogulf-1.jpg',
+    hero: '/products/eco-gulf-a.jpg',
     intro: 'Eco Gulf is our sustainable window system, crafted with recycled-content aluminium and designed for better energy efficiency. It combines responsible material choices with a sleek, modern appearance and dependable performance, helping create comfortable spaces while supporting a more environmentally conscious approach to contemporary architecture.',
-    image: '/products/ecogulf-2.jpg',
+    image: '/products/eco-gulf-b.jpg',
     specs: [
-      { label: 'Frame Depth', value: '46 mm' },
-      { label: 'Sightline', value: '23 mm (interlock)' },
-      { label: 'Max Sash Weight', value: '120 kg' },
-      { label: 'Glazing', value: 'Double / Triple' },
-      { label: 'Finish', value: 'Powder-coated' },
-      { label: 'Air Tightness', value: 'Class 4' },
+      { label: '2 Track Frame Width', value: '83 mm' },
+      { label: '3 Track Frame Width', value: '120 mm' },
+      { label: 'Frame Height', value: '41 mm' },
+      { label: 'Interlock Sightline', value: '19 mm' },
+      { label: 'Glass Thickness', value: '5 mm – 11.5 mm' },
+      { label: 'Max Shutter Height', value: '2100 mm' },
+      { label: 'Max Shutter Width', value: '1200 mm' },
+      { label: 'Locking Type', value: 'Single / Multi Point Locking' },
+      { label: 'Mosquito Net', value: 'Shutter / Pleated' },
+      { label: 'Roller Capacity', value: 'Up to 80 kg' },
     ],
     features: [
       { title: 'Energy-Efficient Design', desc: 'Designed to improve indoor comfort and support lower energy consumption.' },
@@ -32,16 +36,16 @@ const products = {
   hl40: {
     name: 'HL-40',
     tagline: 'Aluminium Window System',
-    hero: '/products/hl40-1.jpg',
+    hero: '/products/hl40-a.jpg',
     intro: 'HL-40 is a thoughtfully engineered aluminium window system designed for modern spaces. Its refined profile, durable construction, and smooth functionality bring together style and performance. With clean aesthetics and dependable quality, HL-40 offers a practical, elegant solution for homes and commercial projects seeking lasting value.',
-    image: '/products/hl40-2.jpg',
+    image: '/products/hl40-a.jpg',
     specs: [
-      { label: 'Frame Depth', value: '40 mm' },
-      { label: 'Panel Weight', value: 'Up to 90 kg' },
-      { label: 'Locking', value: 'Multi-point, 2 hooks' },
-      { label: 'Glazing', value: 'Double' },
-      { label: 'Finish', value: 'Powder-coated' },
-      { label: 'Air Tightness', value: 'Class 3' },
+      { label: 'Frame Width', value: '40 mm' },
+      { label: 'Frame Height', value: '39 mm' },
+      { label: 'Glass Thickness', value: '4 mm – 24 mm' },
+      { label: 'Max Shutter Height', value: '1900 mm' },
+      { label: 'Max Shutter Width', value: '700 mm' },
+      { label: 'Locking Type', value: 'Multi / Single' },
     ],
     features: [
       { title: 'Slim & Elegant Profiles', desc: 'Clean, refined lines give your spaces a modern and sophisticated look.' },
@@ -54,16 +58,19 @@ const products = {
   blaze: {
     name: 'Blaze',
     tagline: 'Aluminium Window System',
-    hero: '/products/blaze-1.jpg',
+    hero: '/products/blaze-a.png',
     intro: 'Blaze is a premium aluminium window system designed to bring together bold aesthetics, dependable strength, and everyday comfort. With its clean profile and refined finish, it adds a contemporary touch to any space while delivering smooth functionality, lasting durability, and reliable performance for modern homes.',
-    image: '/products/blaze-2.jpg',
+    image: '/products/blaze-b.png',
     specs: [
-      { label: 'Panel Width', value: 'Up to 1.4 m' },
-      { label: 'Panel Height', value: 'Up to 3 m' },
-      { label: 'Hinge', value: 'Concealed floor & head pivot' },
-      { label: 'Glazing', value: 'Double, laminated safety glass' },
-      { label: 'Finish', value: 'Anodised / Custom powder coat' },
-      { label: 'Locking', value: 'Multi-point security lock' },
+      { label: 'Max Sash Width', value: '800 mm' },
+      { label: 'Max Sash Height', value: '1500 mm' },
+      { label: 'Glass Thickness', value: '4 mm – 8 mm' },
+      { label: 'Max Sash Weight', value: '60 kg' },
+      { label: 'Construction Depth', value: 'Frame 2T-55 mm, Frame 3T-85 mm' },
+      { label: 'Sight Line', value: '20 mm (interlock)' },
+      { label: 'Wind Load', value: 'Class B3 (1.5 kPa)' },
+      { label: 'Water Tightness', value: 'Class 5A (250 Pa)' },
+      { label: 'Air Permeability', value: 'Class 3 (400 Pa)' },
     ],
     features: [
       { title: 'Bold, Modern Design', desc: 'Clean lines and a refined profile give every space a confident, contemporary look.' },
@@ -76,16 +83,19 @@ const products = {
   'slide-pro': {
     name: 'Slide-Pro',
     tagline: 'Aluminium Window System',
-    hero: '/products/slidepro-1.jpg',
+    hero: '/products/slidepro-a.jpg',
     intro: 'Slide-Pro is a thoughtfully designed aluminium sliding window system that combines sleek aesthetics with smooth, effortless movement. Built for modern homes and commercial spaces, it offers dependable strength, practical functionality, and a refined finish, creating a seamless connection between indoor comfort and the outside world.',
-    image: '/products/slidepro-2.jpg',
+    image: '/products/slidepro-b.jpg',
     specs: [
-      { label: 'Frame Depth', value: '48 mm' },
-      { label: 'Tracks', value: '2, 3 or 4-track' },
-      { label: 'Max Panel Weight', value: '150 kg' },
-      { label: 'Glazing', value: 'Double' },
-      { label: 'Finish', value: 'Powder-coated' },
-      { label: 'Air Tightness', value: 'Class 3' },
+      { label: 'Max Sash Width', value: '1000 mm' },
+      { label: 'Max Sash Height', value: '2100 mm' },
+      { label: 'Glass Thickness', value: '5 mm – 18 mm' },
+      { label: 'Max Sash Weight', value: '80 kg' },
+      { label: 'Construction Depth', value: 'Frame 2T-65 mm, 3T-101 mm, 4T-138 mm' },
+      { label: 'Sight Line', value: '28 mm (interlock)' },
+      { label: 'Wind Load', value: 'Class B3 (2.2 kPa)' },
+      { label: 'Water Tightness', value: 'Class 5A (200 Pa)' },
+      { label: 'Air Permeability', value: 'Class 3 (600 Pa)' },
     ],
     features: [
       { title: 'Smooth Sliding Experience', desc: 'Glides effortlessly for easy opening and closing every day.' },
@@ -156,7 +166,7 @@ export default async function AluminiumWindowProductPage({ params }) {
       {/* Specifications */}
       <section className={styles.specs}>
         <div className={styles.specsInner}>
-          <h2 className={styles.sectionHeading}>Specifications</h2>
+          <h2 className={styles.sectionHeading}>Technical Specifications</h2>
           <div className={styles.specsGrid}>
             {data.specs.map((s) => (
               <div key={s.label} className={styles.specItem}>

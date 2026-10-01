@@ -11,16 +11,14 @@ const products = {
   'vertical-sliding': {
     name: 'Vertical Sliding',
     tagline: 'Signature System',
-    hero: '/products/verticalsliding-1.jpg',
+    hero: '/products/vertical-sliding-a.jpg',
     intro: 'Vertical Sliding is a stylish aluminium window system that combines classic character with modern functionality. Designed to move smoothly up and down, it offers practical ventilation without taking up extra space. With durable construction, clean profiles, and refined finishes, it brings comfort, elegance, and reliable performance to modern homes and commercial spaces.',
-    image: '/products/verticalsliding-2.jpg',
+    image: '/products/vertical-sliding-b.jpg',
     specs: [
-      { label: 'Frame Depth', value: '52 mm' },
-      { label: 'Balance', value: 'Concealed spring balance' },
-      { label: 'Max Sash Weight', value: '60 kg per sash' },
-      { label: 'Glazing', value: 'Double' },
-      { label: 'Finish', value: 'Powder-coated / Anodised' },
-      { label: 'Air Tightness', value: 'Class 3' },
+      { label: 'Max Sash Width', value: '900 mm' },
+      { label: 'Max Sash Height', value: '2100 mm' },
+      { label: 'Glass Thickness', value: '5 mm – 8 mm' },
+      { label: 'Locking Type', value: 'Single' },
     ],
     features: [
       { title: 'Space-Saving Design', desc: 'Opens vertically without taking up valuable room inside or outside.' },
@@ -33,16 +31,16 @@ const products = {
   'tilt-turn': {
     name: 'Tilt & Turn',
     tagline: 'Signature System',
-    hero: '/products/tilt-turn-onsite.jpg',
+    hero: '/products/tilt-turn-a.jpg',
     intro: 'Tilt & Turn is a versatile aluminium window system designed for modern comfort and flexibility. Its dual-opening function lets you tilt the window for gentle ventilation or turn it fully open when you need more airflow. With clean lines, smooth operation, and lasting durability, it suits contemporary homes and commercial spaces.',
-    image: '/products/tilt-turn-onsite.jpg',
+    image: '/products/tilt-turn-a.jpg',
     specs: [
-      { label: 'Frame Depth', value: '50 mm' },
-      { label: 'Hardware', value: 'Multi-point tilt & turn gear' },
-      { label: 'Max Sash Weight', value: '130 kg' },
-      { label: 'Glazing', value: 'Double / Triple' },
-      { label: 'Finish', value: 'Powder-coated / Anodised' },
-      { label: 'Air Tightness', value: 'Class 4' },
+      { label: 'Frame Width', value: '40 mm' },
+      { label: 'Frame Height', value: '39 mm' },
+      { label: 'Glass Thickness', value: '4 mm – 24 mm' },
+      { label: 'Max Shutter Height', value: '1900 mm' },
+      { label: 'Max Shutter Width', value: '700 mm' },
+      { label: 'Locking Type', value: 'Multi / Single' },
     ],
     features: [
       { title: 'Two Ways to Open', desc: 'Tilt for gentle ventilation or turn fully open for maximum airflow and access.' },
@@ -55,16 +53,20 @@ const products = {
   'sliding-folding': {
     name: 'Sliding Folding',
     tagline: 'Signature System',
-    hero: '/products/slidingfolding-1.jpg',
+    hero: '/products/sliding-folding-a.png',
     intro: 'Sliding Folding is a versatile aluminium door system designed to open spaces beautifully. Its smooth folding panels create a wide, unobstructed opening, making indoor and outdoor areas feel naturally connected. With strong construction, sleek profiles, and effortless operation, it brings flexibility, natural light, and modern elegance to homes and commercial spaces.',
-    image: '/products/slidingfolding-2.jpg',
+    image: '/products/sliding-folding-b.jpg',
     specs: [
-      { label: 'Frame Depth', value: '46 mm' },
-      { label: 'Panels', value: '3 to 7-panel configurations' },
-      { label: 'Max Panel Weight', value: '100 kg' },
-      { label: 'Glazing', value: 'Double' },
-      { label: 'Finish', value: 'Powder-coated' },
-      { label: 'Air Tightness', value: 'Class 3' },
+      { label: 'Max Sash Width', value: '1000 mm' },
+      { label: 'Max Sash Height', value: '3600 mm' },
+      { label: 'Glass Thickness', value: '5 mm – 35 mm' },
+      { label: 'Max Sash Weight', value: '120 kg' },
+      { label: 'Construction Depth', value: 'Frame 74 mm' },
+      { label: 'Panel Configurations', value: '3-3-0, 4-3-1, 5-5-0, 6-3-3, 6-5-1, 7-7-0' },
+      { label: 'Sight Line', value: 'Upto 110 mm' },
+      { label: 'Wind Load', value: 'Class CE2500 (3.5 kPa)' },
+      { label: 'Water Tightness', value: 'Class 7A (300 Pa)' },
+      { label: 'Air Permeability', value: 'Class 4 (600 Pa)' },
     ],
     features: [
       { title: 'Wide, Open Spaces', desc: 'Folding panels create a generous opening, helping connect indoor and outdoor areas beautifully.' },
@@ -77,9 +79,9 @@ const products = {
   'parallel-opening': {
     name: 'Parallel Opening',
     tagline: 'Signature System',
-    hero: '/products/parallel-opening-onsite.jpg',
+    hero: '/products/parallel-opening-a.webp',
     intro: 'Parallel Opening is a thoughtfully designed aluminium window system that brings fresh air, natural light, and everyday comfort into your space. Its unique opening style allows the window to move outward evenly, creating effective ventilation while maintaining a clean, modern appearance and dependable performance for contemporary homes and commercial spaces.',
-    image: '/products/parallel-opening-onsite.jpg',
+    image: '/products/parallel-opening-a.webp',
     specs: [
       { label: 'Frame Depth', value: '48 mm' },
       { label: 'Hardware', value: 'Parallel friction stays' },
@@ -157,7 +159,7 @@ export default async function SignatureSystemsProductPage({ params }) {
       {/* Specifications */}
       <section className={styles.specs}>
         <div className={styles.specsInner}>
-          <h2 className={styles.sectionHeading}>Specifications</h2>
+          <h2 className={styles.sectionHeading}>Technical Specifications</h2>
           <div className={styles.specsGrid}>
             {data.specs.map((s) => (
               <div key={s.label} className={styles.specItem}>

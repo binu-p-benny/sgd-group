@@ -27,10 +27,10 @@ export const metadata = {
 };
 
 const windowSystems = [
-  { name: 'Eco Gulf',  href: '/products/aluminium-window-systems/eco-gulf',  image: '/products/ecogulf-1.jpg' },
-  { name: 'HL-40',     href: '/products/aluminium-window-systems/hl40',      image: '/products/hl40-1.jpg' },
-  { name: 'Blaze',     href: '/products/aluminium-window-systems/blaze',     image: '/products/blaze-1.jpg' },
-  { name: 'Slide-Pro', href: '/products/aluminium-window-systems/slide-pro', image: '/products/slidepro-1.jpg' },
+  { name: 'Eco Gulf',  href: '/products/aluminium-window-systems/eco-gulf',  image: '/products/eco-gulf-a.jpg' },
+  { name: 'HL-40',     href: '/products/aluminium-window-systems/hl40',      image: '/products/hl40-a.jpg' },
+  { name: 'Blaze',     href: '/products/aluminium-window-systems/blaze',     image: '/products/blaze-a.png' },
+  { name: 'Slide-Pro', href: '/products/aluminium-window-systems/slide-pro', image: '/products/slidepro-a.jpg' },
 ];
 
 export default function AluminiumWindowSystemsPage() {
@@ -41,11 +41,11 @@ export default function AluminiumWindowSystemsPage() {
         label="Aluminium Window Systems"
         title="Aluminium Window Systems."
         subtitle="Precision-engineered aluminium window profiles — Eco Gulf, HL-40, Blaze and Slide-Pro — built for lasting performance and architectural clarity."
-        bg="/products/window-systems-hillview.jpg"
+        bg="/products/window-systems-hero.jpg"
       />
 
       <ApplicationsSection
-        image="/products/window-systems-swing.jpg"
+        image="/products/window-systems-open.jpg"
         description="Our aluminum window systems are thoughtfully engineered to bring together modern design, lasting durability, and everyday comfort. Built with precision and premium materials, they offer seamless functionality, enhanced natural light, and reliable performance for homes and commercial spaces. Every installation reflects our commitment to quality craftsmanship, elegant finishes, and customer satisfaction."
       />
       <FeatureSection

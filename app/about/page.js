@@ -30,7 +30,7 @@ export default function AboutPage() {
       <Navigation />
       <PageHero
         title="Our Story"
-        bg="/about/about-hero-dusk.jpg"
+        bg="/about/About-1.jpg"
       />
 
       {/* Built with Precision — Story Section */}

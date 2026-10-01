@@ -50,7 +50,7 @@ export default function CareersPage() {
       <Navigation />
       <PageHero
         title="Career"
-        bg="/hero.png"
+        bg="/career/Careers-1.png"
       />
 
       {/* Intro */}
@@ -65,7 +65,7 @@ export default function CareersPage() {
             </p>
           </div>
           <div className={styles.introImage}>
-            <img src="/about.png" alt="SGD Group team" />
+            <img src="/career/Careers-2.JPG" alt="SGD Group team" />
           </div>
         </div>
       </section>
@@ -75,10 +75,10 @@ export default function CareersPage() {
       <div className={styles.mobileImageGridWrap}>
         <div className={styles.mobileImageGrid}>
           <div className={styles.mobileImageGridItem}>
-            <img src="/about.png" alt="SGD Group team" />
+            <img src="/career/Careers-3.JPG" alt="SGD Group team" />
           </div>
           <div className={styles.mobileImageGridItem}>
-            <img src="/services/services-03.png" alt="SGD Group workplace" />
+            <img src="/career/Careers-2.JPG" alt="SGD Group workplace" />
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@ export default function CareersPage() {
             ))}
           </div>
           <div className={styles.whyImage}>
-            <img src="/services/services-03.png" alt="SGD Group workplace" />
+            <img src="/career/Careers-3.JPG" alt="SGD Group workplace" />
           </div>
         </div>
       </section>

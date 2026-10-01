@@ -118,13 +118,13 @@ const row1 = categories.slice(0, 3);
 const row2 = categories.slice(3, 6);
 
 const doorSystems = [
-  { name: 'Imperial SS2', href: '/products/aluminium-door-systems/imperialss2', image: '/products/imperial-ss2-pool-view.jpg' },
-  { name: 'Vista',        href: '/products/aluminium-door-systems/vista',       image: '/services/services-03.png' },
-  { name: 'Ultra',        href: '/products/aluminium-door-systems/ultra',       image: '/products/ultra-1.jpg' },
-  { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf',   image: '/products/retrogulf-1.jpg' },
-  { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50',        image: '/products/hl50-1.jpg' },
-  { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus',       image: '/products/nexus-1.jpg' },
-  { name: 'Horizon',      href: '/products/aluminium-door-systems/horizon',     image: '/products/horizon-1.jpg' },
+  { name: 'Imperial SS2', href: '/products/aluminium-door-systems/imperialss2', image: '/products/imperial-ss2-a.jpg' },
+  { name: 'Vista',        href: '/products/aluminium-door-systems/vista',       image: '/products/vista-a.jpg' },
+  { name: 'Ultra',        href: '/products/aluminium-door-systems/ultra',       image: '/products/ultra-a.jpg' },
+  { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf',   image: '/products/retro-gulf-a.jpg' },
+  { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50',        image: '/products/hl50-a.jpg' },
+  { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus',       image: '/products/nexus-a.png' },
+  { name: 'Horizon',      href: '/products/aluminium-door-systems/horizon',     image: '/products/horizon-a.jpg' },
 ];
 
 const features = [
@@ -158,7 +158,7 @@ export default function AluminiumDoorSystemsPage() {
       <Navigation />
       <PageHero
         title="Aluminium Door Systems"
-        bg="/products/imperial-ss2-pool-view.jpg"
+        bg="/products/door-systems-hero.jpg"
       />
 
       {/* ── Overview Section ── */}
@@ -178,7 +178,7 @@ export default function AluminiumDoorSystemsPage() {
 
           {/* Right: image */}
           <div className={styles.imageWrapper}>
-            <img src="/products/imperial-ss2-corridor.jpg" alt="Aluminium door installation — Imperial SS2, SGD showcase villa" />
+            <img src="/products/imperial-ss2-a.jpg" alt="Aluminium door installation — Imperial SS2, SGD showcase villa" />
           </div>
 
           {/* Mobile-only combined image grid — replaces the separate

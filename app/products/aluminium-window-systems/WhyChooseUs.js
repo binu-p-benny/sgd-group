@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
         </div>
 
         <div className={styles.whyImage}>
-          <img src="/products/window-systems-swing.jpg" alt="Why choose SGD aluminium window systems" />
+          <img src="/products/window-systems-hero.jpg" alt="Why choose SGD aluminium window systems" />
         </div>
 
       </div>

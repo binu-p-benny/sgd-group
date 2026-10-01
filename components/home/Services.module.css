@@ -143,6 +143,14 @@
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* This image is landscape while its cell is a short, wide strip, so a
+   centered crop clips the "ADVANCED DESIGN..." headline at the top —
+   anchor near the top (trimming the blank margin above the headline)
+   instead so the headline and lead callouts stay in frame. */
+.bottomMid .cellImg {
+  object-position: center 15%;
+}
+
 .cell:hover .cellImg {
   transform: scale(1.04);
 }

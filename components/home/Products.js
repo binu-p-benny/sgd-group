@@ -9,10 +9,10 @@ import styles from './Products.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const categories = [
-  { label: 'Aluminium Window', img: '/project-nikshan.png' },
-  { label: 'Aluminium Doors',  img: '/project-eham.png'   },
-  { label: 'Facades',          img: '/project-loshidh.png' },
-  { label: 'Interior',         img: '/project-Jabir.png'  },
+  { label: 'Windows System',   img: '/products/window-systems-hero.jpg', href: '/products/aluminium-window-systems' },
+  { label: 'Doors System',     img: '/products/door-systems-hero.jpg',   href: '/products/aluminium-door-systems'   },
+  { label: 'Signature system', img: '/products/tilt-turn-a.jpg',         href: '/products/signature-systems'        },
+  { label: 'Sliding folding',  img: '/products/sliding-folding-a.png',   href: '/products/signature-systems/sliding-folding' },
 ];
 
 export default function Products() {
@@ -79,8 +79,9 @@ export default function Products() {
         {/* ── 4-column card grid ── */}
         <div className={styles.grid}>
           {categories.map((cat, i) => (
-            <div
+            <Link
               key={cat.label}
+              href={cat.href}
               className={styles.card}
               ref={el => (cardsRef.current[i] = el)}
               onPointerDown={() => handlePressIn(i)}
@@ -99,7 +100,7 @@ export default function Products() {
               <div className={styles.cardOverlay}>
                 <span className={styles.cardLabel}>{cat.label}</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

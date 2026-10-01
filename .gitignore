@@ -47,3 +47,4 @@ next-env.d.ts
 .dev.vars*
 !.dev.vars.example
 cloudflare-env.d.ts
+public/products/Product page/
