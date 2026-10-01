@@ -11,7 +11,7 @@ const mosaicImages = [
   { src: 'services/pre-Engineered-1.png',
        alt: 'Exploded display board of aluminium door hardware, including frame sections, hinges, locking mechanisms, handles, and restrictors',
         slot: 'tall'        },
-  { src: 'services/pre-Engineered-2.png',
+  { src: 'services/Pre-Engineered-2.png',
        alt: 'Side-by-side comparison of a normal window letting in glare and heat versus a pre-engineered reflective window keeping the office cool',
                                        slot: 'topMid'      },
   { src: 'services/Pre-Engineered-3.jpg',
