@@ -245,7 +245,7 @@ export default async function AluminiumDoorProductPage({ params }) {
       {/* Specifications */}
       <section className={styles.specs}>
         <div className={styles.specsInner}>
-          <h2 className={styles.sectionHeading}>Specifications</h2>
+          <h2 className={styles.sectionHeading}>Technical Specifications</h2>
           <div className={styles.specsGrid}>
             {data.specs.map((s) => (
               <div key={s.label} className={styles.specItem}>
