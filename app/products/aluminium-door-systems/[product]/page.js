@@ -138,7 +138,7 @@ const products = {
     tagline: 'Aluminium Door System',
     hero: '/products/nexus-a.png',
     intro: 'Nexus is a modern aluminium door system designed to connect style, comfort, and reliable performance. Its clean profile and durable construction bring a refined look to contemporary spaces, while smooth functionality makes everyday living easier. Ideal for homes and commercial projects, Nexus delivers lasting quality with effortless elegance.',
-    image: '/products/nexus-a.png',
+    image: '/products/nexus-b.jpg',
     specs: [
       { label: 'Max Sash Width', value: '1500 mm' },
       { label: 'Max Sash Height', value: '3000 mm' },
