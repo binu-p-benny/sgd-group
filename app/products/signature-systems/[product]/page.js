@@ -81,7 +81,7 @@ const products = {
     tagline: 'Signature System',
     hero: '/products/parallel-opening-a.webp',
     intro: 'Parallel Opening is a thoughtfully designed aluminium window system that brings fresh air, natural light, and everyday comfort into your space. Its unique opening style allows the window to move outward evenly, creating effective ventilation while maintaining a clean, modern appearance and dependable performance for contemporary homes and commercial spaces.',
-    image: '/products/parallel-opening-a.webp',
+    image: '/products/parallel-opening-b.png',
     specs: [
       { label: 'Frame Depth', value: '48 mm' },
       { label: 'Hardware', value: 'Parallel friction stays' },
