@@ -31,9 +31,9 @@ const products = {
   'tilt-turn': {
     name: 'Tilt & Turn',
     tagline: 'Signature System',
-    hero: '/products/tilt-turn-a.jpg',
+    hero: '/products/tilt-turn-b.jpg',
     intro: 'Tilt & Turn is a versatile aluminium window system designed for modern comfort and flexibility. Its dual-opening function lets you tilt the window for gentle ventilation or turn it fully open when you need more airflow. With clean lines, smooth operation, and lasting durability, it suits contemporary homes and commercial spaces.',
-    image: '/products/tilt-turn-a.jpg',
+    image: '/products/tilt-turn-c.jpg',
     specs: [
       { label: 'Frame Width', value: '40 mm' },
       { label: 'Frame Height', value: '39 mm' },
@@ -81,7 +81,7 @@ const products = {
     tagline: 'Signature System',
     hero: '/products/parallel-opening-a.webp',
     intro: 'Parallel Opening is a thoughtfully designed aluminium window system that brings fresh air, natural light, and everyday comfort into your space. Its unique opening style allows the window to move outward evenly, creating effective ventilation while maintaining a clean, modern appearance and dependable performance for contemporary homes and commercial spaces.',
-    image: '/products/parallel-opening-b.png',
+    image: '/products/parallel-opening-c.jpg',
     specs: [
       { label: 'Frame Depth', value: '48 mm' },
       { label: 'Hardware', value: 'Parallel friction stays' },

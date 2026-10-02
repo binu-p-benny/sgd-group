@@ -37,7 +37,7 @@ const featureItems = [
 
 const systems = [
   { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening', image: '/products/parallel-opening-a.webp' },
-  { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn',        image: '/products/tilt-turn-a.jpg' },
+  { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn',        image: '/products/tilt-turn-b.jpg' },
   { name: 'Vertical Sliding', href: '/products/signature-systems/vertical-sliding', image: '/products/vertical-sliding-a.jpg' },
   { name: 'Sliding Folding',  href: '/products/signature-systems/sliding-folding',  image: '/products/sliding-folding-a.png' },
 ];
@@ -50,7 +50,7 @@ export default function SignatureSystemsPage() {
         label="Signature Systems"
         title="For the openings standard systems can't solve."
         subtitle="Parallel Opening, Tilt & Turn, Vertical Sliding, and Sliding Folding — four mechanisms engineered for every kind of opening."
-        bg="/products/tilt-turn-a.jpg"
+        bg="/products/tilt-turn-b.jpg"
       />
 
       <ApplicationsSection
