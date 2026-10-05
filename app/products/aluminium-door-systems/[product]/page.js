@@ -13,7 +13,7 @@ const products = {
     tagline: 'Aluminium Door System',
     hero: '/products/imperial-ss2-a.jpg',
     intro: 'Imperial SS2 brings together refined aluminium design, dependable strength, and effortless functionality for modern spaces. Its elegant profile and premium finish create a sophisticated entrance, while thoughtful engineering ensures lasting performance. Ideal for homes and commercial projects, it adds comfort, security, and timeless character to every space.',
-    image: '/products/imperial-ss2-a.jpg',
+    image: '/products/imperial-ss2-b.jpg',
     specs: [
       { label: 'Track Frame Width', value: '225 mm' },
       { label: 'Track Frame Height', value: '105 mm' },
@@ -116,7 +116,7 @@ const products = {
     tagline: 'Aluminium Door System',
     hero: '/products/hl50-a.jpg',
     intro: 'HL-50 is a premium aluminium casement door system designed for modern spaces that value clean aesthetics and dependable performance. Its strong construction, refined profile, and smooth functionality create a comfortable, elegant experience. Built for lasting durability, HL-50 is an ideal choice for contemporary homes, villas, and commercial projects.',
-    image: '/products/hl50-a.jpg',
+    image: '/products/hl50-b.jpg',
     specs: [
       { label: 'Frame Width', value: '50 mm' },
       { label: 'Frame Height', value: '46 mm' },

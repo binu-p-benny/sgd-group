@@ -38,7 +38,7 @@ const products = {
     tagline: 'Aluminium Window System',
     hero: '/products/hl40-a.jpg',
     intro: 'HL-40 is a thoughtfully engineered aluminium window system designed for modern spaces. Its refined profile, durable construction, and smooth functionality bring together style and performance. With clean aesthetics and dependable quality, HL-40 offers a practical, elegant solution for homes and commercial projects seeking lasting value.',
-    image: '/products/hl40-a.jpg',
+    image: '/products/hl40-b.jpg',
     specs: [
       { label: 'Frame Width', value: '40 mm' },
       { label: 'Frame Height', value: '39 mm' },
