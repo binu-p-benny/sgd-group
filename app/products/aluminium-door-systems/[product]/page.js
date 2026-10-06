@@ -38,7 +38,7 @@ const products = {
     tagline: 'Aluminium Door System',
     hero: '/products/vista-a.jpg',
     intro: 'Vista is a modern aluminium door system designed to bring openness, elegance, and dependable performance into everyday spaces. Its clean profile and generous glass areas create a bright, welcoming feel, while durable construction ensures lasting reliability. Ideal for contemporary homes and commercial projects, Vista connects style, comfort, and functionality beautifully.',
-    image: '/products/vista-a.jpg',
+    image: '/products/vista-b.jpg',
     specs: [
       { label: '2 Track Frame Width', value: '150 mm' },
       { label: '3 Track Frame Width', value: '217 mm' },
