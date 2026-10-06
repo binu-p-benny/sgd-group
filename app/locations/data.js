@@ -82,8 +82,10 @@ export const locations = {
     intro:
       'SGD Group delivers its full range of aluminium window systems, doors and architectural glazing to projects across Karnataka, coordinated from our head office in Calicut, Kerala.',
     areasLabel: 'Cities we serve',
-    areas: [],
-    projects: [],
+    areas: ['Bangalore'],
+    projects: [
+      { name: 'Chindananda Reddy', href: '/projects/chindananda-reddy-bangalore', place: 'Bangalore' },
+    ],
   },
 };
 

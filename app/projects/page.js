@@ -25,6 +25,8 @@ const residential = [
   { name: 'Nidhin Engapuzha',    href: '/projects/nidhin-engapuzha',    image: '/projects/nidhin-engapuzha-1.jpg',    location: 'Engapuzha, Kerala' },
   { name: 'Nidhin Kannur',       href: '/projects/nidhin-kannur',       image: '/projects/nidhin-kannur-1.jpg',       location: 'Kannur, Kerala' },
   { name: 'Jilce Jose',          href: '/projects/jilce-jose-thrissur', image: '/projects/jilce-jose-thrissur-1.jpg', location: 'Thrissur, Kerala' },
+  { name: 'Benny Ranni',         href: '/projects/benny-ranni',         image: '/projects/benny-ranni-1.jpg',         location: 'Ranni, Kerala' },
+  { name: 'Chindananda Reddy',   href: '/projects/chindananda-reddy-bangalore', image: '/projects/chindananda-reddy-bangalore-1.jpg', location: 'Bangalore, Karnataka' },
 ];
 
 const commercial = [
