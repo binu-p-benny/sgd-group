@@ -34,6 +34,7 @@ const products = {
     hero: '/products/tilt-turn-b.jpg',
     intro: 'Tilt & Turn is a versatile aluminium window system designed for modern comfort and flexibility. Its dual-opening function lets you tilt the window for gentle ventilation or turn it fully open when you need more airflow. With clean lines, smooth operation, and lasting durability, it suits contemporary homes and commercial spaces.',
     image: '/products/tilt-turn-c.jpg',
+    gallery: ['/products/tilt-turn-a.jpg'],
     specs: [
       { label: 'Frame Width', value: '40 mm' },
       { label: 'Frame Height', value: '39 mm' },
@@ -82,6 +83,7 @@ const products = {
     hero: '/products/parallel-opening-a.webp',
     intro: 'Parallel Opening is a thoughtfully designed aluminium window system that brings fresh air, natural light, and everyday comfort into your space. Its unique opening style allows the window to move outward evenly, creating effective ventilation while maintaining a clean, modern appearance and dependable performance for contemporary homes and commercial spaces.',
     image: '/products/parallel-opening-c.jpg',
+    gallery: ['/products/parallel-opening-b.png'],
     specs: [
       { label: 'Frame Depth', value: '48 mm' },
       { label: 'Hardware', value: 'Parallel friction stays' },
@@ -188,6 +190,22 @@ export default async function SignatureSystemsProductPage({ params }) {
           </div>
         </div>
       </section>
+
+      {/* More views */}
+      {data.gallery?.length > 0 && (
+        <section className={styles.moreViews}>
+          <div className={styles.moreViewsInner}>
+            <h2 className={styles.sectionHeading}>More Views</h2>
+            <div className={styles.moreViewsGrid}>
+              {data.gallery.map((src) => (
+                <div key={src} className={styles.moreViewsItem}>
+                  <img src={src} alt={data.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Applications + CTA */}
       <section className={styles.applications}>
