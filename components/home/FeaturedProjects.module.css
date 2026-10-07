@@ -48,12 +48,15 @@
 /* ── Card ───────────────────────────────────────── */
 .card {
   position: relative;
+  display: block;
   overflow: hidden;
   cursor: pointer;
   /* Figma: 650 × 596 px → ratio */
   aspect-ratio: 650 / 596;
   background: #111;
   border-radius: 2px;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* ── Auto-sliding image stack ───────────────────── */
@@ -105,13 +108,29 @@
   box-sizing: border-box;
 }
 
-/* Project name — white, 24 px */
+/* Project name + state, stacked on the left */
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
 .cardName {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 29px;
   color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.cardState {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.65);
   white-space: nowrap;
 }
 
@@ -194,11 +213,6 @@
     gap: 20px;
   }
 
-  /* Only the first 3 projects show on mobile */
-  .grid > div:nth-child(4) {
-    display: none;
-  }
-
   /* Compact card: fixed-height image, name + "View more" moved
      below the image in normal flow instead of overlaid on it. */
   .card {
@@ -231,6 +245,7 @@
   }
 
   .cardName { font-size: 17px; color: #111111; }
+  .cardState { color: rgba(17, 17, 17, 0.55); }
   .viewBtn  {
     font-size: 11px;
     padding: 0 12px;

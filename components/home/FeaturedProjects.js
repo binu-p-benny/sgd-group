@@ -9,10 +9,18 @@ import styles from './FeaturedProjects.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { title: 'Nikshan Electronics', images: ['/project-nikshan.png'] },
-  { title: 'Eham Digital',        images: ['/projects/eham-digital-real.jpg', '/project-eham.png'] },
-  { title: 'Loshidh Thrissur',    images: ['/projects/loshidh-thrissur-1.jpg', '/projects/loshidh-thrissur-3.jpg', '/projects/loshidh-thrissur-4.jpg'] },
-  { title: 'Jabir Kottakal',      images: ['/projects/jabir-kottakal-1.jpg', '/projects/jabir-kottakal-2.jpg', '/projects/jabir-kottakal-4.jpg'] },
+  {
+    title: 'Chindananda Reddy',
+    state: 'Karnataka',
+    href: '/projects/chindananda-reddy-bangalore',
+    images: ['/projects/chindananda-reddy-bangalore-1.jpg', '/projects/chindananda-reddy-bangalore-2.jpg', '/projects/chindananda-reddy-bangalore-7.jpg'],
+  },
+  {
+    title: 'Benny',
+    state: 'Kerala',
+    href: '/projects/benny-ranni',
+    images: ['/projects/benny-ranni-1.jpg', '/projects/benny-ranni-2.jpg', '/projects/benny-ranni-3.jpg'],
+  },
 ];
 
 export default function FeaturedProjects() {
@@ -97,11 +105,12 @@ export default function FeaturedProjects() {
         {/* ── Centered title ── */}
         <h2 className={styles.title} ref={titleRef}>Featured Projects</h2>
 
-        {/* ── 2×2 grid ── */}
+        {/* ── Featured project cards ── */}
         <div className={styles.grid}>
           {projects.map((project, i) => (
-            <div
+            <Link
               key={project.title}
+              href={project.href}
               className={styles.card}
               ref={el => (cardsRef.current[i] = el)}
             >
@@ -119,10 +128,13 @@ export default function FeaturedProjects() {
 
               {/* Bottom gradient bar */}
               <div className={styles.cardBar}>
-                <span className={styles.cardName}>{project.title}</span>
-                <button className={styles.viewBtn}>View more</button>
+                <div className={styles.cardMeta}>
+                  <span className={styles.cardName}>{project.title}</span>
+                  <span className={styles.cardState}>{project.state}</span>
+                </div>
+                <span className={styles.viewBtn}>View more</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

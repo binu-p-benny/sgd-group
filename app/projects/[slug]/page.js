@@ -209,7 +209,7 @@ const projects = {
     product: 'Casement Windows',
     description: `A striking two-storey residence in Bengaluru where classical architectural details — ornate iron balustrades, pillared balconies and a commanding entrance — are paired with precision aluminium casement windows throughout. Tall glazed openings bring natural light deep into every room while preserving the home's formal, symmetrical facade.\nInside, warm interiors with soft furnishings and detailed millwork are matched by consistently finished window and door units, carrying the same quality of finish from the grand exterior through to its private bedrooms.`,
     sideImage: '/projects/chindananda-reddy-bangalore-2.jpg',
-    galleryImages: ['/projects/chindananda-reddy-bangalore-1.jpg', '/projects/chindananda-reddy-bangalore-2.jpg', '/projects/chindananda-reddy-bangalore-3.jpg', '/projects/chindananda-reddy-bangalore-4.jpg'],
+    galleryImages: ['/projects/chindananda-reddy-bangalore-1.jpg', '/projects/chindananda-reddy-bangalore-2.jpg', '/projects/chindananda-reddy-bangalore-3.jpg', '/projects/chindananda-reddy-bangalore-4.jpg', '/projects/chindananda-reddy-bangalore-5.jpg', '/projects/chindananda-reddy-bangalore-6.jpg', '/projects/chindananda-reddy-bangalore-7.jpg'],
     materialsDescription: 'Factory-finished aluminium casement systems with EPDM weather sealing, finished to match the home\'s formal architectural detailing.',
     materials: [
       { label: '1. ALUMINIUM PROFILES', sub: 'Frame, Sash & Mullion Sections', image: '/services/services-01.png' },
