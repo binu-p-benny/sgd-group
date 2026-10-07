@@ -14,7 +14,6 @@ const products = {
     hero: '/products/imperial-ss2-a.jpg',
     intro: 'Imperial SS2 brings together refined aluminium design, dependable strength, and effortless functionality for modern spaces. Its elegant profile and premium finish create a sophisticated entrance, while thoughtful engineering ensures lasting performance. Ideal for homes and commercial projects, it adds comfort, security, and timeless character to every space.',
     image: '/products/imperial-ss2-b.jpg',
-    gallery: ['/products/imperial-ss2-c.jpg'],
     specs: [
       { label: 'Track Frame Width', value: '225 mm' },
       { label: 'Track Frame Height', value: '105 mm' },
@@ -93,7 +92,6 @@ const products = {
     hero: '/products/retro-gulf-a.jpg',
     intro: 'Retro Gulf combines timeless character with modern aluminium engineering, bringing warmth, elegance, and dependable performance to your space. Its distinctive design adds personality while durable construction ensures lasting reliability. Ideal for homes and commercial projects, Retro Gulf creates an inviting architectural statement without compromising everyday comfort or functionality.',
     image: '/products/retro-gulf-b.jpg',
-    gallery: ['/products/retro-gulf-c.jpg'],
     specs: [
       { label: '2 Track Frame Width', value: '100 mm' },
       { label: '3 Track Frame Width', value: '150 mm' },
@@ -276,22 +274,6 @@ export default async function AluminiumDoorProductPage({ params }) {
           </div>
         </div>
       </section>
-
-      {/* More views */}
-      {data.gallery?.length > 0 && (
-        <section className={styles.moreViews}>
-          <div className={styles.moreViewsInner}>
-            <h2 className={styles.sectionHeading}>More Views</h2>
-            <div className={styles.moreViewsGrid}>
-              {data.gallery.map((src) => (
-                <div key={src} className={styles.moreViewsItem}>
-                  <img src={src} alt={data.name} />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Applications + CTA */}
       <section className={styles.applications}>
