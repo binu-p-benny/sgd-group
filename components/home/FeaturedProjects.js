@@ -22,6 +22,12 @@ const projects = [
     images: ['/projects/benny-ranni-1.jpg', '/projects/benny-ranni-2.jpg', '/projects/benny-ranni-3.jpg'],
   },
   {
+    title: 'Jabir',
+    state: 'Kerala',
+    href: '/projects/jabir-kottakal',
+    images: ['/projects/jabir-kottakal-1.jpg', '/projects/jabir-kottakal-2.jpg', '/projects/jabir-kottakal-4.jpg'],
+  },
+  {
     title: 'Loshidh',
     state: 'Kerala',
     href: '/projects/loshidh-thrissur',
