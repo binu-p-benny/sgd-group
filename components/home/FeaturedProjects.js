@@ -21,6 +21,12 @@ const projects = [
     href: '/projects/benny-ranni',
     images: ['/projects/benny-ranni-1.jpg', '/projects/benny-ranni-2.jpg', '/projects/benny-ranni-3.jpg'],
   },
+  {
+    title: 'Loshidh',
+    state: 'Kerala',
+    href: '/projects/loshidh-thrissur',
+    images: ['/projects/loshidh-thrissur-1.jpg', '/projects/loshidh-thrissur-3.jpg', '/projects/loshidh-thrissur-4.jpg'],
+  },
 ];
 
 export default function FeaturedProjects() {

@@ -32,16 +32,15 @@
   width: 100%;
 }
 
-/* ── 2×2 grid ───────────────────────────────────── */
+/* ── Cards grid ─────────────────────────────────── */
 /*
-  Figma: two rows of 2 cards, each card 650 × 596 px,
-  gap between columns = 100 px, gap between rows = 100 px
-  (1400 - 650*2 = 100 px gap)
+  Originally a 2×2 grid at 650 × 596 px/card (Figma); now holds three
+  cards in a single row, same aspect ratio, scaled to fit 1400px.
 */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 100px 100px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
   width: 100%;
 }
 
