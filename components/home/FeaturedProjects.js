@@ -23,7 +23,7 @@ const projects = [
   },
   {
     title: 'Jabir',
-    state: 'Kerala',
+    state: 'Tamil Nadu',
     href: '/projects/jabir-kottakal',
     images: ['/projects/jabir-kottakal-1.jpg', '/projects/jabir-kottakal-2.jpg', '/projects/jabir-kottakal-4.jpg'],
   },

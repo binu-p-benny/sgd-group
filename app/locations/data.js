@@ -46,7 +46,6 @@ export const locations = {
     areasLabel: 'Districts we have delivered in',
     areas: ['Kozhikode', 'Malappuram', 'Thrissur', 'Kannur'],
     projects: [
-      { name: 'Jabir, Kottakkal',    href: '/projects/jabir-kottakal',    place: 'Malappuram' },
       { name: 'Shameer, Vengara',    href: '/projects/shameer-vengara',   place: 'Malappuram' },
       { name: 'Loshidh, Thrissur',   href: '/projects/loshidh-thrissur',  place: 'Thrissur'   },
       { name: 'Nidhin, Engapuzha',   href: '/projects/nidhin-engapuzha',  place: 'Kozhikode'  },
@@ -67,7 +66,9 @@ export const locations = {
       'SGD Group delivers its full range of aluminium window systems, doors and architectural glazing to projects across Tamil Nadu, coordinated from our head office in Calicut, Kerala.',
     areasLabel: 'Cities we serve',
     areas: [],
-    projects: [],
+    projects: [
+      { name: 'Jabir, Kottakkal', href: '/projects/jabir-kottakal', place: 'Tamil Nadu' },
+    ],
   },
 
   karnataka: {

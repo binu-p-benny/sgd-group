@@ -19,7 +19,7 @@ export const metadata = {
 };
 
 const residential = [
-  { name: 'Jabir Kottakal',      href: '/projects/jabir-kottakal',      image: '/projects/jabir-kottakal-1.jpg',      location: 'Kottakal, Kerala' },
+  { name: 'Jabir Kottakal',      href: '/projects/jabir-kottakal',      image: '/projects/jabir-kottakal-1.jpg',      location: 'Kottakal, Tamil Nadu' },
   { name: 'Shameer Vengara',     href: '/projects/shameer-vengara',     image: '/projects/shameer-vengara-1.jpg',     location: 'Vengara, Kerala' },
   { name: 'Loshidh Thrissur',    href: '/projects/loshidh-thrissur',    image: '/projects/loshidh-thrissur-1.jpg',    location: 'Thrissur, Kerala' },
   { name: 'Nidhin Engapuzha',    href: '/projects/nidhin-engapuzha',    image: '/projects/nidhin-engapuzha-1.jpg',    location: 'Engapuzha, Kerala' },
