@@ -312,26 +312,6 @@ export default async function ProjectPage({ params }) {
         </div>
       </section>
 
-      {/* ── Video Section ── */}
-      <section className={styles.videoSection}>
-        <div className={styles.videoInner}>
-          <div className={styles.videoEmbed}>
-            {project.youtubeId ? (
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}`}
-                title={project.name}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            ) : (
-              <div className={styles.videoPlaceholder}>
-                <span className={styles.videoComingSoon}>Video coming soon</span>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* ── Completed Projects (shared) ── */}
       <AboutProjects />
 
