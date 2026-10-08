@@ -58,9 +58,10 @@ export const locations = {
     name: 'Tamil Nadu',
     contentComplete: false,   // TODO: add cities served + local projects, then flip
     heroBg: '/services/services-03.png',
-    title: 'Aluminium Windows & Glazing in Tamil Nadu | SGD Group',
+    title: 'Expert Glass & Window Installation and Service in Tamil Nadu',
+    h1: 'Premium Aluminium Windows & Glass Solutions in Tamil Nadu',
     description:
-      'SGD Group supplies and installs aluminium window systems, doors and architectural glazing across Tamil Nadu.',
+      'Premium glass and aluminium windows for homes in Tamil Nadu by SGD Group. Explore durable, stylish window solutions designed for safety and performance.',
     keywords: 'aluminium windows Tamil Nadu, glazing contractors Tamil Nadu, aluminium doors Tamil Nadu, system aluminium windows Chennai, aluminium windows Chennai',
     intro:
       'SGD Group delivers its full range of aluminium window systems, doors and architectural glazing to projects across Tamil Nadu, coordinated from our head office in Calicut, Kerala.',
@@ -76,9 +77,10 @@ export const locations = {
     name: 'Karnataka',
     contentComplete: false,   // TODO: add cities served + local projects, then flip
     heroBg: '/services/services-02.png',
-    title: 'Aluminium Windows & Glazing in Karnataka | SGD Group',
+    title: 'Expert Glass & Window Installation and Service in Karnataka',
+    h1: 'Premium Aluminium Windows & Glass Solutions in Karnataka',
     description:
-      'SGD Group supplies and installs aluminium window systems, doors and architectural glazing across Karnataka.',
+      'Premium glass and aluminium windows for homes in Karnataka by SGD Group. Explore durable, stylish window solutions designed for safety and performance.',
     keywords: 'aluminium windows Karnataka, glazing contractors Karnataka, aluminium doors Bengaluru',
     intro:
       'SGD Group delivers its full range of aluminium window systems, doors and architectural glazing to projects across Karnataka, coordinated from our head office in Calicut, Kerala.',

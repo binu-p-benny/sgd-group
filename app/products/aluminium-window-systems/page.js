@@ -10,15 +10,21 @@ import WhyChooseUs from './WhyChooseUs';
 import VideoTestimonials from '@/components/home/VideoTestimonials';
 
 export const metadata = {
-  title: 'Aluminium Window Systems | SGD Group of Companies Kerala',
-  description: 'SGD Group\'s aluminium sliding glass window systems — Eco Gulf, HL-40, Blaze and Slide-Pro — slim-line, engineered for precision and modern Kerala homes.',
+  title: 'Aluminium Window Systems Kerala | SGD Group',
+  description: 'Explore premium aluminium window systems in Kerala by SGD Group. Durable, energy-efficient and modern windows for homes and commercial spaces.',
   keywords: 'aluminium window systems Kerala, Eco Gulf window, HL-40 window, Blaze pivot system, Slide-Pro sliding window, SGD aluminium windows, sliding glass windows Kerala, best sliding windows, slim line windows, residential sliding windows, openable windows Kerala, casement windows Kerala, sliding windows with grill',
   openGraph: {
-    title: 'Aluminium Window Systems | SGD Group',
-    description: 'Premium aluminium window systems — Eco Gulf, HL-40, Blaze and Slide-Pro — for residential and commercial spaces.',
+    title: 'Aluminium Window Systems Kerala | SGD Group',
+    description: 'Explore premium aluminium window systems in Kerala by SGD Group. Durable, energy-efficient and modern windows for homes and commercial spaces.',
     url: 'https://sgdgroupofcompanies.com/products/aluminium-window-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
+    images: ['/hero.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aluminium Window Systems Kerala | SGD Group',
+    description: 'Explore premium aluminium window systems in Kerala by SGD Group. Durable, energy-efficient and modern windows for homes and commercial spaces.',
     images: ['/hero.png'],
   },
   alternates: {
@@ -39,7 +45,7 @@ export default function AluminiumWindowSystemsPage() {
       <Navigation />
       <PageHero
         label="Aluminium Window Systems"
-        title="Aluminium Window Systems."
+        title="Aluminium Window Systems in Kerala"
         subtitle="Precision-engineered aluminium window profiles — Eco Gulf, HL-40, Blaze and Slide-Pro — built for lasting performance and architectural clarity."
         bg="/products/window-systems-hero.jpg"
       />

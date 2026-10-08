@@ -34,6 +34,12 @@ export async function generateMetadata({ params }) {
       locale: 'en_IN',
       images: [loc.heroBg],
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: loc.title,
+      description: loc.description,
+      images: [loc.heroBg],
+    },
   };
 }
 
@@ -90,7 +96,7 @@ export default async function LocationPage({ params }) {
         ]}
       />
 
-      <PageHero title={loc.name} bg={loc.heroBg} />
+      <PageHero title={loc.h1 || loc.name} bg={loc.heroBg} />
 
       <section className={styles.section}>
         <div className="container">

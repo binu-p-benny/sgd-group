@@ -10,6 +10,9 @@ import styles from './product.module.css';
 const products = {
   'vertical-sliding': {
     name: 'Vertical Sliding',
+    h1: 'Vertical Sliding Aluminium Windows in Kerala',
+    metaTitle: 'Vertical Sliding Windows Kerala | SGD Group',
+    metaDescription: 'Explore vertical sliding aluminium windows in Kerala by SGD Group. Space-saving design, smooth operation and durable construction for modern and period-style homes.',
     tagline: 'Signature System',
     hero: '/products/vertical-sliding-a.jpg',
     intro: 'Vertical Sliding is a stylish aluminium window system that combines classic character with modern functionality. Designed to move smoothly up and down, it offers practical ventilation without taking up extra space. With durable construction, clean profiles, and refined finishes, it brings comfort, elegance, and reliable performance to modern homes and commercial spaces.',
@@ -52,6 +55,9 @@ const products = {
   },
   'sliding-folding': {
     name: 'Sliding Folding',
+    h1: 'Sliding Folding Glass Doors in Kerala',
+    metaTitle: 'Sliding Folding Glass Doors Kerala | SGD Group',
+    metaDescription: 'Explore sliding folding glass doors in Kerala by SGD Group. Create wide, unobstructed openings with smooth operation, sleek profiles and durable construction.',
     tagline: 'Signature System',
     hero: '/products/sliding-folding-a.png',
     intro: 'Sliding Folding is a versatile aluminium door system designed to open spaces beautifully. Its smooth folding panels create a wide, unobstructed opening, making indoor and outdoor areas feel naturally connected. With strong construction, sleek profiles, and effortless operation, it brings flexibility, natural light, and modern elegance to homes and commercial spaces.',
@@ -109,15 +115,23 @@ export async function generateMetadata({ params }) {
   const data = products[product];
   if (!data) return {};
   const url = `https://sgdgroupofcompanies.com/products/signature-systems/${product}`;
+  const title = data.metaTitle || `${data.name} | Signature Systems | SGD Group of Companies Kerala`;
+  const description = data.metaDescription || data.intro.slice(0, 155);
   return {
-    title: `${data.name} | Signature Systems | SGD Group of Companies Kerala`,
-    description: data.intro.slice(0, 155),
+    title,
+    description,
     openGraph: {
-      title: `${data.name} | SGD Group`,
-      description: data.intro.slice(0, 155),
+      title,
+      description,
       url,
       siteName: 'SGD Group of Companies',
       type: 'website',
+      images: ['/hero.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
       images: ['/hero.png'],
     },
     alternates: { canonical: url },
@@ -140,7 +154,7 @@ export default async function SignatureSystemsProductPage({ params }) {
         ]}
       />
       <Navigation />
-      <PageHero title={data.name} bg={data.hero} />
+      <PageHero title={data.h1 || data.name} bg={data.hero} />
 
       {/* Overview */}
       <section className={styles.overview}>

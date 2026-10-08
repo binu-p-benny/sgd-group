@@ -8,15 +8,21 @@ import WhyChooseUs from './WhyChooseUs';
 import VideoTestimonials from '@/components/home/VideoTestimonials';
 
 export const metadata = {
-  title: 'Aluminium Door Systems | SGD Group of Companies Kerala',
-  description: 'SGD Group\'s aluminium & sliding glass door systems — Imperial SS2, Vista, Ultra, Retro Gulf, HL-50, Nexus and Horizon — precision-engineered for Kerala homes.',
+  title: 'Aluminium Door Systems Kerala | SGD Group',
+  description: 'Explore premium aluminium door systems in Kerala by SGD Group. Discover durable, energy-efficient and modern door solutions for homes, villas and commercial spaces.',
   keywords: 'aluminium door systems Kerala, aluminium doors, SGD aluminium doors, architectural doors Kerala, sliding glass doors Kerala, residential sliding doors, slim line sliding doors, automatic sliding doors, openable doors with grill Kerala, frameless sliding doors, Algerian sliding doors',
   openGraph: {
-    title: 'Aluminium Door Systems | SGD Group',
-    description: 'Premium aluminium door systems for residential and commercial projects in Kerala.',
+    title: 'Aluminium Door Systems Kerala | SGD Group',
+    description: 'Explore premium aluminium door systems in Kerala by SGD Group. Discover durable, energy-efficient and modern door solutions for homes, villas and commercial spaces.',
     url: 'https://sgdgroupofcompanies.com/products/aluminium-door-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
+    images: ['/hero.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aluminium Door Systems Kerala | SGD Group',
+    description: 'Explore premium aluminium door systems in Kerala by SGD Group. Discover durable, energy-efficient and modern door solutions for homes, villas and commercial spaces.',
     images: ['/hero.png'],
   },
   alternates: {
@@ -157,7 +163,7 @@ export default function AluminiumDoorSystemsPage() {
     <main>
       <Navigation />
       <PageHero
-        title="Aluminium Door Systems"
+        title="Aluminium Door Systems in Kerala"
         bg="/products/door-systems-hero.jpg"
       />
 
