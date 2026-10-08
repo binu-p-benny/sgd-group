@@ -303,13 +303,11 @@ export default async function ProjectPage({ params }) {
         <div className={styles.galleryInner}>
           <h2 className={styles.galleryTitle}>Gallery</h2>
           <div className={styles.galleryGrid}>
-            {project.galleryImages
-              .filter((src) => src !== project.heroImage)
-              .map((src, i) => (
-                <div key={src} className={styles.galleryItem}>
-                  <img src={src} alt={`${project.name} — view ${i + 1}`} />
-                </div>
-              ))}
+            {project.galleryImages.map((src, i) => (
+              <div key={src} className={styles.galleryItem}>
+                <img src={src} alt={`${project.name} — view ${i + 1}`} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -317,14 +315,6 @@ export default async function ProjectPage({ params }) {
       {/* ── Video Section ── */}
       <section className={styles.videoSection}>
         <div className={styles.videoInner}>
-          <div className={styles.videoHeader}>
-            <div className={styles.videoLeft}>
-              <h2 className={styles.videoHeading}>{project.videoHeading}</h2>
-            </div>
-            <div className={styles.videoRight}>
-              <p className={styles.videoDescription}>{project.videoDescription}</p>
-            </div>
-          </div>
           <div className={styles.videoEmbed}>
             {project.youtubeId ? (
               <iframe
@@ -335,10 +325,7 @@ export default async function ProjectPage({ params }) {
               />
             ) : (
               <div className={styles.videoPlaceholder}>
-                <img src={project.heroImage} alt={project.name} />
-                <div className={styles.videoPlaceholderOverlay}>
-                  <span className={styles.videoComingSoon}>Video coming soon</span>
-                </div>
+                <span className={styles.videoComingSoon}>Video coming soon</span>
               </div>
             )}
           </div>
