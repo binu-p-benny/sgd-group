@@ -251,8 +251,6 @@ export default async function ProjectPage({ params }) {
   const project = projects[slug];
   if (!project) notFound();
 
-  const [gallery0, ...galleryRest] = project.galleryImages;
-
   return (
     <main>
       <BreadcrumbJsonLd
@@ -297,38 +295,21 @@ export default async function ProjectPage({ params }) {
               ))}
             </p>
           </div>
-          <div className={styles.introImage}>
-            <img src={project.sideImage} alt={project.name} />
-          </div>
         </div>
       </section>
 
-      {/* ── Gallery Slider ── */}
+      {/* ── Gallery — every other photo for this project ── */}
       <section className={styles.gallery}>
         <div className={styles.galleryInner}>
-          <GallerySlider images={project.galleryImages} name={project.name} />
-        </div>
-      </section>
-
-      {/* ── Materials Used ── */}
-      <section className={styles.materials}>
-        <div className={styles.materialsInner}>
-          <div className={styles.materialsHeader}>
-            <h2 className={styles.materialsTitle}>Materials Used</h2>
-            <p className={styles.materialsDesc}>{project.materialsDescription}</p>
-          </div>
-          <div className={styles.materialsGrid}>
-            {project.materials.map((m) => (
-              <div key={m.label} className={styles.materialCard}>
-                <div className={styles.materialImageWrap}>
-                  <img src={m.image} alt={m.label} />
-                  <div className={styles.materialLabel}>
-                    <strong>{m.label}</strong>
-                    <span>{m.sub}</span>
-                  </div>
+          <h2 className={styles.galleryTitle}>Gallery</h2>
+          <div className={styles.galleryGrid}>
+            {project.galleryImages
+              .filter((src) => src !== project.heroImage)
+              .map((src, i) => (
+                <div key={src} className={styles.galleryItem}>
+                  <img src={src} alt={`${project.name} — view ${i + 1}`} />
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </section>
@@ -369,25 +350,5 @@ export default async function ProjectPage({ params }) {
 
       <Footer />
     </main>
-  );
-}
-
-function GallerySlider({ images, name }) {
-  // Server component — renders a CSS-only slider with dot indicators
-  return (
-    <div className={styles.slider}>
-      <div className={styles.sliderTrack}>
-        {images.map((src, i) => (
-          <div key={i} className={styles.sliderSlide}>
-            <img src={src} alt={`${name} — view ${i + 1}`} />
-          </div>
-        ))}
-      </div>
-      <div className={styles.sliderDots}>
-        {images.map((_, i) => (
-          <span key={i} className={`${styles.dot} ${i === 0 ? styles.dotActive : ''}`} />
-        ))}
-      </div>
-    </div>
   );
 }
