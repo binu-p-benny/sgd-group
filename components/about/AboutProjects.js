@@ -9,14 +9,14 @@ import styles from './AboutProjects.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { src: '/project-nikshan.png',  alt: 'Nikshan Electronics' },
-  { src: '/projects/eham-digital-real.jpg',    alt: 'Eham Digital' },
-  { src: '/projects/loshidh-thrissur-1.jpg',   alt: 'Loshidh Residence' },
-  { src: '/projects/jabir-kottakal-1.jpg',     alt: 'Jabir Residence' },
-  { src: '/projects/shameer-vengara-1.jpg',    alt: 'Shameer Vengara Residence' },
-  { src: '/projects/nidhin-engapuzha-1.jpg',   alt: 'Nidhin Engapuzha Residence' },
-  { src: '/projects/nidhin-kannur-1.jpg',      alt: 'Nidhin Kannur Residence' },
-  { src: '/projects/jilce-jose-thrissur-1.jpg', alt: 'Jilce Jose Residence' },
+  { src: '/project-nikshan.png',                 name: 'Nikshan Electronics', location: 'Kerala',     href: '/projects/nikshan-electronics' },
+  { src: '/projects/eham-digital-real.jpg',      name: 'Eham Digital',       location: 'Kerala',     href: '/projects/eham-digital' },
+  { src: '/projects/loshidh-thrissur-1.jpg',     name: 'Loshidh',            location: 'Kerala',     href: '/projects/loshidh-thrissur' },
+  { src: '/projects/jabir-kottakal-1.jpg',       name: 'Jabir',              location: 'Tamil Nadu', href: '/projects/jabir-kottakal' },
+  { src: '/projects/shameer-vengara-1.jpg',      name: 'Shameer Vengara',    location: 'Kerala',     href: '/projects/shameer-vengara' },
+  { src: '/projects/nidhin-engapuzha-1.jpg',     name: 'Nidhin Engapuzha',   location: 'Kerala',     href: '/projects/nidhin-engapuzha' },
+  { src: '/projects/nidhin-kannur-1.jpg',        name: 'Nidhin Kannur',      location: 'Kerala',     href: '/projects/nidhin-kannur' },
+  { src: '/projects/jilce-jose-thrissur-1.jpg',  name: 'Jilce Jose',         location: 'Kerala',     href: '/projects/jilce-jose-thrissur' },
 ];
 
 export default function AboutProjects() {
@@ -86,9 +86,13 @@ export default function AboutProjects() {
       <div className={styles.stripOuter}>
         <div className={styles.track} ref={trackRef}>
           {projects.map((p, i) => (
-            <div key={i} className={styles.card}>
-              <img src={p.src} alt={p.alt} className={styles.cardImg} />
-            </div>
+            <Link key={i} href={p.href} className={styles.card}>
+              <img src={p.src} alt={p.name} className={styles.cardImg} />
+              <div className={styles.cardOverlay}>
+                <span className={styles.cardName}>{p.name}</span>
+                <span className={styles.cardLocation}>{p.location}</span>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
