@@ -22,8 +22,9 @@
   padding: 0 2rem;
 }
 
-/* ── Full-width image ── */
+/* ── Full-width image — mobile only, see breakpoint below ── */
 .imgWrap {
+  display: none;
   width: 100%;
   height: 578px;
   overflow: hidden;
@@ -156,6 +157,9 @@
   .inner {
     padding: 0 1.5rem;
     gap: 40px;
+  }
+  .imgWrap {
+    display: block;
   }
   .topRow {
     flex-direction: column;
