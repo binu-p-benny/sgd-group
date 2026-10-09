@@ -109,14 +109,14 @@ export default function Navigation() {
       href: '#',
       dropdown: [
         {
-          name: 'Aluminium Window Systems', href: '/products/aluminium-window-systems', image: '/services/services-01.png',
+          name: 'Aluminium Window Systems', href: '/products/aluminium-window-systems', image: '/products/window-systems-hero.jpg',
           subItems: [
             { name: 'Eco Gulf',  href: '/products/aluminium-window-systems/eco-gulf' },
             { name: 'HL-40',     href: '/products/aluminium-window-systems/hl40' },
           ]
         },
         {
-          name: 'Aluminium Door Systems', href: '/products/aluminium-door-systems', image: '/services/services-02.png',
+          name: 'Aluminium Door Systems', href: '/products/aluminium-door-systems', image: '/products/door-systems-hero.jpg',
           subItems: [
             { name: 'Imperial SS2', href: '/products/aluminium-door-systems/imperialss2' },
             { name: 'Vista',        href: '/products/aluminium-door-systems/vista' },
@@ -127,7 +127,7 @@ export default function Navigation() {
           ]
         },
         {
-          name: 'Signature Systems', href: '/products/signature-systems', image: '/services/services-03.png',
+          name: 'Signature Systems', href: '/products/signature-systems', image: '/products/tilt-turn-b.jpg',
           subItems: [
             { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening' },
             { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn' },
