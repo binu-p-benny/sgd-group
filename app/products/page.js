@@ -48,8 +48,6 @@ const categories = [
     products: [
       { slug: 'eco-gulf', name: 'Eco Gulf', image: '/services/services-02.png', desc: 'Our most sustainable system, built from recycled-content aluminium.' },
       { slug: 'hl40', name: 'HL-40', image: '/services/services-04.png', desc: 'Slimmer 40 mm profile for residential balconies, patios, and entrances.' },
-      { slug: 'blaze', name: 'Blaze', image: '/services/services-03.png', desc: 'Statement pivot system built as the centrepiece of an elevation.' },
-      { slug: 'slide-pro', name: 'Slide-Pro', image: '/services/services-02.png', desc: 'Multi-track horizontal sliding system for openings needing more than two panels.' },
     ],
   },
   {

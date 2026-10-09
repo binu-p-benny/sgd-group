@@ -12,7 +12,7 @@ import VideoTestimonials from '@/components/home/VideoTestimonials';
 export const metadata = {
   title: 'Aluminium Window Systems Kerala | SGD Group',
   description: 'Explore premium aluminium window systems in Kerala by SGD Group. Durable, energy-efficient and modern windows for homes and commercial spaces.',
-  keywords: 'aluminium window systems Kerala, Eco Gulf window, HL-40 window, Blaze pivot system, Slide-Pro sliding window, SGD aluminium windows, sliding glass windows Kerala, best sliding windows, slim line windows, residential sliding windows, openable windows Kerala, casement windows Kerala, sliding windows with grill',
+  keywords: 'aluminium window systems Kerala, Eco Gulf window, HL-40 window, SGD aluminium windows, sliding glass windows Kerala, best sliding windows, slim line windows, residential sliding windows, openable windows Kerala, casement windows Kerala, sliding windows with grill',
   openGraph: {
     title: 'Aluminium Window Systems Kerala | SGD Group',
     description: 'Explore premium aluminium window systems in Kerala by SGD Group. Durable, energy-efficient and modern windows for homes and commercial spaces.',
@@ -35,8 +35,6 @@ export const metadata = {
 const windowSystems = [
   { name: 'Eco Gulf',  href: '/products/aluminium-window-systems/eco-gulf',  image: '/products/eco-gulf-a.jpg' },
   { name: 'HL-40',     href: '/products/aluminium-window-systems/hl40',      image: '/products/hl40-a.jpg' },
-  { name: 'Blaze',     href: '/products/aluminium-window-systems/blaze',     image: '/products/blaze-a.png' },
-  { name: 'Slide-Pro', href: '/products/aluminium-window-systems/slide-pro', image: '/products/slidepro-a.jpg' },
 ];
 
 export default function AluminiumWindowSystemsPage() {
@@ -46,7 +44,7 @@ export default function AluminiumWindowSystemsPage() {
       <PageHero
         label="Aluminium Window Systems"
         title="Aluminium Window Systems in Kerala"
-        subtitle="Precision-engineered aluminium window profiles — Eco Gulf, HL-40, Blaze and Slide-Pro — built for lasting performance and architectural clarity."
+        subtitle="Precision-engineered aluminium window profiles — Eco Gulf and HL-40 — built for lasting performance and architectural clarity."
         bg="/products/window-systems-hero.jpg"
       />
 

@@ -113,8 +113,6 @@ export default function Navigation() {
           subItems: [
             { name: 'Eco Gulf',  href: '/products/aluminium-window-systems/eco-gulf' },
             { name: 'HL-40',     href: '/products/aluminium-window-systems/hl40' },
-            { name: 'Blaze',     href: '/products/aluminium-window-systems/blaze' },
-            { name: 'Slide-Pro', href: '/products/aluminium-window-systems/slide-pro' },
           ]
         },
         {
