@@ -159,31 +159,6 @@ const products = {
     ],
     applications: ['Commercial Towers', 'Corporate Facades', 'Landmark Buildings'],
   },
-  horizon: {
-    name: 'Horizon',
-    tagline: 'Aluminium Door System',
-    hero: '/products/horizon-a.jpg',
-    intro: 'Horizon is a thoughtfully designed aluminium door system that brings openness, natural light, and modern elegance into everyday spaces. Its durable construction and refined profile offer dependable performance, while smooth functionality ensures comfort and convenience. Perfect for contemporary homes and commercial projects, Horizon creates bright spaces built for lasting enjoyment.',
-    image: '/products/horizon-b.jpg',
-    specs: [
-      { label: 'Max Sash Width', value: '1500 mm' },
-      { label: 'Max Sash Height', value: '2400 mm' },
-      { label: 'Glass Thickness', value: '5 mm – 18 mm' },
-      { label: 'Max Sash Weight', value: '120 kg' },
-      { label: 'Construction Depth', value: 'Frame 2T-85 mm, 3T-119 mm, 4T-162 mm' },
-      { label: 'Sight Line', value: 'Upto 15 mm' },
-      { label: 'Wind Load', value: 'Class CE2500 (2.5 kPa)' },
-      { label: 'Water Tightness', value: 'Class 7A (300 Pa)' },
-      { label: 'Air Permeability', value: 'Class 4 (600 Pa)' },
-    ],
-    features: [
-      { title: 'Brings in More Natural Light', desc: 'Designed to create brighter, more open spaces with generous glass areas.' },
-      { title: 'Clean & Contemporary Look', desc: 'Refined aluminium profiles add a sleek architectural touch to any setting.' },
-      { title: 'Strong for Everyday Performance', desc: 'Durable construction provides reliable strength and long-lasting functionality.' },
-      { title: 'Comfortable & Easy to Use', desc: 'Smooth operation makes everyday use simple, convenient, and enjoyable.' },
-    ],
-    applications: ['Pool-Facing Living Rooms', 'Rooftop Lounges', 'Luxury Villas'],
-  },
 };
 
 export function generateStaticParams() {

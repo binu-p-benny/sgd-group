@@ -130,7 +130,6 @@ const doorSystems = [
   { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf',   image: '/products/retro-gulf-a.jpg' },
   { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50',        image: '/products/hl50-a.jpg' },
   { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus',       image: '/products/nexus-a.png' },
-  { name: 'Horizon',      href: '/products/aluminium-door-systems/horizon',     image: '/products/horizon-a.jpg' },
 ];
 
 const features = [

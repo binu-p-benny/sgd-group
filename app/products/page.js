@@ -63,7 +63,6 @@ const categories = [
       { slug: 'retrogulf', name: 'Retro Gulf', image: '/services/services-01.png', desc: 'Retrofit-friendly system for upgrading existing openings with minimal disruption.' },
       { slug: 'hl50', name: 'HL-50', image: '/services/services-03.png', desc: 'Heavy-duty casement door series on a 50 mm profile for large, high-traffic openings.' },
       { slug: 'nexus', name: 'Nexus', image: '/services/services-02.png', desc: 'Modular curtain-wall system linking large glazed panels into one continuous facade.' },
-      { slug: 'horizon', name: 'Horizon', image: '/services/services-03.png', desc: 'Panoramic sliding system engineered for openings that erase indoor-outdoor boundaries.' },
     ],
   },
   {

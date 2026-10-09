@@ -28,7 +28,7 @@ const projectSlugs = [
 
 const productRoutes = {
   'aluminium-window-systems': ['eco-gulf', 'hl40', 'blaze', 'slide-pro'],
-  'aluminium-door-systems': ['imperialss2', 'vista', 'ultra', 'retrogulf', 'hl50', 'nexus', 'horizon'],
+  'aluminium-door-systems': ['imperialss2', 'vista', 'ultra', 'retrogulf', 'hl50', 'nexus'],
   'signature-systems': ['parallel-opening', 'tilt-turn', 'vertical-sliding', 'sliding-folding'],
 };
 

@@ -126,7 +126,6 @@ export default function Navigation() {
             { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf' },
             { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50' },
             { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus' },
-            { name: 'Horizon',      href: '/products/aluminium-door-systems/horizon' },
           ]
         },
         {
