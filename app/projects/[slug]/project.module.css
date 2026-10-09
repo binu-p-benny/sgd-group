@@ -248,6 +248,7 @@
 
   .galleryItem img {
     object-fit: contain;
+    object-position: center;
   }
 
   /* Mirrors the home page Hero's mobile treatment: image becomes a
