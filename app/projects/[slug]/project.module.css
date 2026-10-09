@@ -246,6 +246,10 @@
     border-radius: 12px;
   }
 
+  .galleryItem img {
+    object-fit: contain;
+  }
+
   /* Mirrors the home page Hero's mobile treatment: image becomes a
      plain block up top, title flows below it in normal flow (not
      overlaid), so no dark overlay or light text is needed. */
