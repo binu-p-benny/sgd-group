@@ -242,13 +242,12 @@
   }
 
   .galleryItem {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: auto;
     border-radius: 12px;
   }
 
   .galleryItem img {
-    object-fit: contain;
-    object-position: center;
+    height: auto;
   }
 
   /* Mirrors the home page Hero's mobile treatment: image becomes a
