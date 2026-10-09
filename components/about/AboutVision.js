@@ -14,6 +14,7 @@ export default function AboutVision() {
   const eyebrowRef  = useRef(null);
   const bodyRef     = useRef(null);
   const btnRef      = useRef(null);
+  const imgRef      = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -43,11 +44,35 @@ export default function AboutVision() {
       { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
       '-=0.3'
     );
+
+    // Full-width image reveal
+    gsap.fromTo(imgRef.current,
+      { clipPath: 'inset(0% 100% 0% 0%)' },
+      {
+        clipPath: 'inset(0% 0% 0% 0%)',
+        duration: 1.4,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: imgRef.current,
+          start: 'top 85%',
+          once: true,
+        },
+      }
+    );
   }, []);
 
   return (
     <section className={styles.section} ref={sectionRef}>
       <div className={styles.inner}>
+
+        {/* ── Full-width image ── */}
+        <div className={styles.imgWrap} ref={imgRef}>
+          <img
+            src="/about/About-2.jpg"
+            alt="SGD Group — Shaping Future Spaces"
+            className={styles.img}
+          />
+        </div>
 
         {/* ── Top row: heading (left) + vision text (right) ── */}
         <div className={styles.topRow}>
