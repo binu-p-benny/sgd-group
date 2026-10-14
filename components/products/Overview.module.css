@@ -132,6 +132,7 @@
 .premiumContent {
   flex: 1;
   min-width: 0;
+  max-width: 860px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -498,6 +499,12 @@
   line-height: 1.6;
   color: rgba(17, 17, 17, 0.7);
   margin: 0;
+}
+
+/* Text-only variant (no right-hand image): keep the copy and accordion at
+   a readable width instead of stretching across the full container. */
+.whyInnerNoImage .whyLeft {
+  max-width: 860px;
 }
 
 /* Right image */

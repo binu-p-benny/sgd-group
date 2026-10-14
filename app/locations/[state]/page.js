@@ -32,13 +32,13 @@ export async function generateMetadata({ params }) {
       siteName: BUSINESS.name,
       type: 'website',
       locale: 'en_IN',
-      images: [loc.heroBg],
+      images: [{ url: `/og/locations/${loc.slug}.jpg`, width: 1200, height: 630, alt: `SGD Group aluminium and glazing projects in ${loc.name}` }],
     },
     twitter: {
       card: 'summary_large_image',
       title: loc.title,
       description: loc.description,
-      images: [loc.heroBg],
+      images: [`/og/locations/${loc.slug}.jpg`],
     },
   };
 }

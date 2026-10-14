@@ -35,7 +35,7 @@ export const locations = {
     slug: 'kerala',
     name: 'Kerala',
     contentComplete: true,
-    heroBg: '/services/services-01.png',
+    heroBg: '/projects/shameer-vengara-1.jpg',
     title: 'Aluminium Windows & Glazing in Kerala | SGD Group',
     description:
       'Aluminium window systems, doors and architectural glazing across Kerala. SGD Group has delivered residential and commercial projects in Kozhikode, Malappuram, Thrissur and Kannur since 2014.',
@@ -57,7 +57,7 @@ export const locations = {
     slug: 'tamil-nadu',
     name: 'Tamil Nadu',
     contentComplete: false,   // TODO: add cities served + local projects, then flip
-    heroBg: '/services/services-03.png',
+    heroBg: '/projects/jabir-kottakal-1.jpg',
     title: 'Expert Glass & Window Installation and Service in Tamil Nadu',
     h1: 'Premium Aluminium Windows & Glass Solutions in Tamil Nadu',
     description:
@@ -76,7 +76,7 @@ export const locations = {
     slug: 'karnataka',
     name: 'Karnataka',
     contentComplete: false,   // TODO: add cities served + local projects, then flip
-    heroBg: '/services/services-02.png',
+    heroBg: '/projects/chindananda-reddy-bangalore-1.jpg',
     title: 'Expert Glass & Window Installation and Service in Karnataka',
     h1: 'Premium Aluminium Windows & Glass Solutions in Karnataka',
     description:

@@ -29,7 +29,7 @@ export default function WhyChooseUs() {
 
   return (
     <section className={styles.whySection}>
-      <div className={styles.whyInner}>
+      <div className={`${styles.whyInner} ${styles.whyInnerNoImage}`}>
 
         {/* Left: text + accordion */}
         <div className={styles.whyLeft}>
@@ -60,11 +60,6 @@ export default function WhyChooseUs() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Right: image */}
-        <div className={styles.whyImage}>
-          <img src="/products/imperial-ss2-a.jpg" alt="Why choose SGD aluminium doors" />
         </div>
 
       </div>

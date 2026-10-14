@@ -17,13 +17,13 @@ export const metadata = {
     url: 'https://sgdgroupofcompanies.com/products/aluminium-door-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: ['/hero.png'],
+    images: [{ url: '/og/door-systems.jpg', width: 1200, height: 630, alt: 'Aluminium door systems by SGD Group' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aluminium Door Systems Kerala | SGD Group',
     description: 'Explore premium aluminium door systems in Kerala by SGD Group. Discover durable, energy-efficient and modern door solutions for homes, villas and commercial spaces.',
-    images: ['/hero.png'],
+    images: ['/og/door-systems.jpg'],
   },
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com/products/aluminium-door-systems',
@@ -186,20 +186,6 @@ export default function AluminiumDoorSystemsPage() {
             <img src="/products/imperial-ss2-a.jpg" alt="Aluminium door installation — Imperial SS2, SGD showcase villa" />
           </div>
 
-          {/* Mobile-only combined image grid — replaces the separate
-              per-section images below with one compact mosaic */}
-          <div className={styles.mobileImageGrid}>
-            <div className={styles.mobileImageGridItem}>
-              <img src="/services/services-02.png" alt="Aluminium door installation" />
-            </div>
-            <div className={styles.mobileImageGridItem}>
-              <img src="/services/services-03.png" alt="Premium aluminium door design" />
-            </div>
-            <div className={styles.mobileImageGridItem}>
-              <img src="/services/services-04.png" alt="Why choose SGD aluminium doors" />
-            </div>
-          </div>
-
         </div>
       </section>
 
@@ -208,10 +194,6 @@ export default function AluminiumDoorSystemsPage() {
       {/* ── Premium Design Section ── */}
       <section className={styles.premiumSection}>
         <div className={styles.premiumInner}>
-
-          <div className={styles.premiumImage}>
-            <img src="/services/services-03.png" alt="Premium aluminium window design" />
-          </div>
 
           <div className={styles.premiumContent}>
             <h2 className={styles.premiumTitle}>Timeless Design, Lasting Strength</h2>

@@ -14,6 +14,12 @@
   gap: 192px;
 }
 
+/* Text-only variant (no image): keep the text block a readable width
+   instead of stretching across the full container. */
+.containerNoImage .content {
+  max-width: 860px;
+}
+
 /* ── Image ── */
 .imageWrap {
   flex-shrink: 0;

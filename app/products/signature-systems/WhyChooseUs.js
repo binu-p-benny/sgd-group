@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
 
   return (
     <section className={styles.whySection}>
-      <div className={styles.whyInner}>
+      <div className={`${styles.whyInner} ${styles.whyInnerNoImage}`}>
 
         <div className={styles.whyLeft}>
           <h2 className={styles.whyTitle}>Why Choose Us</h2>
@@ -58,10 +58,6 @@ export default function WhyChooseUs() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className={styles.whyImage}>
-          <img src="/services/services-04.png" alt="Why choose SGD Signature Systems" />
         </div>
 
       </div>

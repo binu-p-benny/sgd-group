@@ -240,7 +240,11 @@ export async function generateMetadata({ params }) {
       url: `https://sgdgroupofcompanies.com/projects/${slug}`,
       siteName: 'SGD Group of Companies',
       type: 'website',
-      images: ['/hero.png'],
+      images: [{ url: `/og/projects/${slug}.jpg`, width: 1200, height: 630, alt: project.name }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [`/og/projects/${slug}.jpg`],
     },
     alternates: { canonical: `https://sgdgroupofcompanies.com/projects/${slug}` },
   };

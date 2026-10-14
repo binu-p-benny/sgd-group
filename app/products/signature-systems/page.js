@@ -19,7 +19,11 @@ export const metadata = {
     url: 'https://sgdgroupofcompanies.com/products/signature-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: ['/hero.png'],
+    images: [{ url: '/og/signature-systems.jpg', width: 1200, height: 630, alt: 'SGD Group signature aluminium systems' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og/signature-systems.jpg'],
   },
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com/products/signature-systems',
@@ -58,27 +62,11 @@ export default function SignatureSystemsPage() {
         description="Our Signature Systems bring thoughtful design and practical performance together. From flexible Parallel Opening and versatile Tilt & Turn to space-saving Vertical Sliding and expansive Sliding Folding solutions, each system is crafted to suit modern lifestyles. With refined aluminium profiles, smooth operation, and lasting durability, these designs help create comfortable, elegant spaces that feel truly yours."
       />
       <FeatureSection
-        image="/services/services-02.png"
+        image={null}
         heading="Four Mechanisms, One Standard of Quality"
         body="Whether it's a vertical sliding sash for a heritage-style facade, a tilt & turn window for easy cleaning, or a sliding-folding door that opens an entire wall, every Signature System is built with the same precision hardware, weather sealing, and toughened glass as the rest of our collection."
       />
       <KeyFeaturesSection features={featureItems} />
-
-      {/* Mobile-only combined image grid — replaces the separate
-          per-section images above with one compact mosaic */}
-      <div className={styles.mobileImageGridWrap}>
-        <div className={styles.mobileImageGrid}>
-          <div className={styles.mobileImageGridItem}>
-            <img src="/services/services-01.png" alt="Signature systems applications" />
-          </div>
-          <div className={styles.mobileImageGridItem}>
-            <img src="/services/services-02.png" alt="Signature systems mechanisms" />
-          </div>
-          <div className={styles.mobileImageGridItem}>
-            <img src="/services/services-04.png" alt="Why choose SGD Signature Systems" />
-          </div>
-        </div>
-      </div>
 
       <WhyChooseUs />
 

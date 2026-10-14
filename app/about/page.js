@@ -17,7 +17,11 @@ export const metadata = {
     url: 'https://sgdgroupofcompanies.com/about',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: ['/hero.png'],
+    images: [{ url: '/og/about.jpg', width: 1200, height: 630, alt: 'About SGD Group of Companies' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og/about.jpg'],
   },
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com/about',

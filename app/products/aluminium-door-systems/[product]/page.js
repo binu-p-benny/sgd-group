@@ -13,7 +13,7 @@ const products = {
     tagline: 'Aluminium Door System',
     hero: '/products/imperial-ss2-a.jpg',
     intro: 'Imperial SS2 brings together refined aluminium design, dependable strength, and effortless functionality for modern spaces. Its elegant profile and premium finish create a sophisticated entrance, while thoughtful engineering ensures lasting performance. Ideal for homes and commercial projects, it adds comfort, security, and timeless character to every space.',
-    image: '/products/imperial-ss2-b.jpg',
+    image: '/products/imperial-ss2-c.webp',
     specs: [
       { label: 'Track Frame Width', value: '225 mm' },
       { label: 'Track Frame Height', value: '105 mm' },
@@ -179,7 +179,11 @@ export async function generateMetadata({ params }) {
       url,
       siteName: 'SGD Group of Companies',
       type: 'website',
-      images: ['/hero.png'],
+      images: [{ url: `/og/products/${product}.jpg`, width: 1200, height: 630, alt: data.name }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [`/og/products/${product}.jpg`],
     },
     alternates: { canonical: url },
   };

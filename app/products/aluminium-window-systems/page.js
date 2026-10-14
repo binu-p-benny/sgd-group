@@ -19,13 +19,13 @@ export const metadata = {
     url: 'https://sgdgroupofcompanies.com/products/aluminium-window-systems',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: ['/hero.png'],
+    images: [{ url: '/og/window-systems.jpg', width: 1200, height: 630, alt: 'Aluminium window systems by SGD Group' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aluminium Window Systems Kerala | SGD Group',
     description: 'Explore premium aluminium window systems in Kerala by SGD Group. Durable, energy-efficient and modern windows for homes and commercial spaces.',
-    images: ['/hero.png'],
+    images: ['/og/window-systems.jpg'],
   },
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com/products/aluminium-window-systems',
@@ -53,7 +53,7 @@ export default function AluminiumWindowSystemsPage() {
         description="Our aluminum window systems are thoughtfully engineered to bring together modern design, lasting durability, and everyday comfort. Built with precision and premium materials, they offer seamless functionality, enhanced natural light, and reliable performance for homes and commercial spaces. Every installation reflects our commitment to quality craftsmanship, elegant finishes, and customer satisfaction."
       />
       <FeatureSection
-        image="/products/window-systems-detail.jpg"
+        image={null}
         heading="Timeless Design, Lasting Strength"
         body="Beautiful spaces begin with exceptional windows. Our aluminum window systems are engineered for durability, precision, and modern aesthetics, offering superior performance in every season. With premium finishes, smooth operation, and dependable quality, they create brighter, safer, and more inspiring living and working environments."
       />
@@ -67,19 +67,6 @@ export default function AluminiumWindowSystemsPage() {
           { title: 'Professional Service & Delivery', desc: 'Expert support, exceptional craftsmanship, and dependable on-time delivery.' },
         ]}
       />
-
-      {/* Mobile-only combined image grid — replaces the separate
-          per-section images above with one compact mosaic */}
-      <div className={styles.mobileImageGridWrap}>
-        <div className={styles.mobileImageGrid}>
-          <div className={styles.mobileImageGridItem}>
-            <img src="/services/services-02.png" alt="Aluminium window systems" />
-          </div>
-          <div className={styles.mobileImageGridItem}>
-            <img src="/services/services-03.png" alt="Why choose SGD aluminium window systems" />
-          </div>
-        </div>
-      </div>
 
       <WhyChooseUs />
 

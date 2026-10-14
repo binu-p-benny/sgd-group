@@ -14,7 +14,11 @@ export const metadata = {
     url: 'https://sgdgroupofcompanies.com/careers',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: ['/hero.png'],
+    images: [{ url: '/og/careers.jpg', width: 1200, height: 630, alt: 'Careers at SGD Group of Companies' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og/careers.jpg'],
   },
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com/careers',
@@ -42,6 +46,8 @@ const whyJoin = [
 
 const openings = [
   { role: 'Aluminium Fabricator', type: 'Full-time', location: 'Thrissur, Kerala', desc: 'Hands-on fabrication of aluminium profiles and glazed units in our production facility.' },
+  { role: 'Sales Executive', type: 'Full-time', location: 'Kozhikode, Kerala', desc: 'Meet homeowners, architects and builders, prepare quotations, and win orders for our aluminium window and door systems.' },
+  { role: 'Operations Executive', type: 'Full-time', location: 'Kozhikode, Kerala', desc: 'Coordinate site surveys, fabrication schedules and installation teams to deliver every project on time and to specification.' },
 ];
 
 export default function CareersPage() {

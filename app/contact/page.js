@@ -15,7 +15,11 @@ export const metadata = {
     url: 'https://sgdgroupofcompanies.com/contact',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: ['/RMS04290.JPG'],
+    images: [{ url: '/og/contact.jpg', width: 1200, height: 630, alt: 'Contact SGD Group of Companies' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og/contact.jpg'],
   },
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com/contact',
