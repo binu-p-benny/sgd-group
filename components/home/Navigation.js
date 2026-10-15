@@ -360,13 +360,16 @@ export default function Navigation() {
             {locationsDesktop}
           </div>
 
-          <div
+          <button
+            type="button"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
             className={`${styles.mobileToggle} ${isOpen ? styles.open : ''} ${isOpen ? styles.mobileToggleHidden : ''}`}
             onClick={(e) => { e.stopPropagation(); setIsOpen(!isOpen); }}
           >
             <span></span>
             <span></span>
-          </div>
+          </button>
         </div>
       </nav>
 

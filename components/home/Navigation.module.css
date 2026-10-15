@@ -562,6 +562,15 @@
   width: 30px;
   height: 20px;
   z-index: 1001;
+  /* Button reset + bigger hit area for touch (bars stay 30x20 visually) */
+  background: none;
+  padding: 0;
+  box-sizing: content-box;
+  border: 14px solid transparent;
+  background-clip: padding-box;
+  margin: -14px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mobileToggle span {
