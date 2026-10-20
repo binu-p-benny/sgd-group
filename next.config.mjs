@@ -124,6 +124,14 @@ const legacyWordpressRedirects = [
   ['/mastering-the-art-of-stress-free-relocation-insider-tips-and-tricks',         '/blog'],
   ['/aluminum-glass-handrails-with-wooden-finish-a-modern-and-secure-choice',      '/blog'],
   ['/choosing-the-right-materials-for-glass-and-wooden-staircases',                '/blog'],
+
+  // Old /portfolio/* project pages (Search Console still lists these) → /projects/*
+  ['/portfolio',                                                                   '/'],
+  ['/portfolio/shameer-vengara',                                                   '/projects/shameer-vengara'],
+  ['/portfolio/loshidh-thrissur',                                                  '/projects/loshidh-thrissur'],
+  ['/portfolio/jilce-jose-thrissur',                                               '/projects/jilce-jose-thrissur'],
+  ['/portfolio/nikshan-electronics-showroom-in-calicut',                           '/projects/nikshan-electronics'],
+  ['/portfolio/:slug',                                                             '/'],
 ];
 
 const nextConfig = {
