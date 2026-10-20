@@ -56,7 +56,7 @@ export const locations = {
   'tamil-nadu': {
     slug: 'tamil-nadu',
     name: 'Tamil Nadu',
-    contentComplete: false,   // TODO: add cities served + local projects, then flip
+    contentComplete: true,    // indexable per SEO request; still worth adding cities served
     heroBg: '/projects/jabir-kottakal-1.jpg',
     title: 'Expert Glass & Window Installation and Service in Tamil Nadu',
     h1: 'Premium Aluminium Windows & Glass Solutions in Tamil Nadu',
