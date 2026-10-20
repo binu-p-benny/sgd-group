@@ -75,7 +75,7 @@ export const locations = {
   karnataka: {
     slug: 'karnataka',
     name: 'Karnataka',
-    contentComplete: false,   // TODO: add cities served + local projects, then flip
+    contentComplete: true,    // indexable per SEO request; still worth adding more cities/projects
     heroBg: '/projects/chindananda-reddy-bangalore-1.jpg',
     title: 'Expert Glass & Window Installation and Service in Karnataka',
     h1: 'Premium Aluminium Windows & Glass Solutions in Karnataka',
