@@ -23,7 +23,7 @@ export default function TermsAndConditionsPage() {
   return (
     <main>
       <Navigation />
-      <PageHero title="Terms & Conditions" bg="/hero.png" />
+      <PageHero title="Terms & Conditions" bg="/hero.jpg" />
 
       <section className="section">
         <div className={styles.wrap}>

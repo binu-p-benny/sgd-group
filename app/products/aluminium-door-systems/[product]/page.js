@@ -136,7 +136,7 @@ const products = {
   nexus: {
     name: 'Nexus',
     tagline: 'Aluminium Door System',
-    hero: '/products/nexus-a.png',
+    hero: '/products/nexus-a.jpg',
     intro: 'Nexus is a modern aluminium door system designed to connect style, comfort, and reliable performance. Its clean profile and durable construction bring a refined look to contemporary spaces, while smooth functionality makes everyday living easier. Ideal for homes and commercial projects, Nexus delivers lasting quality with effortless elegance.',
     image: '/products/nexus-b.jpg',
     specs: [

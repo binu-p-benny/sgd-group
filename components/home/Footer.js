@@ -37,7 +37,7 @@ export default function Footer() {
       {/* Parallax background image */}
       <div className={styles.bgWrapper}>
         <img
-          src="/skylight.png"
+          src="/skylight.jpg"
           alt=""
           className={styles.bgImage}
           ref={imageRef}

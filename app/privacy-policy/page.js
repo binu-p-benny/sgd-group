@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
   return (
     <main>
       <Navigation />
-      <PageHero title="Privacy Policy" bg="/hero.png" />
+      <PageHero title="Privacy Policy" bg="/hero.jpg" />
 
       <section className="section">
         <div className={styles.wrap}>

@@ -1,7 +1,7 @@
 import styles from './FeatureSection.module.css';
 
 export default function FeatureSection({
-  image = '/services/services-02.png',
+  image = '/services/services-02.jpg',
   heading = 'Sleek. Secure. Built to Last',
   body = 'Enhance your space with openable aluminium doors designed for modern living and lasting performance. Featuring slim profiles that allow more light and natural airflow, these doors offer flexible opening options for everyday comfort and convenience. With secure locking systems, reliable insulation, and durable materials, they combine clean aesthetics with strength and long-term functionality.',
   videoHref = '#',

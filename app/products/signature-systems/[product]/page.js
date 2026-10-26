@@ -59,7 +59,7 @@ const products = {
     metaTitle: 'Sliding Folding Glass Doors Kerala | SGD Group',
     metaDescription: 'Explore sliding folding glass doors in Kerala by SGD Group. Create wide, unobstructed openings with smooth operation, sleek profiles and durable construction.',
     tagline: 'Signature System',
-    hero: '/products/sliding-folding-a.png',
+    hero: '/products/sliding-folding-a.jpg',
     intro: 'Sliding Folding is a versatile aluminium door system designed to open spaces beautifully. Its smooth folding panels create a wide, unobstructed opening, making indoor and outdoor areas feel naturally connected. With strong construction, sleek profiles, and effortless operation, it brings flexibility, natural light, and modern elegance to homes and commercial spaces.',
     image: '/products/sliding-folding-b.jpg',
     specs: [
@@ -85,7 +85,7 @@ const products = {
   'parallel-opening': {
     name: 'Parallel Opening',
     tagline: 'Signature System',
-    hero: '/products/parallel-opening-a.webp',
+    hero: '/products/parallel-opening-a.jpg',
     intro: 'Parallel Opening is a thoughtfully designed aluminium window system that brings fresh air, natural light, and everyday comfort into your space. Its unique opening style allows the window to move outward evenly, creating effective ventilation while maintaining a clean, modern appearance and dependable performance for contemporary homes and commercial spaces.',
     image: '/products/parallel-opening-c.jpg',
     specs: [

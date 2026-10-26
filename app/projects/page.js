@@ -34,7 +34,7 @@ const residential = [
 ];
 
 const commercial = [
-  { name: 'Nikshan Electronics', href: '/projects/nikshan-electronics', image: '/project-nikshan.png', location: 'Kerala' },
+  { name: 'Nikshan Electronics', href: '/projects/nikshan-electronics', image: '/project-nikshan.jpg', location: 'Kerala' },
   { name: 'Eham Digital',        href: '/projects/eham-digital',        image: '/projects/eham-digital-real.jpg', location: 'Kerala' },
 ];
 

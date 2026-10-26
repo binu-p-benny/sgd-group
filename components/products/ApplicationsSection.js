@@ -101,7 +101,7 @@ const applications = [
 
 const rows = [applications.slice(0, 3), applications.slice(3, 6)];
 
-export default function ApplicationsSection({ image = '/services/services-02.png', description }) {
+export default function ApplicationsSection({ image = '/services/services-02.jpg', description }) {
   return (
     <section className={styles.section}>
       <div className={styles.container}>

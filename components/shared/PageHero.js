@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import styles from './PageHero.module.css';
 
-export default function PageHero({ label, title, subtitle, bg = '/hero.png' }) {
+export default function PageHero({ label, title, subtitle, bg = '/hero.jpg' }) {
   const titleRef = useRef(null);
   const imageRef = useRef(null);
 

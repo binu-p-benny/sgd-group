@@ -19,7 +19,7 @@ const residentialProjects = [
 ];
 
 const commercialProjects = [
-  { name: 'Nikshan Electronics', href: '/projects/nikshan-electronics', image: '/project-nikshan.png' },
+  { name: 'Nikshan Electronics', href: '/projects/nikshan-electronics', image: '/project-nikshan.jpg' },
   { name: 'Eham Digital',        href: '/projects/eham-digital',        image: '/projects/eham-digital-real.jpg' },
 ];
 

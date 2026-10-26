@@ -9,7 +9,7 @@ import styles from './AboutProjects.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { src: '/project-nikshan.png',                 name: 'Nikshan Electronics', location: 'Kerala',     href: '/projects/nikshan-electronics' },
+  { src: '/project-nikshan.jpg',                 name: 'Nikshan Electronics', location: 'Kerala',     href: '/projects/nikshan-electronics' },
   { src: '/projects/eham-digital-real.jpg',      name: 'Eham Digital',       location: 'Kerala',     href: '/projects/eham-digital' },
   { src: '/projects/loshidh-thrissur-1.jpg',     name: 'Loshidh',            location: 'Kerala',     href: '/projects/loshidh-thrissur' },
   { src: '/projects/jabir-kottakal-1.jpg',       name: 'Jabir',              location: 'Tamil Nadu', href: '/projects/jabir-kottakal' },

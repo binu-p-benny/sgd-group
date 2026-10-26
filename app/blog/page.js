@@ -17,13 +17,13 @@ export const metadata = {
     url: 'https://sgdgroupofcompanies.com/blog',
     siteName: 'SGD Group of Companies',
     type: 'website',
-    images: [{ url: 'https://sgdgroupofcompanies.com/project-nikshan.png', width: 1200, height: 630, alt: 'SGD Group Insights & News' }],
+    images: [{ url: 'https://sgdgroupofcompanies.com/project-nikshan.jpg', width: 1200, height: 630, alt: 'SGD Group Insights & News' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Insights & News | SGD Group',
     description: 'Articles from SGD Group on structural glazing, skylights, frameless doors, and the latest in aluminium and glass design.',
-    images: ['https://sgdgroupofcompanies.com/project-nikshan.png'],
+    images: ['https://sgdgroupofcompanies.com/project-nikshan.jpg'],
   },
   alternates: {
     canonical: 'https://sgdgroupofcompanies.com/blog',
@@ -44,7 +44,7 @@ export default async function BlogPage({ searchParams }) {
         label="Insights & News"
         title="Latest from our journal."
         subtitle="Notes on structural glazing, daylighting, and the details that make an aluminium system worth specifying."
-        bg="/project-nikshan.png"
+        bg="/project-nikshan.jpg"
       />
 
       <section className={styles.section}>

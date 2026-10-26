@@ -27,8 +27,8 @@ export default function ProductCollection() {
   }, []);
 
   const products = [
-    { title: 'Doors', img: '/hero.png' },
-    { title: 'Windows', img: '/skylight.png' }
+    { title: 'Doors', img: '/hero.jpg' },
+    { title: 'Windows', img: '/skylight.jpg' }
   ];
 
   return (

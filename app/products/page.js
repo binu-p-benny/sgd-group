@@ -34,7 +34,7 @@ const realProjects = [
   { slug: 'loshidh-thrissur',   name: 'Loshidh Thrissur',   image: '/projects/loshidh-thrissur-1.jpg' },
   { slug: 'nidhin-engapuzha',   name: 'Nidhin Engapuzha',   image: '/projects/nidhin-engapuzha-1.jpg' },
   { slug: 'nidhin-kannur',      name: 'Nidhin Kannur',      image: '/projects/nidhin-kannur-1.jpg' },
-  { slug: 'nikshan-electronics',name: 'Nikshan Electronics',image: '/project-nikshan.png' },
+  { slug: 'nikshan-electronics',name: 'Nikshan Electronics',image: '/project-nikshan.jpg' },
   { slug: 'eham-digital',       name: 'Eham Digital',       image: '/projects/eham-digital-real.jpg' },
   { slug: 'jilce-jose-thrissur',name: 'Jilce Jose',         image: '/projects/jilce-jose-thrissur-1.jpg' },
 ];
@@ -75,7 +75,7 @@ const categories = [
     href: '/products/signature-systems',
     desc: 'Mechanisms engineered for the openings a standard slide or swing can\'t solve.',
     products: [
-      { slug: 'parallel-opening', name: 'Parallel Opening', image: '/products/parallel-opening-a.webp', desc: 'Even push-out ventilation window that holds securely at any angle.' },
+      { slug: 'parallel-opening', name: 'Parallel Opening', image: '/products/parallel-opening-a.jpg', desc: 'Even push-out ventilation window that holds securely at any angle.' },
       { slug: 'tilt-turn', name: 'Tilt & Turn', image: '/products/tilt-turn-b.jpg', desc: 'Dual-function sash — tilt for ventilation, turn for full opening and cleaning.' },
       { slug: 'vertical-sliding', name: 'Vertical Sliding', image: '/products/vertical-sliding-a.jpg', desc: 'Modern aluminium take on the classic sash window, for heritage-style facades.' },
       { slug: 'sliding-folding', name: 'Sliding Folding', image: '/products/cards/sliding-folding.jpg', desc: 'Stacking panels that open an entire wall between indoor and outdoor spaces.' },

@@ -129,7 +129,7 @@ const doorSystems = [
   { name: 'Ultra',        href: '/products/aluminium-door-systems/ultra',       image: '/products/ultra-a.jpg' },
   { name: 'Retro Gulf',   href: '/products/aluminium-door-systems/retrogulf',   image: '/products/retro-gulf-a.jpg' },
   { name: 'HL-50',        href: '/products/aluminium-door-systems/hl50',        image: '/products/hl50-a.jpg' },
-  { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus',       image: '/products/nexus-a.png' },
+  { name: 'Nexus',        href: '/products/aluminium-door-systems/nexus',       image: '/products/nexus-a.jpg' },
 ];
 
 const features = [

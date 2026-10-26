@@ -40,10 +40,10 @@ const featureItems = [
 ];
 
 const systems = [
-  { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening', image: '/products/parallel-opening-a.webp' },
+  { name: 'Parallel Opening', href: '/products/signature-systems/parallel-opening', image: '/products/parallel-opening-a.jpg' },
   { name: 'Tilt & Turn',      href: '/products/signature-systems/tilt-turn',        image: '/products/tilt-turn-b.jpg' },
   { name: 'Vertical Sliding', href: '/products/signature-systems/vertical-sliding', image: '/products/vertical-sliding-a.jpg' },
-  { name: 'Sliding Folding',  href: '/products/signature-systems/sliding-folding',  image: '/products/sliding-folding-a.png' },
+  { name: 'Sliding Folding',  href: '/products/signature-systems/sliding-folding',  image: '/products/sliding-folding-a.jpg' },
 ];
 
 export default function SignatureSystemsPage() {
@@ -58,7 +58,7 @@ export default function SignatureSystemsPage() {
       />
 
       <ApplicationsSection
-        image="/products/parallel-opening-a.webp"
+        image="/products/parallel-opening-a.jpg"
         description="Our Signature Systems bring thoughtful design and practical performance together. From flexible Parallel Opening and versatile Tilt & Turn to space-saving Vertical Sliding and expansive Sliding Folding solutions, each system is crafted to suit modern lifestyles. With refined aluminium profiles, smooth operation, and lasting durability, these designs help create comfortable, elegant spaces that feel truly yours."
       />
       <FeatureSection

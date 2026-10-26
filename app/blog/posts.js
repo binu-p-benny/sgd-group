@@ -10,7 +10,7 @@ export const blogPosts = [
     tags: ['Structural Glazing', 'Curtain Wall', 'Facade Design'],
     readTime: '5 min read',
     author: 'SGD Group Team',
-    image: '/project-nikshan.png',
+    image: '/project-nikshan.jpg',
     content: [
       'Structural glazing has moved from a specialist technique reserved for landmark towers to a mainstream expectation on commercial and high-end residential projects alike. Where a facade once needed visible mullions and transoms to carry its own weight, modern structural silicone and point-fixed systems let glass panels do the structural work themselves — creating uninterrupted, almost frameless elevations.',
       'The shift is being driven by three things: bigger glass panels from improved manufacturing and transport capability, stronger interlayers that make laminated and toughened glass safer at scale, and aluminium sub-frames engineered to hide almost entirely behind the glass line. Together, they let architects specify facades that read as a single continuous surface rather than a grid of framed windows.',
@@ -33,7 +33,7 @@ export const blogPosts = [
     tags: ['Skylights', 'Natural Light', 'Energy Efficiency'],
     readTime: '4 min read',
     author: 'SGD Group Team',
-    image: '/skylight.png',
+    image: '/skylight.jpg',
     content: [
       'A well-placed skylight can transform a room more dramatically than almost any other single design decision — turning a dim interior space into one filled with soft, even daylight for most of the day. Unlike a vertical window, a skylight draws light from directly overhead, which reaches deeper into a floor plan and reduces the need for artificial lighting during daytime hours.',
       'Beyond the obvious energy savings, natural overhead light has a measurable effect on wellbeing. Studies on daylighting consistently link good access to natural light with better mood, improved focus, and healthier sleep cycles — which is why skylights are increasingly specified in offices, studios, and kitchens, not just traditional atriums.',
@@ -56,7 +56,7 @@ export const blogPosts = [
     tags: ['Frameless Doors', 'Sliding Systems', 'Interior Design'],
     readTime: '4 min read',
     author: 'SGD Group Team',
-    image: '/project-eham.png',
+    image: '/project-eham.jpg',
     content: [
       'Frameless sliding doors have become the signature detail of contemporary luxury homes — and it\'s easy to see why. By minimising the aluminium frame to an almost invisible sightline, they turn a door into what feels like a moving wall of glass, blurring the line between an interior living space and whatever sits beyond it: a garden, a pool deck, or a view.',
       'The appeal isn\'t purely aesthetic. A well-engineered frameless system still needs to deliver everything a conventional door does — weather sealing, security, and smooth day-to-day operation — just with far less visible hardware doing the work. That means heavier-duty rollers and tracks hidden within a slimmer profile, and drainage details engineered with less material to work with.',

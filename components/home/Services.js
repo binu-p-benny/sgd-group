@@ -8,16 +8,16 @@ import styles from './Services.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const mosaicImages = [
-  { src: 'services/pre-Engineered-1.png',
+  { src: 'services/pre-Engineered-1.jpg',
        alt: 'Exploded display board of aluminium door hardware, including frame sections, hinges, locking mechanisms, handles, and restrictors',
         slot: 'tall'        },
-  { src: 'services/Pre-Engineered-2.png',
+  { src: 'services/Pre-Engineered-2.jpg',
        alt: 'Side-by-side comparison of a normal window letting in glare and heat versus a pre-engineered reflective window keeping the office cool',
                                        slot: 'topMid'      },
   { src: 'services/Pre-Engineered-3.jpg',
        alt: 'Water droplets beading on weatherproof aluminium panel finishes in multiple metallic shades',
                                  slot: 'topRight'    },
-  { src: 'services/Pre-Engineered-4.png',
+  { src: 'services/Pre-Engineered-4.jpg',
       alt: 'Cross-section diagram of an aluminium window profile highlighting double glazing, EPDM gasket, thermal break, drainage system, and strong profile',
                                    slot: 'bottomMid'   },
 ];

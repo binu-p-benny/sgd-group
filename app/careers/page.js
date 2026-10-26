@@ -56,7 +56,7 @@ export default function CareersPage() {
       <Navigation />
       <PageHero
         title="Career"
-        bg="/career/Careers-1.png"
+        bg="/career/Careers-1.jpg"
       />
 
       {/* Intro */}

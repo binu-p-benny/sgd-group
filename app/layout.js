@@ -21,7 +21,7 @@ export const metadata = {
     description: 'Discover the best windows for home in Kerala with SGD Group of Companies. Premium, durable glass and windows for home in Kerala designed for style, safety, and performance.',
     images: [
       {
-        url: '/hero.png',
+        url: '/hero.jpg',
         width: 1024,
         height: 1024,
         alt: 'SGD Group of Companies',
@@ -32,7 +32,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Expert Glass & Window Installation and Service in Kerala | SGD Group',
     description: 'Discover the best windows for home in Kerala with SGD Group of Companies. Premium, durable glass and windows for home in Kerala designed for style, safety, and performance.',
-    images: ['/hero.png'],
+    images: ['/hero.jpg'],
   },
   robots: {
     index: true,
@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
               "description": "Kerala's leading specialists in aluminium window systems, doors, facades, and architectural glazing.",
               "url": "https://sgdgroupofcompanies.com",
               "logo": "https://sgdgroupofcompanies.com/logo-cl.png",
-              "image": "https://sgdgroupofcompanies.com/hero.png",
+              "image": "https://sgdgroupofcompanies.com/hero.jpg",
               "telephone": "+917902266219",
               "email": "sgdprojectmanagement@gmail.com",
               "address": {

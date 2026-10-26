@@ -12,7 +12,7 @@ const categories = [
   { label: 'Windows System',   img: '/products/window-systems-hero.jpg', href: '/products/aluminium-window-systems' },
   { label: 'Doors System',     img: '/products/door-systems-hero.jpg',   href: '/products/aluminium-door-systems'   },
   { label: 'Signature system', img: '/products/tilt-turn-b.jpg',         href: '/products/signature-systems'        },
-  { label: 'Sliding folding',  img: '/products/sliding-folding-a.png',   href: '/products/signature-systems/sliding-folding' },
+  { label: 'Sliding folding',  img: '/products/sliding-folding-a.jpg',   href: '/products/signature-systems/sliding-folding' },
 ];
 
 export default function Products() {
