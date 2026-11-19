@@ -1,5 +1,6 @@
 import { blogPosts } from './blog/posts';
 import { indexableLocations } from './locations/data';
+import { publishedCities } from './locations/cityNav';
 
 const BASE_URL = 'https://sgdgroupofcompanies.com';
 
@@ -69,6 +70,16 @@ export default function sitemap() {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    });
+  }
+
+  // City landing pages — see published flag in ./locations/cityNav.js
+  for (const city of publishedCities) {
+    entries.push({
+      url: `${BASE_URL}/locations/${city.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     });
   }
 

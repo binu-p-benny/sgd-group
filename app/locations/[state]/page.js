@@ -4,15 +4,46 @@ import Navigation from '@/components/home/Navigation';
 import Footer from '@/components/home/Footer';
 import PageHero from '@/components/shared/PageHero';
 import BreadcrumbJsonLd from '@/components/shared/BreadcrumbJsonLd';
-import { locations, BASE_URL, BUSINESS, PRODUCT_RANGE } from '../data';
+import { locations, BASE_URL, BUSINESS, PRODUCT_RANGE, providerJsonLd } from '../data';
+import { cities } from '../cities';
+import { citiesByState } from '../cityNav';
+import CityPage from './CityPage';
 import styles from './page.module.css';
 
 export function generateStaticParams() {
-  return Object.keys(locations).map((state) => ({ state }));
+  return [...Object.keys(locations), ...Object.keys(cities)].map((state) => ({ state }));
 }
 
 export async function generateMetadata({ params }) {
   const { state } = await params;
+
+  const city = cities[state];
+  if (city) {
+    const cityUrl = `${BASE_URL}/locations/${city.slug}`;
+    return {
+      title: { absolute: city.title },
+      description: city.description,
+      keywords: city.keywords,
+      alternates: { canonical: cityUrl },
+      robots: city.published ? undefined : { index: false, follow: true },
+      openGraph: {
+        title: city.title,
+        description: city.description,
+        url: cityUrl,
+        siteName: BUSINESS.name,
+        type: 'website',
+        locale: 'en_IN',
+        images: [{ url: `/og/locations/${city.slug}.jpg`, width: 1200, height: 630, alt: city.h1 }],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: city.title,
+        description: city.description,
+        images: [`/og/locations/${city.slug}.jpg`],
+      },
+    };
+  }
+
   const loc = locations[state];
   if (!loc) return {};
 
@@ -45,8 +76,12 @@ export async function generateMetadata({ params }) {
 
 export default async function LocationPage({ params }) {
   const { state } = await params;
+
+  if (cities[state]) return <CityPage city={cities[state]} />;
+
   const loc = locations[state];
   if (!loc) notFound();
+  const stateCities = citiesByState(loc.slug);
 
   const url = `${BASE_URL}/locations/${loc.slug}`;
 
@@ -62,21 +97,7 @@ export default async function LocationPage({ params }) {
       name: loc.name,
       containedInPlace: { '@type': 'Country', name: 'India' },
     },
-    provider: {
-      '@type': 'HomeAndConstructionBusiness',
-      name: BUSINESS.name,
-      url: BASE_URL,
-      telephone: BUSINESS.telephone,
-      email: BUSINESS.email,
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: BUSINESS.streetAddress,
-        addressLocality: BUSINESS.locality,
-        addressRegion: BUSINESS.region,
-        postalCode: BUSINESS.postalCode,
-        addressCountry: BUSINESS.country,
-      },
-    },
+    provider: providerJsonLd(),
   };
 
   return (
@@ -118,6 +139,24 @@ export default async function LocationPage({ params }) {
           )}
         </div>
       </section>
+
+      {stateCities.length > 0 && (
+        <section className={styles.section}>
+          <div className="container">
+            <h2 className={styles.heading}>Cities we serve in {loc.name}</h2>
+            <ul className={styles.projectList}>
+              {stateCities.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/locations/${c.slug}`} className={styles.projectRow}>
+                    <span className={styles.projectName}>Aluminium windows and doors in {c.name}</span>
+                    <span className={styles.projectPlace} aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       <section className={styles.sectionAlt}>
         <div className="container">

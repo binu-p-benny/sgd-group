@@ -521,6 +521,152 @@
   color: #111111;
 }
 
+/* ── Locations dropdown: state rows that expand to show their city pages ── */
+.locationsMenu {
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.locationsState {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.locationsState:first-of-type {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.locationsStateRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.locationsStateLink {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: rgba(245, 244, 239, 0.55);
+  padding: 14px 0;
+  transition: color 0.2s ease, letter-spacing 0.2s ease;
+  white-space: nowrap;
+}
+
+.locationsStateLink:hover {
+  color: #F5F4EF;
+  letter-spacing: 1.6px;
+}
+
+.locationsStateLink:hover .locationsPin {
+  opacity: 1;
+}
+
+.locationsStateToggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: -8px;
+  border-radius: 6px;
+  color: rgba(245, 244, 239, 0.55);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.locationsStateToggle:hover {
+  color: #F5F4EF;
+  background: rgba(255,255,255,0.06);
+}
+
+.locationsStateToggle:focus-visible {
+  outline: 2px solid rgba(245, 244, 239, 0.6);
+  outline-offset: 1px;
+}
+
+/* Height animation without measuring: 0fr -> 1fr */
+.locationsCities {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.locationsCitiesOpen {
+  grid-template-rows: 1fr;
+}
+
+.locationsCitiesInner {
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 26px;
+}
+
+.locationsCityLink {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: rgba(245, 244, 239, 0.5);
+  padding: 9px 0;
+  white-space: nowrap;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.locationsCityLink:last-child {
+  margin-bottom: 10px;
+}
+
+.locationsCityLink:hover {
+  color: #F5F4EF;
+  padding-left: 4px;
+}
+
+.scrolled .locationsState {
+  border-bottom-color: rgba(17, 17, 17, 0.08);
+}
+
+.scrolled .locationsState:first-of-type {
+  border-top-color: rgba(17, 17, 17, 0.08);
+}
+
+.scrolled .locationsStateLink,
+.scrolled .locationsStateToggle {
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.scrolled .locationsStateLink:hover,
+.scrolled .locationsStateToggle:hover {
+  color: #111111;
+}
+
+.scrolled .locationsStateToggle:hover {
+  background: rgba(17, 17, 17, 0.05);
+}
+
+.scrolled .locationsCityLink {
+  color: rgba(17, 17, 17, 0.55);
+}
+
+.scrolled .locationsCityLink:hover {
+  color: #111111;
+}
+
 /* Contact button */
 .contactBtn {
   background: rgba(245, 244, 239, 0.15);

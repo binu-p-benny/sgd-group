@@ -96,3 +96,21 @@ export const locationList = Object.values(locations);
 
 /* Only fully-written pages belong in the sitemap. */
 export const indexableLocations = locationList.filter((l) => l.contentComplete);
+
+/* Provider block for Service JSON-LD, shared by state and city pages. The address
+   is the real head office; city pages are service areas, not business locations. */
+export const providerJsonLd = () => ({
+  '@type': 'HomeAndConstructionBusiness',
+  name: BUSINESS.name,
+  url: BASE_URL,
+  telephone: BUSINESS.telephone,
+  email: BUSINESS.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: BUSINESS.streetAddress,
+    addressLocality: BUSINESS.locality,
+    addressRegion: BUSINESS.region,
+    postalCode: BUSINESS.postalCode,
+    addressCountry: BUSINESS.country,
+  },
+});

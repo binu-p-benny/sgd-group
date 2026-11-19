@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import { ChevronDown, Globe, MapPin } from 'lucide-react';
 import { useLenis } from '@studio-freight/react-lenis';
+import { citiesByState } from '@/app/locations/cityNav';
 import styles from './Navigation.module.css';
 
 const residentialProjects = [
@@ -23,12 +24,19 @@ const commercialProjects = [
   { name: 'Eham Digital',        href: '/projects/eham-digital',        image: '/projects/eham-digital-real.jpg' },
 ];
 
-/* Service locations — states we currently operate in.
-   Slugs mirror the keys in app/locations/data.js. */
+/* Service locations — states we currently operate in, each with its city pages.
+   State slugs mirror the keys in app/locations/data.js; cities come from
+   app/locations/cityNav.js (a small module, safe for the client bundle). */
+const stateLocation = (name, slug) => ({
+  name,
+  slug,
+  href: `/locations/${slug}`,
+  cities: citiesByState(slug).map((c) => ({ name: c.name, href: `/locations/${c.slug}` })),
+});
 const southIndiaLocations = [
-  { name: 'Kerala',     href: '/locations/kerala' },
-  { name: 'Tamil Nadu', href: '/locations/tamil-nadu' },
-  { name: 'Karnataka',  href: '/locations/karnataka' },
+  stateLocation('Kerala', 'kerala'),
+  stateLocation('Tamil Nadu', 'tamil-nadu'),
+  stateLocation('Karnataka', 'karnataka'),
 ];
 
 export default function Navigation() {
@@ -37,6 +45,7 @@ export default function Navigation() {
   const [megaOpen, setMegaOpen]               = useState(false);       // products mega
   const [projectsOpen, setProjectsOpen]       = useState(false);       // projects mega
   const [locationsOpen, setLocationsOpen]     = useState(false);       // locations dropdown
+  const [openLocState, setOpenLocState]       = useState(null);        // state whose cities are expanded in the locations dropdown
   const [hoveredProduct, setHoveredProduct]   = useState(null);
   const [hoveredProject, setHoveredProject]   = useState(null);
   const [openMobileGroup, setOpenMobileGroup] = useState(null); // 'Products' | 'Projects' | null — home page accordion
@@ -84,7 +93,7 @@ export default function Navigation() {
   }, [locationsOpen]);
 
   /* Close it when navigating away */
-  useEffect(() => { setLocationsOpen(false); }, [pathname]);
+  useEffect(() => { setLocationsOpen(false); setOpenLocState(null); }, [pathname]);
 
   useEffect(() => {
     if (isOpen) {
@@ -191,19 +200,58 @@ export default function Navigation() {
         />
       </button>
 
-      <div className={`${styles.locationsMenu} ${locationsOpen ? styles.locationsMenuOpen : ''}`}>
+      <div className={`${styles.locationsMenu} ${locationsOpen ? styles.locationsMenuOpen : ''}`} data-lenis-prevent>
         <p className={styles.locationsGroupLabel}>South India</p>
-        {southIndiaLocations.map((loc) => (
-          <Link
-            key={loc.name}
-            href={loc.href}
-            className={styles.locationsItem}
-            onClick={() => setLocationsOpen(false)}
-          >
-            <MapPin size={14} strokeWidth={1.75} className={styles.locationsPin} />
-            {loc.name}
-          </Link>
-        ))}
+        {southIndiaLocations.map((loc) => {
+          const hasCities = loc.cities.length > 0;
+          const open = openLocState === loc.slug;
+          return (
+            <div key={loc.name} className={styles.locationsState}>
+              <div className={styles.locationsStateRow}>
+                <Link
+                  href={loc.href}
+                  className={styles.locationsStateLink}
+                  onClick={() => setLocationsOpen(false)}
+                >
+                  <MapPin size={14} strokeWidth={1.75} className={styles.locationsPin} />
+                  {loc.name}
+                </Link>
+                {hasCities && (
+                  <button
+                    type="button"
+                    className={styles.locationsStateToggle}
+                    onClick={() => setOpenLocState(open ? null : loc.slug)}
+                    aria-expanded={open}
+                    aria-label={`${open ? 'Hide' : 'Show'} cities in ${loc.name}`}
+                  >
+                    <ChevronDown
+                      size={14}
+                      strokeWidth={2}
+                      className={`${styles.locationsChevron} ${open ? styles.locationsChevronOpen : ''}`}
+                    />
+                  </button>
+                )}
+              </div>
+              {hasCities && (
+                <div className={`${styles.locationsCities} ${open ? styles.locationsCitiesOpen : ''}`}>
+                  <div className={styles.locationsCitiesInner}>
+                    {loc.cities.map((city) => (
+                      <Link
+                        key={city.href}
+                        href={city.href}
+                        className={styles.locationsCityLink}
+                        tabIndex={open ? 0 : -1}
+                        onClick={() => setLocationsOpen(false)}
+                      >
+                        {city.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -506,12 +554,54 @@ export default function Navigation() {
                 <div className={`${styles.mobileAccordionContent} ${openMobileGroup === item.name ? styles.mobileAccordionContentOpen : ''}`}>
                   <div className={styles.mobileAccordionInner}>
                     <p className={styles.mobileGroupLabel}>South India</p>
-                    {southIndiaLocations.map((loc, j) => (
-                      <Link key={loc.name} href={loc.href} className={styles.mobileLeafLink}
-                        onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
-                        {loc.name}
-                      </Link>
-                    ))}
+                    {southIndiaLocations.map((loc, j) => {
+                      if (loc.cities.length === 0) {
+                        return (
+                          <div key={loc.name} className={styles.mobileCategoryGroup}>
+                            <div className={styles.mobileCategoryRow}>
+                              <Link href={loc.href} className={styles.mobileCategoryLabel}
+                                onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
+                                {loc.name}
+                              </Link>
+                            </div>
+                          </div>
+                        );
+                      }
+                      const leafKey = `loc-${loc.slug}`;
+                      const open = openMobileLeaf === leafKey;
+                      return (
+                        <div key={loc.name} className={styles.mobileCategoryGroup}>
+                          <div className={`${styles.mobileCategoryRow} ${open ? styles.mobileCategoryRowOpen : ''}`}>
+                            <Link href={loc.href} className={styles.mobileCategoryLabel}
+                              onClick={() => setIsOpen(false)} ref={el => linksRef.current[i * 10 + j] = el}>
+                              {loc.name}
+                            </Link>
+                            <button
+                              type="button"
+                              className={styles.mobileCategoryChevronBox}
+                              onClick={() => toggleMobileLeaf(leafKey)}
+                              aria-expanded={open}
+                              aria-label={`Toggle cities in ${loc.name}`}
+                            >
+                              <ChevronDown
+                                size={16}
+                                className={`${styles.mobileCategoryChevronIcon} ${open ? styles.mobileCategoryChevronIconOpen : ''}`}
+                              />
+                            </button>
+                          </div>
+                          <div className={`${styles.mobileLeafContent} ${open ? styles.mobileLeafContentOpen : ''}`}>
+                            <div className={styles.mobileLeafInner}>
+                              {loc.cities.map((city) => (
+                                <Link key={city.href} href={city.href} className={styles.mobileLeafLink}
+                                  onClick={() => setIsOpen(false)}>
+                                  {city.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
