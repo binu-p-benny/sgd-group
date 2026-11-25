@@ -59,6 +59,109 @@
   margin: 0;
 }
 
+/* ── Rich content: headings, lists, links, callout, tables ── */
+.body h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--color-text);
+  margin: 1.5rem 0 0;
+  scroll-margin-top: 110px;
+}
+
+.body h2:first-child {
+  margin-top: 0;
+}
+
+.body ul,
+.body ol {
+  margin: 0;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.body li::marker {
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.body strong {
+  font-weight: 600;
+}
+
+.body a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: rgba(17, 17, 17, 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.body a:hover {
+  text-decoration-color: var(--color-text);
+}
+
+.callout {
+  padding: 1.5rem 1.75rem;
+  background: var(--color-surface);
+  border-left: 3px solid var(--color-text);
+  border-radius: 0 12px 12px 0;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.table th,
+.table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table thead th {
+  background: var(--color-surface);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table tbody th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* Sections that follow the FAQ (conclusion / about) */
+.afterFaq {
+  background: var(--color-background);
+  padding: 0 0 84px;
+}
+
 /* ── Breadcrumb ──────────────────────────────────── */
 .breadcrumb {
   display: flex;
@@ -316,6 +419,11 @@
 
   .body { gap: 1.25rem; }
   .body p { font-size: 1rem; line-height: 1.7; }
+  .body ul,
+  .body ol { font-size: 1rem; line-height: 1.65; }
+  .callout { padding: 1.25rem 1.25rem; }
+  .table { font-size: 0.875rem; }
+  .afterFaq { padding: 0 0 48px; }
 
   .tagsRow { margin-top: 1.5rem; }
 

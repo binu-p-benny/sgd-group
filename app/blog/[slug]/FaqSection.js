@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import RichText from './RichText';
 import styles from './post.module.css';
 
 export default function FaqSection({ faqs }) {
@@ -31,7 +32,7 @@ export default function FaqSection({ faqs }) {
                 </span>
               </button>
               <div className={`${styles.faqAnswer} ${openIndex === i ? styles.faqAnswerOpen : ''}`}>
-                <p>{item.a}</p>
+                <p><RichText text={item.a} /></p>
               </div>
             </div>
           ))}

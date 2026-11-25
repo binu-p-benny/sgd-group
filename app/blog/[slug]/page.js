@@ -5,6 +5,8 @@ import Footer from '@/components/home/Footer';
 import PageHero from '@/components/shared/PageHero';
 import { blogPosts, getPostBySlug } from '../posts';
 import FaqSection from './FaqSection';
+import PostContent from './PostContent';
+import { stripMarkup } from './RichText';
 import styles from './post.module.css';
 
 export function generateStaticParams() {
@@ -16,11 +18,11 @@ export async function generateMetadata({ params }) {
   const post = getPostBySlug(slug);
   if (!post) return {};
   const url = `https://sgdgroupofcompanies.com/blog/${slug}`;
-  const imageUrl = `https://sgdgroupofcompanies.com${post.image}`;
+  const imageUrl = `https://sgdgroupofcompanies.com${post.ogImage || post.image}`;
   return {
-    title: `${post.title} | SGD Group of Companies Kerala`,
+    title: post.seoTitle ? { absolute: post.seoTitle } : `${post.title} | SGD Group of Companies Kerala`,
     description: post.excerpt,
-    keywords: post.tags?.join(', '),
+    keywords: post.keywords || post.tags?.join(', '),
     robots: { index: true, follow: true },
     openGraph: {
       title: post.title,
@@ -50,13 +52,14 @@ export default async function BlogPostPage({ params }) {
 
   const moreArticles = blogPosts.filter((p) => p.slug !== slug);
   const url = `https://sgdgroupofcompanies.com/blog/${slug}`;
-  const imageUrl = `https://sgdgroupofcompanies.com${post.image}`;
+  const imageUrl = `https://sgdgroupofcompanies.com${post.ogImage || post.image}`;
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
+    ...(post.keywords && { keywords: post.keywords }),
     image: imageUrl,
     datePublished: post.date,
     dateModified: post.updatedDate || post.date,
@@ -75,7 +78,7 @@ export default async function BlogPostPage({ params }) {
     mainEntity: post.faqs.map((f) => ({
       '@type': 'Question',
       name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
+      acceptedAnswer: { '@type': 'Answer', text: stripMarkup(f.a) },
     })),
   } : null;
 
@@ -130,9 +133,7 @@ export default async function BlogPostPage({ params }) {
           </div>
 
           <div className={styles.body}>
-            {post.content.map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
+            <PostContent blocks={post.content} />
           </div>
 
           {post.tags?.length > 0 && (
@@ -155,6 +156,16 @@ export default async function BlogPostPage({ params }) {
 
       <FaqSection faqs={post.faqs} />
 
+      {post.afterFaq?.length > 0 && (
+        <section className={styles.afterFaq}>
+          <div className={styles.inner}>
+            <div className={styles.body}>
+              <PostContent blocks={post.afterFaq} />
+            </div>
+          </div>
+        </section>
+      )}
+
       {moreArticles.length > 0 && (
         <section className={styles.more}>
           <div className={styles.moreInner}>
@@ -163,7 +174,7 @@ export default async function BlogPostPage({ params }) {
               {moreArticles.map((p) => (
                 <Link key={p.slug} href={`/blog/${p.slug}`} className={styles.moreCard}>
                   <div className={styles.moreImage}>
-                    <img src={p.image} alt={p.title} />
+                    <img src={p.thumb || p.image} alt={p.title} />
                   </div>
                   <h3 className={styles.moreCardTitle}>{p.title}</h3>
                 </Link>

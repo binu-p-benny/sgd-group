@@ -1,5 +1,7 @@
 
-export const blogPosts = [
+import { keralaClimatePost } from './kerala-climate-post';
+
+const earlierPosts = [
   {
     slug: 'future-of-structural-glazing',
     title: 'The Future of Structural Glazing in Modern Architecture',
@@ -70,6 +72,10 @@ export const blogPosts = [
     ],
   },
 ];
+
+/* Order here is the display order everywhere (blog index, home page, "More articles").
+   Keep the newest post first. */
+export const blogPosts = [keralaClimatePost, ...earlierPosts];
 
 export function getPostBySlug(slug) {
   return blogPosts.find((p) => p.slug === slug);

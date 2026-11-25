@@ -71,7 +71,7 @@ export default async function BlogPage({ searchParams }) {
             {filteredPosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className={styles.card}>
                 <div className={styles.imageWrapper}>
-                  <img src={post.image} alt={post.title} className={styles.image} />
+                  <img src={post.thumb || post.image} alt={post.title} className={styles.image} />
                 </div>
                 <div className={styles.metaRow}>
                   <span className={styles.category}>{post.category}</span>

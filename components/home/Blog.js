@@ -57,7 +57,7 @@ export default function Blog() {
               ref={el => cardsRef.current[i] = el}
             >
               <div className={styles.imageWrapper}>
-                <img src={post.image} alt={post.title} className={styles.image} />
+                <img src={post.thumb || post.image} alt={post.title} className={styles.image} />
               </div>
               <span className={styles.date}>{post.date}</span>
               <h3 className={styles.cardTitle}>{post.title}</h3>
